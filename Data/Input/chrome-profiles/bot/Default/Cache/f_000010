@@ -1,0 +1,675 @@
+var Util = ariba.Util;
+var Dom = ariba.Dom;
+var Refresh = ariba.Refresh;
+var Widgets = ariba.Widgets;
+var Community = ariba.Community;
+var debug = ariba.Debug;
+var Event = ariba.Event;
+
+if (! Widgets.hover_card_patched) {
+    Widgets.hover_card_patched = true;
+
+    var ActiveHoverCard = null;
+    var ActiveHoverLink = null;
+
+    var HideActiveHoverCardTimeout = null;
+
+    ariba.Event.registerBehaviors({
+        HCC : {
+            mousemove : function (hoverLink, evt) {
+                Widgets.displayHoverCard(hoverLink);
+            },
+            mouseout : function (hoverLink, evt) {
+                Widgets.hideActiveHoverCard();
+            },
+            click : function (hoverLink, evt) {
+                Widgets.hideActiveHoverCard();
+            }
+        },
+        HC : {
+            mouseover : function (hoverCard, evt) {
+                Widgets.clearHideHoverCard();
+            },
+            mouseout : function (hoverLink, evt) {
+                Widgets.hideActiveHoverCard();
+            }
+        }
+    });
+
+    Dom.find = function (parent, selector) {
+        // only supporting classname for now
+        return Dom.findChildrenUsingPredicate(parent,
+            function (e) {
+                return e.className && e.className.indexOf(selector) >= 0;
+            }
+        );
+    };
+
+    Widgets.getHoverCard = function (hoverLink) {
+        var hoverCard = Dom.find(hoverLink, "hcard")[0];
+        // use hover card id if it has been relocated
+        if (!hoverCard) {
+            hoverCard = Dom.getElementById(hoverLink.getAttribute("hoverId"));
+        }
+        else {
+            hoverLink.setAttribute("hoverId", hoverCard.id);
+        }
+        return hoverCard;
+    };
+
+    Widgets.getHoverLink = function (hoverLink) {
+        if (typeof(hoverLink) == 'string') {
+            hoverLink = Dom.getElementById(hoverLink);
+        }
+        return hoverLink;
+    };
+
+    Widgets.displayNewsHover = function (hoverLink) {
+        Widgets.displayHover(hoverLink);
+    }
+
+    Widgets.displayHoverCard = function (hoverLink) {
+        Widgets.displayHover(hoverLink);
+        Widgets.saveActiveCard(hoverLink);
+    }
+
+    Widgets.displayHover = function (hoverLink) {
+        hoverLink = Widgets.getHoverLink(hoverLink);
+        var hoverCard = Widgets.getHoverCard(hoverLink);
+        Dom.relocateDiv(hoverCard);
+        Widgets._hideActiveHoverCard(hoverCard);
+
+        var newTop = 0;
+        var newLeft = 0;
+        var position = hoverLink.getAttribute("_pos");
+
+        if (position == "bottom") {
+            // calculate newTop and newLeft
+            newTop = Dom.absoluteTop(hoverLink) + hoverLink.offsetHeight;
+            newLeft = Dom.absoluteLeft(hoverLink);
+            Dom.addClass(hoverCard, "hoverBottom");
+        }
+        else if (position == "bottomLeft") {
+           // This is been done for Safari and Chrome browsers where the hover pointer doesnt line up correctly
+            if (!Dom.isSafari) {
+            	newTop = Dom.absoluteTop(hoverLink) + hoverLink.offsetHeight;
+            } else {
+            	newTop = Dom.absoluteTop(hoverLink) + hoverLink.offsetHeight - 8;
+            }
+
+            newLeft = Dom.absoluteLeft(hoverLink);
+            Dom.addClass(hoverCard, "hoverBottomLeft");
+        }
+        else {
+            newTop = Dom.absoluteTop(hoverLink) - 20;
+
+            var hoverLinkLeft = Dom.absoluteLeft(hoverLink);
+            var hoverLinkWidth = hoverLink.offsetWidth;
+            var linkLeftCenter =
+                 hoverLinkLeft + hoverLinkWidth / 2;
+            if (linkLeftCenter <= Dom.documentClientWidth() / 2) {
+                newLeft = hoverLinkLeft + hoverLinkWidth;
+            }
+            else {
+                hoverCard.style.display='';
+                newLeft = hoverLinkLeft - hoverCard.offsetWidth;
+                Dom.addClass(hoverCard, "hoverLeft");
+            }
+        }
+        Dom.setAbsolutePosition(hoverCard, newLeft, newTop);
+        Refresh.displayDiv(hoverCard);
+    };
+
+    Widgets.saveActiveCard = function (hoverLink) {
+        hoverLink = Widgets.getHoverLink(hoverLink);
+        var hoverCard = Widgets.getHoverCard(hoverLink);
+        ActiveHoverCard = hoverCard;
+        ActiveHoverLink = hoverLink.id;
+    }
+
+    Widgets.hideNewsHover = function (hoverLink) {
+        hoverLink = Widgets.getHoverLink(hoverLink);
+        var hoverCard = Widgets.getHoverCard(hoverLink)
+        Widgets.hideHover(hoverCard);
+    }
+
+    Widgets.hideActiveHoverCard = function ()
+    {
+        Widgets.clearHideHoverCard();
+        HideActiveHoverCardTimeout =
+            setTimeout(Widgets._hideActiveHoverCard.bind(Widgets), 200);
+    };
+
+    Widgets._hideActiveHoverCard = function (newHoverCard) {
+        var hoverCard = ActiveHoverCard;
+        if (hoverCard && hoverCard != newHoverCard) {
+            Widgets.hideHover(hoverCard);
+        }
+    };
+
+    Widgets.hideHover = function (hoverCard) {
+        Refresh.undisplayDiv(hoverCard);
+        Dom.removeClass(hoverCard, "hoverLeft");
+        Dom.removeClass(hoverCard, "hoverBottom");
+    }
+
+    Widgets.clearHideHoverCard = function ()
+    {
+        clearTimeout(HideActiveHoverCardTimeout);
+    };
+
+    Widgets.refreshActiveHoverCard = function()
+    {
+         Widgets.hideActiveHoverCard();
+         Widgets.displayHoverCard(ActiveHoverLink);
+    }
+
+
+    function showInsituElement(insituElement) {
+         var domInsituElement = Dom.getElementById(insituElement);
+         if (domInsituElement) {
+            domInsituElement.style.display = '';
+         }
+    }
+
+    function hideInsituElement(insituElement) {
+         var domInsituElement = Dom.getElementById(insituElement);
+         if (domInsituElement) {
+             domInsituElement.style.display = 'none';
+         }
+    }
+
+    function showInsituIFrame() {
+         var domInsituElement = Dom.getElementById('InSituContentPane');
+
+         if (domInsituElement) {
+            domInsituElement.className = 'wCommunityPaneShown';
+            //Set the height to Browser Window Size - 71 (71 is Supplier global nav height)
+            domInsituElement.height = document.documentElement.clientHeight - 71;
+            if(document.documentElement.clientWidth < 1280) {
+               domInsituElement.style.display = 'inline';
+               domInsituElement.style.visibility = 'visible';
+            } else {
+               domInsituElement.style.visibility = 'visible';
+               domInsituElement.style.display = '';
+            }
+         /*This fix has beed added as domInsituElement.previousElementSibling is not supported by IE 8 and above*/
+           if(domInsituElement.previousElementSibling){
+               domInsituElement.previousElementSibling.width = (document.documentElement.clientWidth - 250)  + 'px';
+               }else if(domInsituElement.previousSibling){
+               domInsituElement.previousSibling.width = (document.documentElement.clientWidth - 250)  + 'px';
+           }
+
+         }
+         showInsituElement(getCurrentInsituIframeId());
+         showInsituElement('sgn-insitu');
+    }
+
+
+
+    function adjustInSituFrameElements(){
+
+         var currentApp = getCurrentApp();
+
+         if(currentApp == "Discovery"){
+
+            var mastHeadCmdBarElementAW5 = document.getElementById("mastHeadCmdBarClassAW5");
+            var mastHeadCmdBarElementAW6 = document.getElementById("mastHeadCmdBarClassAW6");
+
+            if( mastHeadCmdBarElementAW5){
+                adjustInSituFrameElementsForAW5();
+            }
+            else if(mastHeadCmdBarElementAW6){
+                adjustInSituFrameElementsForAW6();
+            }
+         }
+         else{
+             if( Util.isAW5()){
+               adjustInSituFrameElementsForAW5();
+             }
+             else{
+               adjustInSituFrameElementsForAW6();
+             }
+         }
+    }
+
+    function adjustInSituFrameElementsForAW6(){
+
+       var UIPreferencesBannerDiv = document.getElementById('UIPreferencesBanner');
+       var iframeInsituElement = Dom.getElementById(getCurrentInsituIframeId());
+       var sgnInsituElement = Dom.getElementById('sgn-insitu');
+       var UIPreferencesBannerDivHeight = 0;
+       var tabsetHeight = 0;
+       if( getNoOfInsituTabs() > 1){
+            tabsetHeight = 42;
+       }
+       if (UIPreferencesBannerDiv) {
+          //if UI preference bar present then, calculate its height
+          UIPreferencesBannerDivHeight = UIPreferencesBannerDiv.clientHeight;
+       }
+        if (iframeInsituElement) {
+           var alertPanel = $('#AWAlertNotificationPanel');
+           if(alertPanel && alertPanel.height() ) {
+                UIPreferencesBannerDivHeight += alertPanel.height();
+           }
+           if (sgnInsituElement) {
+              sgnInsituElement.style.top = UIPreferencesBannerDivHeight+ "px";
+           }
+           //adjust the inSitu frame element position with UI Preference bar if present + 54px(height of community profile bar)
+           iframeInsituElement.style.top = 54 + UIPreferencesBannerDivHeight + tabsetHeight + "px";
+
+           //setting up inSitu frame height (window height - (community profile bar  + UI preference bar height))
+           iframeInsituElement.height =  document.documentElement.clientHeight - (54 + tabsetHeight + UIPreferencesBannerDivHeight);
+       } else {
+            showInsituElement('helpmenulink');
+            hideInsituElement('sgn-insitu');
+            hideInsituElement('sgninsituexpandeddiv');
+            hideInsituElement('sgninsitucollapseddiv');
+        }
+    }
+
+    function adjustInSituFrameElementsForAW5(){
+
+        var UIPreferencesBannerDiv = document.getElementById('UIPreferencesBanner');
+        var iframeInsituElement = Dom.getElementById(getCurrentInsituIframeId());
+        var sgninsituexpandeddivElement = Dom.getElementById('sgninsituexpandeddiv');
+        var sgnInsituElement = Dom.getElementById('sgn-insitu');
+        var tabsetHeight = 0;
+        if( getNoOfInsituTabs() > 1){
+            tabsetHeight = 30;
+        }
+        var UIPreferencesBannerDivHeight = 0;
+        if (UIPreferencesBannerDiv){
+            if (Dom.IsIE){
+                UIPreferencesBannerDivHeight = UIPreferencesBannerDiv.offsetHeight;
+                }
+            else {
+            //if UI preference bar present then, calculate its height
+            UIPreferencesBannerDivHeight = UIPreferencesBannerDiv.clientHeight;
+            }
+        }
+        if (iframeInsituElement) {
+           if (sgnInsituElement) {
+               sgnInsituElement.style.top = UIPreferencesBannerDivHeight + "px";
+           }
+            //adjust the expanded div in nav bar if UI Preference bar present
+            //note this not needed for collapsed div,coz it doesnt need to be fixed
+            // position on page scroll
+            if (sgninsituexpandeddivElement) {
+               sgninsituexpandeddivElement.style.top = 50  + UIPreferencesBannerDivHeight +  "px";
+            }
+            //adjust the inSitu frame element position with UI Preference bar if present
+            iframeInsituElement.style.top = 71 + UIPreferencesBannerDivHeight +  tabsetHeight + "px";
+            //setting up inSitu frame height (window height - (nav bar + UI preference bar height))
+            iframeInsituElement.height =  document.documentElement.clientHeight - (71 + UIPreferencesBannerDivHeight);
+        } else {
+            showInsituElement('helpmenulink');
+            hideInsituElement('sgn-insitu');
+            hideInsituElement('sgninsituexpandeddiv');
+            hideInsituElement('sgninsitucollapseddiv');
+        }
+    }
+
+
+    function getCurrentApp() {
+
+            var currentURL = window.location.href;
+            if((currentURL.indexOf('Discovery.aw')>=0)||(currentURL.indexOf('Discovery.woa')>=0)){
+                return "Discovery";
+            }
+            else if((currentURL.indexOf('Contract.aw')>=0)||(currentURL.indexOf('Contract.woa')>=0)){
+                return "Contract";
+            }
+            else if((currentURL.indexOf('Sourcing.aw')>=0)||(currentURL.indexOf('Sourcing.woa')>=0)){
+                return "Sourcing";
+            }
+            else {
+                return "Other";
+            }
+    }
+
+    function hideInsituIFrame() {
+         var domInsituElement = Dom.getElementById('InSituContentPane');
+         if (domInsituElement) {
+            domInsituElement.className = 'wCommunityPaneHidden';
+            domInsituElement.style.display = 'none';
+            domInsituElement.style.visibility = 'hidden';
+
+             /*This fix has beed added as domInsituElement.previousElementSibling is not supported by IE 8 and above*/
+             if(domInsituElement.previousElementSibling){
+                  domInsituElement.previousElementSibling.width = '';
+             }else if(domInsituElement.previousSibling){
+                   domInsituElement.previousSibling.width = '';
+             }
+         }
+         hideInsituElement('sgn-insitu');
+    }
+
+    function updateCookie(isInSituCollapsed) {
+
+        document.cookie = 'insitu=isCollapsed:' + isInSituCollapsed
+                                    + '|winWidth:' + document.documentElement.clientWidth
+                                    + '|winHeight:' + document.documentElement.clientHeight + '; path=/';
+    }
+
+
+    function getNotificationCallback(content){
+     showInsituElement('notificationcount');
+     document.getElementById('notificationcount').innerHTML = content['count'];
+    }
+
+    /**
+     * Helper function to check if insitu is overlapped with other elements in the page
+     */
+    function isInSituOverLapped() {
+        //this function checks if inSitu is overlapped on top of left hand side TD, using two approach
+        //Approach 1: check horizontal scroll bar present
+        //Approach 2: By calculating insitu position, check it's overlapped on left hand side TD
+        var isOverLapped = false;
+        //this checks page has horizontal scroll bar, if yes then page content is overflowed
+        var hasHScroll = document.body.scrollWidth > document.body.clientWidth;
+        //check insitu elment is present as well as not hidden
+        var domInsituElement = Dom.getElementById('InSituContentPane');
+        if (domInsituElement && domInsituElement.style.visibility === 'visible') {
+            //expression: Body offset width -(insitu position PX from left + insitu width)
+            //if the value is below '0', then insitu is ovelapped
+            var x = document.body.offsetWidth - (domInsituElement.offsetLeft + 250);
+            isOverlapped = (x < 0);
+        }
+        return hasHScroll || isOverLapped;
+    }
+    /**
+     * Helper function to get specific cookie from browser
+    */
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1);
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+    
+    /**
+    * Helper function to check inSitu is collapsed or not, from cookie value
+    * inSitu cookie structure: insitu=isCollapsed:0|winWidth:1280|winHeight:800
+    */
+    function isInSituCookieValueCollapsed(){
+        var insitu= getCookie("insitu");
+        var ck = insitu.split('|');
+        var str = ck[0];
+        var c = str.charAt(str.length - 1);
+        if (c == 1) {
+            return true;
+        }
+        return false;
+    }
+    
+    /**
+    * Helper function to check if insitu cookie is set or not
+    * inSitu cookie structure(when set): insitu=isCollapsed:0|winWidth:1280|winHeight:800
+    */
+    function isInSituCookieSet(){
+        var insitu= getCookie("insitu");
+        //getCookie returns empty string when the insitu cookie is not set
+        if (insitu == "") {
+            return false;
+        }
+        return true;
+    }
+
+    function adjustLogoutLink(){
+        var topLogoutLink = document.getElementById('logouttopcommand');
+        if(topLogoutLink != null){
+            var cmdLinks = Dom.getElementById('cmdlinks');
+            topLogoutLink.style.right = cmdLinks.clientWidth + 20 + "px";
+        }
+    }
+
+
+    function getCurrentInsituIframeId(){
+        if( ariba.InsituContent){
+            return ariba.InsituContent.getCurrentInsituIframeId();
+        }
+        return "communityContentIframe";
+    }
+
+    function getNoOfInsituTabs(){
+        if( ariba.InsituContent){
+            return ariba.InsituContent.getNoOfInsituTabs();
+        }
+        return 0;
+    }
+
+    function isCurrentDocumentPurchaseOrder() {
+        var iFrameCommunityComponent = document.getElementById('communityContentIframe');
+        if(iFrameCommunityComponent!=null){
+            var srcFromIFrame=iFrameCommunityComponent.src
+            if(srcFromIFrame!=null && srcFromIFrame.indexOf('domainObject:PurchaseOrder')>=0){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /*
+      This method handles moving message frame based on state of insitu.
+    */
+    function adjustInstMsgIframe () {
+        var instMsgIframeElem = document.getElementById("instMsgIframeContanier");
+        var inSituContentPaneElem = document.getElementById("InSituContentPane");
+        if (instMsgIframeElem && inSituContentPaneElem) {
+            var inSituContentPaneStyle = window.getComputedStyle(inSituContentPaneElem, null);
+            var inSituContentPaneVisible = (inSituContentPaneStyle.getPropertyValue("visibility") === 'hidden') ? false : true;
+            if (inSituContentPaneVisible) {
+                var width = inSituContentPaneStyle.getPropertyValue("width");
+                instMsgIframeElem.style.right = width;
+            } else {
+                instMsgIframeElem.style.right = '0px';
+            }
+        }
+    }
+
+    Util.collapseInSituFromGlobalNav = function ()
+    {
+         if(isCurrentDocumentPurchaseOrder()){
+            $(".tableHead table:first").attr('style', 'width: 100% !important');
+            $(".tableHead table:first").resize();
+            debug.log("resize table after help menu collapse");
+         }
+         hideInsituIFrame();
+         hideInsituElement("sgninsituexpandeddiv");
+         showInsituElement("sgninsitucollapseddiv");
+         updateCookie(1);
+         adjustInstMsgIframe();
+    };
+
+
+    Util.expandInSituFromGlobalNav = function ()
+    {
+         if(isCurrentDocumentPurchaseOrder()){
+            $(".tableHead table:first").attr('style', 'width: auto !important');
+            $(".tableHead table:first").resize();
+            debug.log("resize table after help menu expand");
+         }
+         showInsituIFrame();
+         var insituIES = document.getElementById("shellbar");
+         if(!insituIES) {
+            hideInsituElement("sgninsitucollapseddiv");
+         }
+         showInsituElement("sgninsituexpandeddiv");
+         updateCookie(0);
+         adjustInSituFrameElements();
+         adjustInstMsgIframe();
+    };
+
+    Util.toggleInSituFromGlobalNav = function () {
+        var iframeInsituElement = Dom.getElementById(getCurrentInsituIframeId());
+        if(isInSituCookieValueCollapsed() || !isInSituCookieSet()) {
+            Util.expandInSituFromGlobalNav();
+        }else {
+            Util.collapseInSituFromGlobalNav();
+        }
+    }
+
+
+    Util.adjustInSituFrame = function () {
+         adjustInSituFrameElements();
+    };
+
+   Util.isInSituOverLappedByPage = function () {
+       //this function checks if inSitu is overlapped on top of left hand side TD, using two approach
+       //Approach 1: check horizontal scroll bar present
+       //Approach 2: By calculating insitu position, check it's overlapped on left hand side TD
+       var isOverLapped = false;
+       //this checks page has horizontal scroll bar, if yes then page content is overflowed
+       var hasHScroll = document.body.scrollWidth > document.body.clientWidth;
+       //check insitu elment is present as well as not hidden
+       var domInsituElement = Dom.getElementById('InSituContentPane');
+       if (domInsituElement && domInsituElement.style.visibility === 'visible') {
+           //expression: Body offset width -(insitu position PX from left + insitu width)
+           //if the value is below '0', then insitu is overlapped
+           var x = document.body.offsetWidth - (domInsituElement.offsetLeft + 250);
+           isOverLapped = (x < 0);
+       }
+       return (isOverLapped || hasHScroll);
+    };
+
+   Util.expandInSituWithoutUpdateCookie = function ()
+   {
+       showInsituIFrame();
+       var insituIes = document.getElementById("shellbar");
+       if(!insituIes) {
+            hideInsituElement("sgninsitucollapseddiv");
+       }
+       showInsituElement("sgninsituexpandeddiv");
+       adjustInSituFrameElements();
+   };
+
+   Util.resizeInSitu = function(){
+       if (!isInSituCookieValueCollapsed()) {
+           Util.resizeCommunityGlobalNavControl();
+       }
+   };
+
+    Util.resizeCommunityGlobalNavControl = function () {
+    //If window size is less than 1280 then keep it collapsed
+        var iframeInsituElement = Dom.getElementById(getCurrentInsituIframeId());
+        if (iframeInsituElement) {
+        if (document.documentElement.clientWidth < 1280) {
+            //this will collapse inSitu
+            Util.resizeCommunityGlobalNavControlWithOutUpdateCookie();
+        } else {
+            Util.expandInSituWithoutUpdateCookie();
+        }
+        if (Util.isInSituOverLappedByPage()) {
+            //if insitu overlapped then we collapse by default and not update cookie
+            Util.resizeCommunityGlobalNavControlWithOutUpdateCookie();
+        }
+       } else {
+            showInsituElement('helpmenulink');
+            hideInsituElement('sgn-insitu');
+            hideInsituElement('sgninsituexpandeddiv');
+            hideInsituElement('sgninsitucollapseddiv');
+        }
+       adjustInstMsgIframe();
+    };
+
+    Util.resizeCommunityGlobalNavControlWithOutUpdateCookie = function () {
+       hideInsituIFrame();
+       hideInsituElement("sgninsituexpandeddiv");
+       showInsituElement("sgninsitucollapseddiv");
+       adjustInSituFrameElements();
+    };
+
+
+    Util.gotoInSituNotifications = function (url){
+      //check if inSitu is collapsed, then show insitu to get to notification UI
+      Util.expandInSituFromGlobalNav();
+      //get inSitu iframe and change src point to notification UI
+       var inSituIframe = document.getElementById(getCurrentInsituIframeId());
+       inSituIframe.src = url;
+              //clear existing count once user click on notification bell
+       hideInsituElement('notificationcount');
+    };
+
+    Util.fetchUserNotificationCount = function (url) {
+     var url = url;
+     $.ajax({
+        async: true,
+        cache: false,
+        type: 'GET',
+        url: url,
+        dataType: 'jsonp',
+        jsonpCallback: 'getNotificationCallback',
+        success : function () {
+        },
+        error : function () {
+          debug.log("error in fetching notification count");
+        }
+        });
+    };
+
+    Util.getUserNotificationCount = function (url) {
+        Util.fetchUserNotificationCount(url);
+        window.setInterval(function(){Util.fetchUserNotificationCount(url);},300000);
+    };
+
+    /**
+     * Helper to adjust insitu navigation links in supplier global nav
+     *
+     */
+    Util.adjustInsitu = function() {
+        var insituElem = Dom.getElementById('InSituContentPane');
+        var domInsituElementExpanded = Dom.getElementById('sgninsituexpandeddiv');
+        var domInsituElementCollapsed = Dom.getElementById('sgninsitucollapseddiv');
+        var sgnInsitu = Dom.getElementById('sgn-insitu');
+        var collaborationContentIframe = Dom.getElementById('collaborationContentIframe');
+        if(collaborationContentIframe) {
+            collaborationContentIframe.className='collaborationContentIframeStyle';
+        }
+        
+        //Execute the code that deals with collapsing or expanding insitu only when
+        //the cookie value is set
+        if(insituElem && isInSituCookieSet()) {
+            if(isInSituCookieValueCollapsed()) {
+                //This will collapse insitu
+                Util.resizeCommunityGlobalNavControlWithOutUpdateCookie();
+            } 
+            else {
+                //This will expand insitu
+                Util.expandInSituWithoutUpdateCookie();
+            }
+            //We always want to hide helpmenulink while adjusting insitu
+            //without this duplicate Help center text to show up in Supplier Global Nav
+            hideInsituElement('helpmenulink');
+        }
+        //dont show any insitu related elements when insitu is not present
+        else if (!insituElem) {
+            if (domInsituElementCollapsed) {
+                domInsituElementCollapsed.style.display = 'none';
+            }
+            if (domInsituElementExpanded) {
+                domInsituElementExpanded.style.display = 'none';
+            }
+            if (sgnInsitu) {
+                sgnInsitu.style.display = 'none';
+            }
+        }
+        //Attach event listener synchronously after onload, as resize can be called in different orders
+        //in IE vs chrome/other browsers
+        /*This fix has beed added as window.addEventListener is not supported by IE 8 and above*/
+        if (window.addEventListener){
+            window.addEventListener("resize", Util.resizeCommunityGlobalNavControl);
+        }
+        else if (window.attachEvent) {
+            window.attachEvent("onresize", Util.resizeInSitu);
+        }
+        adjustInstMsgIframe();
+    };
+    Event.addEvent(window,"onload",Util.adjustInsitu);
+}

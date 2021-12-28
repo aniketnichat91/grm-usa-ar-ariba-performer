@@ -1,0 +1,30 @@
+{
+   "background": {
+      "scripts": [ "BackgroundMain.js" ]
+   },
+   "browser_action": {
+      "default_popup": ""
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "ContentMain.js" ],
+      "match_about_blank": true,
+      "matches": [ "http://*/*", "https://*/*", "file://*/*" ],
+      "run_at": "document_start"
+   } ],
+   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+   "default_locale": "en",
+   "description": "UiPath component for browser interaction",
+   "icons": {
+      "128": "uiPath128.png",
+      "16": "uiPath16.png",
+      "32": "uiPath32.png",
+      "48": "uiPath48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAg/NFkR/SlTmkVr4Z+ED76QEhqrV7Jzt0xq1dsb5kZuolmwrhuqRxBD0FSWt+P+Az/5jYTRaEOuEkD2OpeeWzzG/E1py7OMBRB7C2OQJ9YRe/3k1gVNSZs3SdVdXuTISUniMrNMv1/lnuLnKADTZ8r63zWyF4RvYAJaFTM4pTthAJ2Hizzo5OMqqCJ1WrW8fBbR7k9iXw/VSqlKKS/S6qi69cHJ+fhf39bFcYtjrjULle7af+07LTpuy5f8AYWUJG7YbXKWHUg2DMDSA8qnKqBF62y72/HPti4yuJE5B2umJNGePlYXS1EbWDWn9IWNVBRFyOdsM235JsguCvdhafhwIDAQAB",
+   "manifest_version": 2,
+   "name": "UiPath Web Automation 21.10",
+   "permissions": [ "management", "nativeMessaging", "tabs", "webNavigation", "\u003Call_urls>", "debugger", "cookies" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "21.10.4"
+}
