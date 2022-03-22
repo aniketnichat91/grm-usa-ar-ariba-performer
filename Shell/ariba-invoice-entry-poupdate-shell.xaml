@@ -82,7 +82,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="416.8,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Clicking Check in Row: &quot; + in_CheckRow]" />
-    <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="1000" DisplayName="Click Checkbox based on row" sap:VirtualizedContainerService.HintSize="416.8,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+    <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="1000" DisplayName="Click Checkbox based on row" sap:VirtualizedContainerService.HintSize="416.8,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="False">
       <ui:Click.CursorPosition>
         <ui:CursorPosition Position="Center">
           <ui:CursorPosition.OffsetX>
@@ -94,13 +94,10 @@
         </ui:CursorPosition>
       </ui:Click.CursorPosition>
       <ui:Click.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dd38af1c-28bd-4d63-8d88-50461474b861" InformativeScreenshot="980ddb121cc76a17e876d9eaad69a042" Selector="[String.Format(&quot;&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;&lt;webctrl tag='DIV' class='w-chk w-chk-dsize' tableRow='{0}' /&gt;&quot;, in_CheckRow)]">
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dd38af1c-28bd-4d63-8d88-50461474b861" InformativeScreenshot="980ddb121cc76a17e876d9eaad69a042" Selector="[String.Format(&quot;&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;&lt;webctrl tag='DIV' class='w-chk w-chk-dsize' tableRow='{0}' /&gt;&quot;, in_CheckRow)]" WaitForReady="INTERACTIVE">
           <ui:Target.TimeoutMS>
             <InArgument x:TypeArguments="x:Int32" />
           </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
         </ui:Target>
       </ui:Click.Target>
     </ui:Click>
