@@ -4,11 +4,13 @@
     <x:Property Name="out_downloadedInvoicesReport" Type="OutArgument(sd:DataTable)" />
     <x:Property Name="in_config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_browser" Type="InArgument(ui:Browser)" />
+    <x:Property Name="in_dt_ConsolidatedInvoices" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="in_ReportFilePath" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1001,5762</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>910,673</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Download_Invoices_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -78,24 +80,26 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1011,5697" sap2010:WorkflowViewState.IdRef="Sequence_13">
+  <Sequence sap:VirtualizedContainerService.HintSize="476,568" sap2010:WorkflowViewState.IdRef="Sequence_13">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="969,5605" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,476" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Download_Invoices" sap:VirtualizedContainerService.HintSize="931,5378" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="Download_Invoices" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="bln_RefExists" />
             <Variable x:TypeArguments="sd:DataTable" Name="dt_AribaReport" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="889,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot; Download Invoices SAP Ariba --- STARTED&quot;]" />
@@ -108,7 +112,7 @@
             </Assign.Value>
           </Assign>
           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="889,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[out_downloadBillingFileName]" />
-          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Seller'" sap:VirtualizedContainerService.HintSize="889,621" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="60b13bde9e52c6940e8321020133ca96" Selector="&lt;html app='chrome.exe' title='Seller Dashboard' /&gt;">
+          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Seller'" sap:VirtualizedContainerService.HintSize="889,621" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="60b13bde9e52c6940e8321020133ca96" Selector="&lt;html app='chrome.exe' title='*' /&gt;">
             <ui:BrowserScope.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -163,13 +167,13 @@
               </ActivityAction>
             </ui:BrowserScope.Body>
           </ui:BrowserScope>
-          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Ariba'" sap:VirtualizedContainerService.HintSize="889,4263" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="9891a1103540d04f3e95e7422abbc5cc" Selector="&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;" TimeoutMS="90000">
+          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Ariba'" sap:VirtualizedContainerService.HintSize="889,5049" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="9891a1103540d04f3e95e7422abbc5cc" Selector="&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;" TimeoutMS="90000">
             <ui:BrowserScope.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                 </ActivityAction.Argument>
-                <Sequence sap:VirtualizedContainerService.HintSize="855,4117" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence sap:VirtualizedContainerService.HintSize="855,4863" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="InvoicesSetTo500" />
                     <Variable x:TypeArguments="x:String" Name="str_FirstDateDisplayed" />
@@ -385,28 +389,91 @@
                   </ui:WindowScope>
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="813,91" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Saving File Succesful : &quot;+out_downloadBillingFileName+&quot;.xls&quot;]" />
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="813,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Reading Excel File ..&quot;]" />
-                  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="813,434" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+                  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="813,1180" sap2010:WorkflowViewState.IdRef="RetryScope_1">
                     <ui:RetryScope.ActivityBody>
                       <ActivityAction>
-                        <ui:ExcelApplicationScope Password="{x:Null}" CreateNewFile="False" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,260" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" Visible="False" WorkbookPath="[in_config(&quot;DownloadFolderpath&quot;).ToString+out_downloadBillingFileName+&quot;.xls&quot;]">
+                        <ui:ExcelApplicationScope Password="{x:Null}" CreateNewFile="False" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="510,1006" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" Visible="False" WorkbookPath="[in_config(&quot;DownloadFolderpath&quot;).ToString+out_downloadBillingFileName+&quot;.xls&quot;]">
                           <ui:ExcelApplicationScope.Body>
                             <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,897" sap2010:WorkflowViewState.IdRef="Sequence_11">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:ExcelReadRange AddHeaders="True" DataTable="[dt_AribaReport]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" SheetName="[out_downloadBillingFileName]">
+                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                                  <ui:CommentOut.Body>
+                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:ExcelAppendRange DataTable="[in_dt_ConsolidatedInvoices]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelAppendRange_1" SheetName="[out_downloadBillingFileName]" />
+                                    </Sequence>
+                                  </ui:CommentOut.Body>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:CommentOut>
+                                <ui:ExcelReadRange AddHeaders="True" DataTable="[dt_AribaReport]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="434,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" SheetName="[out_downloadBillingFileName]">
                                   <ui:ExcelReadRange.Range>
                                     <InArgument x:TypeArguments="x:String">
                                       <Literal x:TypeArguments="x:String" Value="" />
                                     </InArgument>
                                   </ui:ExcelReadRange.Range>
                                 </ui:ExcelReadRange>
+                                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,514" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                                  <TryCatch.Try>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="242,176" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:MergeDataTable Destination="[in_dt_ConsolidatedInvoices]" DisplayName="Merge Data Table" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="MergeDataTable_1" MissingSchemaAction="Add" Source="[dt_AribaReport]" />
+                                      <ui:RemoveDuplicateRows DataTable="[in_dt_ConsolidatedInvoices]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_1" OutputDataTable="[in_dt_ConsolidatedInvoices]" />
+                                    </Sequence>
+                                  </TryCatch.Try>
+                                  <TryCatch.Catches>
+                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,352" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ActivityAction x:TypeArguments="s:Exception">
+                                        <ActivityAction.Argument>
+                                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                        </ActivityAction.Argument>
+                                        <Sequence sap:VirtualizedContainerService.HintSize="376,283" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Warn" Message="[&quot;Invoice Download for 1st Datatable is Null hence it wont merge &quot;]" />
+                                          <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="sd:DataTable">[in_dt_ConsolidatedInvoices]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="sd:DataTable">[dt_AribaReport]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </Sequence>
+                                      </ActivityAction>
+                                    </Catch>
+                                  </TryCatch.Catches>
+                                </TryCatch>
+                                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[in_dt_ConsolidatedInvoices.rows.Count.ToString]" />
                               </Sequence>
                             </ActivityAction>
                           </ui:ExcelApplicationScope.Body>
@@ -428,7 +495,7 @@
                       <OutArgument x:TypeArguments="sd:DataTable">[out_downloadedInvoicesReport]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="sd:DataTable">[dt_AribaReport]</InArgument>
+                      <InArgument x:TypeArguments="sd:DataTable">[in_dt_ConsolidatedInvoices]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <ui:UiElementExists DisplayName="Element Exists 'Invoices'" Exists="[InvoicesSetTo500]" sap:VirtualizedContainerService.HintSize="813,106" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
@@ -519,10 +586,10 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="935,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,314" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -537,7 +604,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Error" Message="[&quot;Exception occured in Download_Invoices Xaml File Error : &quot;+exception.Message+&quot; Exception Source :&quot;+exception.Source]" />
-              <Rethrow sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+              <Throw Exception="[new Exception(&quot;Exception occured in Download_Invoices Xaml File Error : &quot;+exception.Message+&quot; Exception Source :&quot;+exception.Source)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
             </Sequence>
           </ActivityAction>
         </Catch>

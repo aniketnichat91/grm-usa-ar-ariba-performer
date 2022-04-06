@@ -13,8 +13,9 @@
     <x:Property Name="in_txtOrderNum" Type="InArgument(x:String)" />
     <x:Property Name="in_txtInvoicePath" Type="InArgument(x:String)" />
     <x:Property Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property Name="in_LineItemCheck" Type="InArgument(x:Boolean)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>824,2143.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>797.6,2143.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -345,6 +346,12 @@
         </InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_txtInvoicePath">
           <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_txtInvoicePath" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="in_LineItemCheck">
+          <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="in_LineItemCheck" />
+        </InArgument>
+        <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">
+          <mva:VisualBasicValue x:TypeArguments="ui:QueueItem" ExpressionText="in_TransactionItem" />
         </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
       <sap:WorkflowViewStateService.ViewState>

@@ -8,7 +8,7 @@
     <x:Property Name="in_txtBillAmount" Type="InArgument(x:String)" />
     <x:Property Name="in_Browser" Type="InArgument(ui:Browser)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>910,1768</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,515</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -74,15 +74,15 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Subtotal Check" sap:VirtualizedContainerService.HintSize="855,1858" sap2010:WorkflowViewState.IdRef="Sequence_17">
+  <Sequence DisplayName="Subtotal Check" sap:VirtualizedContainerService.HintSize="879,2430" sap2010:WorkflowViewState.IdRef="Sequence_17">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="813,62" sap2010:WorkflowViewState.IdRef="WriteLine_10" Text="[&quot;in_txtLineTableRow: &quot; + in_txtLineTableRow]" />
-    <ui:UiElementExists DisplayName="Check 1 Element Exists: QTY Subtotal (Target)" Exists="[io_boolSubtotalPass]" sap:VirtualizedContainerService.HintSize="813,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="837,61" sap2010:WorkflowViewState.IdRef="WriteLine_10" Text="[&quot;in_txtLineTableRow: &quot; + in_txtLineTableRow]" />
+    <ui:UiElementExists DisplayName="Check 1 Element Exists: QTY Subtotal (Target)" Exists="[io_boolSubtotalPass]" sap:VirtualizedContainerService.HintSize="837,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
       <ui:UiElementExists.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="568e3e49-db85-4d84-9ff1-034b5adc6e21" InformativeScreenshot="422f2d6168fabf30815e6ac3e52b81dd" Selector="&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;&lt;webctrl tag='INPUT' type='text' colName='Quantity' tableRow='10' /&gt;">
           <ui:Target.TimeoutMS>
@@ -94,11 +94,11 @@
         </ui:Target>
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
-    <If Condition="[not io_boolSubtotalPass]" sap:VirtualizedContainerService.HintSize="813,581" sap2010:WorkflowViewState.IdRef="If_4">
+    <If Condition="[not io_boolSubtotalPass]" sap:VirtualizedContainerService.HintSize="837,1160" sap2010:WorkflowViewState.IdRef="If_4">
       <If.Then>
-        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,338" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="458,1133" sap2010:WorkflowViewState.IdRef="TryCatch_1">
           <TryCatch.Try>
-            <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="False" DelayMS="2000" DisplayName="Click togglein row 10" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="False">
+            <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="False" DelayMS="2000" DisplayName="Click togglein row 10" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -119,10 +119,10 @@
             </ui:Click>
           </TryCatch.Try>
           <TryCatch.Catches>
-            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="424,971" sap2010:WorkflowViewState.IdRef="Catch`1_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -130,15 +130,15 @@
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="376,380" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="418,902" sap2010:WorkflowViewState.IdRef="Sequence_18">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Warn" Message="[&quot;Target Toggle selector was failed Trying to click again  &quot;]" />
-                  <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'chrome.exe Ariba'" sap:VirtualizedContainerService.HintSize="334,155" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT">
-                    <ui:ClickImage.CursorPosition>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="376,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Warn" Message="[&quot;Target Toggle selector was failed Trying to click again  &quot;]" />
+                  <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DelayMS="2000" DisplayName="Click togglein row 10" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="False">
+                    <ui:Click.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
                           <InArgument x:TypeArguments="x:Int32" />
@@ -147,21 +147,64 @@
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:CursorPosition.OffsetY>
                       </ui:CursorPosition>
-                    </ui:ClickImage.CursorPosition>
-                    <ui:ClickImage.Image>
-                      <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADHSURBVDhPrZItE8IwDIb5rxU1NTUzMTVYTA1mpgaDreEfzMTMTGBmajA1M5gXenRb2W4G9txFpJe8+eoBC2J3gzUaUgiITZNQdIRrHnjmvJEvweANpDRw3CPGiDgsw0eeiPd3YS2hz4whvyZmweBBwsB3LRzJqRtJDm2ZUTIwrFKwPBeeBIMnCNugrVUxWrZTsxpt5JPH2SsE2QqQZ3haiCWrLuhz3Aq2EOQRsjt3eK327XBzh7oG/7LDRLqy2O3KmV3/4f8ALwsMp1ZE5yfZAAAAAElFTkSuQmCC" />
-                    </ui:ClickImage.Image>
-                    <ui:ClickImage.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e0b39e39-649e-4959-9e56-b30215e55d15" Selector="&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;">
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="dd38af1c-28bd-4d63-8d88-50461474b861" InformativeScreenshot="105e623794643c7f23b6b6201c4b8871" Selector="&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;&lt;webctrl href='#' id='*' tableCol='3' tableRow='10' tag='A' colName='Include' /&gt;&lt;webctrl tag='SPAN' /&gt;" WaitForReady="COMPLETE">
                         <ui:Target.TimeoutMS>
                           <InArgument x:TypeArguments="x:Int32" />
                         </ui:Target.TimeoutMS>
-                        <ui:Target.WaitForReady>
-                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                        </ui:Target.WaitForReady>
                       </ui:Target>
-                    </ui:ClickImage.Target>
-                  </ui:ClickImage>
+                    </ui:Click.Target>
+                  </ui:Click>
+                  <Sequence DisplayName="Test101" sap:VirtualizedContainerService.HintSize="376,533" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:Int32" Name="FromDate_QueueProcessing" />
+                      <Variable x:TypeArguments="x:Int32" Name="int_Days" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" ContinueOnError="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="pgdn" KeyModifiers="None" SpecialKey="True">
+                      <ui:SendHotkey.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="1321bf2a-56ae-4e6d-9080-e95c97cc3481">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:SendHotkey.Target>
+                    </ui:SendHotkey>
+                    <ui:ClickImage DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click Image 'chrome.exe Ariba'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:ClickImage.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:ClickImage.CursorPosition>
+                      <ui:ClickImage.Image>
+                        <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADNSURBVDhPvZIvE8IwDMX5rhE1NTUzMTNYTA1mpgaDreEbzMTMTGBmZjA1MzOPjZXbH24Gevzuctf2kpfXpgck5h+CAfXNIjcKRLQfSoOPDuWjj3UTG8EWPldQuYM0ASEEdOv8mT7gPjQ2yuAsXTzcCLaeQblHXTmwertRYFdhLlnTiYXWFhIbLwQHd0ywZYVCL64W41TuWY11Mu0WggJLDC8evBEbI7s0Me8TsQT27Wu9cnjNkjrcf0NTyDdvODJOmdJNeSLpP/ydxILAExrOlnWTctezAAAAAElFTkSuQmCC" />
+                      </ui:ClickImage.Image>
+                      <ui:ClickImage.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c8131e51-2fc1-49ec-b360-be88e54b7ade" Selector="&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:ClickImage.Target>
+                    </ui:ClickImage>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Error" Message="[&quot;Target in catch trying to Toggle On SubTotal is 0&quot;]" />
+                  </Sequence>
                 </Sequence>
               </ActivityAction>
             </Catch>
@@ -169,10 +212,10 @@
         </TryCatch>
       </If.Then>
       <If.Else>
-        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[&quot;&quot;]" />
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[&quot;Quantity Subtotal is not 10 for Target&quot;]" />
       </If.Else>
     </If>
-    <ui:UiElementExists DisplayName="Element Exists: QTY Subtotal (Target)" Exists="[io_boolSubtotalPass]" sap:VirtualizedContainerService.HintSize="813,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+    <ui:UiElementExists DisplayName="Element Exists: QTY Subtotal (Target)" Exists="[io_boolSubtotalPass]" sap:VirtualizedContainerService.HintSize="837,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
       <ui:UiElementExists.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="568e3e49-db85-4d84-9ff1-034b5adc6e21" InformativeScreenshot="422f2d6168fabf30815e6ac3e52b81dd" Selector="&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;&lt;webctrl tag='INPUT' type='text' colName='Quantity' tableRow='10' /&gt;" WaitForReady="COMPLETE">
           <ui:Target.TimeoutMS>
@@ -181,7 +224,7 @@
         </ui:Target>
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
-    <If Condition="[io_boolSubtotalPass]" DisplayName="If regular Subtotal (not QTY)" sap:VirtualizedContainerService.HintSize="797,550" sap2010:WorkflowViewState.IdRef="If_3">
+    <If Condition="[io_boolSubtotalPass]" DisplayName="If regular Subtotal (not QTY)" sap:VirtualizedContainerService.HintSize="837,544" sap2010:WorkflowViewState.IdRef="If_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -189,7 +232,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="Get Subtotal Amount" sap:VirtualizedContainerService.HintSize="376,300" sap2010:WorkflowViewState.IdRef="Sequence_13">
+        <Sequence DisplayName="Get Subtotal Amount" sap:VirtualizedContainerService.HintSize="376,299" sap2010:WorkflowViewState.IdRef="Sequence_13">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -210,17 +253,17 @@
               <OutArgument x:TypeArguments="x:String">[io_txtSubTotal]</OutArgument>
             </ui:GetValue.Value>
           </ui:GetValue>
-          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="WriteLine_9" Text="[&quot;Got subtotal: &quot; +io_txtSubTotal]" />
+          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_9" Text="[&quot;Got subtotal: &quot; +io_txtSubTotal]" />
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="BizError and Bail" sap:VirtualizedContainerService.HintSize="376,390" sap2010:WorkflowViewState.IdRef="Sequence_14">
+        <Sequence DisplayName="BizError and Bail" sap:VirtualizedContainerService.HintSize="376,386" sap2010:WorkflowViewState.IdRef="Sequence_14">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage sap2010:Annotation.AnnotationText="Add TransactionItem details&#xA;" DisplayName="Log Message: General" sap:VirtualizedContainerService.HintSize="334,137" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[&quot;General Exception: Subtotal not found.&quot;]">
+          <ui:LogMessage sap2010:Annotation.AnnotationText="Add TransactionItem details&#xA;" DisplayName="Log Message: General" sap:VirtualizedContainerService.HintSize="334,133" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[&quot;General Exception: Subtotal not found.&quot;]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>

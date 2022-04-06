@@ -5,10 +5,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>910,515</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,2043</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Take_Screenshot_After_Employee_Deletiona_nd_Save_it_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="42">
+    <scg:List x:TypeArguments="x:String" Capacity="27">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -35,10 +35,11 @@
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="28">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -65,66 +66,223 @@
       <AssemblyReference>UiPath.MicrosoftOffice365.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="476,414" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap:VirtualizedContainerService.HintSize="606,1978" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,322" sap2010:WorkflowViewState.IdRef="TryCatch_1">
-      <TryCatch.Try>
-        <Sequence DisplayName="Capture_Exception_Screenshot" sap:VirtualizedContainerService.HintSize="376,476" sap2010:WorkflowViewState.IdRef="Sequence_1">
-          <Sequence.Variables>
-            <Variable x:TypeArguments="ui:Image" Name="Invoice_Exception_Screenshot" />
-          </Sequence.Variables>
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:Highlight HighlightTime="{x:Null}" Color="Gold" ContinueOnError="True" DisplayName="Highligh Dynamic user" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Highlight_1">
-            <ui:Highlight.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fbcd1fc8-7fa4-4b2e-8949-7bf4cff3f907" InformativeScreenshot="717663a910ebdc363c1230d4caa038b3" Selector="&lt;wnd app='s3scr9.3.50.exe' cls='APS3SCR' title='Form Executor - V9.0.01   Client - V9.3.50' /&gt;&lt;wnd cls='SysTreeView32' title='Tree View' /&gt;&lt;ctrl name='User*' role='outline item' /&gt;">
-                <ui:Target.TimeoutMS>
-                  <InArgument x:TypeArguments="x:Int32" />
-                </ui:Target.TimeoutMS>
-                <ui:Target.WaitForReady>
-                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                </ui:Target.WaitForReady>
-              </ui:Target>
-            </ui:Highlight.Target>
-          </ui:Highlight>
-          <ui:TakeScreenshot WaitBefore="{x:Null}" DisplayName="Screenshot SAP Ariba -Resuable Code" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="TakeScreenshot_1" Screenshot="[Invoice_Exception_Screenshot]">
-            <ui:TakeScreenshot.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="43de83a0-ea54-43b9-aa60-154e53a08150" InformativeScreenshot="7d41bb99620347cd0a2ff4f9bd645019" WaitForReady="COMPLETE">
-                <ui:Target.TimeoutMS>
-                  <InArgument x:TypeArguments="x:Int32" />
-                </ui:Target.TimeoutMS>
-              </ui:Target>
-            </ui:TakeScreenshot.Target>
-          </ui:TakeScreenshot>
-          <ui:SaveImage DisplayName="Save Deletion Image" FileName="[in_str_ScreenshotLocation]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="SaveImage_1" Image="[Invoice_Exception_Screenshot]" />
-        </Sequence>
-      </TryCatch.Try>
-      <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,160" sap2010:WorkflowViewState.IdRef="Catch`1_1">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ActivityAction x:TypeArguments="s:Exception">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-            </ActivityAction.Argument>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Issue for Capturing Screenshot &quot;+in_str_ScreenshotLocation]" />
-          </ActivityAction>
-        </Catch>
-      </TryCatch.Catches>
-    </TryCatch>
+    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="564,1886" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+      <ui:RetryScope.ActivityBody>
+        <ActivityAction>
+          <Sequence sap:VirtualizedContainerService.HintSize="522,1712" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Int32" Name="temp" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="480,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[&quot;Trying to take screenshot  &quot;+temp.ToString+&quot; time for invoice&quot;+in_str_ScreenshotLocation]" />
+            <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="480,1489" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,1397" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <TryCatch.Try>
+                  <Sequence DisplayName="Test_Screenshotdemo" sap:VirtualizedContainerService.HintSize="376,1170" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ClickImage DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click Image 'chrome.exe Buy'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:ClickImage.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:ClickImage.CursorPosition>
+                      <ui:ClickImage.Image>
+                        <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAE0AAAAjCAYAAADR94eaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKtSURBVGhD7Zo/b9pAGIf7OfIlsuVTsHXr1o2tQwcGJJQhQ5cMEVIHBktRhwplYesUpA7tEFksICEVBpemVc5gwChg/lT69X3PZ9eAS8hFiSC9RzoJ33uc7568d4ZwL2C4N0aaBkaaBkvSFosFet4Azvef+NZ2TKHCLtgJu4mIpXFl58cv2WA6m6laA7tgJ+wmEhdL4wAXQzpJP7E0TkOTYf+G3bAjJpbG69ewmciRkXYPjDQNjDQNjDQNjDQN/h9p9S4O3t6gWFfXD+ARpf3GsO2hcHKDQxosDzhr9dGaqPBTsxfS2j1kaJCZ9x6qbR+NKw+5PAk862Oomjwpuy8tQPWMsuvEQ0fVMMGVKwdelregTKx1kc2FWXh07KLiTGW7cIIuzi9dvFLx7IVPvYYEDmXwcVh/mBMo1cYqshxb73OnpQ1RpAEeWCs5NZ9i6AcI5vTaCTMx9/mW6kaonFL7fA8tbqcmmCnRcvZuUS2xBIFPHsUmAxQSMftCyOVfvqaY30dOxuiLta/el+/C5vvtrbQk8yAUqC7FpaBJ0QT5Qk5QoCJkaGnCw6+crYkYRqh+6KLSDFQfLr6wJEZ4eM3va9LrZ5FpGMP+KJBRyy8sd0tbkruCbSX7+lukqN2XdveeFmVM+Tr8j8q2mRb2kcy0CVq1ARpihk6FJbmoemEWR0X+kXZfGk2u2ZV71kvLg01PTzt6ep564PmGkgTO22MIZ4AifTTZRtrynjZGgxrFexotx2wcC9Cp0z3fubD9lT4eyKNJW/ucRsvwjUUbdLTfTGjzp436iGLyCWglMmiTNGLbpyfHCpejcN/cD2nPFyNNAyNNAyNNAyNNAyNNAyNNAyNNgzVp5sfizaT+WGyOJWwm9ViCOQCTDrtgJ6kHYBiu5Aachrx+TUk7agX8AdSv3P4MUFmoAAAAAElFTkSuQmCC" />
+                      </ui:ClickImage.Image>
+                      <ui:ClickImage.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="738dcc12-8aa1-4bd2-b729-9be1ff950fb8" Selector="&lt;html app='chrome.exe' title='Buy Black Matte Black Full Rim Round Lenskart Air Air Wrap LA E14260-C3 Eyeglasses at LensKart.com' /&gt;" TimeoutMS="10" WaitForReady="COMPLETE" />
+                      </ui:ClickImage.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:ClickImage>
+                    <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="NAvigate to Chrome window" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:Click.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:Click.CursorPosition>
+                      <ui:Click.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="503f0c93-162a-42ec-812f-066b13c71b87" InformativeScreenshot="fa30f34558c16af0de6df70b28257dde" Selector="&lt;html app='chrome.exe' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:Click.Target>
+                    </ui:Click>
+                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SpecialKey="{x:Null}" Activate="True" DelayBefore="5000" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="p" KeyModifiers="Ctrl" SendWindowMessages="True">
+                      <ui:SendHotkey.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="1be6395d-c4fa-4c8f-b9af-bc3db0edc8c5" WaitForReady="COMPLETE">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                        </ui:Target>
+                      </ui:SendHotkey.Target>
+                    </ui:SendHotkey>
+                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" DelayBefore="5000" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_4" Key="enter" KeyModifiers="None" SendWindowMessages="True" SpecialKey="True">
+                      <ui:SendHotkey.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="1be6395d-c4fa-4c8f-b9af-bc3db0edc8c5" WaitForReady="COMPLETE">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                        </ui:Target>
+                      </ui:SendHotkey.Target>
+                    </ui:SendHotkey>
+                    <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists 'Button'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                      <ui:UiElementExists.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="99449df9-8a17-407b-a85e-474717f1e8af" InformativeScreenshot="22aaa4b0c4d763b4f6a8382484b669bc" Selector="&lt;wnd app='chrome.exe' cls='#32770' title='Save As' /&gt;&lt;wnd ctrlid='1' title='&amp;amp;Save' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:UiElementExists.Target>
+                    </ui:UiElementExists>
+                    <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'Edit'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="temp">
+                      <ui:TypeInto.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="50add8b3-b0d6-4cea-a879-75e7c2502dc0" InformativeScreenshot="6f793e13d2af6b338afc56349193c5ca" Selector="&lt;wnd app='chrome.exe' title='Save As' /&gt;&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd aaname='File name:' /&gt;" WaitForReady="COMPLETE">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                        </ui:Target>
+                      </ui:TypeInto.Target>
+                    </ui:TypeInto>
+                    <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="2000" DisplayName="Click 'Button'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:Click.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:Click.CursorPosition>
+                      <ui:Click.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6328b49a-bf5c-4f5d-8c10-119732c550d2" InformativeScreenshot="22aaa4b0c4d763b4f6a8382484b669bc" Selector="&lt;wnd app='chrome.exe' cls='#32770' title='Save As' /&gt;&lt;wnd ctrlid='1' title='&amp;amp;Save' /&gt;" WaitForReady="COMPLETE">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                        </ui:Target>
+                      </ui:Click.Target>
+                    </ui:Click>
+                  </Sequence>
+                </TryCatch.Try>
+                <TryCatch.Catches>
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ActivityAction x:TypeArguments="s:Exception">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                      </ActivityAction.Argument>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,514" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="ui:Image" Name="Error_Screenshot" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Issue for Capturing Screenshot &quot;+in_str_ScreenshotLocation]" />
+                        <ui:ClickImage DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click Image 'chrome.exe Buy'" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="ClickImage_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+                          <ui:ClickImage.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </ui:ClickImage.CursorPosition>
+                          <ui:ClickImage.Image>
+                            <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAE0AAAAjCAYAAADR94eaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKtSURBVGhD7Zo/b9pAGIf7OfIlsuVTsHXr1o2tQwcGJJQhQ5cMEVIHBktRhwplYesUpA7tEFksICEVBpemVc5gwChg/lT69X3PZ9eAS8hFiSC9RzoJ33uc7568d4ZwL2C4N0aaBkaaBkvSFosFet4Azvef+NZ2TKHCLtgJu4mIpXFl58cv2WA6m6laA7tgJ+wmEhdL4wAXQzpJP7E0TkOTYf+G3bAjJpbG69ewmciRkXYPjDQNjDQNjDQNjDQN/h9p9S4O3t6gWFfXD+ARpf3GsO2hcHKDQxosDzhr9dGaqPBTsxfS2j1kaJCZ9x6qbR+NKw+5PAk862Oomjwpuy8tQPWMsuvEQ0fVMMGVKwdelregTKx1kc2FWXh07KLiTGW7cIIuzi9dvFLx7IVPvYYEDmXwcVh/mBMo1cYqshxb73OnpQ1RpAEeWCs5NZ9i6AcI5vTaCTMx9/mW6kaonFL7fA8tbqcmmCnRcvZuUS2xBIFPHsUmAxQSMftCyOVfvqaY30dOxuiLta/el+/C5vvtrbQk8yAUqC7FpaBJ0QT5Qk5QoCJkaGnCw6+crYkYRqh+6KLSDFQfLr6wJEZ4eM3va9LrZ5FpGMP+KJBRyy8sd0tbkruCbSX7+lukqN2XdveeFmVM+Tr8j8q2mRb2kcy0CVq1ARpihk6FJbmoemEWR0X+kXZfGk2u2ZV71kvLg01PTzt6ep564PmGkgTO22MIZ4AifTTZRtrynjZGgxrFexotx2wcC9Cp0z3fubD9lT4eyKNJW/ucRsvwjUUbdLTfTGjzp436iGLyCWglMmiTNGLbpyfHCpejcN/cD2nPFyNNAyNNAyNNAyNNAyNNAyNNAyNNgzVp5sfizaT+WGyOJWwm9ViCOQCTDrtgJ6kHYBiu5Aachrx+TUk7agX8AdSv3P4MUFmoAAAAAElFTkSuQmCC" />
+                          </ui:ClickImage.Image>
+                          <ui:ClickImage.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="738dcc12-8aa1-4bd2-b729-9be1ff950fb8" Selector="&lt;html app='chrome.exe' title='Buy Black Matte Black Full Rim Round Lenskart Air Air Wrap LA E14260-C3 Eyeglasses at LensKart.com' /&gt;" TimeoutMS="10" WaitForReady="COMPLETE" />
+                          </ui:ClickImage.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:ClickImage>
+                        <ui:TakeScreenshot WaitBefore="{x:Null}" ContinueOnError="True" DisplayName="Take Screenshot" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="TakeScreenshot_2" Screenshot="[Error_Screenshot]">
+                          <ui:TakeScreenshot.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="5011f36b-db05-450a-8e63-23413963a1e1" WaitForReady="COMPLETE">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                            </ui:Target>
+                          </ui:TakeScreenshot.Target>
+                        </ui:TakeScreenshot>
+                        <ui:SaveImage ContinueOnError="True" DisplayName="Save Image" FileName="[in_str_ScreenshotLocation]" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="SaveImage_2" Image="[Error_Screenshot]" />
+                      </Sequence>
+                    </ActivityAction>
+                  </Catch>
+                </TryCatch.Catches>
+              </TryCatch>
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </ui:RetryScope.ActivityBody>
+      <ui:RetryScope.Condition>
+        <ActivityFunc x:TypeArguments="x:Boolean" />
+      </ui:RetryScope.Condition>
+    </ui:RetryScope>
   </Sequence>
 </Activity>

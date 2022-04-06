@@ -10,7 +10,7 @@
     <x:Property Name="in_InvoiceNumber" Type="InArgument(x:String)" />
     <x:Property Name="in_OrderNumber" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1240,1708</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,1571</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -76,15 +76,15 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="919,1563" sap2010:WorkflowViewState.IdRef="Sequence_19">
+  <Sequence sap:VirtualizedContainerService.HintSize="919,1506" sap2010:WorkflowViewState.IdRef="Sequence_19">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="877,1471" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="877,1414" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Subtotal Check" sap:VirtualizedContainerService.HintSize="839,1244" sap2010:WorkflowViewState.IdRef="Sequence_17">
+        <Sequence DisplayName="Subtotal Check" sap:VirtualizedContainerService.HintSize="839,1187" sap2010:WorkflowViewState.IdRef="Sequence_17">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -108,7 +108,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:UiElementExists>
-          <If Condition="[io_boolSubtotalPass]" DisplayName="If regular Subtotal (not QTY)" sap:VirtualizedContainerService.HintSize="797,544" sap2010:WorkflowViewState.IdRef="If_3">
+          <If Condition="[io_boolSubtotalPass]" DisplayName="If regular Subtotal (not QTY)" sap:VirtualizedContainerService.HintSize="797,487" sap2010:WorkflowViewState.IdRef="If_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -141,7 +141,7 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence DisplayName="BizError and Bail" sap:VirtualizedContainerService.HintSize="376,386" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <Sequence DisplayName="BizError and Bail" sap:VirtualizedContainerService.HintSize="376,287" sap2010:WorkflowViewState.IdRef="Sequence_14">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -154,8 +154,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:LogMessage>
-                <ui:NavigateTo Browser="[in_Browser]" DisplayName="Navigate To Home after QTY Biz Exception" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="NavigateTo_3" Url="[in_Config(&quot;urlAribaProd&quot;).ToString]" />
-                <Throw DisplayName="Throw: Application Error (QTY Line)" Exception="[new ApplicationException(&quot;Line Subtotal not found. QTY line?&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                <Throw DisplayName="Throw: Application Error (QTY Line)" Exception="[new SystemException(&quot;Line Subtotal not found. QTY line?&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_4" />
               </Sequence>
             </If.Else>
           </If>

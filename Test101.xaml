@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Test101" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="824,610.4" sap2010:WorkflowViewState.IdRef="Test101_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Test101" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1240,515" sap2010:WorkflowViewState.IdRef="Test101_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
       <x:String>System.Activities</x:String>
@@ -29,6 +29,7 @@
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Xml.Serialization</x:String>
       <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -59,9 +60,10 @@
       <AssemblyReference>UiPath.MicrosoftOffice365.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Test101" sap:VirtualizedContainerService.HintSize="241.6,115.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Test101" sap:VirtualizedContainerService.HintSize="376,402" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="FromDate_QueueProcessing" />
       <Variable x:TypeArguments="x:Int32" Name="int_Days" />
@@ -71,39 +73,42 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="Shell_Test_Queue" Reference="Test24">
-      <ui:AddQueueItem.ItemInformation>
-        <InArgument x:TypeArguments="x:String" x:Key="Media">
-          <Literal x:TypeArguments="x:String">MEPRSOCIAL</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="BillDate">
-          <Literal x:TypeArguments="x:String">03/08/22</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="PONumber">
-          <Literal x:TypeArguments="x:String">4550197779</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="BillAmount">
-          <Literal x:TypeArguments="x:String">-155.57</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="LineNumber">
-          <Literal x:TypeArguments="x:String">10</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="Client">
-          <Literal x:TypeArguments="x:String">Shell</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="BillNumber">
-          <Literal x:TypeArguments="x:String">22SO3210</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="RecipientEmail">
-          <Literal x:TypeArguments="x:String">kumar.bhawan@accelirate.com</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="Devision">
-          <Literal x:TypeArguments="x:String">003 CORPORATE</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="Comment">
-          <Literal x:TypeArguments="x:String">MTFSEMGLOBAL</Literal>
-        </InArgument>
-      </ui:AddQueueItem.ItemInformation>
-    </ui:AddQueueItem>
+    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="pgdn" KeyModifiers="None" SpecialKey="True">
+      <ui:SendHotkey.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="1321bf2a-56ae-4e6d-9080-e95c97cc3481">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:SendHotkey.Target>
+    </ui:SendHotkey>
+    <ui:ClickImage ContinueOnError="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Image 'chrome.exe Ariba'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="ClickImage_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+      <ui:ClickImage.CursorPosition>
+        <ui:CursorPosition Position="Center">
+          <ui:CursorPosition.OffsetX>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetX>
+          <ui:CursorPosition.OffsetY>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetY>
+        </ui:CursorPosition>
+      </ui:ClickImage.CursorPosition>
+      <ui:ClickImage.Image>
+        <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAABUAAAAMCAYAAACNzvbFAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADYSURBVDhPY/hPA4DF0A//r++f/D+xz+a/VLvkf2ac2Pt/4NyF/w+8gGpDAmiGPvq/Yabpf6WZC/8ff/IdKoYOvv9//+HD/++fQZa3/HdqD/rfcQlVLYqhz7cn/Jeatv7/fSgfHXy/NOu/J9ylpv8Tt9z+//zS5P9WXZP/H0cyF8nQl/9XTNMD2grlooPvR/9XongfhF3+T7j6CEMfkqFn/ne0J/xfgSWMwODhCiRXInDg9pf/jy+F0DCAZCjQxklUdylNwhQEILZSNfYhgOrplDqABob+/w8AWFxhLfdB6p4AAAAASUVORK5CYII=" />
+      </ui:ClickImage.Image>
+      <ui:ClickImage.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c8131e51-2fc1-49ec-b360-be88e54b7ade" Selector="&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:ClickImage.Target>
+    </ui:ClickImage>
   </Sequence>
 </Activity>
