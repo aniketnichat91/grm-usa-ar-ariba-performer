@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1410,6566</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>781.6,1414.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="42">
@@ -98,7 +98,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Subprocess for SAP Ariba" sap:VirtualizedContainerService.HintSize="655,2608" sap2010:WorkflowViewState.IdRef="Sequence_62">
+  <Sequence DisplayName="Subprocess for SAP Ariba" sap:VirtualizedContainerService.HintSize="560,1349.6" sap2010:WorkflowViewState.IdRef="Sequence_62">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_screenshotpath" />
       <Variable x:TypeArguments="ss:SecureString" Name="str_GMUSA_AR_SharePoint_Pass" />
@@ -116,7 +116,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_config(&quot;GMUSA_AR_SharePointCredential&quot;).ToString]" DisplayName="Get Credential( Share Point Credential )" sap:VirtualizedContainerService.HintSize="613,79" sap2010:WorkflowViewState.IdRef="GetRobotCredential_5" Password="[str_GMUSA_AR_SharePoint_Pass]" Username="[str_GMUSA_AR_SharePoint_User]">
+    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_config(&quot;GMUSA_AR_SharePointCredential&quot;).ToString]" DisplayName="Get Credential( Share Point Credential )" sap:VirtualizedContainerService.HintSize="518.4,80.8" sap2010:WorkflowViewState.IdRef="GetRobotCredential_5" Password="[str_GMUSA_AR_SharePoint_Pass]" Username="[str_GMUSA_AR_SharePoint_User]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -124,7 +124,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:GetRobotCredential>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="613,2397" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="518.4,1136" sap2010:WorkflowViewState.IdRef="TryCatch_3">
       <TryCatch.Variables>
         <Variable x:TypeArguments="x:Int32" Name="intLineNumber" />
         <Variable x:TypeArguments="x:String" Name="txtBillDate" />
@@ -143,7 +143,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="657,4279" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="656.8,4240" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="boolSubtotalcheck" />
             <Variable x:TypeArguments="x:Boolean" Name="boolPOTableException" />
@@ -169,7 +169,7 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="615,51" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Extracting Queue details from AR_Invoicing_Queue - Started  &quot;]">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="615.2,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Extracting Queue details from AR_Invoicing_Queue - Started  &quot;]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -177,7 +177,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <ui:MultipleAssign DisplayName="Assign Bill Variables from Transaction" sap:VirtualizedContainerService.HintSize="615,284" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+          <ui:MultipleAssign DisplayName="Assign Bill Variables from Transaction" sap:VirtualizedContainerService.HintSize="615.2,284" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
             <ui:MultipleAssign.AssignOperations>
               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -245,7 +245,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:MultipleAssign>
-          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="615,276" sap2010:WorkflowViewState.IdRef="CommentOut_34">
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="615.2,276" sap2010:WorkflowViewState.IdRef="CommentOut_34">
             <ui:CommentOut.Body>
               <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_135">
                 <sap:WorkflowViewStateService.ViewState>
@@ -284,7 +284,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:CommentOut>
-          <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  /Buyer.aw'" sap:VirtualizedContainerService.HintSize="615,106" sap2010:WorkflowViewState.IdRef="Click_16" KeyModifiers="None" MouseButton="BTN_LEFT">
+          <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A  /Buyer.aw'" sap:VirtualizedContainerService.HintSize="615.2,105.6" sap2010:WorkflowViewState.IdRef="Click_16" KeyModifiers="None" MouseButton="BTN_LEFT">
             <ui:Click.CursorPosition>
               <ui:CursorPosition Position="Center">
                 <ui:CursorPosition.OffsetX>
@@ -306,7 +306,7 @@
               </ui:Target>
             </ui:Click.Target>
           </ui:Click>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="615,51" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Extracting Queue details from AR_Invoicing_Queue - Successful  &quot;]">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="615.2,51.2" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Extracting Queue details from AR_Invoicing_Queue - Successful  &quot;]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -314,7 +314,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <Switch x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Assigning PDF File path to variable for Mars and Shell&#xA;" DisplayName="PDF file path" Expression="[txtSubProcess.ToLowerInvariant.Trim]" sap:VirtualizedContainerService.HintSize="615,108" sap2010:WorkflowViewState.IdRef="Switch`1_6">
+          <Switch x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Assigning PDF File path to variable for Mars and Shell&#xA;" DisplayName="PDF file path" Expression="[txtSubProcess.ToLowerInvariant.Trim]" sap:VirtualizedContainerService.HintSize="615.2,108" sap2010:WorkflowViewState.IdRef="Switch`1_6">
             <Switch.Default>
               <Sequence DisplayName="SubProcess is Blank /not as expected" sap:VirtualizedContainerService.HintSize="241.6,115.2" sap2010:WorkflowViewState.IdRef="Sequence_104">
                 <sap:WorkflowViewStateService.ViewState>
@@ -399,7 +399,7 @@
               </sap:WorkflowViewStateService.ViewState>
             </ui:MultipleAssign>
           </Switch>
-          <Switch x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Assigning Sharepoint folder path based on the subprocess and assets configured in queue . This will help while uploading the exception Screenshots" DisplayName="Switch" Expression="[txtSubProcess.ToLower]" sap:VirtualizedContainerService.HintSize="615,153" sap2010:WorkflowViewState.IdRef="Switch`1_8">
+          <Switch x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Assigning Sharepoint folder path based on the subprocess and assets configured in queue . This will help while uploading the exception Screenshots" DisplayName="Switch" Expression="[txtSubProcess.ToLower]" sap:VirtualizedContainerService.HintSize="615.2,152.8" sap2010:WorkflowViewState.IdRef="Switch`1_8">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -432,7 +432,7 @@
               </Assign.Value>
             </Assign>
           </Switch>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="615,51" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Info" Message="[&quot;SubProcess :&quot;+txtSubProcess+&quot; Bill Number : &quot;+txtOrderNum]">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="615.2,51.2" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Info" Message="[&quot;SubProcess :&quot;+txtSubProcess+&quot; Bill Number : &quot;+txtOrderNum]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -440,7 +440,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <ui:UiElementExists DisplayName="Element Exists 'Supplier Login'" Exists="[bln_EnterpriseLoginExists]" sap:VirtualizedContainerService.HintSize="615,51" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+          <ui:UiElementExists DisplayName="Element Exists 'Supplier Login'" Exists="[bln_EnterpriseLoginExists]" sap:VirtualizedContainerService.HintSize="615.2,51.2" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
             <ui:UiElementExists.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d988ce7f-c23f-45fd-b32b-e298b108e3ad" InformativeScreenshot="7147959c5ab5cca0a84476177082f93d" Selector="&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;&lt;webctrl tag='INPUT' type='submit' /&gt;" TimeoutMS="6000" WaitForReady="COMPLETE" />
             </ui:UiElementExists.Target>
@@ -451,7 +451,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:UiElementExists>
-          <If sap2010:Annotation.AnnotationText="Validating if SAP Ariba is already logged in" Condition="[bln_EnterpriseLoginExists]" DisplayName="If Sap Ariba login Check ?" sap:VirtualizedContainerService.HintSize="615,93" sap2010:WorkflowViewState.IdRef="If_13">
+          <If sap2010:Annotation.AnnotationText="Validating if SAP Ariba is already logged in" Condition="[bln_EnterpriseLoginExists]" DisplayName="If Sap Ariba login Check ?" sap:VirtualizedContainerService.HintSize="615.2,92.8" sap2010:WorkflowViewState.IdRef="If_13">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -949,7 +949,7 @@
               </Sequence>
             </If.Else>
           </If>
-          <Assign DisplayName="Divide Line Number / 10" sap:VirtualizedContainerService.HintSize="615,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <Assign DisplayName="Divide Line Number / 10" sap:VirtualizedContainerService.HintSize="615.2,60" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[txtLineNumberDivided]</OutArgument>
             </Assign.To>
@@ -957,7 +957,7 @@
               <InArgument x:TypeArguments="x:String">[Convert.ToString(intLineNumber/10)]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="615,51" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Divide Line Number / 10 --&gt; Line Number &quot;+txtLineNumberDivided.ToString]">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="615.2,51.2" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Divide Line Number / 10 --&gt; Line Number &quot;+txtLineNumberDivided.ToString]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -965,8 +965,8 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <Delay DisplayName="Delay for Homepage to load" Duration="[TimeSpan.FromMilliseconds(2000)]" sap:VirtualizedContainerService.HintSize="615,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
-          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser Ariba" sap:VirtualizedContainerService.HintSize="615,2238" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="8004c84994fe995c0a9c8357b9c668a8" Selector="&lt;html app='chrome.exe' /&gt;" UiBrowser="[browser]">
+          <Delay DisplayName="Delay for Homepage to load" Duration="[TimeSpan.FromMilliseconds(2000)]" sap:VirtualizedContainerService.HintSize="615.2,22.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
+          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser Ariba" sap:VirtualizedContainerService.HintSize="615.2,2238.4" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="8004c84994fe995c0a9c8357b9c668a8" Selector="&lt;html app='chrome.exe' /&gt;" UiBrowser="[browser]">
             <ui:BrowserScope.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -1666,30 +1666,14 @@
                           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Info" Message="[&quot; Invoice type - Credit : Invoice Creation Started&quot;]" />
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Standard invoices will be created based on the Bill Amount is Negative and based on subprocess : Mars/Target column headers for data are assigned" DisplayName="Invoke ariba-credit-click-into-multi_new workflow" sap:VirtualizedContainerService.HintSize="334,169" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Mars\ariba-credit-click-into-multi_new.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_txtInvoiceNum">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="txtInvoiceNum" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_txtOrderNum">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="txtOrderNum" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_txtLineNumberDivided">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="txtLineNumberDivided" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_txtBillAmount">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="txtBillAmount" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                                <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_txtSubprocess">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="txtSubProcess.ToLowerInvariant" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">
-                                <mva:VisualBasicValue x:TypeArguments="ui:QueueItem" ExpressionText="in_TransactionItem" />
-                              </InArgument>
-                              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_CreditShell">
-                                <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="CreditShell" />
-                              </OutArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_txtInvoiceNum">[txtInvoiceNum]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_txtOrderNum">[txtOrderNum]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_txtLineNumberDivided">[txtLineNumberDivided]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_txtBillAmount">[txtBillAmount]</InArgument>
+                              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_txtSubprocess">[txtSubProcess.ToLowerInvariant]</InArgument>
+                              <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
+                              <OutArgument x:TypeArguments="x:Boolean" x:Key="out_CreditShell">[CreditShell]</OutArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1711,18 +1695,10 @@
                           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="337,91" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Info" Message="[&quot; Invoice type - Standard : Invoice Creation Started&quot;]" />
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Standard invoices will be created based on the Bill Amount is Positive" DisplayName="Invoke Standard Click Into" sap:VirtualizedContainerService.HintSize="337,154" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Mars\ariba-clickinto-standard-invoice.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_txtOrderNum">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="txtOrderNum" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_txtInvoiceNum">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="txtInvoiceNum" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_txtLineNumberDivided">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="txtLineNumberDivided" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">
-                                <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_txtOrderNum">[txtOrderNum]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_txtInvoiceNum">[txtInvoiceNum]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_txtLineNumberDivided">[txtLineNumberDivided]</InArgument>
+                              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_config">[in_Config]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1927,29 +1903,15 @@
                         <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Invoice Subtotal" sap:VirtualizedContainerService.HintSize="343,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Shell\ariba-subtotalcheck-invoice-shell.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <OutArgument x:TypeArguments="x:Boolean" x:Key="out_SubtotalPass" />
-                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                              <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-                            </InArgument>
-                            <InOutArgument x:TypeArguments="x:String" x:Key="io_txtBillAmount">
-                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="txtBillAmount" />
-                            </InOutArgument>
+                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                            <InOutArgument x:TypeArguments="x:String" x:Key="io_txtBillAmount">[txtBillAmount]</InOutArgument>
                             <InOutArgument x:TypeArguments="x:String" x:Key="io_txtSubTotal" />
                             <InOutArgument x:TypeArguments="x:Boolean" x:Key="io_boolSubtotalPass" />
-                            <InArgument x:TypeArguments="ui:Browser" x:Key="in_Browser">
-                              <mva:VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="browser" />
-                            </InArgument>
-                            <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">
-                              <mva:VisualBasicValue x:TypeArguments="ui:QueueItem" ExpressionText="in_TransactionItem" />
-                            </InArgument>
-                            <OutArgument x:TypeArguments="x:String" x:Key="out_txtLineTableRow">
-                              <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="txtLineTableRowShell" />
-                            </OutArgument>
-                            <InArgument x:TypeArguments="x:Boolean" x:Key="in_Credit">
-                              <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="CreditShell" />
-                            </InArgument>
-                            <OutArgument x:TypeArguments="x:Boolean" x:Key="Out_LineItemCheck">
-                              <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="LineItemCheck" />
-                            </OutArgument>
+                            <InArgument x:TypeArguments="ui:Browser" x:Key="in_Browser">[browser]</InArgument>
+                            <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="out_txtLineTableRow">[txtLineTableRowShell]</OutArgument>
+                            <InArgument x:TypeArguments="x:Boolean" x:Key="in_Credit">[CreditShell]</InArgument>
+                            <OutArgument x:TypeArguments="x:Boolean" x:Key="Out_LineItemCheck">[LineItemCheck]</OutArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
                       </Sequence>
@@ -1963,44 +1925,20 @@
                         <If.Then>
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Credit Entry" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Shell\ariba-invoice-entry-credit-shell.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_txtInvoiceNum">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="txtInvoiceNum" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_txtBillDate">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="txtBillDate" />
-                              </InArgument>
-                              <InOutArgument x:TypeArguments="x:Boolean" x:Key="io_invoiceUploaded">
-                                <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="invoiceUploaded" />
-                              </InOutArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_txtLineNumberDivided">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="txtLineNumberDivided" />
-                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_txtInvoiceNum">[txtInvoiceNum]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_txtBillDate">[txtBillDate]</InArgument>
+                              <InOutArgument x:TypeArguments="x:Boolean" x:Key="io_invoiceUploaded">[invoiceUploaded]</InOutArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_txtLineNumberDivided">[txtLineNumberDivided]</InArgument>
                               <InOutArgument x:TypeArguments="x:Boolean" x:Key="io_boolPOTableException" />
-                              <InOutArgument x:TypeArguments="x:String" x:Key="io_txtCheckRow">
-                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="txtLineTableRowShell" />
-                              </InOutArgument>
+                              <InOutArgument x:TypeArguments="x:String" x:Key="io_txtCheckRow">[txtLineTableRowShell]</InOutArgument>
                               <InOutArgument x:TypeArguments="x:String" x:Key="io_txtToggleRow" />
-                              <OutArgument x:TypeArguments="x:String" x:Key="out_txtRowCount">
-                                <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="txtRowCount" />
-                              </OutArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_txtBillAmount">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="txtBillAmount" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                                <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_txtOrderNum">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="txtOrderNum" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="in_txtInvoicePath">
-                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="txtInvoiceFilePath" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">
-                                <mva:VisualBasicValue x:TypeArguments="ui:QueueItem" ExpressionText="in_TransactionItem" />
-                              </InArgument>
-                              <InArgument x:TypeArguments="x:Boolean" x:Key="in_LineItemCheck">
-                                <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="LineItemCheck" />
-                              </InArgument>
+                              <OutArgument x:TypeArguments="x:String" x:Key="out_txtRowCount">[txtRowCount]</OutArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_txtBillAmount">[txtBillAmount]</InArgument>
+                              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_txtOrderNum">[txtOrderNum]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_txtInvoicePath">[txtInvoiceFilePath]</InArgument>
+                              <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
+                              <InArgument x:TypeArguments="x:Boolean" x:Key="in_LineItemCheck">[LineItemCheck]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -2053,48 +1991,20 @@
                             </ui:CommentOut>
                             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ariba-invoice-entry-standard-mars-new workflow" sap:VirtualizedContainerService.HintSize="347,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Shell\ariba-invoice-entry-standard-shell.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_txtInvoiceNum">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="txtInvoiceNum" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_txtBillDate">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="txtBillDate" />
-                                </InArgument>
-                                <InOutArgument x:TypeArguments="x:Boolean" x:Key="io_invoiceUploaded">
-                                  <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="invoiceUploaded" />
-                                </InOutArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_txtLineNumberDivided">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="txtLineNumberDivided" />
-                                </InArgument>
-                                <InOutArgument x:TypeArguments="x:Boolean" x:Key="io_boolPOTableException">
-                                  <mva:VisualBasicReference x:TypeArguments="x:Boolean" ExpressionText="boolPOTableException" />
-                                </InOutArgument>
-                                <InOutArgument x:TypeArguments="x:String" x:Key="io_txtCheckRow">
-                                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="txtLineTableRowShell" />
-                                </InOutArgument>
-                                <InOutArgument x:TypeArguments="x:String" x:Key="io_txtToggleRow">
-                                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="txtToggleRow" />
-                                </InOutArgument>
-                                <OutArgument x:TypeArguments="x:String" x:Key="out_txtRowCount">
-                                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="txtRowCount" />
-                                </OutArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_txtBillAmount">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="txtBillAmount" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                                  <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_txtOrderNum">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="txtOrderNum" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_txtInvoicePath">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="txtInvoiceFilePath" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:Boolean" x:Key="in_LineItemCheck">
-                                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="LineItemCheck" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">
-                                  <mva:VisualBasicValue x:TypeArguments="ui:QueueItem" ExpressionText="in_TransactionItem" />
-                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_txtInvoiceNum">[txtInvoiceNum]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_txtBillDate">[txtBillDate]</InArgument>
+                                <InOutArgument x:TypeArguments="x:Boolean" x:Key="io_invoiceUploaded">[invoiceUploaded]</InOutArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_txtLineNumberDivided">[txtLineNumberDivided]</InArgument>
+                                <InOutArgument x:TypeArguments="x:Boolean" x:Key="io_boolPOTableException">[boolPOTableException]</InOutArgument>
+                                <InOutArgument x:TypeArguments="x:String" x:Key="io_txtCheckRow">[txtLineTableRowShell]</InOutArgument>
+                                <InOutArgument x:TypeArguments="x:String" x:Key="io_txtToggleRow">[txtToggleRow]</InOutArgument>
+                                <OutArgument x:TypeArguments="x:String" x:Key="out_txtRowCount">[txtRowCount]</OutArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_txtBillAmount">[txtBillAmount]</InArgument>
+                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_txtOrderNum">[txtOrderNum]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_txtInvoicePath">[txtInvoiceFilePath]</InArgument>
+                                <InArgument x:TypeArguments="x:Boolean" x:Key="in_LineItemCheck">[LineItemCheck]</InArgument>
+                                <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -2147,7 +2057,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="579,2213" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="484.8,948" sap2010:WorkflowViewState.IdRef="Catch`1_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2158,7 +2068,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap2010:Annotation.AnnotationText="" DisplayName="System Exception Logging" sap:VirtualizedContainerService.HintSize="573,2144" sap2010:WorkflowViewState.IdRef="Sequence_63">
+            <Sequence sap2010:Annotation.AnnotationText="" DisplayName="System Exception Logging" sap:VirtualizedContainerService.HintSize="478.4,877.6" sap2010:WorkflowViewState.IdRef="Sequence_63">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2166,7 +2076,7 @@
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="531,1707" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="436.8,291.2" sap2010:WorkflowViewState.IdRef="TryCatch_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2174,17 +2084,17 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <TryCatch.Try>
-                  <Sequence sap:VirtualizedContainerService.HintSize="493,1480" sap2010:WorkflowViewState.IdRef="Sequence_80">
+                  <Sequence sap:VirtualizedContainerService.HintSize="488.8,1294.4" sap2010:WorkflowViewState.IdRef="Sequence_80">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CaptureScreen_AsPDF workflow" sap:VirtualizedContainerService.HintSize="451,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_32" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Reusable_Library\CaptureScreen_AsPDF.xaml">
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CaptureScreen_AsPDF workflow" sap:VirtualizedContainerService.HintSize="447.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_32" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Reusable_Library\CaptureScreen_AsPDF.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">
-                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;ExScreenshotsFolderPath&quot;).ToString+&quot;\&quot;+txtInvoiceNum+&quot;__&quot;+txtOrderNum+&quot;.pdf&quot;" />
+                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;ExScreenshotsFolderPath&quot;).ToString+&quot;\&quot;+txtInvoiceNum+&quot;__&quot;+txtOrderNum+&quot;.png&quot;" />
                         </InArgument>
                         <InArgument x:TypeArguments="x:String" x:Key="in_Title">
                           <Literal x:TypeArguments="x:String">*</Literal>
@@ -2194,15 +2104,15 @@
                         </InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="451,282" sap2010:WorkflowViewState.IdRef="CommentOut_35">
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="447.2,284.8" sap2010:WorkflowViewState.IdRef="CommentOut_35">
                       <ui:CommentOut.Body>
-                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="415,204" sap2010:WorkflowViewState.IdRef="Sequence_136">
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="412,206.4" sap2010:WorkflowViewState.IdRef="Sequence_136">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke TakeInvoiceErrorScreenshot workflow" sap:VirtualizedContainerService.HintSize="373,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Reusable_Library\TakeInvoiceErrorScreenshot.xaml">
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke TakeInvoiceErrorScreenshot workflow" sap:VirtualizedContainerService.HintSize="370.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Reusable_Library\TakeInvoiceErrorScreenshot.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
                               <InArgument x:TypeArguments="x:String" x:Key="in_str_ScreenshotLocation">[in_Config("ExScreenshotsFolderPath").ToString+"\"+txtInvoiceNum+"__"+txtOrderNum+".png"]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
@@ -2216,13 +2126,13 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:CommentOut>
-                    <uma:Office365ApplicationScope CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" Timeout="{x:Null}" ApplicationId="[in_Config(&quot;GMUSA_AR_ApplicationID&quot;).ToString]" ApplicationSecret="[in_Config(&quot;GMUSA_AR_ApplicationSecret&quot;).ToString]" AuthenticationType="UsernameAndPassword" DisplayName="Private: Microsoft Office 365 Scope ( Share Point)" Environment="Global" sap:VirtualizedContainerService.HintSize="451,914" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_2" OAuthApplication="UiPath" SecurePassword="[str_GMUSA_AR_SharePoint_Pass]" Services="Files" Tenant="[in_Config(&quot;GMUSA_AR_TenantID&quot;).ToString]" Username="[str_GMUSA_AR_SharePoint_User]">
+                    <uma:Office365ApplicationScope CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" Timeout="{x:Null}" ApplicationId="[in_Config(&quot;GMUSA_AR_ApplicationID&quot;).ToString]" ApplicationSecret="[in_Config(&quot;GMUSA_AR_ApplicationSecret&quot;).ToString]" AuthenticationType="UsernameAndPassword" DisplayName="Private: Microsoft Office 365 Scope ( Share Point)" Environment="Global" sap:VirtualizedContainerService.HintSize="447.2,723.2" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_2" OAuthApplication="UiPath" SecurePassword="[str_GMUSA_AR_SharePoint_Pass]" Services="Files" Tenant="[in_Config(&quot;GMUSA_AR_TenantID&quot;).ToString]" Username="[str_GMUSA_AR_SharePoint_User]">
                       <uma:Office365ApplicationScope.Body>
                         <ActivityAction x:TypeArguments="mg:GraphServiceClient">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="mg:GraphServiceClient" Name="ParentScope" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,828" sap2010:WorkflowViewState.IdRef="Sequence_79">
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,636.8" sap2010:WorkflowViewState.IdRef="Sequence_79">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="mg:DriveItem" Name="Folder" />
                               <Variable x:TypeArguments="mg:DriveItem" Name="DestinationFolder" />
@@ -2240,17 +2150,17 @@
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_41" Level="Info" Message="[&quot;Finding the Folder Name in Config Exists&quot;]" />
-                            <umaf:FindFilesAndFolders DriveMetadata="{x:Null}" DisplayName="Find Files And Folders" DriveName="Documents" First="[Folder]" sap:VirtualizedContainerService.HintSize="334,85" sap2010:WorkflowViewState.IdRef="FindFilesAndFolders_2" Query="Exception_Screenshots" Results="[result]" SiteUrl="https://insidemedia.sharepoint.com/sites/GRMUSA-AR/" Subfolder="[Sharepoint_Path]" />
-                            <umaf:UploadFile CloudFileName="{x:Null}" DriveMetadata="{x:Null}" Metadata="{x:Null}" ConflictBehavior="Replace" Destination="[Folder]" DisplayName="Upload File" sap:VirtualizedContainerService.HintSize="334,249" sap2010:WorkflowViewState.IdRef="UploadFile_1" LocalFilePath="[in_Config(&quot;ExScreenshotsFolderPath&quot;).ToString+&quot;\&quot;+txtInvoiceNum+&quot;__&quot;+txtOrderNum+&quot;.pdf&quot;]" Result="[drive_Screenshot]">
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_41" Level="Info" Message="[&quot;Finding the Folder Name in Config Exists&quot;]" />
+                            <umaf:FindFilesAndFolders DriveMetadata="{x:Null}" DisplayName="Find Files And Folders" DriveName="Documents" First="[Folder]" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="FindFilesAndFolders_2" Query="Exception_Screenshots" Results="[result]" SiteUrl="https://insidemedia.sharepoint.com/sites/GRMUSA-AR/" Subfolder="[Sharepoint_Path]" />
+                            <umaf:UploadFile CloudFileName="{x:Null}" DriveMetadata="{x:Null}" Metadata="{x:Null}" ConflictBehavior="Replace" Destination="[Folder]" DisplayName="Upload File" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="UploadFile_1" LocalFilePath="[in_Config(&quot;ExScreenshotsFolderPath&quot;).ToString+&quot;\&quot;+txtInvoiceNum+&quot;__&quot;+txtOrderNum+&quot;.png&quot;]" Result="[drive_Screenshot]">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </umaf:UploadFile>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_43" Level="Warn" Message="[&quot;Uploading Screenshot to Sharepoint &quot;+in_Config(&quot;ExScreenshotsFolderPath&quot;).ToString+&quot;\&quot;+txtInvoiceNum+&quot;__&quot;+txtOrderNum+&quot;.png&quot;]">
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_43" Level="Warn" Message="[&quot;Uploading Screenshot to Sharepoint &quot;+in_Config(&quot;ExScreenshotsFolderPath&quot;).ToString+&quot;\&quot;+txtInvoiceNum+&quot;__&quot;+txtOrderNum+&quot;.png&quot;]">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2258,7 +2168,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:LogMessage>
-                            <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                            <Assign sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Assign_6">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">[str_ScreenshotExceptionPath]</OutArgument>
                               </Assign.To>
@@ -2279,7 +2189,7 @@
                   </Sequence>
                 </TryCatch.Try>
                 <TryCatch.Catches>
-                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="497,21" sap2010:WorkflowViewState.IdRef="Catch`1_6">
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2290,19 +2200,19 @@
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                       </ActivityAction.Argument>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_40" Level="Warn" Message="[&quot;Failed to take System exception screenshot&quot;]" />
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_40" Level="Warn" Message="[&quot;Failed to take System exception screenshot&quot;]" />
                     </ActivityAction>
                   </Catch>
                 </TryCatch.Catches>
               </TryCatch>
-              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{intLineNumber,txtOrderNum,txtBillDate,txtInvoiceNum,txtBillAmount,&quot;System Exception&quot;,exception.Message,str_ScreenshotExceptionPath}]" DataTable="[dt_ExecutionFailureTracker]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="531,22" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
-              <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="531,51" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[in_config(&quot;DailyTrackerFilepath&quot;).tostring]">
+              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{intLineNumber,txtOrderNum,txtBillDate,txtInvoiceNum,txtBillAmount,&quot;System Exception&quot;,exception.Message,str_ScreenshotExceptionPath}]" DataTable="[dt_ExecutionFailureTracker]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="436.8,22.4" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
+              <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="436.8,197.6" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[in_config(&quot;DailyTrackerFilepath&quot;).tostring]">
                 <ui:ExcelApplicationScope.Body>
                   <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                     </ActivityAction.Argument>
-                    <ui:ExcelAppendRange DataTable="[dt_ExecutionFailureTracker]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelAppendRange_1" SheetName="FAILED_INVOICES">
+                    <ui:ExcelAppendRange DataTable="[dt_ExecutionFailureTracker]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="ExcelAppendRange_1" SheetName="FAILED_INVOICES">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2314,17 +2224,17 @@
                 </ui:ExcelApplicationScope.Body>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ExcelApplicationScope>
-              <ui:NavigateTo Browser="[in_Browser]" ContinueOnError="True" DisplayName="Navigate To Search Page" sap:VirtualizedContainerService.HintSize="531,59" sap2010:WorkflowViewState.IdRef="NavigateTo_10" Url="[in_Config(&quot;urlAribaProd&quot;).ToString]" />
-              <Rethrow sap:VirtualizedContainerService.HintSize="531,22" sap2010:WorkflowViewState.IdRef="Rethrow_2" />
+              <ui:NavigateTo Browser="[in_Browser]" ContinueOnError="True" DisplayName="Navigate To Search Page" sap:VirtualizedContainerService.HintSize="436.8,60" sap2010:WorkflowViewState.IdRef="NavigateTo_10" Url="[in_Config(&quot;urlAribaProd&quot;).ToString]" />
+              <Rethrow sap:VirtualizedContainerService.HintSize="436.8,22.4" sap2010:WorkflowViewState.IdRef="Rethrow_2" />
             </Sequence>
           </ActivityAction>
         </Catch>
-        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="579,21" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="484.8,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2335,7 +2245,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="System Exception Logging" sap:VirtualizedContainerService.HintSize="556,66" sap2010:WorkflowViewState.IdRef="Sequence_64">
+            <Sequence DisplayName="System Exception Logging" sap:VirtualizedContainerService.HintSize="555.2,68.8" sap2010:WorkflowViewState.IdRef="Sequence_64">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
