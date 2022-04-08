@@ -12,7 +12,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>781.6,1294.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>848,1387.2</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CaptureScreen_AsPDF_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
@@ -73,7 +73,7 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CaptureScreen_AsPDF" sap:VirtualizedContainerService.HintSize="475.2,1229.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence DisplayName="CaptureScreen_AsPDF" sap:VirtualizedContainerService.HintSize="475.2,1322.4" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Selector" />
     </Sequence.Variables>
@@ -91,13 +91,13 @@
         <InArgument x:TypeArguments="x:String">["&lt;html app='chrome.exe' title='"+in_Title+"' /&gt;"]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe ariba.com'" sap:VirtualizedContainerService.HintSize="433.6,944" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="317c657f07bc7cbc21482eddbaf71836" Selector="&lt;html app='chrome.exe' title='*' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe ariba.com'" sap:VirtualizedContainerService.HintSize="433.6,1036.8" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="317c657f07bc7cbc21482eddbaf71836" Selector="&lt;html app='chrome.exe' title='*' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="241.6,796.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="241.6,889.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="boolImageExist" />
             </Sequence.Variables>
@@ -107,7 +107,7 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" DisplayName="Send Hotkey 'document Ariba'" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="f12" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'document Ariba'" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="f12" KeyModifiers="None" SpecialKey="True">
               <ui:SendHotkey.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="37938e71-7372-426e-8d4a-8ddbd61dcf6e" InformativeScreenshot="01dbaf18e2b342dd4904f0e4ede52adb" Selector="&lt;wnd app='chrome.exe' omit:cls='Chrome_WidgetWin_1' title='*Chrome*' /&gt;&lt;ctrl omit:name='Ariba Network Supplier' role='document' /&gt;" WaitForReady="COMPLETE">
                   <ui:Target.TimeoutMS>
@@ -123,7 +123,7 @@
               </sap:WorkflowViewStateService.ViewState>
             </ui:SendHotkey>
             <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
-            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="p" KeyModifiers="Ctrl, Shift" SendWindowMessages="False" SpecialKey="True">
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="p" KeyModifiers="Ctrl, Shift" SendWindowMessages="False" SpecialKey="False">
               <ui:SendHotkey.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="37938e71-7372-426e-8d4a-8ddbd61dcf6e" Selector="&lt;wnd app='chrome.exe' omit:cls='Chrome_WidgetWin_1' title='*Chrome*' /&gt;&lt;ctrl omit:name='Ariba Network Supplier' role='document' /&gt;" WaitForReady="COMPLETE">
                   <ui:Target.TimeoutMS>
@@ -139,6 +139,14 @@
               </sap:WorkflowViewStateService.ViewState>
             </ui:SendHotkey>
             <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Delay_2" />
+            <ui:Delete ContinueOnError="True" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[in_FilePath]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:Delete>
             <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'File Path'" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="True" Text="[&quot;capture full size screenshot&quot;+ &quot;[k(enter)]&quot;]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3b4b8051-55be-4917-80c3-bee5e2d27eff" InformativeScreenshot="dfd8f0c87731ee0ddea8192527dcd35e" Selector="&lt;wnd app='chrome.exe' cls='Chrome_Widget*' omit:title='Ariba Network Supplier - Google Chrome' /&gt;&lt;ctrl name='DevTools' role='document' /&gt;&lt;ctrl omit:name='Quick open prompt' role='editable text' /&gt;" WaitForReady="COMPLETE">
@@ -170,7 +178,7 @@
               </sap:WorkflowViewStateService.ViewState>
             </ui:TypeInto>
             <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Delay_3" />
-            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" DisplayName="Send Hotkey 'document Ariba'" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="SendHotkey_5" Key="f12" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'document Ariba'" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="SendHotkey_6" Key="f12" KeyModifiers="None" SpecialKey="True">
               <ui:SendHotkey.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="37938e71-7372-426e-8d4a-8ddbd61dcf6e" InformativeScreenshot="01dbaf18e2b342dd4904f0e4ede52adb" Selector="&lt;wnd app='chrome.exe' omit:cls='Chrome_WidgetWin_1' title='*Chrome*' /&gt;&lt;ctrl omit:name='Ariba Network Supplier' role='document' /&gt;" WaitForReady="COMPLETE">
                   <ui:Target.TimeoutMS>
@@ -187,7 +195,7 @@
             </ui:SendHotkey>
             <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
               <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="241.6,145.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="524.8,490.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
