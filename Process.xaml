@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>892,5524</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>910,5298</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="42">
@@ -95,10 +95,9 @@
       <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
       <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Subprocess for SAP Ariba" sap:VirtualizedContainerService.HintSize="902.4,5419.2" sap2010:WorkflowViewState.IdRef="Sequence_62">
+  <Sequence DisplayName="Subprocess for SAP Ariba" sap:VirtualizedContainerService.HintSize="906,5153" sap2010:WorkflowViewState.IdRef="Sequence_62">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_screenshotpath" />
       <Variable x:TypeArguments="ss:SecureString" Name="str_GMUSA_AR_SharePoint_Pass" />
@@ -116,7 +115,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_config(&quot;GMUSA_AR_SharePointCredential&quot;).ToString]" DisplayName="Get Credential( Share Point Credential )" sap:VirtualizedContainerService.HintSize="860.8,80.8" sap2010:WorkflowViewState.IdRef="GetRobotCredential_5" Password="[str_GMUSA_AR_SharePoint_Pass]" Username="[str_GMUSA_AR_SharePoint_User]">
+    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_config(&quot;GMUSA_AR_SharePointCredential&quot;).ToString]" DisplayName="Get Credential( Share Point Credential )" sap:VirtualizedContainerService.HintSize="864,80" sap2010:WorkflowViewState.IdRef="GetRobotCredential_5" Password="[str_GMUSA_AR_SharePoint_Pass]" Username="[str_GMUSA_AR_SharePoint_User]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -124,7 +123,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:GetRobotCredential>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="860.8,5205.6" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="864,4941" sap2010:WorkflowViewState.IdRef="TryCatch_3">
       <TryCatch.Variables>
         <Variable x:TypeArguments="x:Int32" Name="intLineNumber" />
         <Variable x:TypeArguments="x:String" Name="txtBillDate" />
@@ -143,7 +142,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="824,4951.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="826,4686" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="boolSubtotalcheck" />
             <Variable x:TypeArguments="x:Boolean" Name="boolPOTableException" />
@@ -169,7 +168,7 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="782.4,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Extracting Queue details from AR_Invoicing_Queue - Started  &quot;]">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="784,52" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Extracting Queue details from AR_Invoicing_Queue - Started  &quot;]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -177,7 +176,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <ui:MultipleAssign DisplayName="Assign Bill Variables from Transaction" sap:VirtualizedContainerService.HintSize="782.4,52.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+          <ui:MultipleAssign DisplayName="Assign Bill Variables from Transaction" sap:VirtualizedContainerService.HintSize="784,52" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
             <ui:MultipleAssign.AssignOperations>
               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -245,7 +244,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:MultipleAssign>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="782.4,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Extracting Queue details from AR_Invoicing_Queue - Successful  &quot;]">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="784,52" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Extracting Queue details from AR_Invoicing_Queue - Successful  &quot;]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -253,7 +252,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <Switch x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Assigning PDF File path to variable for Mars and Shell. And Assigning Sharepoint folder path based on the subprocess and assets configured in queue . This will help while uploading the exception Screenshots&#xA;" DisplayName="PDF file path" Expression="[txtSubProcess.ToLowerInvariant.Trim]" sap:VirtualizedContainerService.HintSize="782.4,263.2" sap2010:WorkflowViewState.IdRef="Switch`1_6">
+          <Switch x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Assigning PDF File path to variable for Mars and Shell. And Assigning Sharepoint folder path based on the subprocess and assets configured in queue . This will help while uploading the exception Screenshots&#xA;" DisplayName="PDF file path" Expression="[txtSubProcess.ToLowerInvariant.Trim]" sap:VirtualizedContainerService.HintSize="784,263" sap2010:WorkflowViewState.IdRef="Switch`1_6">
             <Switch.Default>
               <Sequence DisplayName="SubProcess is Blank /not as expected" sap:VirtualizedContainerService.HintSize="241.6,115.2" sap2010:WorkflowViewState.IdRef="Sequence_104">
                 <sap:WorkflowViewStateService.ViewState>
@@ -272,7 +271,7 @@
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign x:Key="target" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+            <Assign x:Key="target" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_11">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[Sharepoint_Path]</OutArgument>
               </Assign.To>
@@ -280,7 +279,7 @@
                 <InArgument x:TypeArguments="x:String">[in_Config("GMUSA_AR_AGENCYNAME_Target").ToString+"\"+in_config("GMUSA_AR_CLIENTNAME_Target").ToString]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:MultipleAssign x:Key="mars" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+            <ui:MultipleAssign x:Key="mars" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
@@ -324,7 +323,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:MultipleAssign>
-            <ui:MultipleAssign x:Key="shell" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+            <ui:MultipleAssign x:Key="shell" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
@@ -361,7 +360,7 @@
               </sap:WorkflowViewStateService.ViewState>
             </ui:MultipleAssign>
           </Switch>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="782.4,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Info" Message="[&quot;SubProcess :&quot;+txtSubProcess+&quot; Bill Number : &quot;+txtOrderNum]">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="784,52" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Info" Message="[&quot;SubProcess :&quot;+txtSubProcess+&quot; Bill Number : &quot;+txtOrderNum]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -369,7 +368,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <ui:UiElementExists DisplayName="Element Exists 'Supplier Login'" Exists="[bln_EnterpriseLoginExists]" sap:VirtualizedContainerService.HintSize="782.4,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+          <ui:UiElementExists DisplayName="Element Exists 'Supplier Login'" Exists="[bln_EnterpriseLoginExists]" sap:VirtualizedContainerService.HintSize="784,106" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
             <ui:UiElementExists.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d988ce7f-c23f-45fd-b32b-e298b108e3ad" InformativeScreenshot="7147959c5ab5cca0a84476177082f93d" Selector="&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;&lt;webctrl tag='INPUT' type='submit' /&gt;" TimeoutMS="6000" WaitForReady="COMPLETE" />
             </ui:UiElementExists.Target>
@@ -380,7 +379,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:UiElementExists>
-          <If sap2010:Annotation.AnnotationText="Validating if SAP Ariba is already logged in" Condition="[bln_EnterpriseLoginExists]" DisplayName="If Sap Ariba login Check ?" sap:VirtualizedContainerService.HintSize="782.4,470.4" sap2010:WorkflowViewState.IdRef="If_13">
+          <If sap2010:Annotation.AnnotationText="Validating if SAP Ariba is already logged in" Condition="[bln_EnterpriseLoginExists]" DisplayName="If Sap Ariba login Check ?" sap:VirtualizedContainerService.HintSize="784,470" sap2010:WorkflowViewState.IdRef="If_13">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -389,7 +388,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence DisplayName="SAP Airba Login Browser" sap:VirtualizedContainerService.HintSize="538.4,280" sap2010:WorkflowViewState.IdRef="Sequence_56">
+              <Sequence DisplayName="SAP Airba Login Browser" sap:VirtualizedContainerService.HintSize="539,279" sap2010:WorkflowViewState.IdRef="Sequence_56">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="credAribaProdUser" />
                   <Variable x:TypeArguments="ss:SecureString" Name="credAribaProdPass" />
@@ -400,7 +399,7 @@
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Switch x:TypeArguments="x:String" DisplayName="Login To SAP Ariba Application" Expression="[txtSubProcess.ToLowerInvariant.Trim]" sap:VirtualizedContainerService.HintSize="496.8,187.2" sap2010:WorkflowViewState.IdRef="Switch`1_3">
+                <Switch x:TypeArguments="x:String" DisplayName="Login To SAP Ariba Application" Expression="[txtSubProcess.ToLowerInvariant.Trim]" sap:VirtualizedContainerService.HintSize="497,187" sap2010:WorkflowViewState.IdRef="Switch`1_3">
                   <Switch.Default>
                     <Sequence DisplayName="SubProcess is Blank /not as expected" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_49">
                       <sap:WorkflowViewStateService.ViewState>
@@ -418,7 +417,7 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence x:Key="target" DisplayName="Log In to Ariba" sap:VirtualizedContainerService.HintSize="555.2,2236.8" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                  <Sequence x:Key="target" DisplayName="Log In to Ariba" sap:VirtualizedContainerService.HintSize="556,2218" sap2010:WorkflowViewState.IdRef="Sequence_51">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Boolean" Name="varAribaLoginSuccess" />
                     </Sequence.Variables>
@@ -428,21 +427,21 @@
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="TODO: Need to attach to explicit browser variable: BrowserUI" Browser="[in_Browser]" BrowserType="Chrome" DisplayName="Attach Browser " sap:VirtualizedContainerService.HintSize="513.6,1628.8" sap2010:WorkflowViewState.IdRef="BrowserScope_2" TimeoutMS="50000">
+                    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="TODO: Need to attach to explicit browser variable: BrowserUI" Browser="[in_Browser]" BrowserType="Chrome" DisplayName="Attach Browser " sap:VirtualizedContainerService.HintSize="514,1527" sap2010:WorkflowViewState.IdRef="BrowserScope_2" TimeoutMS="50000">
                       <ui:BrowserScope.Body>
                         <ActivityAction x:TypeArguments="x:Object">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="478.4,1405.6" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="480,1388" sap2010:WorkflowViewState.IdRef="Sequence_50">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="436.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Navigating to SAP Ariba Home Page - Successful&quot;]" />
-                            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="436.8,312" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Navigating to SAP Ariba Home Page - Successful&quot;]" />
+                            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,306" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -450,10 +449,10 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <TryCatch.Try>
-                                <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(txtSubProcess.Trim).ToString]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="283.2,80.8" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[credAribaProdPass]" Username="[credAribaProdUser]" />
+                                <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(txtSubProcess.Trim).ToString]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="284,79" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[credAribaProdPass]" Username="[credAribaProdUser]" />
                               </TryCatch.Try>
                               <TryCatch.Catches>
-                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -464,7 +463,7 @@
                                     <ActivityAction.Argument>
                                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                     </ActivityAction.Argument>
-                                    <Sequence DisplayName="Ariba Invoice save Error" sap:VirtualizedContainerService.HintSize="376,68.8" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                                    <Sequence DisplayName="Ariba Invoice save Error" sap:VirtualizedContainerService.HintSize="376,66" sap2010:WorkflowViewState.IdRef="Sequence_57">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -478,8 +477,8 @@
                                 </Catch>
                               </TryCatch.Catches>
                             </TryCatch>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="436.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Entering Username for Target &quot;]" />
-                            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into Username" EmptyField="False" sap:VirtualizedContainerService.HintSize="436.8,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="False" SimulateType="True" Text="[credAribaProdUser]">
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Entering Username for Target &quot;]" />
+                            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into Username" EmptyField="False" sap:VirtualizedContainerService.HintSize="438,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="False" SimulateType="True" Text="[credAribaProdUser]">
                               <ui:TypeInto.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="612d4822-b5ff-4936-9c73-4dba4fab850a" InformativeScreenshot="95dc6de88dffa3d847c8b2dd8e9b8916" Selector="&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;&lt;webctrl name='UserName' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
                                   <ui:Target.TimeoutMS>
@@ -488,8 +487,8 @@
                                 </ui:Target>
                               </ui:TypeInto.Target>
                             </ui:TypeInto>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="436.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Entering Password for Target &quot;]" />
-                            <ui:TypeSecureText AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" Activate="True" DelayMS="1000" DisplayName="Type Secure Text Password" EmptyField="False" sap:VirtualizedContainerService.HintSize="436.8,107.2" sap2010:WorkflowViewState.IdRef="TypeSecureText_1" SecureText="[credAribaProdPass]" SendWindowMessages="False" SimulateType="True">
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Entering Password for Target &quot;]" />
+                            <ui:TypeSecureText AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" Activate="True" DelayMS="1000" DisplayName="Type Secure Text Password" EmptyField="False" sap:VirtualizedContainerService.HintSize="438,106" sap2010:WorkflowViewState.IdRef="TypeSecureText_1" SecureText="[credAribaProdPass]" SendWindowMessages="False" SimulateType="True">
                               <ui:TypeSecureText.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3198b550-b370-4948-a2e8-54313acba1ff" InformativeScreenshot="6cf925b0c39b181a72adf5521e620453" Selector="&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;&lt;webctrl name='Password' id='Password' /&gt;" WaitForReady="COMPLETE">
                                   <ui:Target.TimeoutMS>
@@ -498,8 +497,8 @@
                                 </ui:Target>
                               </ui:TypeSecureText.Target>
                             </ui:TypeSecureText>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="436.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Clicking Login Button &quot;]" />
-                            <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Login" sap:VirtualizedContainerService.HintSize="436.8,107.2" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Clicking Login Button &quot;]" />
+                            <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Login" sap:VirtualizedContainerService.HintSize="438,106" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                               <ui:Click.CursorPosition>
                                 <ui:CursorPosition OffsetX="34" OffsetY="22" Position="TopLeft" />
                               </ui:Click.CursorPosition>
@@ -522,16 +521,16 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:BrowserScope>
-                    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="513.6,537.6" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="1" RetryInterval="00:00:30">
+                    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="514,538" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="1" RetryInterval="00:00:30">
                       <ui:RetryScope.ActivityBody>
                         <ActivityAction>
-                          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="375.2,364" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="376,360" sap2010:WorkflowViewState.IdRef="Sequence_52">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:UiElementExists sap2010:Annotation.AnnotationText="Add Retry Scope to wait for load" DisplayName="Check Login Worked" Exists="[varAribaLoginSuccess]" sap:VirtualizedContainerService.HintSize="333.6,138.4" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+                            <ui:UiElementExists sap2010:Annotation.AnnotationText="Add Retry Scope to wait for load" DisplayName="Check Login Worked" Exists="[varAribaLoginSuccess]" sap:VirtualizedContainerService.HintSize="334,137" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
                               <ui:UiElementExists.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0016f5bb-add3-447e-9438-468617f0dc6a" InformativeScreenshot="007f5f36d9c56f14ecdf7bfd7acca66c" Selector="&lt;html app='chrome.exe' title='Business Network' /&gt;&lt;webctrl parentid='search-input-container' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
                                   <ui:Target.TimeoutMS>
@@ -547,7 +546,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:UiElementExists>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Waiting for Target to Login&quot;]" />
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Waiting for Target to Login&quot;]" />
                           </Sequence>
                         </ActivityAction>
                       </ui:RetryScope.ActivityBody>
@@ -555,7 +554,7 @@
                         <ActivityFunc x:TypeArguments="x:Boolean" />
                       </ui:RetryScope.Condition>
                     </ui:RetryScope>
-                    <If Condition="[varAribaLoginSuccess]" sap:VirtualizedContainerService.HintSize="513.6,52" sap2010:WorkflowViewState.IdRef="If_12">
+                    <If Condition="[varAribaLoginSuccess]" sap:VirtualizedContainerService.HintSize="514,52" sap2010:WorkflowViewState.IdRef="If_12">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -579,21 +578,21 @@
                       </If.Else>
                     </If>
                   </Sequence>
-                  <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" UiBrowser="{x:Null}" x:Key="mars" sap2010:Annotation.AnnotationText="TODO: Need to attach to explicit browser variable: BrowserUI" Browser="[in_Browser]" BrowserType="Chrome" DisplayName="Attach Browser SAP Ariba Mars Login " sap:VirtualizedContainerService.HintSize="513.6,1545.6" sap2010:WorkflowViewState.IdRef="BrowserScope_3" TimeoutMS="50000">
+                  <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" UiBrowser="{x:Null}" x:Key="mars" sap2010:Annotation.AnnotationText="TODO: Need to attach to explicit browser variable: BrowserUI" Browser="[in_Browser]" BrowserType="Chrome" DisplayName="Attach Browser SAP Ariba Mars Login " sap:VirtualizedContainerService.HintSize="514,1534" sap2010:WorkflowViewState.IdRef="BrowserScope_3" TimeoutMS="50000">
                     <ui:BrowserScope.Body>
                       <ActivityAction x:TypeArguments="x:Object">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="480,1405.6" sap2010:WorkflowViewState.IdRef="Sequence_69">
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="480,1388" sap2010:WorkflowViewState.IdRef="Sequence_69">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_30" Level="Info" Message="[&quot;Navigating to MARS  SAP Ariba Home Page - Successful&quot;]" />
-                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438.4,312" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_30" Level="Info" Message="[&quot;Navigating to MARS  SAP Ariba Home Page - Successful&quot;]" />
+                          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,306" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -601,10 +600,10 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <TryCatch.Try>
-                              <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(txtSubProcess.Trim).ToString]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="283.2,80.8" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[credAribaProdPass]" Username="[credAribaProdUser]" />
+                              <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(txtSubProcess.Trim).ToString]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="284,79" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[credAribaProdPass]" Username="[credAribaProdUser]" />
                             </TryCatch.Try>
                             <TryCatch.Catches>
-                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_5">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -615,14 +614,14 @@
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                   </ActivityAction.Argument>
-                                  <Sequence DisplayName="Ariba Invoice save Error" sap:VirtualizedContainerService.HintSize="376,248" sap2010:WorkflowViewState.IdRef="Sequence_68">
+                                  <Sequence DisplayName="Ariba Invoice save Error" sap:VirtualizedContainerService.HintSize="376,247" sap2010:WorkflowViewState.IdRef="Sequence_68">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_31" Level="Error" Message="[in_Config(&quot;EXS0008&quot;).ToString+exception.Message+&quot; Exception Source :&quot;+exception.Source]">
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_31" Level="Error" Message="[in_Config(&quot;EXS0008&quot;).ToString+exception.Message+&quot; Exception Source :&quot;+exception.Source]">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -630,14 +629,14 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </ui:LogMessage>
-                                    <Throw Exception="[new Exception(in_Config(&quot;EXS0008&quot;).ToString+exception.Message+&quot; Exception Source :&quot;+exception.Source)]" sap:VirtualizedContainerService.HintSize="334.4,22.4" sap2010:WorkflowViewState.IdRef="Throw_12" />
+                                    <Throw Exception="[new Exception(in_Config(&quot;EXS0008&quot;).ToString+exception.Message+&quot; Exception Source :&quot;+exception.Source)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_12" />
                                   </Sequence>
                                 </ActivityAction>
                               </Catch>
                             </TryCatch.Catches>
                           </TryCatch>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_32" Level="Info" Message="[&quot;Entering Username for Mars &quot;]" />
-                          <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into Username" EmptyField="False" sap:VirtualizedContainerService.HintSize="438.4,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_3" SendWindowMessages="False" SimulateType="True" Text="[credAribaProdUser]">
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_32" Level="Info" Message="[&quot;Entering Username for Mars &quot;]" />
+                          <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into Username" EmptyField="False" sap:VirtualizedContainerService.HintSize="438,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" SendWindowMessages="False" SimulateType="True" Text="[credAribaProdUser]">
                             <ui:TypeInto.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="612d4822-b5ff-4936-9c73-4dba4fab850a" InformativeScreenshot="95dc6de88dffa3d847c8b2dd8e9b8916" Selector="&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;&lt;webctrl name='UserName' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
                                 <ui:Target.TimeoutMS>
@@ -646,8 +645,8 @@
                               </ui:Target>
                             </ui:TypeInto.Target>
                           </ui:TypeInto>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_33" Level="Info" Message="[&quot;Entering Password for Mars &quot;]" />
-                          <ui:TypeSecureText AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" Activate="True" DelayMS="1000" DisplayName="Type Secure Text Password" EmptyField="False" sap:VirtualizedContainerService.HintSize="438.4,107.2" sap2010:WorkflowViewState.IdRef="TypeSecureText_2" SecureText="[credAribaProdPass]" SendWindowMessages="False" SimulateType="True">
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_33" Level="Info" Message="[&quot;Entering Password for Mars &quot;]" />
+                          <ui:TypeSecureText AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" Activate="True" DelayMS="1000" DisplayName="Type Secure Text Password" EmptyField="False" sap:VirtualizedContainerService.HintSize="438,106" sap2010:WorkflowViewState.IdRef="TypeSecureText_2" SecureText="[credAribaProdPass]" SendWindowMessages="False" SimulateType="True">
                             <ui:TypeSecureText.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3198b550-b370-4948-a2e8-54313acba1ff" InformativeScreenshot="6cf925b0c39b181a72adf5521e620453" Selector="&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;&lt;webctrl name='Password' id='Password' /&gt;" WaitForReady="COMPLETE">
                                 <ui:Target.TimeoutMS>
@@ -656,8 +655,8 @@
                               </ui:Target>
                             </ui:TypeSecureText.Target>
                           </ui:TypeSecureText>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_34" Level="Info" Message="[&quot;Clicking Login Button &quot;]" />
-                          <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Login" sap:VirtualizedContainerService.HintSize="438.4,107.2" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_34" Level="Info" Message="[&quot;Clicking Login Button &quot;]" />
+                          <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Login" sap:VirtualizedContainerService.HintSize="438,106" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                             <ui:Click.CursorPosition>
                               <ui:CursorPosition OffsetX="34" OffsetY="22" Position="TopLeft" />
                             </ui:Click.CursorPosition>
@@ -680,7 +679,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:BrowserScope>
-                  <Sequence x:Key="shell" DisplayName="Log In to Ariba Shell" sap:VirtualizedContainerService.HintSize="241.6,68.8" sap2010:WorkflowViewState.IdRef="Sequence_132">
+                  <Sequence x:Key="shell" DisplayName="Log In to Ariba Shell" sap:VirtualizedContainerService.HintSize="242,66" sap2010:WorkflowViewState.IdRef="Sequence_132">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Boolean" Name="varAribaLoginSuccess" />
                     </Sequence.Variables>
@@ -866,7 +865,7 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence DisplayName="SAP Airba Login True" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_59">
+              <Sequence DisplayName="SAP Airba Login True" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_59">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -878,7 +877,7 @@
               </Sequence>
             </If.Else>
           </If>
-          <Assign DisplayName="Divide Line Number / 10" sap:VirtualizedContainerService.HintSize="782.4,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <Assign DisplayName="Divide Line Number / 10" sap:VirtualizedContainerService.HintSize="784,60" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[txtLineNumberDivided]</OutArgument>
             </Assign.To>
@@ -886,7 +885,7 @@
               <InArgument x:TypeArguments="x:String">[Convert.ToString(intLineNumber/10)]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="782.4,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Divide Line Number / 10 --&gt; Line Number &quot;+txtLineNumberDivided.ToString]">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="784,52" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Divide Line Number / 10 --&gt; Line Number &quot;+txtLineNumberDivided.ToString]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -894,28 +893,28 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <Delay DisplayName="Delay for Homepage to load" Duration="[TimeSpan.FromMilliseconds(2000)]" sap:VirtualizedContainerService.HintSize="782.4,22.4" sap2010:WorkflowViewState.IdRef="Delay_1" />
-          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser Ariba" sap:VirtualizedContainerService.HintSize="782.4,3195.2" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="8004c84994fe995c0a9c8357b9c668a8" Selector="&lt;html app='chrome.exe' /&gt;" UiBrowser="[browser]">
+          <Delay DisplayName="Delay for Homepage to load" Duration="[TimeSpan.FromMilliseconds(2000)]" sap:VirtualizedContainerService.HintSize="784,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser Ariba" sap:VirtualizedContainerService.HintSize="784,2937" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="8004c84994fe995c0a9c8357b9c668a8" Selector="&lt;html app='chrome.exe' /&gt;" UiBrowser="[browser]">
             <ui:BrowserScope.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="PreCheck &amp; Create Invoice" sap:VirtualizedContainerService.HintSize="580,3048" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                <Sequence DisplayName="PreCheck &amp; Create Invoice" sap:VirtualizedContainerService.HintSize="581,2791" sap2010:WorkflowViewState.IdRef="Sequence_11">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Search for Order &amp; Validate" sap:VirtualizedContainerService.HintSize="538.4,2234.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence DisplayName="Search for Order &amp; Validate" sap:VirtualizedContainerService.HintSize="539,2221" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496.8,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;Processing Order: &quot; + txtOrderNum]">
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="497,52" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;Processing Order: &quot; + txtOrderNum]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -923,16 +922,16 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:LogMessage>
-                    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="496.8,512.8" sap2010:WorkflowViewState.IdRef="RetryScope_3">
+                    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="497,510" sap2010:WorkflowViewState.IdRef="RetryScope_3">
                       <ui:RetryScope.ActivityBody>
                         <ActivityAction>
-                          <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="375.2,336.8" sap2010:WorkflowViewState.IdRef="Sequence_144">
+                          <Sequence DisplayName="" sap:VirtualizedContainerService.HintSize="376,334" sap2010:WorkflowViewState.IdRef="Sequence_144">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click into Order Number Search Box" sap:VirtualizedContainerService.HintSize="333.6,68.8" sap2010:WorkflowViewState.IdRef="Click_15" KeyModifiers="None" MouseButton="BTN_LEFT">
+                            <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click into Order Number Search Box" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="Click_15" KeyModifiers="None" MouseButton="BTN_LEFT">
                               <ui:Click.CursorPosition>
                                 <ui:CursorPosition Position="Center">
                                   <ui:CursorPosition.OffsetX>
@@ -957,7 +956,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:Click>
-                            <ui:TypeInto Activate="{x:Null}" AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" ClickBeforeTyping="False" DelayMS="2000" DisplayName="Type Into Order Number" EmptyField="False" sap:VirtualizedContainerService.HintSize="333.6,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_6" SendWindowMessages="True" SimulateType="False" Text="[txtOrderNum + &quot;[k(enter)]&quot;]">
+                            <ui:TypeInto Activate="{x:Null}" AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" ClickBeforeTyping="False" DelayMS="2000" DisplayName="Type Into Order Number" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_6" SendWindowMessages="True" SimulateType="False" Text="[txtOrderNum + &quot;[k(enter)]&quot;]">
                               <ui:TypeInto.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2750c11f-d859-4c22-9ef8-95d2ac8af822" InformativeScreenshot="064830ce9cf4e2761e0cc206482660f4" Selector="&lt;html app='chrome.exe' omit:title='Seller Dashboard' /&gt;&lt;webctrl tag='APP-DOCUMENT-SEARCH' /&gt;&lt;webctrl id='search-input-container' tag='DIV' /&gt;&lt;webctrl tag='*' class='ng-*' parentid='search-input-container' omit:title='Seller Dashboard' /&gt;" WaitForReady="COMPLETE">
                                   <ui:Target.TimeoutMS>
@@ -979,7 +978,7 @@
                         <ActivityFunc x:TypeArguments="x:Boolean" />
                       </ui:RetryScope.Condition>
                     </ui:RetryScope>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496.8,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_27" Level="Info" Message="[&quot;Typing  Order Number: &quot; + txtOrderNum]">
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="497,52" sap2010:WorkflowViewState.IdRef="LogMessage_27" Level="Info" Message="[&quot;Typing  Order Number: &quot; + txtOrderNum]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -987,14 +986,14 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:LogMessage>
-                    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[txtSubProcess.ToLower]" sap:VirtualizedContainerService.HintSize="496.8,187.2" sap2010:WorkflowViewState.IdRef="Switch`1_4">
+                    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[txtSubProcess.ToLower]" sap:VirtualizedContainerService.HintSize="497,186" sap2010:WorkflowViewState.IdRef="Switch`1_4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence x:Key="target" DisplayName="Check if Order Number Exists" sap:VirtualizedContainerService.HintSize="375.2,68.8" sap2010:WorkflowViewState.IdRef="Sequence_85">
+                      <Sequence x:Key="target" DisplayName="Check if Order Number Exists" sap:VirtualizedContainerService.HintSize="376,66" sap2010:WorkflowViewState.IdRef="Sequence_85">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1070,7 +1069,7 @@
                           </If.Else>
                         </If>
                       </Sequence>
-                      <Sequence x:Key="mars" DisplayName="subprocess mars : order number check" sap:VirtualizedContainerService.HintSize="241.6,68.8" sap2010:WorkflowViewState.IdRef="Sequence_89">
+                      <Sequence x:Key="mars" DisplayName="subprocess mars : order number check" sap:VirtualizedContainerService.HintSize="242,66" sap2010:WorkflowViewState.IdRef="Sequence_89">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1171,7 +1170,7 @@
                           </If.Else>
                         </If>
                       </Sequence>
-                      <Sequence x:Key="shell" DisplayName="Sequence : Shell" sap:VirtualizedContainerService.HintSize="375.2,68.8" sap2010:WorkflowViewState.IdRef="Sequence_111">
+                      <Sequence x:Key="shell" DisplayName="Sequence : Shell" sap:VirtualizedContainerService.HintSize="376,66" sap2010:WorkflowViewState.IdRef="Sequence_111">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1248,7 +1247,7 @@
                         </If>
                       </Sequence>
                     </Switch>
-                    <ui:Replace DisplayName="RegEx clean PartialInvoiceCheck" sap:VirtualizedContainerService.HintSize="496.8,52.8" sap2010:WorkflowViewState.IdRef="Replace_1" Input="[txtPartialInvoiceCheck]" IsBuilderTabModified="False" Pattern="[“[^a-zA-Z0-9]”]" RegexOption="IgnoreCase, Compiled" Replacement="[String.Empty]" Result="[txtPartialInvoiceCheck]">
+                    <ui:Replace DisplayName="RegEx clean PartialInvoiceCheck" sap:VirtualizedContainerService.HintSize="497,52" sap2010:WorkflowViewState.IdRef="Replace_1" Input="[txtPartialInvoiceCheck]" IsBuilderTabModified="False" Pattern="[“[^a-zA-Z0-9]”]" RegexOption="IgnoreCase, Compiled" Replacement="[String.Empty]" Result="[txtPartialInvoiceCheck]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1256,7 +1255,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:Replace>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496.8,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_28" Level="Info" Message="[&quot;Order Status for Invoice is&quot;+txtPartialInvoiceCheck.ToString]">
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="497,52" sap2010:WorkflowViewState.IdRef="LogMessage_28" Level="Info" Message="[&quot;Order Status for Invoice is&quot;+txtPartialInvoiceCheck.ToString]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1264,7 +1263,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:LogMessage>
-                    <If sap2010:Annotation.AnnotationText="Checking if Order Status is &quot;PartiallyInvoiced&quot; OR  txtPartialInvoiceCheck = &quot;New&quot; OR txtPartialInvoiceCheck = &quot;Changed&quot; OR txtPartialInvoiceCheck = &quot;Invoiced&quot; if True clicking on the Latest Invoice on Row 2 for Target else logs expection" Condition="[txtPartialInvoiceCheck = &quot;PartiallyInvoiced&quot; OR  txtPartialInvoiceCheck = &quot;New&quot; OR txtPartialInvoiceCheck = &quot;Changed&quot; OR txtPartialInvoiceCheck = &quot;Invoiced&quot;]" DisplayName="If Order Status is New or Partial then Proceed" sap:VirtualizedContainerService.HintSize="496.8,224.8" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If sap2010:Annotation.AnnotationText="Checking if Order Status is &quot;PartiallyInvoiced&quot; OR  txtPartialInvoiceCheck = &quot;New&quot; OR txtPartialInvoiceCheck = &quot;Changed&quot; OR txtPartialInvoiceCheck = &quot;Invoiced&quot; if True clicking on the Latest Invoice on Row 2 for Target else logs expection" Condition="[txtPartialInvoiceCheck = &quot;PartiallyInvoiced&quot; OR  txtPartialInvoiceCheck = &quot;New&quot; OR txtPartialInvoiceCheck = &quot;Changed&quot; OR txtPartialInvoiceCheck = &quot;Invoiced&quot;]" DisplayName="If Order Status is New or Partial then Proceed" sap:VirtualizedContainerService.HintSize="497,224" sap2010:WorkflowViewState.IdRef="If_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1313,7 +1312,7 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_config(&quot;GMUSA_AR_SharePointCredential&quot;).ToString]" DisplayName="Get Credential( Share Point Credential )" sap:VirtualizedContainerService.HintSize="496.8,80.8" sap2010:WorkflowViewState.IdRef="GetRobotCredential_4" Password="[str_GMUSA_AR_SharePoint_Pass]" Username="[str_GMUSA_AR_SharePoint_User]">
+                    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_config(&quot;GMUSA_AR_SharePointCredential&quot;).ToString]" DisplayName="Get Credential( Share Point Credential )" sap:VirtualizedContainerService.HintSize="497,80" sap2010:WorkflowViewState.IdRef="GetRobotCredential_4" Password="[str_GMUSA_AR_SharePoint_Pass]" Username="[str_GMUSA_AR_SharePoint_User]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1321,7 +1320,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:GetRobotCredential>
-                    <Switch x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Checking Invoice File Check for Mars only , For Targets it will be Blank" DisplayName="Switch Invoice File Pre-Check" Expression="[txtSubProcess.ToLowerInvariant]" sap:VirtualizedContainerService.HintSize="496.8,218.4" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+                    <Switch x:TypeArguments="x:String" sap2010:Annotation.AnnotationText="Checking Invoice File Check for Mars only , For Targets it will be Blank" DisplayName="Switch Invoice File Pre-Check" Expression="[txtSubProcess.ToLowerInvariant]" sap:VirtualizedContainerService.HintSize="497,217" sap2010:WorkflowViewState.IdRef="Switch`1_2">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1330,7 +1329,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <x:Null x:Key="target" />
-                      <Sequence x:Key="mars" DisplayName="Pre-check for Invoices" sap:VirtualizedContainerService.HintSize="475.2,68.8" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                      <Sequence x:Key="mars" DisplayName="Pre-check for Invoices" sap:VirtualizedContainerService.HintSize="476,66" sap2010:WorkflowViewState.IdRef="Sequence_43">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1437,7 +1436,7 @@
                           </sap:WorkflowViewStateService.ViewState>
                         </uma:Office365ApplicationScope>
                       </Sequence>
-                      <TryCatch x:Key="shell" DisplayName="TryCatch Check PDF for Shell" sap:VirtualizedContainerService.HintSize="512,1158.4" sap2010:WorkflowViewState.IdRef="TryCatch_12">
+                      <TryCatch x:Key="shell" DisplayName="TryCatch Check PDF for Shell" sap:VirtualizedContainerService.HintSize="514,1108" sap2010:WorkflowViewState.IdRef="TryCatch_12">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1445,7 +1444,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <TryCatch.Try>
-                          <Sequence DisplayName="Pre-check for Invoices shell" sap:VirtualizedContainerService.HintSize="475.2,864" sap2010:WorkflowViewState.IdRef="Sequence_123">
+                          <Sequence DisplayName="Pre-check for Invoices shell" sap:VirtualizedContainerService.HintSize="476,853" sap2010:WorkflowViewState.IdRef="Sequence_123">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="ss:SecureString" Name="str_GMUSA_AR_SharePoint_Pass" />
                               <Variable x:TypeArguments="x:String" Name="str_GMUSA_AR_SharePoint_User" />
@@ -1456,8 +1455,8 @@
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_68" Level="Trace" Message="[&quot;Pre-checking Invoice File exists...&quot;]" />
-                            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_config(&quot;GMUSA_AR_SharePointCredential&quot;).ToString]" DisplayName="Get Credential( Share Point Credential )" sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="GetRobotCredential_9" Password="[str_GMUSA_AR_SharePoint_Pass]" Username="[str_GMUSA_AR_SharePoint_User]">
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_68" Level="Trace" Message="[&quot;Pre-checking Invoice File exists...&quot;]" />
+                            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_config(&quot;GMUSA_AR_SharePointCredential&quot;).ToString]" DisplayName="Get Credential( Share Point Credential )" sap:VirtualizedContainerService.HintSize="434,79" sap2010:WorkflowViewState.IdRef="GetRobotCredential_9" Password="[str_GMUSA_AR_SharePoint_Pass]" Username="[str_GMUSA_AR_SharePoint_User]">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1465,13 +1464,13 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:GetRobotCredential>
-                            <uma:Office365ApplicationScope CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" Timeout="{x:Null}" ApplicationId="[in_Config(&quot;GMUSA_AR_ApplicationID&quot;).ToString]" ApplicationSecret="[in_Config(&quot;GMUSA_AR_ApplicationSecret&quot;).ToString]" AuthenticationType="UsernameAndPassword" DisplayName="Private: Microsoft Office 365 Scope ( Share Point)" Environment="Global" sap:VirtualizedContainerService.HintSize="433.6,517.6" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_4" OAuthApplication="UiPath" SecurePassword="[str_GMUSA_AR_SharePoint_Pass]" Services="Files" Tenant="[in_Config(&quot;GMUSA_AR_TenantID&quot;).ToString]" Username="[str_GMUSA_AR_SharePoint_User]">
+                            <uma:Office365ApplicationScope CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" Timeout="{x:Null}" ApplicationId="[in_Config(&quot;GMUSA_AR_ApplicationID&quot;).ToString]" ApplicationSecret="[in_Config(&quot;GMUSA_AR_ApplicationSecret&quot;).ToString]" AuthenticationType="UsernameAndPassword" DisplayName="Private: Microsoft Office 365 Scope ( Share Point)" Environment="Global" sap:VirtualizedContainerService.HintSize="434,511" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_4" OAuthApplication="UiPath" SecurePassword="[str_GMUSA_AR_SharePoint_Pass]" Services="Files" Tenant="[in_Config(&quot;GMUSA_AR_TenantID&quot;).ToString]" Username="[str_GMUSA_AR_SharePoint_User]">
                               <uma:Office365ApplicationScope.Body>
                                 <ActivityAction x:TypeArguments="mg:GraphServiceClient">
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="mg:GraphServiceClient" Name="ParentScope" />
                                   </ActivityAction.Argument>
-                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="304,431.2" sap2010:WorkflowViewState.IdRef="Sequence_117">
+                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="304,425" sap2010:WorkflowViewState.IdRef="Sequence_117">
                                     <Sequence.Variables>
                                       <Variable x:TypeArguments="mg:DriveItem" Name="Folder" />
                                       <Variable x:TypeArguments="mg:DriveItem" Name="DestinationFolder" />
@@ -1491,7 +1490,7 @@
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+                                    <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_14">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:String">[str_PDF_FileName]</OutArgument>
                                       </Assign.To>
@@ -1499,7 +1498,7 @@
                                         <InArgument x:TypeArguments="x:String">[txtInvoiceNum+".PDF"]</InArgument>
                                       </Assign.Value>
                                     </Assign>
-                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="262.4,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_58" Level="Info" Message="[&quot;Checking Pdf file Path in Sharepoint : &quot;+str_PDF_FileName]">
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="LogMessage_58" Level="Info" Message="[&quot;Checking Pdf file Path in Sharepoint : &quot;+str_PDF_FileName]">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1507,7 +1506,7 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </ui:LogMessage>
-                                    <umaf:FindFilesAndFolders DriveMetadata="{x:Null}" Results="{x:Null}" DisplayName="Find Files And Folders" DriveName="[in_Config(&quot;GMUSA_AR_DriveName&quot;).ToString]" First="[DriveItemPDF]" sap:VirtualizedContainerService.HintSize="262.4,52.8" sap2010:WorkflowViewState.IdRef="FindFilesAndFolders_7" Query="[str_PDF_FileName]" SiteUrl="[in_Config(&quot;GMUSA_AR_SiteUrl&quot;).ToString]" Subfolder="[in_TransactionItem.SpecificContent(&quot;InvoicesLocation&quot;).ToString]">
+                                    <umaf:FindFilesAndFolders DriveMetadata="{x:Null}" Results="{x:Null}" DisplayName="Find Files And Folders" DriveName="[in_Config(&quot;GMUSA_AR_DriveName&quot;).ToString]" First="[DriveItemPDF]" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="FindFilesAndFolders_7" Query="[str_PDF_FileName]" SiteUrl="[in_Config(&quot;GMUSA_AR_SiteUrl&quot;).ToString]" Subfolder="[in_TransactionItem.SpecificContent(&quot;InvoicesLocation&quot;).ToString]">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1515,7 +1514,7 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </umaf:FindFilesAndFolders>
-                                    <If Condition="[DriveItemPDF isNot Nothing]" sap:VirtualizedContainerService.HintSize="262.4,52.8" sap2010:WorkflowViewState.IdRef="If_22">
+                                    <If Condition="[DriveItemPDF isNot Nothing]" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="If_22">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1581,7 +1580,7 @@
                           </Sequence>
                         </TryCatch.Try>
                         <TryCatch.Catches>
-                          <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="478.4,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_15">
+                          <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="606,21" sap2010:WorkflowViewState.IdRef="Catch`1_15">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1592,10 +1591,10 @@
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
                               </ActivityAction.Argument>
-                              <Rethrow sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Rethrow_4" />
+                              <Rethrow sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Rethrow_4" />
                             </ActivityAction>
                           </Catch>
-                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="478.4,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_16">
+                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="606,21" sap2010:WorkflowViewState.IdRef="Catch`1_16">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1606,13 +1605,13 @@
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                               </ActivityAction.Argument>
-                              <Throw Exception="[new Systemexception(&quot;Failed to download PDF from sharepoint. Please check sharepoint credentials and foldes.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Throw_27" />
+                              <Throw Exception="[new Systemexception(&quot;Failed to download PDF from sharepoint. Please check sharepoint credentials and foldes.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_27" />
                             </ActivityAction>
                           </Catch>
                         </TryCatch.Catches>
                       </TryCatch>
                     </Switch>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496.8,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_29" Level="Info" Message="[&quot;Click Into Invoice is next...&quot;]">
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="497,52" sap2010:WorkflowViewState.IdRef="LogMessage_29" Level="Info" Message="[&quot;Click Into Invoice is next...&quot;]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1620,9 +1619,9 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:LogMessage>
-                    <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists" sap:VirtualizedContainerService.HintSize="496.8,68.8" sap2010:WorkflowViewState.IdRef="UiElementExists_9">
+                    <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists" sap:VirtualizedContainerService.HintSize="497,68" sap2010:WorkflowViewState.IdRef="UiElementExists_9">
                       <ui:UiElementExists.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="80607f2f-4c93-4818-95fd-8ddda57014c0" Selector="&lt;webctrl tag='SPAN' aaname='*Create Invoice*' /&gt;" TimeoutMS="50000" WaitForReady="COMPLETE" />
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="80607f2f-4c93-4818-95fd-8ddda57014c0" Selector="&lt;webctrl id='*' tag='BUTTON' aaname='Create an invoice against the purchase order' innertext=' Create Invoice ' /&gt;" TimeoutMS="50000" WaitForReady="COMPLETE" />
                       </ui:UiElementExists.Target>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1631,7 +1630,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:UiElementExists>
-                    <If sap2010:Annotation.AnnotationText="Checking the Type of Invoices if its credit or standard based on queue inputs and invoices are created based on input provided" Condition="[boolCredit = True]" DisplayName="If Invoice Is Credit" sap:VirtualizedContainerService.HintSize="496.8,144.8" sap2010:WorkflowViewState.IdRef="If_5">
+                    <If sap2010:Annotation.AnnotationText="Checking the Type of Invoices if its credit or standard based on queue inputs and invoices are created based on input provided" Condition="[boolCredit = True]" DisplayName="If Invoice Is Credit" sap:VirtualizedContainerService.HintSize="497,144" sap2010:WorkflowViewState.IdRef="If_5">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1695,14 +1694,14 @@
                       </If.Else>
                     </If>
                   </Sequence>
-                  <Switch x:TypeArguments="x:String" DisplayName="Switch Choose arClient for Actions" Expression="[txtSubProcess.ToLowerInvariant]" sap:VirtualizedContainerService.HintSize="538.4,488" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch Choose arClient for Actions" Expression="[txtSubProcess.ToLowerInvariant]" sap:VirtualizedContainerService.HintSize="539,186" sap2010:WorkflowViewState.IdRef="Switch`1_1">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Sequence x:Key="target" DisplayName="Action Sequence: Target" sap:VirtualizedContainerService.HintSize="705.6,68.8" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                    <Sequence x:Key="target" DisplayName="Action Sequence: Target" sap:VirtualizedContainerService.HintSize="706,68" sap2010:WorkflowViewState.IdRef="Sequence_40">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1780,20 +1779,20 @@
                         </If.Else>
                       </If>
                     </Sequence>
-                    <Sequence x:Key="mars" DisplayName="Action Sequence - Mars" sap:VirtualizedContainerService.HintSize="766.4,974.4" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                    <Sequence x:Key="mars" DisplayName="Action Sequence - Mars" sap:VirtualizedContainerService.HintSize="767,1003" sap2010:WorkflowViewState.IdRef="Sequence_39">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence sap:VirtualizedContainerService.HintSize="724.8,576" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                      <Sequence sap:VirtualizedContainerService.HintSize="725,570" sap2010:WorkflowViewState.IdRef="Sequence_38">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Invoice Subtotal" sap:VirtualizedContainerService.HintSize="335.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Mars\ariba-subtotalcheck-invoice.xaml">
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Invoice Subtotal" sap:VirtualizedContainerService.HintSize="339,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Mars\ariba-subtotalcheck-invoice.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <OutArgument x:TypeArguments="x:Boolean" x:Key="out_SubtotalPass" />
                             <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
@@ -1804,7 +1803,7 @@
                             <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Used for Mars" DisplayName="Invoke Line Check" sap:VirtualizedContainerService.HintSize="335.2,144.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Mars\ariba-line-amount-check.xaml">
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Used for Mars" DisplayName="Invoke Line Check" sap:VirtualizedContainerService.HintSize="339,143" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Mars\ariba-line-amount-check.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <OutArgument x:TypeArguments="x:Boolean" x:Key="out_LineCheck">[boolLinecheck]</OutArgument>
                             <OutArgument x:TypeArguments="x:Boolean" x:Key="out_SubtotalPass">[boolSubtotalcheck]</OutArgument>
@@ -1820,7 +1819,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:InvokeWorkflowFile>
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Used for Mars" DisplayName="Invoke ariba-subtotalcheck-subtotal" sap:VirtualizedContainerService.HintSize="335.2,144.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Mars\ariba-subtotalcheck-linesubtotal.xaml">
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Used for Mars" DisplayName="Invoke ariba-subtotalcheck-subtotal" sap:VirtualizedContainerService.HintSize="339,143" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Mars\ariba-subtotalcheck-linesubtotal.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <OutArgument x:TypeArguments="x:Boolean" x:Key="out_SubtotalPass" />
                             <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
@@ -1876,14 +1875,14 @@
                         </If.Else>
                       </If>
                     </Sequence>
-                    <Sequence x:Key="shell" DisplayName="Action Sequence - Shell" sap:VirtualizedContainerService.HintSize="241.6,254.4" sap2010:WorkflowViewState.IdRef="Sequence_127">
+                    <Sequence x:Key="shell" DisplayName="Action Sequence - Shell" sap:VirtualizedContainerService.HintSize="242,237" sap2010:WorkflowViewState.IdRef="Sequence_127">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_124">
+                      <Sequence sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_124">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1911,7 +1910,7 @@
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:InvokeWorkflowFile>
                       </Sequence>
-                      <If Condition="[boolCredit = True]" DisplayName="If Standard or Credit (Shell)" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="If_20">
+                      <If Condition="[boolCredit = True]" DisplayName="If Standard or Credit (Shell)" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_20">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1973,32 +1972,15 @@
                       </If>
                     </Sequence>
                   </Switch>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="538.4,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_33">
-                    <ui:CommentOut.Body>
-                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.2,206.4" sap2010:WorkflowViewState.IdRef="Sequence_134">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ariba-invoice-save workflow" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Mars\ariba-invoice-save.xaml">
-                          <ui:InvokeWorkflowFile.Arguments>
-                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="in_txtBillAmount">[txtBillAmount]</InArgument>
-                            <InArgument x:TypeArguments="ui:Browser" x:Key="in_Browser">[in_Browser]</InArgument>
-                            <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
-                          </ui:InvokeWorkflowFile.Arguments>
-                        </ui:InvokeWorkflowFile>
-                      </Sequence>
-                    </ui:CommentOut.Body>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </ui:CommentOut>
-                  <ui:NavigateTo Browser="[in_Browser]" DisplayName="Navigate To Search Page" sap:VirtualizedContainerService.HintSize="538.4,60" sap2010:WorkflowViewState.IdRef="NavigateTo_9" Url="[in_Config(&quot;urlAribaProd&quot;).ToString]" />
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ariba-invoice-save workflow" sap:VirtualizedContainerService.HintSize="539,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Mars\ariba-invoice-save.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_txtBillAmount">[txtBillAmount]</InArgument>
+                      <InArgument x:TypeArguments="ui:Browser" x:Key="in_Browser">[in_Browser]</InArgument>
+                      <InArgument x:TypeArguments="ui:QueueItem" x:Key="in_TransactionItem">[in_TransactionItem]</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                  <ui:NavigateTo Browser="[in_Browser]" DisplayName="Navigate To Search Page" sap:VirtualizedContainerService.HintSize="539,59" sap2010:WorkflowViewState.IdRef="NavigateTo_9" Url="[in_Config(&quot;urlAribaProd&quot;).ToString]" />
                 </Sequence>
               </ActivityAction>
             </ui:BrowserScope.Body>
@@ -2012,7 +1994,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="827.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="830,22" sap2010:WorkflowViewState.IdRef="Catch`1_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2023,7 +2005,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap2010:Annotation.AnnotationText="" DisplayName="System Exception Logging" sap:VirtualizedContainerService.HintSize="475.2,639.2" sap2010:WorkflowViewState.IdRef="Sequence_63">
+            <Sequence sap2010:Annotation.AnnotationText="" DisplayName="System Exception Logging" sap:VirtualizedContainerService.HintSize="476,670" sap2010:WorkflowViewState.IdRef="Sequence_63">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2031,7 +2013,7 @@
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="TryCatch_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2161,7 +2143,7 @@
             </Sequence>
           </ActivityAction>
         </Catch>
-        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="827.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="830,22" sap2010:WorkflowViewState.IdRef="Catch`1_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -2172,7 +2154,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Business Exception Logging" sap:VirtualizedContainerService.HintSize="475.2,639.2" sap2010:WorkflowViewState.IdRef="Sequence_143">
+            <Sequence sap2010:Annotation.AnnotationText="" DisplayName="Business Exception Logging" sap:VirtualizedContainerService.HintSize="476,670" sap2010:WorkflowViewState.IdRef="Sequence_143">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2180,7 +2162,7 @@
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_14">
+              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="TryCatch_14">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
