@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>701.6,1071.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>915,1066</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Invoices_Validation_Check_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -75,10 +75,9 @@
       <AssemblyReference>UiPath.MicrosoftOffice365.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="712,1006.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
+  <Sequence sap:VirtualizedContainerService.HintSize="714,1001" sap2010:WorkflowViewState.IdRef="Sequence_7">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="temp" />
     </Sequence.Variables>
@@ -87,9 +86,9 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="670.4,913.6" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="672,909" sap2010:WorkflowViewState.IdRef="TryCatch_2">
       <TryCatch.Try>
-        <Flowchart DisplayName="Invoices_Validation_Check" sap:VirtualizedContainerService.HintSize="633.6,682.4" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+        <Flowchart DisplayName="Invoices_Validation_Check" sap:VirtualizedContainerService.HintSize="634,682" sap2010:WorkflowViewState.IdRef="Flowchart_1">
           <Flowchart.Variables>
             <Variable x:TypeArguments="s:Nullable(s:DateTime)" Name="FromDate_QueueProcessing" />
             <Variable x:TypeArguments="sco:Collection(ui:QueueItem)" Default="[New Collection(Of QueueItem)]" Name="AR_QueueList" />
@@ -101,7 +100,7 @@
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
-              <av:Size x:Key="ShapeSize">60,75.2</av:Size>
+              <av:Size x:Key="ShapeSize">60,75</av:Size>
               <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,117</av:PointCollection>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
               <x:Double x:Key="Height">645.5</x:Double>
@@ -114,11 +113,11 @@
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <av:Point x:Key="ShapeLocation">200,117</av:Point>
-                <av:Size x:Key="ShapeSize">200,68.8</av:Size>
-                <av:PointCollection x:Key="ConnectorLocation">300,185.8 300,215.8 300.2,215.8 300.2,230</av:PointCollection>
+                <av:Size x:Key="ShapeSize">200,66</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">300,183 300,230</av:PointCollection>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Processing Queue Item Date Selection" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <Sequence DisplayName="Processing Queue Item Date Selection" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_1">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Int32" Name="int_Days" />
               </Sequence.Variables>
@@ -127,7 +126,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <Assign sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_5">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Int32">[int_Days]</OutArgument>
                 </Assign.To>
@@ -135,7 +134,7 @@
                   <InArgument x:TypeArguments="x:Int32">[Convert.ToInt32(in_config("QueueDetails_days").ToString)]</InArgument>
                 </Assign.Value>
               </Assign>
-              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_2">
                 <Assign.To>
                   <OutArgument x:TypeArguments="s:Nullable(s:DateTime)">[FromDate_QueueProcessing]</OutArgument>
                 </Assign.To>
@@ -148,18 +147,18 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </Assign>
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;**Processing Queue From Date : &quot;+FromDate_QueueProcessing.ToString]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;**Processing Queue From Date : &quot;+FromDate_QueueProcessing.ToString]" />
             </Sequence>
             <FlowStep.Next>
               <FlowStep x:Name="__ReferenceID1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <av:Point x:Key="ShapeLocation">169,230</av:Point>
-                    <av:Size x:Key="ShapeSize">262.4,60</av:Size>
+                    <av:Size x:Key="ShapeSize">262,60</av:Size>
                     <av:PointCollection x:Key="ConnectorLocation">300,290 300,340</av:PointCollection>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_11">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Int32">[iterate_count]</OutArgument>
                   </Assign.To>
@@ -177,11 +176,11 @@
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <av:Point x:Key="ShapeLocation">169,340</av:Point>
-                        <av:Size x:Key="ShapeSize">262.4,60</av:Size>
+                        <av:Size x:Key="ShapeSize">262,60</av:Size>
                         <av:PointCollection x:Key="ConnectorLocation">300,400 300,424.5</av:PointCollection>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+                    <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_12">
                       <Assign.To>
                         <OutArgument x:TypeArguments="scg:IEnumerable(ui:QueueItem)">[AR_QueueList_temp]</OutArgument>
                       </Assign.To>
@@ -199,11 +198,11 @@
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <av:Point x:Key="ShapeLocation">200,424.5</av:Point>
-                            <av:Size x:Key="ShapeSize">200,52.8</av:Size>
-                            <av:PointCollection x:Key="ConnectorLocation">300,477.3 300,514.5</av:PointCollection>
+                            <av:Size x:Key="ShapeSize">200,51</av:Size>
+                            <av:PointCollection x:Key="ConnectorLocation">300,475.5 300,514.5</av:PointCollection>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:InterruptibleDoWhile Condition="[Flag_QueueCheck=False]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+                        <ui:InterruptibleDoWhile Condition="[Flag_QueueCheck=False]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="562,1232" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
                           <ui:InterruptibleDoWhile.Body>
                             <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,1067" sap2010:WorkflowViewState.IdRef="Sequence_19">
                               <Sequence.Variables>
@@ -288,16 +287,16 @@
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <av:Point x:Key="ShapeLocation">200,514.5</av:Point>
-                                <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                                <av:Size x:Key="ShapeSize">200,51</av:Size>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:ForEach x:TypeArguments="ui:QueueItem" CurrentIndex="{x:Null}" DisplayName="For Each Bill Number in Queues" sap:VirtualizedContainerService.HintSize="573.6,1695.2" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[AR_QueueList]">
+                            <ui:ForEach x:TypeArguments="ui:QueueItem" CurrentIndex="{x:Null}" DisplayName="For Each Bill Number in Queues" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[AR_QueueList]">
                               <ui:ForEach.Body>
                                 <ActivityAction x:TypeArguments="ui:QueueItem">
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="ui:QueueItem" Name="item" />
                                   </ActivityAction.Argument>
-                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="538.4,1560.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="538.666666666667,1566" sap2010:WorkflowViewState.IdRef="Sequence_3">
                                     <Sequence.Variables>
                                       <Variable x:TypeArguments="x:String" Name="str_BillingNumber" />
                                       <Variable x:TypeArguments="x:String" Name="str_ClientName" />
@@ -308,7 +307,7 @@
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Assign sap:VirtualizedContainerService.HintSize="496.8,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                    <Assign sap:VirtualizedContainerService.HintSize="496.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_4">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:String">[str_BillingNumber]</OutArgument>
                                       </Assign.To>
@@ -316,7 +315,7 @@
                                         <InArgument x:TypeArguments="x:String">[item.SpecificContent("BillNumber").ToString]</InArgument>
                                       </Assign.Value>
                                     </Assign>
-                                    <Assign sap:VirtualizedContainerService.HintSize="496.8,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+                                    <Assign sap:VirtualizedContainerService.HintSize="496.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_16">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:String">[out_str_ClientName]</OutArgument>
                                       </Assign.To>
@@ -324,7 +323,7 @@
                                         <InArgument x:TypeArguments="x:String">[item.SpecificContent("Client").ToString.ToLowerInvariant]</InArgument>
                                       </Assign.Value>
                                     </Assign>
-                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Matching Bill Number :&quot;+item.SpecificContent(&quot;BillNumber&quot;).ToString+&quot; with the Invoice# - Sap Ariba Downloaded File&quot;]" />
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496.666666666667,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Matching Bill Number :&quot;+item.SpecificContent(&quot;BillNumber&quot;).ToString+&quot; with the Invoice# - Sap Ariba Downloaded File&quot;]" />
                                     <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[item.SpecificContent(&quot;Client&quot;).ToString.ToLowerInvariant]" sap:VirtualizedContainerService.HintSize="496.8,1135.2" sap2010:WorkflowViewState.IdRef="Switch`1_1">
                                       <TryCatch x:Key="target" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="515.2,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                                         <TryCatch.Variables>
@@ -753,7 +752,7 @@
         </Flowchart>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="636.8,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="638,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
