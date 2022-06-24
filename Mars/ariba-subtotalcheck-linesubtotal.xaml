@@ -8,7 +8,7 @@
     <x:Property Name="io_boolSubtotalPass" Type="InOutArgument(x:Boolean)" />
     <x:Property Name="in_Browser" Type="InArgument(ui:Browser)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1040,1884</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1153.33333333333,1544.66666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -70,18 +70,20 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Subtotal Check" sap:VirtualizedContainerService.HintSize="839,1819" sap2010:WorkflowViewState.IdRef="Sequence_17">
+  <Sequence DisplayName="Subtotal Check" sap:VirtualizedContainerService.HintSize="840,1440" sap2010:WorkflowViewState.IdRef="Sequence_17">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="797,61" sap2010:WorkflowViewState.IdRef="WriteLine_10" Text="[&quot;in_txtLineTableRow: &quot; + in_txtLineTableRow]" />
-    <ui:UiElementExists DisplayName="Element Exists: Regular Subtotal (Mars)" Exists="[io_boolSubtotalPass]" sap:VirtualizedContainerService.HintSize="797,68" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="798,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Sub Total Check Started&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="798,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;in_txtLineTableRow: &quot; + in_txtLineTableRow]" />
+    <ui:UiElementExists DisplayName="Element Exists: Regular Subtotal (Mars)" Exists="[io_boolSubtotalPass]" sap:VirtualizedContainerService.HintSize="798,68" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
       <ui:UiElementExists.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="568e3e49-db85-4d84-9ff1-034b5adc6e21" Selector="[String.Format(&quot;&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;&lt;webctrl tag='INPUT' type='text' colName='Subtotal' tableRow='{0}' /&gt;&quot;, in_txtLineTableRow)]">
           <ui:Target.TimeoutMS>
@@ -93,7 +95,7 @@
         </ui:Target>
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
-    <If Condition="[io_boolSubtotalPass]" DisplayName="If regular Subtotal (not QTY)" sap:VirtualizedContainerService.HintSize="797,544" sap2010:WorkflowViewState.IdRef="If_3">
+    <If Condition="[io_boolSubtotalPass]" DisplayName="If regular Subtotal (not QTY)" sap:VirtualizedContainerService.HintSize="798,496.666666666667" sap2010:WorkflowViewState.IdRef="If_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -101,7 +103,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="Get Subtotal Amount" sap:VirtualizedContainerService.HintSize="376,299" sap2010:WorkflowViewState.IdRef="Sequence_13">
+        <Sequence DisplayName="Get Subtotal Amount" sap:VirtualizedContainerService.HintSize="376,332.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_13">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -122,47 +124,48 @@
               <OutArgument x:TypeArguments="x:String">[io_txtSubTotal]</OutArgument>
             </ui:GetValue.Value>
           </ui:GetValue>
-          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_9" Text="[&quot;Got subtotal: &quot; +io_txtSubTotal]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Got subtotal: &quot; +io_txtSubTotal]" />
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="BizError and Bail" sap:VirtualizedContainerService.HintSize="376,386" sap2010:WorkflowViewState.IdRef="Sequence_14">
+        <Sequence DisplayName="BizError and Bail" sap:VirtualizedContainerService.HintSize="376,294" sap2010:WorkflowViewState.IdRef="Sequence_14">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage sap2010:Annotation.AnnotationText="Add TransactionItem details&#xA;" DisplayName="Log Message: General" sap:VirtualizedContainerService.HintSize="334,133" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[&quot;Business Exception: Subtotal not found.&quot;]">
+          <ui:LogMessage sap2010:Annotation.AnnotationText="&#xA;" DisplayName="Log Message: General" sap:VirtualizedContainerService.HintSize="334,140" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Warn" Message="[&quot;Business Exception: Subtotal not found.&quot;]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <ui:NavigateTo Browser="[in_Browser]" DisplayName="Navigate To Home after QTY Biz Exception" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="NavigateTo_3" Url="[in_Config(&quot;urlAribaProd&quot;).ToString]" />
           <Throw DisplayName="Throw: Biz Error (QTY Line)" Exception="[new BusinessRuleException(&quot;Line Subtotal not found. QTY line?&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_4" />
         </Sequence>
       </If.Else>
     </If>
-    <ui:Replace BuilderPattern="[$,USD ]" DisplayName="Replace non-numeric chars in SubTotal" sap:VirtualizedContainerService.HintSize="797,59" sap2010:WorkflowViewState.IdRef="Replace_1" Input="[io_txtSubTotal]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ONEOF&quot;,&quot;OperationName&quot;:&quot;One of&quot;,&quot;OperationValue&quot;:&quot;$,USD &quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="%[$,USD ]" RegexOption="IgnoreCase" Replacement="[String.Empty]" Result="[io_txtSubTotal]" />
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="797,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[&quot;SubTotal is &quot; + io_txtSubTotal]" />
-    <If sap2010:Annotation.AnnotationText="This should work for either -Credit or +Invoices" Condition="[(Math.Abs(Convert.ToDecimal(io_txtBillAmount))) &lt; (Math.Abs(Convert.ToDecimal(io_txtSubTotal)))]" DisplayName="If BillAmount is less than Subtotal Line then Proceed " sap:VirtualizedContainerService.HintSize="797,734" sap2010:WorkflowViewState.IdRef="If_2">
+    <ui:Replace BuilderPattern="[$,USD ]" DisplayName="Replace non-numeric chars in SubTotal" sap:VirtualizedContainerService.HintSize="798,58.6666666666667" sap2010:WorkflowViewState.IdRef="Replace_1" Input="[io_txtSubTotal]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ONEOF&quot;,&quot;OperationName&quot;:&quot;One of&quot;,&quot;OperationValue&quot;:&quot;$,USD &quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="%[$,USD ]" RegexOption="IgnoreCase" Replacement="[String.Empty]" Result="[io_txtSubTotal]" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="798,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[&quot;SubTotal is &quot; + io_txtSubTotal]" />
+    <If sap2010:Annotation.AnnotationText="This should work for either -Credit or +Invoices" Condition="[(Math.Abs(Convert.ToDecimal(io_txtBillAmount))) &lt; (Math.Abs(Convert.ToDecimal(io_txtSubTotal)))]" DisplayName="If BillAmount is less than Subtotal Line then Proceed " sap:VirtualizedContainerService.HintSize="798,98" sap2010:WorkflowViewState.IdRef="If_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="304,253" sap2010:WorkflowViewState.IdRef="Sequence_9">
+        <Sequence sap:VirtualizedContainerService.HintSize="304,256.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;Hooray! &quot; + io_txtBillAmount + &quot; is less than the Line Subtotal: &quot; + io_txtSubTotal]" />
-          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;Hooray! &quot; + io_txtBillAmount + &quot; is less than the Line Subtotal: &quot; + io_txtSubTotal]" />
+          <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_4">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">[out_SubtotalPass]</OutArgument>
             </Assign.To>
@@ -173,15 +176,15 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="376,545" sap2010:WorkflowViewState.IdRef="Sequence_10">
+        <Sequence sap:VirtualizedContainerService.HintSize="376,552" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[&quot;Boo... &quot; + io_txtBillAmount + &quot; is more than the Line Subtotal: &quot; + io_txtSubTotal]" />
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Bill amount: &quot; + io_txtBillAmount + &quot; is more than the Line Subtotal: &quot; + io_txtSubTotal]" />
-          <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[&quot;Boo... &quot; + io_txtBillAmount + &quot; is more than the Line Subtotal: &quot; + io_txtSubTotal]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Bill amount: &quot; + io_txtBillAmount + &quot; is more than the Line Subtotal: &quot; + io_txtSubTotal]" />
+          <Assign sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_5">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">[out_SubtotalPass]</OutArgument>
             </Assign.To>
@@ -189,10 +192,11 @@
               <InArgument x:TypeArguments="x:Boolean">False</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:NavigateTo Browser="[in_Browser]" DisplayName="Navigate To Home after Line Check Biz Exception" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="NavigateTo_4" Url="[in_Config(&quot;urlAribaProd&quot;).ToString]" />
+          <ui:NavigateTo Browser="[in_Browser]" DisplayName="Navigate To Home after Line Check Biz Exception" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="NavigateTo_4" Url="[in_Config(&quot;urlAribaProd&quot;).ToString]" />
           <Throw DisplayName="Throw Biz Exception" Exception="[new BusinessRuleException(&quot;Bill amount: &quot; + io_txtBillAmount + &quot; is more than the Line Subtotal: &quot; + io_txtSubTotal)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_5" />
         </Sequence>
       </If.Else>
     </If>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="798,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Sub Total Check Ended&quot;]" />
   </Sequence>
 </Activity>

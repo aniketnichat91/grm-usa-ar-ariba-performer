@@ -15,7 +15,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>677.6,4713.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1153.33333333333,4425.33333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SharePoint_Upload_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="42">
@@ -104,7 +104,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SharePoint_Upload" sap:VirtualizedContainerService.HintSize="628.8,4648.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
+  <Sequence DisplayName="SharePoint_Upload" sap:VirtualizedContainerService.HintSize="632.666666666667,4320.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_12">
     <Sequence.Variables>
       <Variable x:TypeArguments="mg:DriveItem" Name="str_File" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_FailedInvoices_Count" />
@@ -116,9 +116,9 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="587.2,4556" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="590.666666666667,4228.66666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="SharePoint_Upload" sap:VirtualizedContainerService.HintSize="550.4,4324.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="SharePoint_Upload" sap:VirtualizedContainerService.HintSize="552,3990" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="ss:SecureString" Name="str_GMUSA_AR_SharePoint_Pass" />
             <Variable x:TypeArguments="x:String" Name="str_GMUSA_AR_SharePoint_User" />
@@ -130,104 +130,8 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="508.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Begin SharePoint Upload xaml&quot;]" />
-          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="508.8,471.2" sap2010:WorkflowViewState.IdRef="TryCatch_2">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <TryCatch.Try>
-              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="435.2,240" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                <ui:CommentOut.Body>
-                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="241.6,161.6" sap2010:WorkflowViewState.IdRef="Sequence_20">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="Filtering the Duplicate records out" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_17">
-                      <Sequence.Variables>
-                        <Variable x:TypeArguments="sd:DataTable" Name="dt_FailedInvoices_Processing" />
-                        <Variable x:TypeArguments="sd:DataTable" Name="dt_RemovedDuplicateFailedItems" />
-                        <Variable x:TypeArguments="sd:DataTable" Name="Dt_Filtered_Failed_items" />
-                      </Sequence.Variables>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <ui:ReadRange AddHeaders="True" DataTable="[dt_FailedInvoices_Processing]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="434,87" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="FAILED_INVOICES" WorkbookPath="[in_config(&quot;DailyTrackerFilepath&quot;).tostring]">
-                        <ui:ReadRange.Range>
-                          <InArgument x:TypeArguments="x:String">
-                            <Literal x:TypeArguments="x:String" Value="" />
-                          </InArgument>
-                        </ui:ReadRange.Range>
-                      </ui:ReadRange>
-                      <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" AutoIncrement="True" ColumnName="ID" DataTable="[dt_FailedInvoices_Processing]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
-                      <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_6">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="sd:DataTable">[Dt_Filtered_Failed_items]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="sd:DataTable">[dt_FailedInvoices_Processing.AsEnumerable.GroupBy(Function(r) r("Bill Number").ToString).Select(Function(g) g.OrderBy(Function(r) (r("ID").ToString)).Last).CopyToDataTable()]</InArgument>
-                        </Assign.Value>
-                      </Assign>
-                      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,419" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="[in_config(&quot;DailyTrackerFilepath&quot;).tostring]">
-                        <ui:ExcelApplicationScope.Body>
-                          <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-                            <ActivityAction.Argument>
-                              <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-                            </ActivityAction.Argument>
-                            <Sequence sap:VirtualizedContainerService.HintSize="376,310" sap2010:WorkflowViewState.IdRef="Sequence_19">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[&quot;Failed Invoice Count :&quot;+Dt_Filtered_Failed_items.Rows.count.ToString]" />
-                              <ui:ExcelWriteRange AddHeaders="False" DataTable="[dt_FailedInvoices_Count]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="FAILED_INVOICES">
-                                <ui:ExcelWriteRange.StartingCell>
-                                  <InArgument x:TypeArguments="x:String">
-                                    <Literal x:TypeArguments="x:String" Value="" />
-                                  </InArgument>
-                                </ui:ExcelWriteRange.StartingCell>
-                              </ui:ExcelWriteRange>
-                            </Sequence>
-                          </ActivityAction>
-                        </ui:ExcelApplicationScope.Body>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </ui:ExcelApplicationScope>
-                    </Sequence>
-                  </Sequence>
-                </ui:CommentOut.Body>
-              </ui:CommentOut>
-            </TryCatch.Try>
-            <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="438.4,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_2">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <ActivityAction x:TypeArguments="s:Exception">
-                  <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                  </ActivityAction.Argument>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;There are no Exception for SAP Target Process&quot;]" />
-                </ActivityAction>
-              </Catch>
-            </TryCatch.Catches>
-          </TryCatch>
-          <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_config(&quot;GMUSA_AR_SharePointCredential&quot;).ToString]" DisplayName="Get Credential( Share Point Credential )" sap:VirtualizedContainerService.HintSize="508.8,80.8" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[str_GMUSA_AR_SharePoint_Pass]" Username="[str_GMUSA_AR_SharePoint_User]">
+          <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="510,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Begin SharePoint Upload xaml&quot;]" />
+          <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_config(&quot;GMUSA_AR_SharePointCredential&quot;).ToString]" DisplayName="Get Credential( Share Point Credential )" sap:VirtualizedContainerService.HintSize="510,80.6666666666667" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[str_GMUSA_AR_SharePoint_Pass]" Username="[str_GMUSA_AR_SharePoint_User]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -235,7 +139,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:GetRobotCredential>
-          <Sequence sap2010:Annotation.AnnotationText="Reading the execution report and sharing the count on email with the number of passes failed records" DisplayName="Get Execution Count for Successful , Failed and Process" sap:VirtualizedContainerService.HintSize="508.8,857.6" sap2010:WorkflowViewState.IdRef="Sequence_16">
+          <Sequence sap2010:Annotation.AnnotationText="Reading the execution report and sharing the count on email with the number of passes failed records" DisplayName="Get Execution Count for Successful , Failed and Process" sap:VirtualizedContainerService.HintSize="510,897.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_16">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data." Name="Config" />
               <Variable x:TypeArguments="sd:DataTable" Name="dt_test" />
@@ -246,39 +150,39 @@
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="433.6,628" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[in_GMUSA_AR_DownloadFileLocalPath]">
+            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,667.333333333333" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[in_GMUSA_AR_DownloadFileLocalPath]">
               <ui:ExcelApplicationScope.Body>
                 <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Get Execution Count for Successful , Failed and Process" sap:VirtualizedContainerService.HintSize="375.2,518.4" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                  <Sequence DisplayName="Get Execution Count for Successful , Failed and Process" sap:VirtualizedContainerService.HintSize="376,518.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_14">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:ExcelReadRange AddHeaders="True" DataTable="[dt_FailedInvoices_Count]" DisplayName="Read Range failed invoices" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="FAILED_INVOICES">
+                    <ui:ExcelReadRange AddHeaders="True" DataTable="[dt_FailedInvoices_Count]" DisplayName="Read Range failed invoices" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="FAILED_INVOICES">
                       <ui:ExcelReadRange.Range>
                         <InArgument x:TypeArguments="x:String">
                           <Literal x:TypeArguments="x:String" Value="" />
                         </InArgument>
                       </ui:ExcelReadRange.Range>
                     </ui:ExcelReadRange>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Failed Invoices for the SAP Ariba Count : &quot;+dt_FailedInvoices_Count.Rows.Count.ToString]" />
-                    <ui:ExcelReadRange AddHeaders="True" DataTable="[dt_SuccessInvoices_Count]" DisplayName="Read Range successful invoices" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" SheetName="SUCCESSFUL_INVOICES">
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Failed Invoices for the SAP Ariba Count : &quot;+dt_FailedInvoices_Count.Rows.Count.ToString]" />
+                    <ui:ExcelReadRange AddHeaders="True" DataTable="[dt_SuccessInvoices_Count]" DisplayName="Read Range successful invoices" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" SheetName="SUCCESSFUL_INVOICES">
                       <ui:ExcelReadRange.Range>
                         <InArgument x:TypeArguments="x:String">
                           <Literal x:TypeArguments="x:String" Value="" />
                         </InArgument>
                       </ui:ExcelReadRange.Range>
                     </ui:ExcelReadRange>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Successful Invoices for the SAP Count : &quot;+dt_SuccessInvoices_Count.Rows.Count.ToString]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;Successful Invoices for the SAP Count : &quot;+dt_SuccessInvoices_Count.Rows.Count.ToString]" />
                   </Sequence>
                 </ActivityAction>
               </ui:ExcelApplicationScope.Body>
             </ui:ExcelApplicationScope>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,52.6666666666667" sap2010:WorkflowViewState.IdRef="TryCatch_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -326,13 +230,13 @@
               </TryCatch.Catches>
             </TryCatch>
           </Sequence>
-          <uma:Office365ApplicationScope CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" Timeout="{x:Null}" ApplicationId="[in_GMUSA_AR_ApplicationID.ToString]" ApplicationSecret="[in_GMUSA_AR_ApplicationSecret.ToString]" AuthenticationType="UsernameAndPassword" DisplayName="Private: Microsoft Office 365 Scope ( Share Point)" Environment="Global" sap:VirtualizedContainerService.HintSize="508.8,2436.8" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuthApplication="UiPath" SecurePassword="[str_GMUSA_AR_SharePoint_Pass]" Services="Files" Tenant="[in_GMUSA_AR_TenantID.ToString]" Username="[str_GMUSA_AR_SharePoint_User]">
+          <uma:Office365ApplicationScope CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" Timeout="{x:Null}" ApplicationId="[in_GMUSA_AR_ApplicationID.ToString]" ApplicationSecret="[in_GMUSA_AR_ApplicationSecret.ToString]" AuthenticationType="UsernameAndPassword" DisplayName="Private: Microsoft Office 365 Scope ( Share Point)" Environment="Global" sap:VirtualizedContainerService.HintSize="510,2570.66666666667" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuthApplication="UiPath" SecurePassword="[str_GMUSA_AR_SharePoint_Pass]" Services="Files" Tenant="[in_GMUSA_AR_TenantID.ToString]" Username="[str_GMUSA_AR_SharePoint_User]">
             <uma:Office365ApplicationScope.Body>
               <ActivityAction x:TypeArguments="mg:GraphServiceClient">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="mg:GraphServiceClient" Name="ParentScope" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="475.2,2350.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,2484.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="mg:DriveItem" Name="Folder" />
                     <Variable x:TypeArguments="mg:DriveItem" Name="DestinationFolder" />
@@ -348,10 +252,10 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Finding the Folder Name in Config Exists&quot;]" />
-                  <umaf:FindFilesAndFolders DriveMetadata="{x:Null}" Results="{x:Null}" DisplayName="Find Files And Folders" DriveName="[in_GMUSA_AR_DriveName_Target]" First="[Folder]" sap:VirtualizedContainerService.HintSize="433.6,85.6" sap2010:WorkflowViewState.IdRef="FindFilesAndFolders_1" Query="[in_GMUSA_AR_CLIENTNAME_Target]" SiteUrl="[in_GMUSA_AR_SiteUrl_Target]" Subfolder="[in_GMUSA_AR_AGENCYNAME_Target]" />
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[in_GMUSA_AR_DownloadFileLocalPath]" />
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Uploading file to Sharepoint Started&quot;]">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Finding the Folder Name in Config Exists&quot;]" />
+                  <umaf:FindFilesAndFolders DriveMetadata="{x:Null}" Results="{x:Null}" DisplayName="Find Files And Folders" DriveName="[in_GMUSA_AR_DriveName_Target]" First="[Folder]" sap:VirtualizedContainerService.HintSize="434,88.6666666666667" sap2010:WorkflowViewState.IdRef="FindFilesAndFolders_1" Query="[in_GMUSA_AR_CLIENTNAME_Target]" SiteUrl="[in_GMUSA_AR_SiteUrl_Target]" Subfolder="[in_GMUSA_AR_AGENCYNAME_Target]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[in_GMUSA_AR_DownloadFileLocalPath]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Uploading file to Sharepoint Started&quot;]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -359,7 +263,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:LogMessage>
-                  <umaf:UploadFile CloudFileName="{x:Null}" DriveMetadata="{x:Null}" Metadata="{x:Null}" ConflictBehavior="Replace" Destination="[Folder]" DisplayName="Upload File" sap:VirtualizedContainerService.HintSize="433.6,249.6" sap2010:WorkflowViewState.IdRef="UploadFile_1" LocalFilePath="[in_GMUSA_AR_DownloadFileLocalPath]" Result="[str_File]">
+                  <umaf:UploadFile CloudFileName="{x:Null}" DriveMetadata="{x:Null}" Metadata="{x:Null}" ConflictBehavior="Replace" Destination="[Folder]" DisplayName="Upload File" sap:VirtualizedContainerService.HintSize="434,264.666666666667" sap2010:WorkflowViewState.IdRef="UploadFile_1" LocalFilePath="[in_GMUSA_AR_DownloadFileLocalPath]" Result="[str_File]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -367,7 +271,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </umaf:UploadFile>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Uploading File to Sharepoint is succesful&quot;]">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,52.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Uploading File to Sharepoint is succesful&quot;]">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -375,7 +279,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:LogMessage>
-                  <Assign sap:VirtualizedContainerService.HintSize="433.6,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                  <Assign sap:VirtualizedContainerService.HintSize="434,62" sap2010:WorkflowViewState.IdRef="Assign_1">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[driver_Weblink]</OutArgument>
                     </Assign.To>
@@ -383,7 +287,7 @@
                       <InArgument x:TypeArguments="x:String">[str_File.WebUrl.ToString.Replace(" ","%20")]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign sap:VirtualizedContainerService.HintSize="433.6,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                  <Assign DisplayName="Assign Success invoice count" sap:VirtualizedContainerService.HintSize="434,62" sap2010:WorkflowViewState.IdRef="Assign_4">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Int32">[temp_count]</OutArgument>
                     </Assign.To>
@@ -391,7 +295,7 @@
                       <InArgument x:TypeArguments="x:Int32">[dt_SuccessInvoices_Count.Rows.Count+ dt_FailedInvoices_Count.Rows.Count]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign sap:VirtualizedContainerService.HintSize="433.6,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <Assign DisplayName="Assign Email Body Template" sap:VirtualizedContainerService.HintSize="434,62" sap2010:WorkflowViewState.IdRef="Assign_2">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[str_EmailBody]</OutArgument>
                     </Assign.To>
@@ -399,7 +303,7 @@
                       <InArgument x:TypeArguments="x:String">[in_Config("Email_Body").ToString.Replace("{0}",driver_Weblink)]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign sap:VirtualizedContainerService.HintSize="433.6,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                  <Assign DisplayName="Assign Email Recipent" sap:VirtualizedContainerService.HintSize="434,62" sap2010:WorkflowViewState.IdRef="Assign_3">
                     <Assign.To>
                       <OutArgument x:TypeArguments="s:String[]">[SentEmail_Add]</OutArgument>
                     </Assign.To>
@@ -407,7 +311,7 @@
                       <InArgument x:TypeArguments="s:String[]">[{in_str_TargetRecipientEmail}]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign sap:VirtualizedContainerService.HintSize="433.6,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                  <Assign DisplayName="Assign Add Total Count of Invoices in Template" sap:VirtualizedContainerService.HintSize="434,62" sap2010:WorkflowViewState.IdRef="Assign_5">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[str_EmailBody]</OutArgument>
                     </Assign.To>
@@ -415,7 +319,7 @@
                       <InArgument x:TypeArguments="x:String">[str_EmailBody.Replace("TotalTarget",temp_count.ToString)]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="433.6,192.8" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                  <ui:MultipleAssign DisplayName="Multiple Template Changes" sap:VirtualizedContainerService.HintSize="434,189.333333333333" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                     <ui:MultipleAssign.AssignOperations>
                       <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -453,8 +357,8 @@
                       </scg:List>
                     </ui:MultipleAssign.AssignOperations>
                   </ui:MultipleAssign>
-                  <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Sending Completion Email -Started&quot;]" />
-                  <umam:SendMail Account="{x:Null}" AttachmentsCollection="{x:Null}" Bcc="{x:Null}" From="{x:Null}" ReplyTo="{x:Null}" Body="[str_EmailBody]" Cc="[in_Config(&quot;GMUSA_AR_EmailTo&quot;).ToString.Split(&quot;;&quot;c)]" DisplayName="Completion Send Mail" sap:VirtualizedContainerService.HintSize="433.6,352.8" sap2010:WorkflowViewState.IdRef="SendMail_1" Importance="Normal" IsBodyHTML="True" IsDraft="False" Subject="[in_Config(&quot;Email_Subject&quot;).ToString]" To="[in_Config(&quot;GMUSA_AR_EmailTo&quot;).ToString.Split(&quot;;&quot;c)]">
+                  <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="434,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Sending Completion Email -Started&quot;]" />
+                  <umam:SendMail Account="{x:Null}" AttachmentsCollection="{x:Null}" From="{x:Null}" ReplyTo="{x:Null}" Bcc="[in_Config(&quot;GMUSA_AR_EmailBcc&quot;).ToString.Split(&quot;;&quot;c)]" Body="[str_EmailBody]" Cc="[in_Config(&quot;GMUSA_AR_EmailCC&quot;).ToString.Split(&quot;;&quot;c)]" DisplayName="Completion Send Mail" sap:VirtualizedContainerService.HintSize="434,361.333333333333" sap2010:WorkflowViewState.IdRef="SendMail_1" Importance="Normal" IsBodyHTML="True" IsDraft="False" Subject="[in_Config(&quot;Email_Subject&quot;).ToString]" To="[SentEmail_Add]">
                     <umam:SendMail.Attachments>
                       <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                     </umam:SendMail.Attachments>
@@ -465,7 +369,35 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </umam:SendMail>
-                  <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="433.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Sending Completion Email -Ended&quot;]" />
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,52.6666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,144.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <umam:SendMail Account="{x:Null}" AttachmentsCollection="{x:Null}" Bcc="{x:Null}" From="{x:Null}" ReplyTo="{x:Null}" Body="[str_EmailBody]" Cc="[in_Config(&quot;GMUSA_AR_EmailTo&quot;).ToString.Split(&quot;;&quot;c)]" DisplayName="Completion Send Mail" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="SendMail_2" Importance="Normal" IsBodyHTML="True" IsDraft="False" Subject="[in_Config(&quot;Email_Subject&quot;).ToString]" To="[in_Config(&quot;GMUSA_AR_EmailTo&quot;).ToString.Split(&quot;;&quot;c)]">
+                          <umam:SendMail.Attachments>
+                            <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                          </umam:SendMail.Attachments>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </umam:SendMail>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:CommentOut>
+                  <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="434,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Sending Completion Email -Ended&quot;]" />
                 </Sequence>
               </ActivityAction>
             </uma:Office365ApplicationScope.Body>
@@ -476,7 +408,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uma:Office365ApplicationScope>
-          <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="508.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;End SharePoint Upload xaml&quot;]" />
+          <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="510,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;End SharePoint Upload xaml&quot;]" />
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>

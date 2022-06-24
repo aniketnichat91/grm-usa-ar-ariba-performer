@@ -11,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>875,2786</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1153.33333333333,2663.33333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ariba_line_amount_check_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="58">
@@ -76,9 +76,10 @@
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ariba_line_amount_check" sap:VirtualizedContainerService.HintSize="885,2721" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ariba_line_amount_check" sap:VirtualizedContainerService.HintSize="958,2598.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
       <Variable x:TypeArguments="x:String" Default="1" Name="txtLineNumberDivided" />
@@ -95,28 +96,28 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="843,61" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="[&quot;Invoking Line Check for Line: &quot; + in_LineNumberDivided]" />
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Ariba'" sap:VirtualizedContainerService.HintSize="843,1695" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="2e4dac027dc11b25a667ae817df61193" Selector="&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="916,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Invoking Line Check for Line: &quot; + in_LineNumberDivided]" />
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Ariba'" sap:VirtualizedContainerService.HintSize="916,1585.33333333333" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="2e4dac027dc11b25a667ae817df61193" Selector="&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Line Number &amp; PO Amount Checks" sap:VirtualizedContainerService.HintSize="809,1549" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence DisplayName="Line Number &amp; PO Amount Checks" sap:VirtualizedContainerService.HintSize="882,1439.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Get Line Item DT" sap:VirtualizedContainerService.HintSize="767,1457" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence DisplayName="Get Line Item DT" sap:VirtualizedContainerService.HintSize="840,1347.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Structured Data from Order Table" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="725,106" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="100" SimulateClick="True">
+              <ui:ExtractData DelayBetweenPagesMS="{x:Null}" NextLinkSelector="{x:Null}" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Structured Data from Order Table" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" sap:VirtualizedContainerService.HintSize="798,106" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="100" SimulateClick="True">
                 <ui:ExtractData.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="da06e8b7-2706-4229-af15-c4bcc32a4f66" InformativeScreenshot="cff76abfca4923137838573f6131e623" Selector="&lt;webctrl tag='TABLE' class='tableBody' parentclass='leg-w-100p' /&gt;" WaitForReady="COMPLETE">
                     <ui:Target.TimeoutMS>
@@ -125,52 +126,11 @@
                   </ui:Target>
                 </ui:ExtractData.Target>
               </ui:ExtractData>
-              <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="725,61" sap2010:WorkflowViewState.IdRef="WriteLine_12" Text="[&quot;in_LineNumberDivided: &quot; + in_LineNumberDivided]" />
-              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="725,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                <ui:CommentOut.Body>
-                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,252" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:FilterDataTable DataTable="[ExtractDataTable]" DisplayName="Filter Data Table for Line Numbers" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="334,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[ExtractDataTable]" SelectColumnsMode="Keep">
-                      <ui:FilterDataTable.Filters>
-                        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
-                          <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="NOTEMPTY">
-                            <ui:FilterOperationArgument.Column>
-                              <InArgument x:TypeArguments="x:String">["No."]</InArgument>
-                            </ui:FilterOperationArgument.Column>
-                          </ui:FilterOperationArgument>
-                          <ui:FilterOperationArgument BooleanOperator="And" Operator="NOTCONTAINS">
-                            <ui:FilterOperationArgument.Column>
-                              <InArgument x:TypeArguments="x:String">["No."]</InArgument>
-                            </ui:FilterOperationArgument.Column>
-                            <ui:FilterOperationArgument.Operand>
-                              <InArgument x:TypeArguments="x:String">["Insert"]</InArgument>
-                            </ui:FilterOperationArgument.Operand>
-                          </ui:FilterOperationArgument>
-                        </scg:List>
-                      </ui:FilterDataTable.Filters>
-                      <ui:FilterDataTable.SelectColumns>
-                        <scg:List x:TypeArguments="InArgument" Capacity="4">
-                          <InArgument x:TypeArguments="x:String">["No."]</InArgument>
-                        </scg:List>
-                      </ui:FilterDataTable.SelectColumns>
-                    </ui:FilterDataTable>
-                  </Sequence>
-                </ui:CommentOut.Body>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </ui:CommentOut>
-              <ui:OutputDataTable DataTable="[ExtractDataTable]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="725,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[txtExtractDT]" />
-              <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="725,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Rows in table: &quot; + ExtractDataTable.Rows.Count.ToString]" />
-              <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[ExtractDataTable]" DisplayName="Lookup Data Table to check LineNum is there" sap:VirtualizedContainerService.HintSize="725,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="No." LookupValue="[in_LineNumberDivided]" RowIndex="[intRowLineNumFound]" />
-              <If Condition="[intRowLineNumFound &lt;&gt; -1]" sap:VirtualizedContainerService.HintSize="725,601" sap2010:WorkflowViewState.IdRef="If_1">
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="798,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;in_LineNumberDivided: &quot; + in_LineNumberDivided]" />
+              <ui:OutputDataTable DataTable="[ExtractDataTable]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="798,22" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[txtExtractDT]" />
+              <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="798,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Rows in table: &quot; + ExtractDataTable.Rows.Count.ToString]" />
+              <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[ExtractDataTable]" DisplayName="Lookup Data Table to check LineNum is there" sap:VirtualizedContainerService.HintSize="798,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="No." LookupValue="[in_LineNumberDivided]" RowIndex="[intRowLineNumFound]" />
+              <If Condition="[intRowLineNumFound &lt;&gt; -1]" sap:VirtualizedContainerService.HintSize="798,511.333333333333" sap2010:WorkflowViewState.IdRef="If_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -178,13 +138,13 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="304,253" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence sap:VirtualizedContainerService.HintSize="376,288.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign DisplayName="Assign LineCheck" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign DisplayName="Assign LineCheck" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_2">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Boolean">[out_LineCheck]</OutArgument>
                       </Assign.To>
@@ -192,18 +152,18 @@
                         <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="Line check passed" />
+                    <ui:LogMessage DisplayName="Log Message Line Check" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Warn" Message="[&quot;Line check passed&quot;]" />
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence sap:VirtualizedContainerService.HintSize="376,444" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence sap:VirtualizedContainerService.HintSize="376,350.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Invoice: &quot; + in_TransactionItem.SpecificContent(&quot;BillNumber&quot;).ToString + &quot; line check failed. Line Number &quot; + in_LineNumberDivided + &quot; was not found.&quot;]" />
-                    <Assign DisplayName="Assign LineCheck" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Invoice: &quot; + in_TransactionItem.SpecificContent(&quot;BillNumber&quot;).ToString + &quot; line check failed. Line Number &quot; + in_LineNumberDivided + &quot; was not found.&quot;]" />
+                    <Assign DisplayName="Assign LineCheck" sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_1">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Boolean">[out_LineCheck]</OutArgument>
                       </Assign.To>
@@ -211,12 +171,11 @@
                         <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To Home after Line Check Biz Exception" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[in_Config(&quot;urlAribaProd&quot;).ToString]" />
                     <Throw Exception="[new BusinessRuleException(&quot;Line Number mismatch. Couldn't proceed to Subtotal check&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
                   </Sequence>
                 </If.Else>
               </If>
-              <Assign DisplayName="AssignTableRow eq Line Num + 9" sap:VirtualizedContainerService.HintSize="725,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign DisplayName="AssignTableRow eq Line Num + 9" sap:VirtualizedContainerService.HintSize="798,62" sap2010:WorkflowViewState.IdRef="Assign_3">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[txtLineTableRow]</OutArgument>
                 </Assign.To>
@@ -224,7 +183,7 @@
                   <InArgument x:TypeArguments="x:String">[Convert.ToString(intRowLineNumFound + 9)]</InArgument>
                 </Assign.Value>
               </Assign>
-              <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="725,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;Table Row for Line &quot; + txtLineNumberDivided + &quot; will be row: &quot; + txtLineTableRow]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="798,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Warn" Message="[&quot;Table Row for Line &quot; + txtLineNumberDivided + &quot; will be row: &quot; + txtLineTableRow]" />
             </Sequence>
           </Sequence>
         </ActivityAction>
@@ -236,7 +195,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:BrowserScope>
-    <If Condition="[out_LineCheck = False]" DisplayName="If LineCheck Fail" sap:VirtualizedContainerService.HintSize="843,793" sap2010:WorkflowViewState.IdRef="If_4">
+    <If Condition="[out_LineCheck = False]" DisplayName="If LineCheck Fail" sap:VirtualizedContainerService.HintSize="916,746.666666666667" sap2010:WorkflowViewState.IdRef="If_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -244,7 +203,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="PreChecks Failed" sap:VirtualizedContainerService.HintSize="376,616" sap2010:WorkflowViewState.IdRef="Sequence_16">
+        <Sequence DisplayName="PreChecks Failed" sap:VirtualizedContainerService.HintSize="376,552" sap2010:WorkflowViewState.IdRef="Sequence_16">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -273,7 +232,7 @@
               </ui:Target>
             </ui:Click.Target>
           </ui:Click>
-          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="False" DisplayName="Hotkey Page Down" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="end" KeyModifiers="Alt" SendWindowMessages="True" SpecialKey="True">
+          <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="False" DisplayName="Hotkey Page Down" sap:VirtualizedContainerService.HintSize="334,117.333333333333" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="end" KeyModifiers="Alt" SendWindowMessages="True" SpecialKey="True">
             <ui:SendHotkey.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="fa054944-e0d9-4637-bd4d-e19f61050e61" WaitForReady="COMPLETE">
                 <ui:Target.TimeoutMS>
@@ -282,8 +241,7 @@
               </ui:Target>
             </ui:SendHotkey.Target>
           </ui:SendHotkey>
-          <WriteLine DisplayName="Log issue" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_10" Text="[&quot;Line check failed. &quot; +out_LineCheck.ToString]" />
-          <ui:NavigateTo Browser="[in_Browser]" DisplayName="Navigate To Ariba Search Page" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="NavigateTo_4" Url="[in_Config(&quot;urlAribaProd&quot;).ToString]" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Line check failed. &quot; +out_LineCheck.ToString]" />
           <Throw Exception="[new BusinessRuleException(&quot;Line Pre-Check Failed&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_5" />
         </Sequence>
       </If.Then>
