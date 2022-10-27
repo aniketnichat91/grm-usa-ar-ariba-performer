@@ -12,10 +12,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1153.33333333333,2690.66666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1240,4701</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ariba_credit_memo_check_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="60">
+    <scg:List x:TypeArguments="x:String" Capacity="31">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -50,7 +50,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="56">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="30">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -80,22 +80,26 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.MicrosoftOffice365.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1000.66666666667,2626" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence sap:VirtualizedContainerService.HintSize="1001,4636" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="958.666666666667,2534" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="959,4544" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="ariba_credit_click_into" sap:VirtualizedContainerService.HintSize="920,2272.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence DisplayName="ariba_credit_click_into" sap:VirtualizedContainerService.HintSize="921,4295" sap2010:WorkflowViewState.IdRef="Sequence_1">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="txtCreditOrderAmount" />
             <Variable x:TypeArguments="x:String" Name="txtCreditInvoiceType" />
             <Variable x:TypeArguments="x:Int32" Default="14" Name="intCreditRow" />
             <Variable x:TypeArguments="x:String" Default="Type" Name="txtCreditCol1" />
+            <Variable x:TypeArguments="x:Int32" Name="intCounter1" />
+            <Variable x:TypeArguments="x:Boolean" Name="blnCreateInvoiceNotExist" />
+            <Variable x:TypeArguments="x:Boolean" Name="blnCreateInvoiceExist" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -103,7 +107,7 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Switch x:TypeArguments="x:String" DisplayName="Switch Assign Credit Memo Table Column Headers" Expression="[in_txtSubprocess]" sap:VirtualizedContainerService.HintSize="878,168.666666666667" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+          <Switch x:TypeArguments="x:String" DisplayName="Switch Assign Credit Memo Table Column Headers" Expression="[in_txtSubprocess]" sap:VirtualizedContainerService.HintSize="879,870" sap2010:WorkflowViewState.IdRef="Switch`1_2">
             <Switch.Default>
               <Assign DisplayName="Assign Credit Table Column 1 Heading" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
                 <Assign.To>
@@ -120,7 +124,7 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign x:Key="target" DisplayName="Assign Credit Table Column 1 Heading" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign x:Key="target" DisplayName="Assign Credit Table Column 1 Heading" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[txtCreditCol1]</OutArgument>
               </Assign.To>
@@ -128,14 +132,14 @@
                 <InArgument x:TypeArguments="x:String">Invoice #</InArgument>
               </Assign.Value>
             </Assign>
-            <Sequence x:Key="shell" DisplayName="Sequence to double check credit (only for shell)" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Sequence x:Key="shell" DisplayName="Sequence to double check credit (only for shell)" sap:VirtualizedContainerService.HintSize="839,664" sap2010:WorkflowViewState.IdRef="Sequence_7">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign DisplayName="Assign Credit Table Column 1 Heading" sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_6">
+              <Assign DisplayName="Assign Credit Table Column 1 Heading" sap:VirtualizedContainerService.HintSize="797,60" sap2010:WorkflowViewState.IdRef="Assign_6">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[txtCreditCol1]</OutArgument>
                 </Assign.To>
@@ -143,31 +147,31 @@
                   <InArgument x:TypeArguments="x:String">Invoice #</InArgument>
                 </Assign.Value>
               </Assign>
-              <If sap2010:Annotation.AnnotationText="for shell credit will be created only for CORPORATE devisions" Condition="[in_TransactionItem.SpecificContent(&quot;Devision&quot;).ToString.Contains(&quot;CORPORATE&quot;)]" sap:VirtualizedContainerService.HintSize="262,114.666666666667" sap2010:WorkflowViewState.IdRef="If_2">
+              <If sap2010:Annotation.AnnotationText="for shell credit will be created only for CORPORATE devisions" Condition="[in_TransactionItem.SpecificContent(&quot;Devision&quot;).ToString.Contains(&quot;CORPORATE&quot;)]" sap:VirtualizedContainerService.HintSize="797,472" sap2010:WorkflowViewState.IdRef="If_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <Sequence sap:VirtualizedContainerService.HintSize="376,283" sap2010:WorkflowViewState.IdRef="Sequence_5">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="262.4,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot; Division Check for SHELL : check passed for credit invoice creation &quot;]">
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot; Division Check for SHELL : check passed for credit invoice creation &quot;]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:LogMessage>
-                    <Assign DisplayName="Assign Credit check" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                    <Assign DisplayName="Assign Credit check" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_7">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Boolean">[out_CreditShell]</OutArgument>
                       </Assign.To>
@@ -178,29 +182,108 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot; Division Check for SHELL : check failed for credit invoice creation &quot;+Environment.NewLine+(in_Config(&quot;BEXS0005&quot;).ToString)]">
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot; Division Check for SHELL : check failed for credit invoice creation &quot;+Environment.NewLine+(in_Config(&quot;BEXS0005&quot;).ToString)]">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:LogMessage>
-                    <Throw Exception="[new BusinessRuleException(in_Config(&quot;BEXS0005&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                    <Throw Exception="[new BusinessRuleException(in_Config(&quot;BEXS0005&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_4" />
                   </Sequence>
                 </If.Else>
               </If>
             </Sequence>
           </Switch>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="878,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[&quot;CheckingCredit Invoice &quot; + in_txtInvoiceNum + &quot; for order &quot; + in_txtOrderNum + Environment.NewLine + &#xA;&quot;Adjusting Column Header: &quot; + txtCreditCol1]" />
-          <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1500" DisplayName="Click Create Invoice" sap:VirtualizedContainerService.HintSize="878,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="879,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[&quot;CheckingCredit Invoice &quot; + in_txtInvoiceNum + &quot; for order &quot; + in_txtOrderNum + Environment.NewLine + &#xA;&quot;Adjusting Column Header: &quot; + txtCreditCol1]" />
+          <Assign sap:VirtualizedContainerService.HintSize="879,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Int32">[intCounter1]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:InterruptibleDoWhile Condition="[not(blnCreateInvoiceExist or blnCreateInvoiceNotExist or  intCounter1&lt;10)]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="879,609" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+            <ui:InterruptibleDoWhile.Body>
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,444" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:UiElementExists DisplayName="Create Invoice not Exist" Exists="[blnCreateInvoiceNotExist]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                  <ui:UiElementExists.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="463ab250-ee4c-420b-9844-1be3ee73ed7c" InformativeScreenshot="24836b04744a41091015c57fc2ebc8f4" Selector="&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;&lt;webctrl tag='BUTTON' class='w-btn w-btn-disabled' innertext=' Create Invoice ' /&gt;" TimeoutMS="2000">
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:UiElementExists.Target>
+                </ui:UiElementExists>
+                <ui:UiElementExists DisplayName="Create Invoice Exist" Exists="[blnCreateInvoiceExist]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                  <ui:UiElementExists.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b9bdef21-b697-447f-bd47-3ce4beddf83f" InformativeScreenshot="ccd5161bad8de3102494eab87f6915c1" Selector="&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;&lt;webctrl tag='BUTTON' class='w-btn' innertext=' Create Invoice ' /&gt;" TimeoutMS="2000">
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:UiElementExists.Target>
+                </ui:UiElementExists>
+                <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[intCounter1]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[intCounter1+1]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </ui:InterruptibleDoWhile.Body>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InterruptibleDoWhile>
+          <If Condition="[blnCreateInvoiceNotExist]" sap:VirtualizedContainerService.HintSize="879,432" sap2010:WorkflowViewState.IdRef="If_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Warn" Message="[&quot;Create Invoice Button Not Exist&quot;]" />
+                <Throw Exception="[New BusinessRuleException(&quot;Create Invoice Button not exist&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_5" />
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_10">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </If.Else>
+          </If>
+          <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1500" DisplayName="Click Create Invoice" sap:VirtualizedContainerService.HintSize="879,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
             <ui:Click.CursorPosition>
               <ui:CursorPosition OffsetX="103" OffsetY="25" Position="TopLeft" />
             </ui:Click.CursorPosition>
@@ -212,7 +295,7 @@
               </ui:Target>
             </ui:Click.Target>
           </ui:Click>
-          <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1000" DisplayName="Click Line-Item Credit Memo" sap:VirtualizedContainerService.HintSize="878,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+          <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1000" DisplayName="Click Line-Item Credit Memo" sap:VirtualizedContainerService.HintSize="879,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
             <ui:Click.CursorPosition>
               <ui:CursorPosition Position="Center">
                 <ui:CursorPosition.OffsetX>
@@ -231,7 +314,7 @@
               </ui:Target>
             </ui:Click.Target>
           </ui:Click>
-          <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="1500" DisplayName="Click Amount 1 of 2" sap:VirtualizedContainerService.HintSize="878,52.6666666666667" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+          <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="1500" DisplayName="Click Amount 1 of 2" sap:VirtualizedContainerService.HintSize="879,106" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
             <ui:Click.CursorPosition>
               <ui:CursorPosition Position="Center">
                 <ui:CursorPosition.OffsetX>
@@ -254,12 +337,12 @@
             </ui:Click.Target>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:Click>
-          <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="1500" DisplayName="Click Amount 2 of 2" sap:VirtualizedContainerService.HintSize="878,52.6666666666667" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+          <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="1500" DisplayName="Click Amount 2 of 2" sap:VirtualizedContainerService.HintSize="879,106" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
             <ui:Click.CursorPosition>
               <ui:CursorPosition Position="Center">
                 <ui:CursorPosition.OffsetX>
@@ -282,20 +365,20 @@
             </ui:Click.Target>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:Click>
-          <Flowchart sap2010:Annotation.AnnotationText="&#xA;Cycle through each row until it finds a suitable invoice. Starts at Tablerow 14." DisplayName="Flowchart Steps Through Grid (Mars)" sap:VirtualizedContainerService.HintSize="878,1068" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+          <Flowchart sap2010:Annotation.AnnotationText="&#xA;Cycle through each row until it finds a suitable invoice. Starts at Tablerow 14." DisplayName="Flowchart Steps Through Grid (Mars)" sap:VirtualizedContainerService.HintSize="879,1065" sap2010:WorkflowViewState.IdRef="Flowchart_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <av:Point x:Key="ShapeLocation">270,0</av:Point>
-                <av:Size x:Key="ShapeSize">60,74.6666666666667</av:Size>
+                <av:Size x:Key="ShapeSize">60,75</av:Size>
                 <av:PointCollection x:Key="ConnectorLocation">300,75 300,100</av:PointCollection>
                 <x:Double x:Key="Width">844</x:Double>
-                <x:Double x:Key="Height">986.81999999999994</x:Double>
+                <x:Double x:Key="Height">987.02</x:Double>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
@@ -307,21 +390,21 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">185,179.5</av:Point>
-                  <av:Size x:Key="ShapeSize">229.333333333333,62.6666666666667</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">299.8,241.9 299.8,271.9 290,271.9 290,284.5</av:PointCollection>
+                  <av:Size x:Key="ShapeSize">230,61</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">300,240.5 300,270.5 290,270.5 290,284.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="229.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="Getting Order Amount &amp; Invoice Type" />
+              <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="Getting Order Amount &amp; Invoice Type" />
               <FlowStep.Next>
                 <FlowStep x:Name="__ReferenceID0">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">190,284.5</av:Point>
-                      <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
-                      <av:PointCollection x:Key="ConnectorLocation">290,336.5 290,374.5</av:PointCollection>
+                      <av:Size x:Key="ShapeSize">200,51</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">290,335.5 290,374.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Order Amount" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="GetValue_3">
+                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Order Amount" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="GetValue_3">
                     <ui:GetValue.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="38bc0223-6940-4715-aff4-cbb6fec98701" InformativeScreenshot="4f9f9e877ad8c210c13948cff5c3ec5c" Selector="[String.Format(&quot;&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;&lt;webctrl tag='TD' colName='Amount*' TableRow='{0}' /&gt;&quot;, intCreditRow)]">
                         <ui:Target.TimeoutMS>
@@ -341,11 +424,11 @@
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">190,374.5</av:Point>
-                          <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
+                          <av:Size x:Key="ShapeSize">200,51</av:Size>
                           <av:PointCollection x:Key="ConnectorLocation">290,426.5 290,464.5</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Order Col 1" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="GetValue_4">
+                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Order Col 1" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="GetValue_4">
                         <ui:GetValue.Target>
                           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="38bc0223-6940-4715-aff4-cbb6fec98701" InformativeScreenshot="ed5f0e5d1226124c581221538998d75b" Selector="[String.Format(&quot;&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;&lt;webctrl tag='TABLE' class='tableBody' parentclass='leg-w-100p' /&gt;&lt;webctrl tableCol='2' tag='TD' tableRow='{0}' /&gt;&quot;, intCreditRow)]">
                             <ui:Target.TimeoutMS>
@@ -365,11 +448,11 @@
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">190,464.5</av:Point>
-                              <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
+                              <av:Size x:Key="ShapeSize">200,51</av:Size>
                               <av:PointCollection x:Key="ConnectorLocation">290,516.5 290,546.5 280,546.5 280,555.5</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:MultipleAssign DisplayName="Trim Extracted Results" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                          <ui:MultipleAssign DisplayName="Trim Extracted Results" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                             <ui:MultipleAssign.AssignOperations>
                               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -401,28 +484,28 @@
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <av:Point x:Key="ShapeLocation">180,555.5</av:Point>
-                                  <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
+                                  <av:Size x:Key="ShapeSize">200,51</av:Size>
                                   <av:PointCollection x:Key="ConnectorLocation">280,607.5 280,637.5 300,637.5 300,638</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:Replace BuilderPattern="[$,USD ]" DisplayName="Replace non-numeric chars in SubTotal" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="Replace_1" Input="[txtCreditOrderAmount]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ONEOF&quot;,&quot;OperationName&quot;:&quot;One of&quot;,&quot;OperationValue&quot;:&quot;$,USD &quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="%[$,USD ]" RegexOption="IgnoreCase" Replacement="[String.Empty]" Result="[txtCreditOrderAmount]" />
+                              <ui:Replace BuilderPattern="[$,USD ]" DisplayName="Replace non-numeric chars in SubTotal" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Replace_1" Input="[txtCreditOrderAmount]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ONEOF&quot;,&quot;OperationName&quot;:&quot;One of&quot;,&quot;OperationValue&quot;:&quot;$,USD &quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="%[$,USD ]" RegexOption="IgnoreCase" Replacement="[String.Empty]" Result="[txtCreditOrderAmount]" />
                               <FlowStep.Next>
                                 <FlowStep x:Name="__ReferenceID2">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <av:Point x:Key="ShapeLocation">185,638</av:Point>
-                                      <av:Size x:Key="ShapeSize">229.333333333333,62.6666666666667</av:Size>
-                                      <av:PointCollection x:Key="ConnectorLocation">299.8,700.4 299.8,730.4 300.1,730.4 300.1,756.5</av:PointCollection>
+                                      <av:Size x:Key="ShapeSize">230,61</av:Size>
+                                      <av:PointCollection x:Key="ConnectorLocation">300,699 300,756.5</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="229.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_9" Text="[&quot;Table Check Results.... Order Amount: &quot; + txtCreditOrderAmount]" />
+                                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_9" Text="[&quot;Table Check Results.... Order Amount: &quot; + txtCreditOrderAmount]" />
                                   <FlowStep.Next>
-                                    <FlowDecision x:Name="__ReferenceID4" Condition="[Convert.ToDecimal(txtCreditOrderAmount) &gt;= Math.Abs(Convert.ToDecimal(in_txtBillAmount)) AND txtCreditInvoiceType.Trim&lt;&gt; &quot;Line-Item Credit Memo&quot;]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.6666666666667,86.6666666666667" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                                    <FlowDecision x:Name="__ReferenceID4" Condition="[Convert.ToDecimal(txtCreditOrderAmount) &gt;= Math.Abs(Convert.ToDecimal(in_txtBillAmount)) AND txtCreditInvoiceType.Trim&lt;&gt; &quot;Line-Item Credit Memo&quot;]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           <av:Point x:Key="ShapeLocation">260.5,756.5</av:Point>
-                                          <av:Size x:Key="ShapeSize">78.6666666666667,86.6666666666667</av:Size>
+                                          <av:Size x:Key="ShapeSize">79,87</av:Size>
                                           <av:PointCollection x:Key="TrueConnector">260.5,800 140,800 140,849.5</av:PointCollection>
                                           <av:PointCollection x:Key="FalseConnector">339.5,800 660,800 660,834</av:PointCollection>
                                         </scg:Dictionary>
@@ -432,20 +515,20 @@
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <av:Point x:Key="ShapeLocation">25,849.5</av:Point>
-                                              <av:Size x:Key="ShapeSize">229.333333333333,62.6666666666667</av:Size>
-                                              <av:PointCollection x:Key="ConnectorLocation">139.8,911.9 120,911.9 120,934.02</av:PointCollection>
+                                              <av:Size x:Key="ShapeSize">230,61</av:Size>
+                                              <av:PointCollection x:Key="ConnectorLocation">140,910.5 120,910.5 120,934.02</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="229.333333333333,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_12" Text="[&quot;Credit Invoice Table check PASSED: Invoice Type &amp; Amount on row: &quot; + intCreditRow.ToString]" />
+                                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_12" Text="[&quot;Credit Invoice Table check PASSED: Invoice Type &amp; Amount on row: &quot; + intCreditRow.ToString]" />
                                           <FlowStep.Next>
                                             <FlowStep x:Name="__ReferenceID10">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <av:Point x:Key="ShapeLocation">20,934.02</av:Point>
-                                                  <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
+                                                  <av:Size x:Key="ShapeSize">200,51</av:Size>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Credit Invoice Table check PASSED: Invoice Type &amp; Amount on row: &quot; + intCreditRow.ToString]">
+                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Credit Invoice Table check PASSED: Invoice Type &amp; Amount on row: &quot; + intCreditRow.ToString]">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -461,11 +544,11 @@
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <av:Point x:Key="ShapeLocation">560,834</av:Point>
-                                              <av:Size x:Key="ShapeSize">200,52.6666666666667</av:Size>
+                                              <av:Size x:Key="ShapeSize">200,51</av:Size>
                                               <av:PointCollection x:Key="ConnectorLocation">660,886 660,929</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Credit is greater than largest Invoice&quot;]">
+                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Credit is greater than largest Invoice&quot;]">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -512,11 +595,11 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">169,100</av:Point>
-                  <av:Size x:Key="ShapeSize">262,62</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">300,162 299.666666666667,162 299.666666666667,179.5</av:PointCollection>
+                  <av:Size x:Key="ShapeSize">262,60</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">300,160 300,179.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Int32">[intCreditRow]</OutArgument>
                 </Assign.To>
@@ -541,7 +624,7 @@
             <x:Reference>__ReferenceID9</x:Reference>
             <x:Reference>__ReferenceID10</x:Reference>
           </Flowchart>
-          <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Invoice Checkbox" sap:VirtualizedContainerService.HintSize="878,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
+          <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Invoice Checkbox" sap:VirtualizedContainerService.HintSize="879,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT">
             <ui:Click.CursorPosition>
               <ui:CursorPosition Position="Center">
                 <ui:CursorPosition.OffsetX>
@@ -569,7 +652,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:Click>
-          <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="4000" DisplayName="Click Create Button" sap:VirtualizedContainerService.HintSize="878,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+          <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="4000" DisplayName="Click Create Button" sap:VirtualizedContainerService.HintSize="879,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
             <ui:Click.CursorPosition>
               <ui:CursorPosition Position="Center">
                 <ui:CursorPosition.OffsetX>
@@ -600,7 +683,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="924.666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="924,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -614,7 +697,7 @@
             <Throw Exception="[new Exception(in_Config(&quot;EXS0004&quot;).ToString+exception.Message+&quot; Exception Source :&quot;+exception.Source)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
           </ActivityAction>
         </Catch>
-        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="924.666666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="924,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>

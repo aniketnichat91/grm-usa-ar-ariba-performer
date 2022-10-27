@@ -5,7 +5,7 @@
     <x:Property Name="in_Browser" Type="InArgument(ui:Browser)" />
     <x:Property Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1374.66666666667,4014.66666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1435,4847</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="26">
@@ -38,7 +38,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="62">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="31">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -72,14 +72,14 @@
       <AssemblyReference>UiPath.MicrosoftOffice365.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Saving Invoice for Subprocess Target" sap:VirtualizedContainerService.HintSize="1384.66666666667,3910" sap2010:WorkflowViewState.IdRef="Sequence_10">
+  <Sequence DisplayName="Saving Invoice for Subprocess Target" sap:VirtualizedContainerService.HintSize="1445,4782" sap2010:WorkflowViewState.IdRef="Sequence_10">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1342.66666666667,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Ariba Saving current Invoice Started&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1342.66666666667,3552.66666666667" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1403,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Ariba Saving current Invoice Started&quot;]" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1403,4428" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -87,7 +87,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <If Condition="[not Convert.ToBoolean(in_Config(&quot;testSetting&quot;))]" DisplayName="If TestSetting is True then Disable" sap:VirtualizedContainerService.HintSize="1304,3291.33333333333" sap2010:WorkflowViewState.IdRef="If_1">
+        <If Condition="[not Convert.ToBoolean(in_Config(&quot;testSetting&quot;))]" DisplayName="If TestSetting is True then Disable" sap:VirtualizedContainerService.HintSize="1365,4179" sap2010:WorkflowViewState.IdRef="If_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -95,20 +95,23 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <If.Then>
-            <Sequence DisplayName="Test Setting for Prod True" sap:VirtualizedContainerService.HintSize="924,3127.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence DisplayName="Test Setting for Prod True" sap:VirtualizedContainerService.HintSize="944,4021" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:Boolean" Name="blnGetAmtExist" />
+              </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Processing and Saving Invoice" sap:VirtualizedContainerService.HintSize="882,3035.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+              <Sequence DisplayName="Processing and Saving Invoice" sap:VirtualizedContainerService.HintSize="902,3929" sap2010:WorkflowViewState.IdRef="Sequence_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="840,52.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Test Setting Disabled. PROD ENABLED.&quot;]">
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="860,51" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Test Setting Disabled. PROD ENABLED.&quot;]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -116,7 +119,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:LogMessage>
-                <Sequence DisplayName="ariba_invoice_create_prod" sap:VirtualizedContainerService.HintSize="840,2850.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence DisplayName="ariba_invoice_create_prod" sap:VirtualizedContainerService.HintSize="860,3746" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="boolInvoiceSuccess" />
                     <Variable x:TypeArguments="x:String" Name="txtAmountDue" />
@@ -127,8 +130,8 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="798,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Clicking Next Button &quot;]" />
-                  <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2000" DisplayName="Click Next" sap:VirtualizedContainerService.HintSize="798,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="818,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Clicking Next Button &quot;]" />
+                  <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2000" DisplayName="Click Next" sap:VirtualizedContainerService.HintSize="818,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
                     <ui:Click.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
@@ -150,8 +153,8 @@
                       </ui:Target>
                     </ui:Click.Target>
                   </ui:Click>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="798,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Sending Hotkey - Home&quot;]" />
-                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'page tab'" sap:VirtualizedContainerService.HintSize="798,155.333333333333" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="home" KeyModifiers="None" SpecialKey="True">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="818,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Sending Hotkey - Home&quot;]" />
+                  <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'page tab'" sap:VirtualizedContainerService.HintSize="818,154" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="home" KeyModifiers="None" SpecialKey="True">
                     <ui:SendHotkey.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e49aed13-e94c-4af0-967c-5ea277f48479" InformativeScreenshot="0741534ab23ac4f9ffa383a1dc357ff1" Selector="&lt;wnd app='chrome.exe' title='Ariba Network Supplier - Google Chrome' /&gt;&lt;ctrl name='Ariba Network Supplier' role='page tab' /&gt;" WaitForReady="COMPLETE">
                         <ui:Target.TimeoutMS>
@@ -160,25 +163,119 @@
                       </ui:Target>
                     </ui:SendHotkey.Target>
                   </ui:SendHotkey>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="798,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Getting the Amount Due Text&quot;]" />
-                  <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Amount Due Text" sap:VirtualizedContainerService.HintSize="798,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
-                    <ui:GetValue.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b3cb7616-8025-4b7a-b38c-6a680ea662b2" InformativeScreenshot="34675d6effbeba50e4b9a8952534b91f" Selector="&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;&lt;webctrl tableRow='9' tag='DIV' rowName='*Amount Due:*' /&gt;">
-                        <ui:Target.TimeoutMS>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:Target.TimeoutMS>
-                        <ui:Target.WaitForReady>
-                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                        </ui:Target.WaitForReady>
-                      </ui:Target>
-                    </ui:GetValue.Target>
-                    <ui:GetValue.Value>
-                      <OutArgument x:TypeArguments="x:String">[txtAmountDue]</OutArgument>
-                    </ui:GetValue.Value>
-                  </ui:GetValue>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="798,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;'Replace non-numeric chars inAmount Due&quot;]" />
-                  <ui:Replace BuilderPattern="[$,USD ]" DisplayName="Replace non-numeric chars inAmount Due" sap:VirtualizedContainerService.HintSize="798,58.6666666666667" sap2010:WorkflowViewState.IdRef="Replace_1" Input="[txtAmountDue]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ONEOF&quot;,&quot;OperationName&quot;:&quot;One of&quot;,&quot;OperationValue&quot;:&quot;$,USD &quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="%[$,USD ]" RegexOption="IgnoreCase" Replacement="[String.Empty]" Result="[txtAmountDue]" />
-                  <If sap2010:Annotation.AnnotationText="This should work for either -Credit or +Invoices" Condition="[(Math.Abs(Convert.ToDecimal(in_txtBillAmount))) = (Math.Abs(Convert.ToDecimal(txtAmountDue)))]" DisplayName="If BillAmount is same as Amount Due then Proceed " sap:VirtualizedContainerService.HintSize="798,536" sap2010:WorkflowViewState.IdRef="If_3">
+                  <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="818,503" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="2">
+                    <ui:RetryScope.ActivityBody>
+                      <ActivityAction>
+                        <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="376,329" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Getting the Amount Due Text&quot;]" />
+                          <ui:UiElementExists DisplayName="Element Exists 'TD'" Exists="[blnGetAmtExist]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                            <ui:UiElementExists.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0ab87c2f-d217-446d-bf7a-f4d27fab77bc" InformativeScreenshot="4ad61fe221c0f406d558faab4092e0f4" Selector="&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;&lt;webctrl tableRow='9' rowName='*Amount Due:*' tableCol='4' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:UiElementExists.Target>
+                          </ui:UiElementExists>
+                        </Sequence>
+                      </ActivityAction>
+                    </ui:RetryScope.ActivityBody>
+                    <ui:RetryScope.Condition>
+                      <ActivityFunc x:TypeArguments="x:Boolean" />
+                    </ui:RetryScope.Condition>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:RetryScope>
+                  <If Condition="[blnGetAmtExist]" sap:VirtualizedContainerService.HintSize="818,403" sap2010:WorkflowViewState.IdRef="If_4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'NOBR'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_3">
+                          <ui:GetValue.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="294c2f91-559e-4534-b38b-ba9c6dad4f38" InformativeScreenshot="0310648a79767e26bcfff8bbdbdea113" Selector="&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;&lt;webctrl tableRow='9' rowName='*Amount Due:*' tableCol='4' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:GetValue.Target>
+                          <ui:GetValue.Value>
+                            <OutArgument x:TypeArguments="x:String">[txtAmountDue]</OutArgument>
+                          </ui:GetValue.Value>
+                        </ui:GetValue>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Warn" Message="[&quot;Amount Due: is not taken&quot;]" />
+                        <Throw Exception="[new BusinessRuleException(&quot;Amount Due: is not taken&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="818,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Amount Due Text" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                          <ui:GetValue.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b3cb7616-8025-4b7a-b38c-6a680ea662b2" InformativeScreenshot="34675d6effbeba50e4b9a8952534b91f" Selector="&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;&lt;webctrl tableRow='9' tag='DIV' rowName='*Amount Due:*' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:GetValue.Target>
+                          <ui:GetValue.Value>
+                            <OutArgument x:TypeArguments="x:String">[txtAmountDue]</OutArgument>
+                          </ui:GetValue.Value>
+                        </ui:GetValue>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:CommentOut>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="818,91" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;'Replace non-numeric chars inAmount Due&quot;]" />
+                  <ui:Replace BuilderPattern="[$,USD ]" DisplayName="Replace non-numeric chars inAmount Due" sap:VirtualizedContainerService.HintSize="818,59" sap2010:WorkflowViewState.IdRef="Replace_1" Input="[txtAmountDue]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ONEOF&quot;,&quot;OperationName&quot;:&quot;One of&quot;,&quot;OperationValue&quot;:&quot;$,USD &quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="%[$,USD ]" RegexOption="IgnoreCase" Replacement="[String.Empty]" Result="[txtAmountDue]" />
+                  <If sap2010:Annotation.AnnotationText="This should work for either -Credit or +Invoices" Condition="[(Math.Abs(Convert.ToDecimal(in_txtBillAmount))) = (Math.Abs(Convert.ToDecimal(txtAmountDue)))]" DisplayName="If BillAmount is same as Amount Due then Proceed " sap:VirtualizedContainerService.HintSize="818,533" sap2010:WorkflowViewState.IdRef="If_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -187,28 +284,28 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence DisplayName="Bill Amount Match" sap:VirtualizedContainerService.HintSize="376,186.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <Sequence DisplayName="Bill Amount Match" sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_7">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Error" Message="[&quot;Bill amount: &quot; + in_txtBillAmount + &quot; is matching with Amount Due: &quot; +txtAmountDue]" />
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Error" Message="[&quot;Bill amount: &quot; + in_txtBillAmount + &quot; is matching with Amount Due: &quot; +txtAmountDue]" />
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence DisplayName="Bill Amount does not Match" sap:VirtualizedContainerService.HintSize="376,341.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <Sequence DisplayName="Bill Amount does not Match" sap:VirtualizedContainerService.HintSize="376,344" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Bill amount: &quot; + in_txtBillAmount + &quot; is different than Amount Due: &quot; +txtAmountDue]" />
-                        <ui:NavigateTo Browser="[in_Browser]" ContinueOnError="True" DisplayName="Nav Home after Subtotal Mismatch" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[in_Config(&quot;urlAribaProd&quot;).ToString]">
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Bill amount: &quot; + in_txtBillAmount + &quot; is different than Amount Due: &quot; +txtAmountDue]" />
+                        <ui:NavigateTo Browser="[in_Browser]" ContinueOnError="True" DisplayName="Nav Home after Subtotal Mismatch" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="[in_Config(&quot;urlAribaProd&quot;).ToString]">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
@@ -217,8 +314,8 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="798,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Clicking Submit Button - Saving Invoices&quot;]" />
-                  <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2000" DisplayName="Click 'Submit'" sap:VirtualizedContainerService.HintSize="798,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="818,91" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Clicking Submit Button - Saving Invoices&quot;]" />
+                  <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2000" DisplayName="Click 'Submit'" sap:VirtualizedContainerService.HintSize="818,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
                     <ui:Click.CursorPosition>
                       <ui:CursorPosition Position="Center">
                         <ui:CursorPosition.OffsetX>
@@ -240,7 +337,8 @@
                       </ui:Target>
                     </ui:Click.Target>
                   </ui:Click>
-                  <ui:UiElementExists DisplayName="Check: Invoice Submission Header" Exists="[boolInvoiceSuccess]" sap:VirtualizedContainerService.HintSize="798,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="818,91" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Info" Message="[&quot;Clicked Save Button - Saving Invoices&quot;]" />
+                  <ui:UiElementExists DisplayName="Check: Invoice Submission Header" Exists="[boolInvoiceSuccess]" sap:VirtualizedContainerService.HintSize="818,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                     <ui:UiElementExists.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="744033aa-a4c2-4566-a6a9-a3a479fe26b5" InformativeScreenshot="d11062f5b1fe54879e2724e3dbead7d9" Selector="&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;&lt;webctrl tag='H2' innertext='*Invoice * has been submitted.*' /&gt;" TimeoutMS="15000">
                         <ui:Target.WaitForReady>
@@ -249,7 +347,7 @@
                       </ui:Target>
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
-                  <If Condition="[boolInvoiceSuccess = True]" DisplayName="If Invoice SUCCESS" sap:VirtualizedContainerService.HintSize="798,631.333333333333" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If Condition="[boolInvoiceSuccess = True]" DisplayName="If Invoice SUCCESS" sap:VirtualizedContainerService.HintSize="818,618" sap2010:WorkflowViewState.IdRef="If_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -257,7 +355,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="376,467.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,460" sap2010:WorkflowViewState.IdRef="Sequence_9">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="txtSubmissionProof" />
                         </Sequence.Variables>
@@ -266,7 +364,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Getting Submission Proof - Checking Invoice Submission Message&quot;]" />
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Getting Submission Proof - Checking Invoice Submission Message&quot;]" />
                         <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Submission proof" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_2">
                           <ui:GetValue.Target>
                             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d73d3892-483e-4887-99f0-52e92ed02862" InformativeScreenshot="b6a469335036fafa6fe1b6361f2bede0" Selector="&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;&lt;webctrl tag='H2' innertext='*Invoice * has been submitted.*' /&gt;" WaitForReady="COMPLETE">
@@ -279,18 +377,18 @@
                             <OutArgument x:TypeArguments="x:String">[txtSubmissionProof]</OutArgument>
                           </ui:GetValue.Value>
                         </ui:GetValue>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;SUCCESS: &quot; + in_TransactionItem.SpecificContent(&quot;BillNumber&quot;).ToString + &quot; | Submission proof: &quot; + txtSubmissionProof]" />
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;SUCCESS: &quot; + in_TransactionItem.SpecificContent(&quot;BillNumber&quot;).ToString + &quot; | Submission proof: &quot; + txtSubmissionProof]" />
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence DisplayName="Secondary Error Handling" sap:VirtualizedContainerService.HintSize="376,339.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <Sequence DisplayName="Secondary Error Handling" sap:VirtualizedContainerService.HintSize="397,336" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="SUBMIT ERROR: Trying secodary Done button." />
-                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Error/White Screen is not encoutered date 06/20/2022" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,144.666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Reusable_Library_\ariba-white-error-page.xaml">
+                        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="355,61" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="SUBMIT ERROR: Trying secodary Done button." />
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Error/White Screen is not encoutered date 06/20/2022" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="355,143" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Reusable_Library_\ariba-white-error-page.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSubmitError" />
                           </ui:InvokeWorkflowFile.Arguments>
@@ -308,19 +406,92 @@
             </Sequence>
           </If.Then>
           <If.Else>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Warn" Message="[&quot;Test Setting Save Skipped Please change settings in Config to run in Production Invoices&quot;]">
+            <Sequence sap:VirtualizedContainerService.HintSize="376,274" sap2010:WorkflowViewState.IdRef="Sequence_21">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:Boolean" Name="blnGetAmtExist" />
+              </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-            </ui:LogMessage>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Warn" Message="[&quot;Test Setting Save Skipped Please change settings in Config to run in Production Invoices&quot;]">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:LogMessage>
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,144" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If Condition="[blnGetAmtExist]" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="If_5">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <Sequence sap:VirtualizedContainerService.HintSize="376,331" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="x:String" Name="txtAmountDue" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'NOBR'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetValue_4">
+                            <ui:GetValue.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="294c2f91-559e-4534-b38b-ba9c6dad4f38" InformativeScreenshot="0310648a79767e26bcfff8bbdbdea113" Selector="&lt;html app='chrome.exe' title='Ariba Network Supplier' /&gt;&lt;webctrl tableRow='9' rowName='*Amount Due:*' tableCol='4' /&gt;">
+                                <ui:Target.TimeoutMS>
+                                  <InArgument x:TypeArguments="x:Int32" />
+                                </ui:Target.TimeoutMS>
+                                <ui:Target.WaitForReady>
+                                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                                </ui:Target.WaitForReady>
+                              </ui:Target>
+                            </ui:GetValue.Target>
+                            <ui:GetValue.Value>
+                              <OutArgument x:TypeArguments="x:String">[txtAmountDue]</OutArgument>
+                            </ui:GetValue.Value>
+                          </ui:GetValue>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[&quot;Amount Due: &quot;+txtAmountDue]" />
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Throw Exception="[new BusinessRuleException(&quot;Amount Due: is not taken&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </ui:CommentOut.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:CommentOut>
+            </Sequence>
           </If.Else>
         </If>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1308.66666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1369,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -343,7 +514,7 @@
             </Sequence>
           </ActivityAction>
         </Catch>
-        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="1308.66666666667,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+        <Catch x:TypeArguments="ui:BusinessRuleException" sap:VirtualizedContainerService.HintSize="1369,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
