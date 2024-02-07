@@ -1,0 +1,249 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SapAribaLogin" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1094,3228" sap2010:WorkflowViewState.IdRef="SapAribaLogin_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="35">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="48">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SapAribaLogin" sap:VirtualizedContainerService.HintSize="1012,3163" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="username_sapAriba" />
+      <Variable x:TypeArguments="ss:SecureString" Name="password_sapAriba" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="950,373" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="CLOSE any page - Use Browser Chrome:" sap:VirtualizedContainerService.HintSize="434,272" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="c8509468-2efc-4c72-a390-73a03e75f1e7" Timeout="5" Version="V2">
+          <uix:NApplicationCard.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+              </ActivityAction.Argument>
+            </ActivityAction>
+          </uix:NApplicationCard.Body>
+          <uix:NApplicationCard.TargetApp>
+            <uix:TargetApp Area="-8, -8, 1936, 907" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM/SURBVFhHxZLLTxNRFMbnT+A/oKm0vsrDtSv3sHGnO9QiolES4kJNFBSJaEStgIJGRUVRhFqKaFDxVV7ScHnYUgWhWC0YpfhAI7r4vPfOnXaGXhVdjF/yy/3Od+6ZMwxVAPxXpKGZSEMzkYZmIg3NRBqaiTQ0E2loJoqtZQoaaZ5kn+aJ6rKoQO9VEn39rD5TT0PeMk0Uy7VJMFLFyX1Dwv+ul9oQjnte67whF/f0s9Zrk8RyI5KipNaNQmNra4RT4I3Es9S6MZ0fhWVBrfZlmdHr56wXx4jl8ngK/xdYa4I443uL2bkftDbqQegjrDUBrD4XMvQrOqJYUhtEwY1xkRg1Ev2KgqYJOhvk81Z6VyOtdoRYz4b4coZS4g3zIZnuD8dgOzGAkpYJkagKRuZgdw0g/8oLkSRr9vN35JwNwEbvsbsM28lBYq8aii9nKPcG3rP7XJcfRbG+ZghF9SG4u6eRU0WHDj9F7/MP4kZC2ZX0BS4ERQW4e6Z53ROaFQlwuj3C5+2H+7D0SB+xHfUbljOU9v539FQV+zSPix2vkXPMj6WlXbBTsiv8omtU3f0INtcOiQqobpuA/UAXiuoSL3WqLcyfsay0mywr60lazlCcVf30TFbnsxmsO+5HeWPiM1d6XgoHhKe+IK+aiAroCsygyjvOc03l15/DvvcxsRX7pMsZyvJdHXAef4qh0eTPPBn9wtGUXerDne6oqOgLuUeFS1bs4zzWFD8mK/Y8/OVyhuIoaofGuoM+nPeO0VyuzsF3CL+ZExX9CjqvKfZhHo33JrF2/xOycufd3y5nKI7tbfxBJxtG4DzUicJjvTT/e7muBuHYflul8A6h/HE5Q9ld2UfPP+uJfzrOzOw3kSbkqg/AUdCK9K2txLHt1qKWM5Qd5Z0YDM5Qb9TEq0/CqT59cwsy8lXKapN/uK5Lw0jP95KMLd5FL2comc6b0HDue4BNFOYzdLmBPI8K9QvukIw8T0pmblNWVm7z4r/Aqo1uMLIYG5pVT884ohfPeZ3oi1mSucn9V3+5hsIeQt9afWCuSrzmvcQy3l+Y5zYTev+fljOkoZlIQzORhmYiDc1EGpqJNDQTaWgm0tA8oPwES1YLjswN8o8AAAAASUVORK5CYII=" InformativeScreenshot="0105bb12bc326f78da06c9356f0f572f.jpg" Selector="&lt;html app='chrome.exe' url='*' /&gt;" Title="Business Network">
+              <uix:TargetApp.Url>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </uix:TargetApp.Url>
+            </uix:TargetApp>
+          </uix:NApplicationCard.TargetApp>
+        </uix:NApplicationCard>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,210" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;No chrome page found to close&quot;]" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:GetRobotCredential AssetName="Can_SapAriba_ebay_Credentials" CacheStrategy="None" DisplayName="Get Credential-arg" FolderPath="GMCAN_FINANCE_AR" sap:VirtualizedContainerService.HintSize="950,170" sap2010:WorkflowViewState.IdRef="GetRobotCredential_6" Password="[password_sapAriba]" Username="[username_sapAriba]">
+      <ui:GetRobotCredential.TimeoutMS>
+        <InArgument x:TypeArguments="x:Int32" />
+      </ui:GetRobotCredential.TimeoutMS>
+    </ui:GetRobotCredential>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: New Incognito Tab" sap:VirtualizedContainerService.HintSize="950,2429" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsIncognito="True" OpenMode="IfNotOpen" ScopeGuid="d13e6e2c-8285-457e-a202-0e787d9e3c16" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="916,2212" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" sap:VirtualizedContainerService.HintSize="854,87" sap2010:WorkflowViewState.IdRef="Activate_2">
+              <ui:Activate.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="38545c85-2602-4fca-8ead-465c636a4061">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Activate.Target>
+            </ui:Activate>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="854,143" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Supplier sign-in will be performed&quot;]" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBefore="5" DisplayName="Type Into - username" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="854,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="d13e6e2c-8285-457e-a202-0e787d9e3c16" Text="[username_sapAriba]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109528051/aw?awh=r&amp;awssk=arMlAhGW&amp;dard=1" DesignTimeRectangle="545, 270, 228, 33" DesignTimeScaleFactor="0.6700000166893005" ElementType="InputBox" FriendlyName="'INPUT userid'" FullSelectorArgument="&lt;webctrl parentname='loginForm' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='userid' tableRow='2' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='loginForm' tag='TABLE' /&gt;&lt;webctrl id='userid' type='text' tag='INPUT' class='w-txt w-txt-dsize' aaname='' /&gt;" Guid="e048924e-0a03-4ade-8089-a34ac5bbce75" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAOgAAAAlCAYAAABI36USAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANMSURBVHhe7dnfT1JxGMfx/qbWcsuL/qC2WrWcmGhaZpioGP7AX6kpWums0CzNzMp0Wfmri8QlSFMBRUMUcKBP53mEhq4LcsPzvfi8NubheH5w4Zvnu+MZ0th7HBSLxXgTAHTGLdqfvpBtCdRkaZA3AKCGZJMIFEBBCBRAYQgUQGEIFEBhCBRAYQgUQGEIFEBhCBRAYQgUQGEIFEBhCBRAYRkP9Oz5C4ktAPhfCBRAYRkPNCv7IpVXWGhr63diD5HL5SZrrY0ikUhiDwD8CwIFUJiugYbDYXo9NEw5hnwyFhZTb98z2t/fp8DmJpkrLZR7s4CKS0rJveyR8++VmanaWiu/e+7op7b2DiozV9L1HAO1d9gpFotr0UfJ3v2EDPmF8pqdm5dzTeUV1NHZJceWlJbRm5FRKii6Le+nvnyVz8X3uXPXRLl5RvnM/DkA9KRroF6vj+6bq46EEI/H6WHbI/qx4JT3/LO+oZn8/nXKLyii8U8Tsn9g8JWcy5GHQiEyV1XLdZc9Hno7Oiahr3m99KCmjlZW1yTGyc9TdHBwQC2t7fLioOfmv1NNnY2CwSDV2RrJ6/PJ9fk+HDqAnnQNNBTakcnHU4uD4OnHx/E0NWjTM894S148JT2eX1RqKqeVlVW5Bgfq6H8p26zT3i3X5dittfWHE1S7Bl/L7fYc+SLgc8cnJmU7+VkWtC8CnuR5xsK/97U1NlM0GpXjAPRwKoEen5ILTqdMNv7j54nmX1+XaVVpscoE4+N9fn/i6EMcbmroHBm/kpKBdnY9pqHhEblu8hwO9Pi536ZnZDsZqHNxUe6/s7sr+wFUkPFAz2Vly0TrHxiUZWc4HNGWrE0SyUYgIPt5qRnc3pbjNjYC1NDUIvs5sp9LS/Ru7H3agfLy+MPHcdnHS1pe2qYT6Kb2BcJfDHwO499Pz8zKNoBeMh4o/x+UpydPzEuXr9KVazeop7eP9vb2JEze5uUoLy/5gRFHycdzULwv9SFROoEuuVyyrOWlalNLqzxYSidQfqLM9+H78X35+NSpD6CHUwkUAE4GgQIoLOOBAsDJIVAAhSFQAIUhUACFIVAAhSFQAIUhUACFIVAAhSFQAIUhUACFIVAAhSFQAIUdNkn0B+V5X2YpbXbjAAAAAElFTkSuQmCC" InformativeScreenshot="65c7daf5af84c5251e893314662c819e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SAP Business Network Supplier' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="5" DisplayName="Click 'Next'" sap:VirtualizedContainerService.HintSize="854,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d13e6e2c-8285-457e-a202-0e787d9e3c16" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109528051/aw?awh=r&amp;awssk=arMlAhGW&amp;dard=1" DesignTimeRectangle="544, 323, 87, 28" DesignTimeScaleFactor="0.6700000166893005" FriendlyName="'Next'" FullSelectorArgument="&lt;webctrl parentname='loginForm' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='loginForm' tag='TABLE' /&gt;&lt;webctrl type='' tag='DIV' class='ies-button-container' aaname='  ' check:innerText='Next' /&gt;" Guid="71bcfca0-0764-4f99-8f02-24827268858e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFsAAAAgCAYAAAB90wSbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANJSURBVGhD7ZoxSBtRGMe76iaF0m6OGd06FacSujhUcHSqQ6vp0GI7KOiQoYUUrIG04iClGYLgoFOJQyoNNKKxPcWQJuqlBtMkRhITk8MQ++/37u4lp70Wiva8lveHn5B337sLv/f5adArELEsQraFacreyh/j7usdXH28jvaHkuCcMI+9UzuQC8e6YYPs2xNJ002C88G88qiyGyffcW1YdPTf4PqTDVU0S7OzzQoFFwOPkG0BPEK2BfAI2RbAI2RbAI+QbQE8NpC9ju5AAcFEBcFwGt1P9XV3Cl6J1qIZ9Iwb6/89eGwgexN94RoU9ibqx1iYS6KD1jsmM1g6BJRCCa7nZvt+xzqc82Wkqg1IYRmdpjXWwWMv2RQle4B+98+yO9wyRiNlSFkFcbmMt/My7kxlMBszdD/VeKIVRHYVxPYb6v2K2SMEI3twjpx9rnXw2Eq2Uj2hrw0sh2Q4jLJfyfDKmjyFulU7mDqWPnzDG3Wd9oR3MRCpoUivDvcVyBW1CKjWEU/k0XeJo4jHRrJPIEWLkKr0Zg4r8Phbsp+9KyFVpy5NF0gazfi5MrJUVpTzuOfPY5ntqTdU0epeXxL9EUW7pxgjRgyywym4opqkVKyoSmSyfStHmsgzUQpFDLhpf4hfp25f3Ca5MSHbHIPs0DYcL/awUNDGSZG6GST75UdNZjFdwnQoD6+OZ05G19g2vAlWqCWbyKFnRMj+Badl33i4AediRR0Takj22PwB4sxn9QjTM1/gmM4hmK5hdm4HvSGtlh3EQprNb9bdXzGky45LGbj82+h6ZPZsa+CxoWxaG6du1X8gMtmuiSSGJSbPEPo18f1aCZ9orqNao0OIo8uvHwrN7QB9N7QOjI2bs8+1Dh4byJbg8KXhWczB5Ys11zondzG6yEZFCjfVDzqbcM7swaOOEOrWyZi2j16P+rfgUPfF4Axk6Drda2oLPYGcNm7mU60PS5cAjyqb/fHArEhwMfDYorP/d3iEbAvgEbItgEfItgAeIdsCeIRsC+Bpym4bWjMtFJyPtsGobtjY2YMraB9aRZvrs+kmwZ+heiTR7Q9WdMNnx8jgKl1cRvv9iOC8MI/MJ3nlacq+5UmcOhnBxdD6Xz/gB85k6hM7pSBjAAAAAElFTkSuQmCC" InformativeScreenshot="95c15c77d81e9ad08a212b11241f0a5a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SAP Business Network Supplier' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="854,143" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;Entering the password&quot;]" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Password'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="854,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" ScopeIdentifier="d13e6e2c-8285-457e-a202-0e787d9e3c16" SecureText="[password_sapAriba]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109528051/aw?awh=r&amp;awssk=arMlAhGW" DesignTimeRectangle="545, 278, 228, 33" DesignTimeScaleFactor="0.6700000166893005" ElementType="InputBoxPassword" FriendlyName="'INPUT Password'" FullSelectorArgument="&lt;webctrl parentname='loginForm' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='Password' tableRow='3' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='loginForm' tag='TABLE' /&gt;&lt;webctrl id='Password' type='password' tag='INPUT' class='w-psw w-psw-width' aaname='' /&gt;" Guid="1a2642bb-d5dd-4909-ae95-d87f9703e34a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAOgAAAAlCAYAAABI36USAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMySURBVHhe7dr7S5NxFMfx/qZ+KKgf+n+CKAJLnXMhknjZ3Lykzfttac0rhGneli6lUstbWJpz4jShqXNOaNPTzmEPlZcgYdv54fOCh21f5vPsB99+zzO8QnGFDic/AIASRpMIFEAhBAqgGAIFUAyBAiiGQAEUQ6AAiiFQAMUQKIBiCBRAMQQKoBgCBVAs6YFevXYj8QwA/hcCBVAMgQIolvRAr9+8RabcR3T7zj057t7PIHdXD0WjscQ79Njd3aPa+kY6OjpKrACkV0oCLbE55JefhcNhKrbaaXLqnbzWBIGCNikPlL3sfyVHYGtLYs005crjj2BQdtZWVzs9zM4hsyWPPG/Gz6wNDg1TxZNq+r6zQycnJ1Tf2EwNTS1ybl5z1tbTwUGY3J3dlJVjocxsMw2Pjsl7+br8sw+ycmhm9iMtLn2Wc/JnqKlroGpnHQIFNVIe6P7+PlntZTQ3v0Ce8Qn6urIq6+MTXhl919Z8VF5ZRZHI70jOW3O1P5fAQqEDqqx2xsOqpfDhoax1dvfKDs3RctwcK1+Tr8WBFhSWyBofxTY7rax+k3N6306StdSBQEGNlAT65z0o72ZDwyN0fHxM8wuLlJdfQNlmC2VkmmS8jEQiZC+rIJujXGLjwM5bM0LkeLt6eqm7p4/W/X7qeOGmhcUlOdf7D9OJT0ES/8iYRwJte9Yha6fDN3ZfBApapHwHNfDOx7uXb90vrzk4jopxvP6NDYmlrqGJYrHYmTUej3kk7R8YlBC9k1MyxvK4Gwzuyu55UaB8sNOBbm4GqOppDQIFNdIW6F581C2yltLW9rbsiBwWB+rzrdPIqEfuFzcDARldl5e/nFkLhULU1NIm95McFu+e/Ly51SVB/2vENQLlPxJFJTYZcfncPGZjxAVN0hYoBzEw+Fq+rLHk5UtMxojLO6Px5c70zOy5a4xDe1xYLPeefPBz3iUZh3nRl0RGoOzT3Hz8M5jkPXwNWzxkDhdAg6QHin9UALi8pAcKAJeHQAEUQ6AAiiFQAMUQKIBiCBRAMQQKoBgCBVAMgQIohkABFEOgAIohUADF/grU5e6jn9GoLABAenGL3CQR0S8ZFmMMuYnnmQAAAABJRU5ErkJggg==" InformativeScreenshot="99791beac1396fffa51c4b85f15c3a58.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SAP Business Network Supplier' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="544, 329, 87, 28" ElementType="Button" FriendlyName="'Sign in'" FullSelectorArgument="&lt;webctrl parentname='loginForm' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='4' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='loginForm' tag='TABLE' /&gt;&lt;webctrl type='submit' tag='INPUT' class='w-login-page-form-btn' aaname='Sign in to SAP Business Network' check:text='Sign in' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFsAAAAgCAYAAAB90wSbAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALGSURBVGhD7Zq/i9NgGMed3VQQ/4T+Bw5ugqMdFBxvc3U4qXNXxQOxcigdOvSGUuhwHe+Go+BwHTpUMba1dw1Xr8QjR0zbNKS0fn3eJG8uqVE4kqb1eL/wgfx4koZPn/d9U+g1iCQWITvBeLK7ZxYevT/GreefcP1ZUxAR5vHxh2P0VMs17JP94M230IsE0WBeeWzZs/kv3M6Ijl4Gd158tkWzeJ0dViiIBx4hOwF4hOwE4BGyE4BHyE4AnjWTLWFj/xy5khRy7rLEea9o8KxEdqqgomnM3U8GTH2MfIFJkVHVAUXq/3HN5YnzXtHgWYHsLsoqoPUGuMv2s128lizIndOQ2qsBzwpky9ijjtNIbirkfFEBWodsW0KGvgRzOncwZvSUM9QqTo3cGUKeOs8OfYRM9l/3OkWNrm9KE2juJaZyjvRC/bLgWc00UhmBPADTGeTeEPlK1xPvCdoZUo2F8jY7fkSjYQ65ceTVQNWwwQRnf6BO0h2pQYKyfaNp+ydk9sWVgvXLgmeFC2Qb6V0V1Y4JhWTxTvMEHZqAQR3r1mc61NlUw7ZZjdy4WPgupAYJynZGhXNucX+58KxQtg/qNAUmirTtCSqwYxaqbOF8ObA7U5FO7PpFuUL239gicfoU9Y8nzpCmDn/aMGleniBH+56gLAnRZ1DorcWk6aYlnXlzrJB9CdIHI8jUqTymYaK627bPeYJKI1rM2KKmodzQUNzv48lbZ+oQsmMmVaEFUp+g1jPRUgiVvY1MsbcTXr/O8Kyt7Dx1pdbx/SDJDlCn0dA8CNb9D/CsdWfbUw1/z6Z5W+mpib0bxwnP2sq+SvAI2QnAI2QnAI+QnQA8QnYC8AjZCcDjyb73qhVaKIjG/a2Wa9gn+0tfR/pdGzc2xZ914uDmZhMPc218/a67hn2yWSzLgmEYGI/Hgogwj8ynPwHZIssM8Bvkje4DVkDLbQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Login or sign in'" sap:VirtualizedContainerService.HintSize="854,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d13e6e2c-8285-457e-a202-0e787d9e3c16" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109558062/aw?awh=r&amp;awssk=Hmj_KPo_&amp;dard=1" DesignTimeRectangle="542, 327, 89, 30" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Login'" FullSelectorArgument="&lt;webctrl parentname='loginForm' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='loginForm' tag='TABLE' /&gt;&lt;webctrl type='submit' tag='INPUT' class='w-login-page-form-btn' aaname='Login to Ariba' check:text='Login' /&gt;" Guid="9368e793-1f7d-4b2a-872b-0fe0fbefb822" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIYAAAAuCAYAAADtNmESAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALZSURBVHhe7ZyxbhpBEIZT5wmSN+AN3EQu0uQt3KXEHUmTwi1JpBSWaCncWXFhFylokLsQieKSiBBsK0gIQiysAwM+CYwmM3c3CwurKHLH7f9Ln8QxeyA0n3YWCh4RgjgCMRBnLDE+fR/R8w8X9PT1N3q8HwAPkF5Lz6X3qzFinAUj543AH8QBjRFj933LuRj4gzigMWI8eYXx4TvigMaI4VoI/EMDMYCFBmIACw3EABYaiAEsNBADWGggBrDQQAxgoYEYwEIDMYCFBmIACw3E+C8alK+PqVK9ctSyhSaTYhRa90TTMRUctYfRprMRUdS5dtSyhQZi/IvSDTVn93R+4qhlFI1/YhR7VBlwPU04uKXCQVo76HJtkVa4NptRs96lF1w/6vN1q8vrunQ+JWo2QpYmXTiL6Ki08h5bjMYzMS7jBkf9kF4W+brYoUo6InJcf/OLpRiEtCeiFK8p4MaHrU5877oYNJ3QYbnBMvGYGfB1RsaMxjMxeDTQ2mio3vGnv6PD/Qs65ga36z9NbSnDphjt4NKsi9+vf2OutxmNX2KcjClcFyN+jkcBP9YdQ3aTXFlGxYKCKu8KXNsYJZ+XrwExtoSH7Rj8OJZkQRELEfGhs1nvxCNG1kGMDJCIIWeANu0ZrmgnPmNw0/mMkZwjenGT9YwR38c7Rr60HCcKxMgAcaM2koyL5JvHsh6yJPn0W0mOd48ofT7JwtQhhrf0qMYjpHaaXO+UeJc5vSX2gc8Z62uziwZiGPT8kRw2hVx5SG3eNVQWH9BADEODCkFEof5oJVk7gPqABmIACw3EABYaiAEsNBADWGggBrDQQAxgoYEYwEIDMYCFBmIACw3EABYaIwb+agk4/2rp2dumczHwB3FAY8Q4rv1xLgb+IA5ojBjz+Zw+fvlNu+9+8Jby1XkjyB7Sa+m59F4c0BgxJFKYTCY0Go1oOBwCD5BeS89XpZBYYiBIEqK/UOlyF9ggLoIAAAAASUVORK5CYII=" InformativeScreenshot="288032edba2e81c70978b0211eef986e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SAP Business Network Supplier' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="545, 278, 228, 33" ElementType="InputBoxPassword" FriendlyName="'INPUT Password'" FullSelectorArgument="&lt;webctrl parentname='loginForm' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='Password' tableRow='2' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='loginForm' tag='TABLE' /&gt;&lt;webctrl id='Password' type='password' tag='INPUT' class='w-psw w-psw-width' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAVoAAAA2CAYAAACGEFHjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATySURBVHhe7dvBSxtpHIfx/XsFS0WJIooEsbhBCCKEIJYSpEWakKXsSUUq7UKUGLBCBBXMQUEP8TAHe8jlu7933pkkTVOWhb4Qh+cDw2bmnUni5dk370z/kPlzc9v9BwDwG6VtJbQAEAihBYDACC0ABEZoASAwQgsAgRFaAAiM0AJAYIQWAAIjtAAQGKEFgMAILQAERmgBIDBCCwCBEVoACIzQAkBghBYAAiO0ABAYoQWAwAgtAARGaAEgMEILAIFNVGjPt19ranpkm1lQfuOjmt3kpAx7OHijqdVDPST7ALJh8kK7uKOjs5aaydY4qGgtZ8dzFbV7yYkZRWiBbJq80I4LzV1dSza7LZ8l+xlFaIFsehmh7Z1qy0Jb+Br5/ehG+6U3mp2x8+34q8Wiqu1kzHm+VHUjr1fJ8sOrlaI+nD0lg9/VrhW1lFw7NZNXYa8ltzIRh27l76HPj/Rlw51XVmNoNn1bW9bU+rGNmt69vmwXBt8lV1D5c0fP8ZnOhcp2vPz5VOXFOZuZv9eVO/zcsb8h/Y5zmi8dqrFHaIEsmvzQ9h7VKC1YjAo68mXTlQUpv32o87tIUfSkq1rhh/Fmyd5nva6rrhu/13ltS/l3F3H8emfl+Nzq9ZONRbr7VldxtaJzN9ipa366qC9ps+PA22etWii/Jcf0qH3bzx88+tfr9lm5Le3H7+c/a9biuRaPOz60U9PLKtZO1Ww/2jdMrlupqNFJrtsr+OgSWiBzJi+0cZRGtplllU/SGek4PmZbJ27a6Wehs9stP+McEX0tWhh31Bw3qBtVcun7mG87cfgaNoOd3b3xx6J/VJjOq3pnr6/fW1SX9aHjh1LtXfsfw2Jdt/Ge/26zu5fxXiy5rvrDdd/V2LS/ldACmTN5oR25GXZls9bnkZtgvW5LHzYGSwfp5meZ5vFQa/HYnJY2dlQ96Sjqv4ebTdpPeDvfLSmUbZZ5Oxj0kdy+iF9f2ev5mtXQhTEJYO/EZsRJRLsHbia9o/P47IE45v3jydLB0Pryr65jjRbIpskL7X+FxmaURQvX7OZhvDTgI+xj1g9trKdup6X9d0XNu+iOPLXQ63bUPKio4NZNpxf0Nh10s9h4HbWj6uKCKtfuYMve3y8puO+Yzm7/V2j7Sw9JUMeF9lOe0AIZ9PJC60I4/Ub7w02NjrX2U2iHPJ/GcR6O3UDykz2Zxfp12bz+OjtUvh9DvxyxdXKhSi6Nr4mXAGy/newn4lnxSl1udWFcaNWu2N8wuuQQ6cit2xJaIHNeXmgfXQBfa23vQndRZLPWU71d9UsBgxtU7sZTS7fxzbAn3X4uWxD9uuqDzULnN+tqxjeh3PXH2sq91lLt3r+/zYQbJdtfsdll6dT2PP9EQl7zP8xEf30zrP+ExLjQJmvBbplk//pe0d2Njt7Z59l5hBbInpcXWvPwteyXAyxM/tGuS/uZP5jRdtuHKq8vDB7vyhVUSR/v6l5qf+hxLPcvz9Z2/eNdKf/TfziWJn4iwc5PZ76pMY939T8rNi60pttSpf8d57RUOlbzk8U8ffwLQGZMVGgBIIsILQAERmgBIDBCCwCBEVoACIzQAkBghBYAAiO0ABAYoQWAwAgtAARGaAEgMEILAIERWgAIjNACQGCEFgACI7QAEBihBYDACC0ABEZoASCwn0LLxsbGxvb7t35oAQChSP8C/7QVLf8LW10AAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NCheckState DisplayName="Check App State 'Workbench'" sap:VirtualizedContainerService.HintSize="854,475" sap2010:WorkflowViewState.IdRef="NCheckState_4" Timeout="55" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,258" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,143" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;SAP Ariba login successful&quot;]" />
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="400,205" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Throw Exception="[new SystemException(&quot;SAP Ariba login FAİLED&quot;)]" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://mu.ariba.com/dashboard/home" DesignTimeRectangle="220, 142, 77, 47" DesignTimeScaleFactor="0.8999999761581421" FriendlyName="'Workbench'" FullSelectorArgument="&lt;webctrl aria-role='menuitem' parentid='SUPWorkbench' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='menuitem' parentid='SUPWorkbench' tag='DIV' type='' class='menu-item' aaname='' check:innerText='Workbench' /&gt;" Guid="5d133968-b57a-4222-89d7-6a404c8bf1ee" InformativeScreenshot="f83a82751ef0e46c2c8b3e413226cfe7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Business Network' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" ContinueOnError="True" DisplayName="Keyboard Shortcuts-reset zoom" sap:VirtualizedContainerService.HintSize="854,179" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][d(ctrl)]0[u(ctrl)][u(hk)]" Timeout="5" Version="V3" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 907" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="d0609c49c771156a772896ab0ea3b7f3.png" Selector="&lt;html app='chrome.exe' url='https://service.ariba.com/Supplier.aw/*' /&gt;" Url="https://service.ariba.com/Supplier.aw/" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
