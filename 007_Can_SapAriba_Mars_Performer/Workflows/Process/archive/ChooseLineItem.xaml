@@ -1,0 +1,546 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ChooseLineItem" this:ChooseLineItem.in_strLineNumber="3" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_strLineNumber" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1415,4028</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ChooseLineItem_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="35">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="48">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="ChooseLineItem" sap:VirtualizedContainerService.HintSize="1425,3963" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="intIndex">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" Value="3" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Boolean" Default="True" Name="isToggleExist" />
+      <Variable x:TypeArguments="x:String" Name="strParentClassAtt" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: SAP Business Network Supplier" sap:VirtualizedContainerService.HintSize="1363,3852" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="0763c23d-941c-4ec9-aeb7-81258d4f860b" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1329,3635" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="strDescription" />
+              <Variable x:TypeArguments="x:String" Name="strLineItemText" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Initiliaze intIndex" sap:VirtualizedContainerService.HintSize="1267,62" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[intIndex]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">1</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:InterruptibleWhile CurrentIndex="{x:Null}" DisplayName="While" sap:VirtualizedContainerService.HintSize="1267,2785" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1" MaxIterations="500">
+              <ui:InterruptibleWhile.Body>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1231,2619" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If Condition="[isToggleExist]" DisplayName="If isToggleExist" sap:VirtualizedContainerService.HintSize="1169,1862" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If.Then>
+                      <Sequence DisplayName="toogle exists - Sequence" sap:VirtualizedContainerService.HintSize="462,192" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,81" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="x:String" Name="strNo" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NGetAttribute Attribute="parentclass" DisplayName="Get Attribute 'include toogle'" sap:VirtualizedContainerService.HintSize="2048,209" sap2010:WorkflowViewState.IdRef="NGetAttribute_2" ScopeIdentifier="0763c23d-941c-4ec9-aeb7-81258d4f860b" Version="V3">
+                            <uix:NGetAttribute.Result>
+                              <OutArgument x:TypeArguments="x:String">[strParentClassAtt]</OutArgument>
+                            </uix:NGetAttribute.Result>
+                            <uix:NGetAttribute.Target>
+                              <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109535037/aw?awh=r&amp;awssk=mRg.bpfU&amp;dard=1" DesignTimeRectangle="215, 695, 36, 14" DesignTimeScaleFactor="1" FriendlyName="'SPAN'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl tag='SPAN' colName='Include' class='fd-toggle__switch*' idx='{0}' /&gt;&quot;, intIndex)]" FuzzySelectorArgument="&lt;webctrl class='tableBody' tag='TABLE' /&gt;&lt;webctrl parentid='_wzjrz' type='' tag='SPAN' class='fd-toggle__switch' aaname=' ' /&gt;" Guid="6220f6c5-89b2-4522-b942-d932ec62cab1" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAASCAYAAAApH5ymAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJDSURBVEhLvZZLTBNBGMc9Kq8DWg9cPHviYoJnDx49QSXYGvEgooaHcrYmviDVWkAQFGl329JFAoRQLhL0QHw0obY3UZFAObQXE7KLWftI/86s2ZXilO52i1/yu3X6/2Vmvm/nEA6ocrkcMpkMXkc2cMzmx9ELfhxu5JhYbAFY7AEsRTeVNXStWgciSANSqRRsj5b2FdsL/e1F1xtlrSpZUDC8EgP3KgTXMx59/c910+sexV3nEE7Yx3Ck0cMU2Y+KJg4NPXOQ5V+K5D+Coijh6csgHNw79HCf0BFYww1hSxfXg3G0+9dxsmOeGa6XqvM8LpGdTKfT+YI/tiUMeGfR5V9lChTj2sQGzjnDJMDHDDYCPe7FlfV8wcGxYMlydPfauK9lkVOxkObSBJfDUTh875nheqC7d/b+MrlDPDOsFGqa+b+CL4Lzyp1jhRdDuXu+NdR3h5hBZtAEH5NuNdIQu6GCV/lvqGudZIaYQRN0jZgQnNjEFe+q0n2sEDNogl4y80o+4v8h+JEM5j7hA1OgGKpgXavADDGDJkhr2CPgZsD4mKGCbd4vqO+aY4aYIU9Qknbg9syQWfiZKVIItUnO3F5EZRmPubZl1xxUS9r5iaFxAQ6efuoiuhrnzyfuOy6PRlFlLZ/gcTtDUK1wJAZ+akH3Y+HhkxHc6XXDdsuJaqvxR8Jealt8mH0bKyxotOjLQ5ZlJBIJNN0LodrEUVdaOTQ/WEAymSyfIK1sNkteQyLi8ThOdU4xw/Vwunta+Q9RFPEbyMOkjLFftmkAAAAASUVORK5CYII=" InformativeScreenshot="ea78b45cb111a012f6033b1cdd5969df.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                            </uix:NGetAttribute.Target>
+                          </uix:NGetAttribute>
+                          <uix:NGetText DisplayName="Get Text 'No'" sap:VirtualizedContainerService.HintSize="2048,158" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="0763c23d-941c-4ec9-aeb7-81258d4f860b" TextString="[strNo]" Version="V3">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109583039/aw?awh=r&amp;awssk=ds.Ja3y_&amp;dard=1#b0" DesignTimeRectangle="148, 505, 68, 39" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'13'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl tag='TD' colName='No.' idx='{0}' /&gt;&quot;, intIndex)]" FuzzySelectorArgument="&lt;webctrl tag='TD' colName='No.' type='' class='tableBodyClass fdml-sii-lit-tableBody' /&gt;" Guid="30c4f687-c7ee-4f49-be20-3c92bdbb665c" InformativeScreenshot="b78de81585d7ca31fe95c075a6d7b8cd.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SAP Business Network Supplier' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" Visibility="Interactive" />
+                            </uix:NGetText.Target>
+                          </uix:NGetText>
+                          <ui:IfElseIf DisplayName="Else If check product in desc" sap:VirtualizedContainerService.HintSize="2048,1756" sap2010:WorkflowViewState.IdRef="IfElseIf_3">
+                            <ui:IfElseIf.ConditionBlocks>
+                              <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                                <ui:IfElseIfBlock BlockType="If" Condition="[strNo = in_strLineNumber]">
+                                  <ui:IfElseIfBlock.Then>
+                                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1997,909" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                      <Sequence.Variables>
+                                        <Variable x:TypeArguments="x:String" Name="isLineFound" />
+                                      </Sequence.Variables>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="1935,798" sap2010:WorkflowViewState.IdRef="IfElseIf_6">
+                                        <ui:IfElseIf.ConditionBlocks>
+                                          <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                                            <ui:IfElseIfBlock BlockType="If" Condition="[strParentClassAtt = &quot;toggleOn&quot;]">
+                                              <ui:IfElseIfBlock.Then>
+                                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="462,259" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Sequence DisplayName="Check next toggle - Sequence" sap:VirtualizedContainerService.HintSize="400,83" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <Assign DisplayName="Assign increment intIndex" sap:VirtualizedContainerService.HintSize="854,61" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                                      <Assign.To>
+                                                        <OutArgument x:TypeArguments="x:Int32">[intIndex]</OutArgument>
+                                                      </Assign.To>
+                                                      <Assign.Value>
+                                                        <InArgument x:TypeArguments="x:Int32">[intIndex+1]</InArgument>
+                                                      </Assign.Value>
+                                                    </Assign>
+                                                    <uix:NCheckState DisplayName="Check App State 'toogle 2'" sap:VirtualizedContainerService.HintSize="854,396" sap2010:WorkflowViewState.IdRef="NCheckState_6" ScopeIdentifier="0763c23d-941c-4ec9-aeb7-81258d4f860b" Version="V3">
+                                                      <uix:NCheckState.IfExists>
+                                                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,177" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <Assign sap:VirtualizedContainerService.HintSize="338,62" sap2010:WorkflowViewState.IdRef="Assign_11">
+                                                            <Assign.To>
+                                                              <OutArgument x:TypeArguments="x:Boolean">[isToggleExist]</OutArgument>
+                                                            </Assign.To>
+                                                            <Assign.Value>
+                                                              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                            </Assign.Value>
+                                                          </Assign>
+                                                        </Sequence>
+                                                      </uix:NCheckState.IfExists>
+                                                      <uix:NCheckState.IfNotExists>
+                                                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="400,177" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <Assign sap:VirtualizedContainerService.HintSize="338,62" sap2010:WorkflowViewState.IdRef="Assign_12">
+                                                            <Assign.To>
+                                                              <OutArgument x:TypeArguments="x:Boolean">[isToggleExist]</OutArgument>
+                                                            </Assign.To>
+                                                            <Assign.Value>
+                                                              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                                            </Assign.Value>
+                                                          </Assign>
+                                                        </Sequence>
+                                                      </uix:NCheckState.IfNotExists>
+                                                      <uix:NCheckState.Target>
+                                                        <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109583039/aw?awh=r&amp;awssk=ds.Ja3y_&amp;dard=1#b0" DesignTimeRectangle="215, 383, 36, 14" DesignTimeScaleFactor="1" FriendlyName="'SPAN'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl tag='SPAN' colName='Include' class='fd-toggle__switch*' idx='{0}' /&gt;&quot;, intIndex)]" FuzzySelectorArgument="&lt;webctrl class='tableBody' tag='TABLE' /&gt;&lt;webctrl parentid='_wzjrz' type='' tag='SPAN' class='fd-toggle__switch' aaname=' ' /&gt;" Guid="a1b81ef3-5d6d-41f3-965f-207691180b91" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAASCAYAAAApH5ymAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJDSURBVEhLvZZLTBNBGMc9Kq8DWg9cPHviYoJnDx49QSXYGvEgooaHcrYmviDVWkAQFGl329JFAoRQLhL0QHw0obY3UZFAObQXE7KLWftI/86s2ZXilO52i1/yu3X6/2Vmvm/nEA6ocrkcMpkMXkc2cMzmx9ELfhxu5JhYbAFY7AEsRTeVNXStWgciSANSqRRsj5b2FdsL/e1F1xtlrSpZUDC8EgP3KgTXMx59/c910+sexV3nEE7Yx3Ck0cMU2Y+KJg4NPXOQ5V+K5D+Coijh6csgHNw79HCf0BFYww1hSxfXg3G0+9dxsmOeGa6XqvM8LpGdTKfT+YI/tiUMeGfR5V9lChTj2sQGzjnDJMDHDDYCPe7FlfV8wcGxYMlydPfauK9lkVOxkObSBJfDUTh875nheqC7d/b+MrlDPDOsFGqa+b+CL4Lzyp1jhRdDuXu+NdR3h5hBZtAEH5NuNdIQu6GCV/lvqGudZIaYQRN0jZgQnNjEFe+q0n2sEDNogl4y80o+4v8h+JEM5j7hA1OgGKpgXavADDGDJkhr2CPgZsD4mKGCbd4vqO+aY4aYIU9Qknbg9syQWfiZKVIItUnO3F5EZRmPubZl1xxUS9r5iaFxAQ6efuoiuhrnzyfuOy6PRlFlLZ/gcTtDUK1wJAZ+akH3Y+HhkxHc6XXDdsuJaqvxR8Jealt8mH0bKyxotOjLQ5ZlJBIJNN0LodrEUVdaOTQ/WEAymSyfIK1sNkteQyLi8ThOdU4xw/Vwunta+Q9RFPEbyMOkjLFftmkAAAAASUVORK5CYII=" InformativeScreenshot="5b027bd917c11d481172a5eb5b7377df.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SAP Business Network Supplier' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" Visibility="Interactive" />
+                                                      </uix:NCheckState.Target>
+                                                    </uix:NCheckState>
+                                                  </Sequence>
+                                                  <ui:Continue sap:VirtualizedContainerService.HintSize="400,25" sap2010:WorkflowViewState.IdRef="Continue_1" />
+                                                </Sequence>
+                                              </ui:IfElseIfBlock.Then>
+                                            </ui:IfElseIfBlock>
+                                            <ui:IfElseIfBlock BlockType="Else">
+                                              <ui:IfElseIfBlock.Then>
+                                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,306" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <uix:NClick ClickType="Single" DisplayName="Click 'include toggle'" sap:VirtualizedContainerService.HintSize="338,195" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0763c23d-941c-4ec9-aeb7-81258d4f860b" Version="V3">
+                                                    <uix:NClick.Target>
+                                                      <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109587040/aw?awh=r&amp;awssk=Y1KHMaBN&amp;dard=1#b0" DesignTimeRectangle="227, 511, 36, 14" DesignTimeScaleFactor="1" FriendlyName="'SPAN'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl tag='SPAN' colName='Include' class='fd-toggle__switch*' idx='{0}' /&gt;&quot;, intIndex)]" FuzzySelectorArgument="&lt;webctrl tag='SPAN' colName='Include' class='fd-toggle__switch*' type='' aaname=' ' /&gt;" Guid="85af90e4-b85a-4b3e-9a5f-2d5532d39530" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAASCAYAAAApH5ymAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJCSURBVEhLtVaLbtpAELz//5xUaiIVBQFtoDXhEV4JNWAbnLQ8LEFAGBBsdxYbWalJ8EFGOqHz4d3x7ezcKYpgt9vRdrul0dij21yByg9N6vQcGo4ntPR9GcPRhMyeLWtp/s944sk7ePczcCCIBJvNhhqPv6lQrNBqtQ5WjsP3V1QwKtR8MuXdzyApBENy1XqLOpYjC13+NUo1us3m6SaV/XB8/ZbhkabrVCZ2PW4gNnJ0rb7kjIMKydVbbSG1XC4p8+MXWX33UNpTACkk3UmRDOdAruydwbn/z6Wgn+FoLGUFuZ/3VZovFsFyMuSNMut3IppMivl8Ibnfbohar9cidmgOO6dLDvA5ePp7gRBTR4+vTDKbN4LZHqrvPktHorzY6nNRqjZo4L5o7SJgM4eoJlWrbYp+IFbo4VyYXZta7Y52V8PGipVaMGOCRulBiKGjTm2I9/CX9WyUayyZlRZBWBe4hFAhsUsRDGNBjzplPkrwUiU+fCw7gg7B+BLzQwjzEk0iJeaP1SVoOS717EEwY4IwV5ytAMwSfnQOpEk4pk6JZ69zyuWLwWwPZTl9sRkATg6zhB/polStk+0MEjcJyCE3NBiFms1mgaj3C9AQzNLiJChXksbBB8KoEfMUm0Fs5ECuHOfErr+FWvDJ4T7/kVtJFDDuItsFyMcd9MfG1XWKvtyk5PIQtx4diI0cPfudywKOpel0KpcFGLYuoL0Gx0As3aMuDnJZQMd5nsfXrUdumOQkza5FteaTxNDt3ngQ/QP/VtVVxDktLgAAAABJRU5ErkJggg==" InformativeScreenshot="ae0df43a87f0170ad03d6665340154c5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                                                    </uix:NClick.Target>
+                                                    <uix:NClick.VerifyOptions>
+                                                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                        <uix:VerifyExecutionOptions.Retry>
+                                                          <InArgument x:TypeArguments="x:Boolean" />
+                                                        </uix:VerifyExecutionOptions.Retry>
+                                                        <uix:VerifyExecutionOptions.Timeout>
+                                                          <InArgument x:TypeArguments="x:Double" />
+                                                        </uix:VerifyExecutionOptions.Timeout>
+                                                      </uix:VerifyExecutionOptions>
+                                                    </uix:NClick.VerifyOptions>
+                                                  </uix:NClick>
+                                                </Sequence>
+                                              </ui:IfElseIfBlock.Then>
+                                            </ui:IfElseIfBlock>
+                                          </sc:BindingList>
+                                        </ui:IfElseIf.ConditionBlocks>
+                                      </ui:IfElseIf>
+                                    </Sequence>
+                                  </ui:IfElseIfBlock.Then>
+                                </ui:IfElseIfBlock>
+                                <ui:IfElseIfBlock BlockType="Else">
+                                  <ui:IfElseIfBlock.Then>
+                                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="513,614" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:IfElseIf DisplayName="Else If parent class is toogleOn" sap:VirtualizedContainerService.HintSize="451,503" sap2010:WorkflowViewState.IdRef="IfElseIf_5">
+                                        <ui:IfElseIf.ConditionBlocks>
+                                          <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                                            <ui:IfElseIfBlock BlockType="If" Condition="[strParentClassAtt = &quot;toggleOn&quot;]">
+                                              <ui:IfElseIfBlock.Then>
+                                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,306" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <uix:NClick ClickType="Single" DisplayName="Click 'include toggle'" sap:VirtualizedContainerService.HintSize="338,195" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0763c23d-941c-4ec9-aeb7-81258d4f860b" Version="V3">
+                                                    <uix:NClick.Target>
+                                                      <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109587040/aw?awh=r&amp;awssk=Y1KHMaBN&amp;dard=1#b0" DesignTimeRectangle="227, 511, 36, 14" DesignTimeScaleFactor="1" FriendlyName="'SPAN'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl tag='SPAN' colName='Include' class='fd-toggle__switch*' idx='{0}' /&gt;&quot;, intIndex)]" FuzzySelectorArgument="&lt;webctrl tag='SPAN' colName='Include' class='fd-toggle__switch*' type='' aaname=' ' /&gt;" Guid="85af90e4-b85a-4b3e-9a5f-2d5532d39530" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAASCAYAAAApH5ymAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJCSURBVEhLtVaLbtpAELz//5xUaiIVBQFtoDXhEV4JNWAbnLQ8LEFAGBBsdxYbWalJ8EFGOqHz4d3x7ezcKYpgt9vRdrul0dij21yByg9N6vQcGo4ntPR9GcPRhMyeLWtp/s944sk7ePczcCCIBJvNhhqPv6lQrNBqtQ5WjsP3V1QwKtR8MuXdzyApBENy1XqLOpYjC13+NUo1us3m6SaV/XB8/ZbhkabrVCZ2PW4gNnJ0rb7kjIMKydVbbSG1XC4p8+MXWX33UNpTACkk3UmRDOdAruydwbn/z6Wgn+FoLGUFuZ/3VZovFsFyMuSNMut3IppMivl8Ibnfbohar9cidmgOO6dLDvA5ePp7gRBTR4+vTDKbN4LZHqrvPktHorzY6nNRqjZo4L5o7SJgM4eoJlWrbYp+IFbo4VyYXZta7Y52V8PGipVaMGOCRulBiKGjTm2I9/CX9WyUayyZlRZBWBe4hFAhsUsRDGNBjzplPkrwUiU+fCw7gg7B+BLzQwjzEk0iJeaP1SVoOS717EEwY4IwV5ytAMwSfnQOpEk4pk6JZ69zyuWLwWwPZTl9sRkATg6zhB/polStk+0MEjcJyCE3NBiFms1mgaj3C9AQzNLiJChXksbBB8KoEfMUm0Fs5ECuHOfErr+FWvDJ4T7/kVtJFDDuItsFyMcd9MfG1XWKvtyk5PIQtx4diI0cPfudywKOpel0KpcFGLYuoL0Gx0As3aMuDnJZQMd5nsfXrUdumOQkza5FteaTxNDt3ngQ/QP/VtVVxDktLgAAAABJRU5ErkJggg==" InformativeScreenshot="ae0df43a87f0170ad03d6665340154c5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                                                    </uix:NClick.Target>
+                                                    <uix:NClick.VerifyOptions>
+                                                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                        <uix:VerifyExecutionOptions.Retry>
+                                                          <InArgument x:TypeArguments="x:Boolean" />
+                                                        </uix:VerifyExecutionOptions.Retry>
+                                                        <uix:VerifyExecutionOptions.Timeout>
+                                                          <InArgument x:TypeArguments="x:Double" />
+                                                        </uix:VerifyExecutionOptions.Timeout>
+                                                      </uix:VerifyExecutionOptions>
+                                                    </uix:NClick.VerifyOptions>
+                                                  </uix:NClick>
+                                                </Sequence>
+                                              </ui:IfElseIfBlock.Then>
+                                            </ui:IfElseIfBlock>
+                                          </sc:BindingList>
+                                        </ui:IfElseIf.ConditionBlocks>
+                                      </ui:IfElseIf>
+                                    </Sequence>
+                                  </ui:IfElseIfBlock.Then>
+                                </ui:IfElseIfBlock>
+                              </sc:BindingList>
+                            </ui:IfElseIf.ConditionBlocks>
+                          </ui:IfElseIf>
+                        </Sequence>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="toggle does not exists - Sequence" sap:VirtualizedContainerService.HintSize="1091,1494" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="1029,1383" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:IfElseIf DisplayName="Else If index is 1 " sap:VirtualizedContainerService.HintSize="967,1272" sap2010:WorkflowViewState.IdRef="IfElseIf_4">
+                            <ui:IfElseIf.ConditionBlocks>
+                              <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                                <ui:IfElseIfBlock BlockType="If" Condition="[intIndex = 1]">
+                                  <ui:IfElseIfBlock.Then>
+                                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,201" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <Throw DisplayName="Throw se" Exception="[new SystemException(&quot;first toggle could not found.&quot;)]" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                                    </Sequence>
+                                  </ui:IfElseIfBlock.Then>
+                                </ui:IfElseIfBlock>
+                                <ui:IfElseIfBlock BlockType="Else">
+                                  <ui:IfElseIfBlock.Then>
+                                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="916,840" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <uix:NCheckState DisplayName="Check App State 'next page'" sap:VirtualizedContainerService.HintSize="854,729" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="0763c23d-941c-4ec9-aeb7-81258d4f860b" Version="V3">
+                                        <uix:NCheckState.IfExists>
+                                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,512" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <uix:NClick ClickType="Single" DisplayName="Click 'next page'" sap:VirtualizedContainerService.HintSize="338,193" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0763c23d-941c-4ec9-aeb7-81258d4f860b" Version="V3">
+                                              <uix:NClick.Target>
+                                                <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109587040/aw?awh=r&amp;awssk=Y1KHMaBN&amp;dard=1#b0" DesignTimeRectangle="1759, 581, 31, 15" DesignTimeScaleFactor="1" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl parentid='_nmzfbc' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl parentid='_obnmic' type='' tag='SPAN' class='w-batch-nav' aaname='' /&gt;" Guid="14db5fc5-0db1-4807-ae87-7f6eb9456cf0" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACMAAAATCAYAAAAao7T0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACsSURBVEhLY/j06dP/wYJHHYMLk+SYO1su/+fKuwjGQVue/f904jqczzX9PlY9pGDSQwbugMv/F90F8u/e+h+E7EBseojEZEXT/unQ0Mi7/n8/kI8IMagD0dQTi8lMM8/+L2qCOggaPegOxNRDGJOfgDGi5/7/Viif3PRDFcdwNd36fwfZMWSGztCPpsGTgJHKltYTQP5AZe3BV+jREI86BhcedQwuPIgc8+k/ALCporllMKEGAAAAAElFTkSuQmCC" InformativeScreenshot="0dd44f40c0ccc711904368024ed5b860.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                                              </uix:NClick.Target>
+                                              <uix:NClick.VerifyOptions>
+                                                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                  <uix:VerifyExecutionOptions.Retry>
+                                                    <InArgument x:TypeArguments="x:Boolean" />
+                                                  </uix:VerifyExecutionOptions.Retry>
+                                                  <uix:VerifyExecutionOptions.Timeout>
+                                                    <InArgument x:TypeArguments="x:Double" />
+                                                  </uix:VerifyExecutionOptions.Timeout>
+                                                </uix:VerifyExecutionOptions>
+                                              </uix:NClick.VerifyOptions>
+                                            </uix:NClick>
+                                            <Assign sap:VirtualizedContainerService.HintSize="338,62" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:Int32">[intIndex]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                            <Assign sap:VirtualizedContainerService.HintSize="338,62" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:Boolean">[isToggleExist]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                          </Sequence>
+                                        </uix:NCheckState.IfExists>
+                                        <uix:NCheckState.IfNotExists>
+                                          <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="400,140" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:Break sap:VirtualizedContainerService.HintSize="338,25" sap2010:WorkflowViewState.IdRef="Break_6" />
+                                          </Sequence>
+                                        </uix:NCheckState.IfNotExists>
+                                        <uix:NCheckState.Target>
+                                          <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109574046/aw?awh=r&amp;awssk=T9z2Hai0&amp;dard=1" DesignTimeRectangle="1828, 585, 32, 17" DesignTimeScaleFactor="1" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl parentid='_nmzfbc' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='_nmzfbc' tag='SPAN' type='' class='w-batch-nav' aaname='' /&gt;" Guid="193de652-9b8a-44fe-8b76-33ce15242a29" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACQAAAAVCAYAAAAuJkyQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACiSURBVEhL7ZMxCoAwDEWde0CP4SkcvYE38AqewLE4OTgK3TzCV6OVgoXYFMEhD7J8AnmkaYEMhtbCVGc19khWdLXPRnSO2pLIEooLLGguSVNNGKjvPR9uyGdpiIVcP96DTbs8srJfKUtFJuRmlF6mnkEvZaeHoASBUORGYoJC0oTCwXvRjYSbEf6skKyj/gIV4lAhDhXiUCEOFeJQIY6fCQEbx9N9nOfDlWMAAAAASUVORK5CYII=" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SAP Business Network Supplier' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" Visibility="Interactive">
+                                            <uix:TargetAnchorable.Anchors>
+                                              <scg:List x:TypeArguments="uix:ITarget" Capacity="0" />
+                                            </uix:TargetAnchorable.Anchors>
+                                          </uix:TargetAnchorable>
+                                        </uix:NCheckState.Target>
+                                      </uix:NCheckState>
+                                    </Sequence>
+                                  </ui:IfElseIfBlock.Then>
+                                </ui:IfElseIfBlock>
+                              </sc:BindingList>
+                            </ui:IfElseIf.ConditionBlocks>
+                          </ui:IfElseIf>
+                        </Sequence>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <Sequence DisplayName="Check next toggle - Sequence" sap:VirtualizedContainerService.HintSize="1169,606" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign DisplayName="Assign increment intIndex" sap:VirtualizedContainerService.HintSize="854,61" sap2010:WorkflowViewState.IdRef="Assign_7">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Int32">[intIndex]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Int32">[intIndex+1]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <uix:NCheckState DisplayName="Check App State 'toogle 2'" sap:VirtualizedContainerService.HintSize="854,394" sap2010:WorkflowViewState.IdRef="NCheckState_5" ScopeIdentifier="0763c23d-941c-4ec9-aeb7-81258d4f860b" Version="V3">
+                      <uix:NCheckState.IfExists>
+                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,177" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap:VirtualizedContainerService.HintSize="338,62" sap2010:WorkflowViewState.IdRef="Assign_8">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Boolean">[isToggleExist]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </uix:NCheckState.IfExists>
+                      <uix:NCheckState.IfNotExists>
+                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="400,177" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Assign sap:VirtualizedContainerService.HintSize="338,62" sap2010:WorkflowViewState.IdRef="Assign_9">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Boolean">[isToggleExist]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </uix:NCheckState.IfNotExists>
+                      <uix:NCheckState.Target>
+                        <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109583039/aw?awh=r&amp;awssk=ds.Ja3y_&amp;dard=1#b0" DesignTimeRectangle="215, 383, 36, 14" DesignTimeScaleFactor="1" FriendlyName="'SPAN'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl tag='SPAN' colName='Include' class='fd-toggle__switch*' idx='{0}' /&gt;&quot;, intIndex)]" FuzzySelectorArgument="&lt;webctrl class='tableBody' tag='TABLE' /&gt;&lt;webctrl parentid='_wzjrz' type='' tag='SPAN' class='fd-toggle__switch' aaname=' ' /&gt;" Guid="a1b81ef3-5d6d-41f3-965f-207691180b91" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAASCAYAAAApH5ymAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJDSURBVEhLvZZLTBNBGMc9Kq8DWg9cPHviYoJnDx49QSXYGvEgooaHcrYmviDVWkAQFGl329JFAoRQLhL0QHw0obY3UZFAObQXE7KLWftI/86s2ZXilO52i1/yu3X6/2Vmvm/nEA6ocrkcMpkMXkc2cMzmx9ELfhxu5JhYbAFY7AEsRTeVNXStWgciSANSqRRsj5b2FdsL/e1F1xtlrSpZUDC8EgP3KgTXMx59/c910+sexV3nEE7Yx3Ck0cMU2Y+KJg4NPXOQ5V+K5D+Coijh6csgHNw79HCf0BFYww1hSxfXg3G0+9dxsmOeGa6XqvM8LpGdTKfT+YI/tiUMeGfR5V9lChTj2sQGzjnDJMDHDDYCPe7FlfV8wcGxYMlydPfauK9lkVOxkObSBJfDUTh875nheqC7d/b+MrlDPDOsFGqa+b+CL4Lzyp1jhRdDuXu+NdR3h5hBZtAEH5NuNdIQu6GCV/lvqGudZIaYQRN0jZgQnNjEFe+q0n2sEDNogl4y80o+4v8h+JEM5j7hA1OgGKpgXavADDGDJkhr2CPgZsD4mKGCbd4vqO+aY4aYIU9Qknbg9syQWfiZKVIItUnO3F5EZRmPubZl1xxUS9r5iaFxAQ6efuoiuhrnzyfuOy6PRlFlLZ/gcTtDUK1wJAZ+akH3Y+HhkxHc6XXDdsuJaqvxR8Jealt8mH0bKyxotOjLQ5ZlJBIJNN0LodrEUVdaOTQ/WEAymSyfIK1sNkteQyLi8ThOdU4xw/Vwunta+Q9RFPEbyMOkjLFftmkAAAAASUVORK5CYII=" InformativeScreenshot="5b027bd917c11d481172a5eb5b7377df.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SAP Business Network Supplier' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" Visibility="Interactive" />
+                      </uix:NCheckState.Target>
+                    </uix:NCheckState>
+                  </Sequence>
+                </Sequence>
+              </ui:InterruptibleWhile.Body>
+              <ui:InterruptibleWhile.Condition>
+                <Literal x:TypeArguments="x:Boolean" Value="True" />
+              </ui:InterruptibleWhile.Condition>
+            </ui:InterruptibleWhile>
+            <uix:NGetText DisplayName="Get Text 'line item text'" sap:VirtualizedContainerService.HintSize="1267,157" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="0763c23d-941c-4ec9-aeb7-81258d4f860b" TextString="[strLineItemText]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109583039/aw?awh=r&amp;awssk=ds.Ja3y_&amp;dard=1#b0" DesignTimeRectangle="76, 350, 1794, 45" DesignTimeScaleFactor="1" FriendlyName="'18 Line Items,  3 Inclu…'" FullSelectorArgument="&lt;webctrl class='base-NCFMST-hdr-grp' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='_xtvocb' tag='TABLE' /&gt;&lt;webctrl class='base-NCFMST-hdr-grp' parentname='_loa0gb' type='' tag='DIV' /&gt;" Guid="6ad1e1bc-99ee-4d00-8b9c-c8d5a263d909" ImageBase64="" InformativeScreenshot="9546701d38f2daa2e24bda28ba717311.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V1" Visibility="Interactive" />
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <ui:IfElseIf DisplayName="Else If contain 1 included" sap:VirtualizedContainerService.HintSize="1267,396" sap2010:WorkflowViewState.IdRef="IfElseIf_7">
+              <ui:IfElseIf.ConditionBlocks>
+                <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                  <ui:IfElseIfBlock BlockType="If" Condition="[not strLineItemText.Contains(&quot;1 Included&quot;)]">
+                    <ui:IfElseIfBlock.Then>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,201" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Throw DisplayName="Throw se" Exception="[new SystemException(&quot;More than 1 line item is selected.&quot;)]" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                      </Sequence>
+                    </ui:IfElseIfBlock.Then>
+                  </ui:IfElseIfBlock>
+                </sc:BindingList>
+              </ui:IfElseIf.ConditionBlocks>
+            </ui:IfElseIf>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAbxSURBVFhHpZZtTFvnFcf9pWuypg3tmjVrGmLeEoMBG2PaJBDb2CkvyQJpvlXtFqRpmrSXT5s67a3pl0nTptXkhdAklEsCbZdG3VsrVe3AhhBCs3ZDi5ZAo21OA5hAOztNmrXhXj9n//M8j415SUe7I/30P+fh+vzPufcasC03YgF3zkzQ0zITrDLAyPshb3ImVEXTQS/NBDn3RmeClcZ0qHIvX6s/9v/HVIPbfjVU1com2kxcra2k6VovqBQM14sIVBpTAbddt/nsoTb2htlUGgWUWcYQ9dWAR0wFOPcgV8r1VMCj8AOfZ59uufzgyWES00a6sUfm8ww0cTZiuPZViLi/Qp1xrohNbV7m3ZiurXChUSzbIIO/QjDKUBlpE4r73BmdhE5ucys4V/X/HoI3h1EsvYFSjTaa9Kmm8W3aSDXPMJGmxkWTNS4BBaoer3ZhCMfSQ/Azh1FMGWU1z5ipxnIA1hq3kDUbaENlJHMxLmul49XljFDqii35LZnwucMZE4XI3khvo41Uzg1lzc1l7aIrOGO0KV3ZupAycWVLWVjbqnC/tNve/h3/nAmboqk2I7mNNpn57jfoxss9ZMYnKR3i5rskZl4la2QXWecqGcGaYn3LQ5JzHpx5BM5kTcNZ70PlS3uMbUYzjYUq1Fb6dknFxDKvr6YbJ3u0JVE8Kah/bBaYdGkqpU8xzNSLZL3jJ/OtChgxbgzhxjDQYbeqoajVXXAbu3M8LzxGzL4fBjO3io1Z39tSRuN1W+nWpTFp8JeYSd8yPqKqZ65R1T4N8qbwdYqOzsprxM0xst6ugZmLDZUOc85aDi3HEOVJGsG74H5hd4u7ZzdVANb+Jq80ZfCsBOv133TLxkein5AXhhmezso1R3ENh4h3K7PhMk1pljJOMXumpMXm7m42ALm6m4S7p1k8+Ys6ury5lN7b7BTMxGP1siFvV/l0UuLROse1eefv4C5xpC7sFdZZJ5lnS8hagtRwiWFzdTdHXScwwIkmTTO9useLIZwUe8RJN177nWy289kPqeJnyTlglNF0rutvdt6QnxFTJ4R5thhm2TgwlINS0NRQ8Yit/HhTsvz4LkpT1rWLth9spL/7yij2cIm4dWmUxuIWudF8MYnbkKTJJF7MTyZguBGGmiEJMSZInS1K2MqMr8JUImSu659/u5piVcWCN4lcnCXXTxNLA7P5dYLKoRH9QlpDRWSeKSSLQW4NaZV1gbCVdu6kUpiWGjuF1C6lj7Q30vkap2zSd/EWlaHpQtgoW7PP+zA0h3WmAEb5wjoDhgowTD7O5uABks7OHUKxk6BAqvjeUz5hxidoMpGi0p/8+zMxiscmProAkzwyB/Ogdgxhl7XKN3CdsJU8v+OvJR2NpNhBqGXuZH2+UQz2n5SbtHRcJycaO38MWD+Ful9dk59JTZ+CGRvlCnMwlyzJBrBecG4Oro/aHB0NRvGxRpqjQQ7gONYgOP/6a0/JZn/+1yyVwLwYKP1A5nP13HkvHhmH9fYWMk+vBw/B9CHBqnOyWE+vM2yOow0tIGPIyPpovQCsdPy8+ioe6rtJjh99QA6YSF0Izg/1/kdee228E4brYLYO2z6I/EGYK6y0Dqzba7MbgZziI/XJTUfqKRsH69E6wXi79ojR9/8hG//pwi0K/jJJm2CYzdeOfUjn/qlevInEu5QYLCFz4CuatTBdK9JqnX5A5hTNUX+WNz1X37rpuTraqJH5kTqRroHwGntE1/nfSgOOi5OWHIaZwEuaDr6m849bsN1aGD+QwWLt/7JUa2CNsPrXGNKcw9HeYN/Y/igxRVrTeRaisH27CPQ8Sa+MvkEX9R3hGL9+lYy/vUJP/P4H5O/wwWiNYkBr//0ytwbuFzIH2H7+f0ZFbaHWosPbKU1hG+ujxKaFhyWkNCT4ZxldwKk/FMHkS8pU6n3YVipZyFlTA/ct/k/ZHg7kFBwOxQraVOOCQyEqBKx8JpXP2ubX2Tze9TDM7hVm9F4YAlaAM605wormxLTl4sAQ9oK2YCzdMP9gkApA/qGgkHCu66XOL7+JZxxdjQHuAathuBqGUNSa2KJbvzB4iPwDtTHZ9EAt5R2sFQznafJY8XNWmR8I0ve7y8mM3I1N71EKrOgqmK4SnM9G7ob5ik83TwcPkbe/NgbIfiAg8vYHpMochvb9Kk9T076VLr+B5xxZxabQu+ZhRe6Kfbxc8+zAIM/YW2F+W/wYxi86Xs4ns28ljL4oMSMrBNdmBPStDGe+758n+G7khv3GhrCfNrT6Re6zPsF5btgn6+q2zTBZobmTzF4QuTNp9q5s/fj1z7H17QKD5Kz/9bYWDNCFAaLQJKCTp/A7PXJHItX7hZFU7wpjtu+OluVvbLP9F5lmWAkTeM7rAAAAAElFTkSuQmCC" InformativeScreenshot="3f905c2b3922a5015e49d42da412d3d6.jpg" Selector="&lt;html app='chrome.exe' /&gt;" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

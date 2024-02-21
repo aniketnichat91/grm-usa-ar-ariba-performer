@@ -1,0 +1,367 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SapAriba_PoFind" this:SapAriba_PoFind.in_strPO="4800403967" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_strPO" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1017,5120</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SapAriba_PoFind_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="41">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="102">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SapAriba_PoFind" sap:VirtualizedContainerService.HintSize="979,5055" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dtPO_matches" />
+      <Variable x:TypeArguments="x:Boolean" Name="boolTableExtNeeded" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Business Network" sap:VirtualizedContainerService.HintSize="917,4944" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="a45657b3-a5aa-4afa-9c61-3304242dc24a" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="workbench" sap:VirtualizedContainerService.HintSize="883,4727" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGoToUrl DelayAfter="3" DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="821,82" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="https://mu.ariba.com/workbench/" Version="V3" />
+            <Sequence DisplayName="Search PO" sap:VirtualizedContainerService.HintSize="821,1107" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NClick ActivateBefore="True" AlterIfDisabled="True" ClickType="Single" DisplayName="Click -reset filter" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a45657b3-a5aa-4afa-9c61-3304242dc24a" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://mu.ariba.com/workbench/" DesignTimeRectangle="1791, 609, 50, 31" DesignTimeScaleFactor="0.8999999761581421" ElementType="Button" FriendlyName="'Reset'" FullSelectorArgument="&lt;webctrl id='filter-reset-button' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='filter-reset-button' tag='BUTTON' type='button' class='fd-button fd-button--standard is-disabled btn-apply' aaname='Reset' check:innerText='Reset' /&gt;" Guid="a7d1a67a-8116-4656-9bc3-8c0ed9ef8064" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADYAAAAjCAYAAADfXvn1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKBSURBVFhH7Zhta+JAFIX3//+FfhUKfiiUXVgI0QoVJLuU1RVbo1bdFGPSWt+oqfjSs/ckE5tWt/uh0nasBwacySS5T869g9wv2FF9DjBvEODkt4tvPx0cGFUtBmM9Kbth7EmtwHjh648/qLtDLJcPavXjayGx1jrDMHZ/+Ai3AqNThNJVhKNzsVZgtFQnp56LsZMh1gqM+aq7kgx7MB20B9NNe7B19VCUfdwbj1S2hoIzxFzt2K4GKJtteGr2P70azOreYzqLxmTkwcpVcSpr21cPlvGGYMVbNVXqXdg4qPTU7A5OqYa0KY6aSTeXGHdb+M51eUbacuBNl+EVBB4KeRspWT/Mt9AYzWTxaXYYziTa+4K2Cxb4Ccfm6FVsHFeuMeW12RDnljjsC9rCR8FowpkRZo5xuynPEYBFH8WcjeIN719iOrqCYbbgLmQadGC8pWPcuxqmjVxtoFyRIM06Gok/2hOnrtyUesnaOG33MV4waqXbNlKFDsZqKnegJR8j/HhvDRY7xqAPLVdCUQoDeQbOEe+Z9tEoX+JY0pEp5wTLCHzDPRmm3nuBASPY+eTBse7YZjEV60gReM2xhN4PTDRwxIEmXNZ7XGMlX7l4D+/iEucDqavAReGXK2nIGpNaumnhiGCqxqyu8l1cLZ9dyZv420UmrEtO1EHzgrYLhhncUhVH5Z6qs+SpaCNT9pUbQQjJNOS70ioVo0uPp2IqW0exG/sn9XYWrRvtO7X2b70C7GNrD6ab9mC6aQ+mmz4XGHty7KrqKsa+sa/ILiq7qbrKlthzmzrBUe/eCeF0690Tir376029e4pNfTpHS5mvOgzGSqeSUNQTsF3SjoIBfwG486VTNLWLAgAAAABJRU5ErkJggg==" InformativeScreenshot="266ed93764e3d5de248398b2cf5200da.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Business Network' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="3" DelayBefore="3" DisplayName="Click-exact match" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a45657b3-a5aa-4afa-9c61-3304242dc24a" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://mu.ariba.com/workbench/" DesignTimeRectangle="494, 414, 104, 29" DesignTimeScaleFactor="0.8999999761581421" ElementType="Text" FriendlyName="'unchecked'" FullSelectorArgument="&lt;webctrl parentid='match-2' parentname='exact' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='match-2' parentname='exact' tag='LABEL' type='' class='fd-radio__label' aaname=' Exact match*' check:innerText='Exact match' /&gt;" Guid="d751b235-7775-48fb-918f-78306821ae96" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGwAAAAhCAYAAAA8oE5/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQ/SURBVGhD7ZjvSxtJGMf79wYUS0SDXJBFDDZvQsghe6mlzUnFRmmuCHcYEY4qaHqbO2ObwtnW3LWFBC7RSzW+2Dffe57ZmSSNm2QjxuvAfGDJPrszs7vznefH5B4MWnHvQTINc+hzGA/TDCOYZhjBNMMIphlGMM0wgmmGEUwzbiRYwTlCNvczvn+4KvYG/Mt2oViSLQzjYiTBvny5wA9P1lEsvcGHvz7i4rIlrvMv28VSGenMM1xcXIrrBh9qO7AmVnAkzVEJLBiLtba5hbPzf+UVfxpn56KdEnMwx7AnphDqPRZ2UJUtbo3yU0ymj6UxDhrYXYpjuybNftyVYOxZw8RS1BvnePjjM2kNwhMsddhEs9l1tFx5/xZxVhAaq2A15OZj34ZgnLM4DI6Cc/Sactqw1/IEs/1SX6uA1EQMOTUBwrawUeHzCraXLUwKj5yGtVpE3WtF1HCQjn19r0RiCZsPn0nl+wtZ7K7LfvdjWCt/xtGqshOdPvUiMksReT2KVL6CFj1ze0GNT4daGLUC7IVp7xqNmXEabcF2aQHN3uf205hNF9H0egwlkGBcUHCOGoX3lb+x8dMv0uqHv4cpB2sd2phc4vB4hd/SEVgvvFmr7yUQ33znfaT7GTmarJTDnVyUH0cQXt5HXZh0L5nCS+pWzcf6e5gQNILUXoNGcHG6bpEdxSOHn+Diz/UoQo/fivMyiWgfcjuiWYQ9Q4voExv8LV2LwX2LRzNqTDI/bSGR3EdVCDaFRfX+TV6IEWRO2BhOIMG4CgyWkzpwe+43GP8cZuXVV3tCLdKkzwrh/DndjMo+PJ7V8couhgo29xyn0hT2/FbnecID/Z7v4mBZRYgewXrHUAjBbBzIRckRgb3TN8r48E0INvBlT7IIU5v4XlfQaIelaYTnoiK0CMHEZPjnkaGCdQsywG5VdpCa5zBHoYyeHaZn+wkmnucn8rUcNgbBxh0S+78sfQwJY7/IwpqhjxRrxvvAeF6GJaLjYRSGKJSJPNfD7QjG70uhsqQWzwAPK2e+9lrFXQhWcEo3KjpeFftMUBtPsGtVYvNKiFHNxxGmhMw6nW5adH5M5xVszE0hIT3OrVMOmFFhtDeHcQGSEpNYp7FCyYIY6xpBBXM530SxduItlebJcyy2F5y3WNbUYunNYVyAJGmMuxCM4Q0x77GC8E/9DCurWWkNwhOsN4eF+INqW16sb8/wO2RoAmznCq3SU1lhTWFSVnffyYKEJ+ClXwVZ+xVx0ccnxwUVjE6r+UR77FlaGLk0TbbDjbggiXr3aJEJSWv7MnzStZ4qceyC8b8XvCHmPdYgWCxud9kaLecZghFYMIYLCd4Qc7jjHKUKEf5l2/njtfAsI9b4GEkwBW+IuaDgKlD9+cv2q98D+rXhxtxIMMP/hxFMM4xgmmEE0wwjmGYYwTTDCKYZRjDNMIJphhFMK4D/AAWmdy3XkBMIAAAAAElFTkSuQmCC" InformativeScreenshot="c920fab09cdacec9b8ea111a3719179d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Business Network' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,143" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[&quot;Looking for an exact match for PO number : &quot; +in_strPO]" />
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Order numbers'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="338,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="a45657b3-a5aa-4afa-9c61-3304242dc24a" Text="[in_strPO]" Version="V3">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://mu.ariba.com/workbench/" DesignTimeRectangle="383, 381, 246, 32" DesignTimeScaleFactor="0.8999999761581421" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl parentid='match-2' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='match-2' tag='INPUT' type='text' class='fd-tokenizer__input tokenizer-input fd-input ng-untouched ng-pristine ng-valid' aaname='' /&gt;" Guid="661eaff0-a5e2-4fb8-91a7-eb0677033c24" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPoAAAAkCAYAAACg2CdiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAR+SURBVHhe7Z3fSxtLHMX9owNKDA0xJBgJwQax3CsSyiKKKRKkLb5IQi1aLpZEaomCAQOtEMFA8pCHfTn9zuxsMonZbW/7ss2eDwxmdn7sTtgz3++ZPLgEQsjCs1R4+S9YWFgWuzCiExIDKHRCYgCFTkgMoNAJiQEUOiExgEInJAZQ6ITEAAqdkBhAoRMSAyh0QmLA3y/0ThWp7Fvcm+of07/Fh8suXFMlZBF4LnT3M3aWk0jMK1ufMDDdokKvXkJi79bUfoPuW2Q2G+iZansviZV/ordOQv6EORHdxWg4xEDK3dEGEruf9WddRlGLc0OcbyWxc/n7z3V/nEfmuGtqhCwmIam7J6LyxdCr9hsoLb/CualqJBrm0lXc9U7kr4N39Qoyqyr6v0Dm8CtGphv6VzjYXMOKygpW8zi4HrdM8dSqopR+obOHlWwF536YDRz/FZXlMk77php2H2l7s5Uft+1cPKL5Wj2rKRLVn2bmG3Ub2Fn3nscfo1HrzdbQvHSQG6/3luk+iSwhQlcvfR61cbBT9Q2888WHR5xu5uHcuHAvK/Kyr0lkfdQvu9utIeeP7ckGsVpGrePtEAPVV20OumbxXW0aDpq62xDtIwen6l5h421/HtbPalPPN2jtoyzCHGmbUsF/vkKt+dybfaTS0tbzGvV8y/toq88Xr0T4Jby5NvPpNgdfdE9Cokew0NVLPyVIEXYxicq1VxvJy70iab2KmV8kMuam0l+1KazhoOOiuZtE6cxKA0R0hXmiEGElRFgfun0rMoaPn/jzsH5eW6FuorGNumdx4s8n8z2gti7Pf+Nd11j39db74F1XqHnWT8bzEBI1AoWuX3oR8kR00Kluqa7y2g4Osn4a30Uta0d+YfgJZZXm9wMO9nSaPMsQd2cOCjoVzmNbpclBB4N6vOXPw/rpNiu9t5j259Z86oBuNuu4dpDQ0V7Wnp5er5onddgxNUKiR4DQZ/y54e5wDbn3D/Jib4jgfb+qIl0FTWtHGJyVkVAn10HR+ycMWg5SalzoeMtPh/ULbOuL9ZhkKFPzKVFbkV7RVmtXUfzZfN53VWmZKiERJEDos/7c46kuAi6WUdqcpKm+P6+0vE3B/X6i/bD21zqy220fsf36+U9Xo5sqyntX5rqLb+/LYguu4IaNV1HXF1xYP922IWm4anMx6DSwfShz60hvnTnYfl99Vt5dT+fiSdaYSos/l81M+3M709HzzBxSEhIx5gv9mT83qEgn4rA3AOVXS8cNSeUnp+Wn3clpd+9ichKf2qyi2bdCv486LS+a023pVxCRfjPdAsfLhpLT6flHbQPC7jO3zb2VZ/auOeLFp3+PH6F9VPJO6KU9t9vAvVmSWu+U31ffFf05iTjBh3FzUNEsM+VF5/hzQkjk+GWhDyS9zmVnorz2q95PToSQ6PJzoWuPKyl5sYb2jA/V/nzmZJ4QEj3+V+pOCPk7odAJiQEUOiExgEInJAZQ6ITEAAqdkBhAoRMSAyh0QmIAhU5IDFia90/TWVhYFqswohOy8AA/ANXyKUb+B5l6AAAAAElFTkSuQmCC" InformativeScreenshot="daa2995f04a9d2172717ea4d1bb82761.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Business Network' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="378, 358, 258, 18" ElementType="Text" FriendlyName="'Order numbers'" FullSelectorArgument="&lt;webctrl parentid='match-2' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='match-2' tag='LABEL' type='' class='label' aaname='Order numbers' check:innerText='Order numbers' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAQYAAAAWCAYAAAAilDITAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOLSURBVHhe7ZqtkqNAGEX3qVCtUOOioqJwUa3ioqJQuDwADoVC4aJQOFQUKg6Fwt39+ifhb3ZmdmeqdjJ1T1WqAk13Oqm6h6+b/AIhhCygGAghKygGQsgKioEQsoJiIISs+HoxNAkCXaDzh9+VJgmgi+8+S0L+DysxdHWGY/QCFQQI1AuiuMC1940fgWIg5OmZieFWaCgV4Vzf0Pc9+q5FmeygtgmawV/0HhQDIU/PKIahRqw2SOqlAXpcjgqb9CrvOxQ6QJLl2IcBjhcpJYYW+XGLUCoM9aKRpaeJGAZcswO2cq2pPnRa+/OvjDOlK6CDBGWdIDJ9gxBR2shoY1tjLzT4scwJ31ZcYtdP7XC6tGjLE3ZKjsMIqTecFUNWzed+Hb/7cM1w2Iby2QovOkXtHWL7pTmSnf9Nhisy7SssGT8uWjdPQp6YUQzNGWqTwsR/yVDFPuwuhIHOcO16CcCAOlbYJrXow3CTdvUQQ1dqhPK+dYnGJd4gym/2/XycBTbgCjq/unH7ykrLuek9MZjAu369zFupEIfCfKYcX4y0Sjs3E/AgMDJwM+9EJhsVw3qxK6FDjcJN3LVFuXw7328T43KTikqa23yHnXyepa9xPhX2OkKemYkY3lgCmDYbRhfC8Q7fIAn28LlzyF3+LpHSBLb25w1GPhPBrCqFOzbgMaqHMZbhf0sMk37+2scUJn1twGeTk8pHqoCzNBqhzdsanJWIQn4c089VT46+PEBFZ1Rtx0qB/BjmFYOaBm5kWTHYEBps0FxgHjwEY6Rh7sqLlzpLy2KcJe+G/4NtbxzbJcFs4uM4rppYvpw01v0G3Cq/YWuWS1I9UBDk2RnFYPcYFOLxNu1xewzTJcAY6HXFMJXIqmJ48JVikOXL/g9t74jh4xXDyFoME2QpkWzdGIQ8M6MYBBMI+1SiatG9+lRiGejFHkNvNuIkcFYMbrxQ5/5x52A3ARO7fPiEGOTs2W6SumVIVyV2Y/GfxGCWB15qvSyBNvc9Fr/HkPv9h6EtcUou9jvOxTCgSY9IG3edkVSuKQby/MzEYHj7fwyvBHqyK2939ssMen/fgJs8lTBPFo45XIY+IwaJ3+OpgyvdKwmrvcH/pRh0Vk7mfkTuNxsN41OJAGEkbT78y4phaAvE998r3OLApQT5AazEQAghFAMhZAXFQAhZQTEQQlZQDISQFRQDIWQFxUAIWQD8Btv70wdprTFgAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="3" DisplayName="Click 'Apply'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a45657b3-a5aa-4afa-9c61-3304242dc24a" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://mu.ariba.com/workbench/" DesignTimeRectangle="1731, 477, 50, 31" DesignTimeScaleFactor="0.8999999761581421" ElementType="Button" FriendlyName="'Apply'" FullSelectorArgument="&lt;webctrl id='filter-apply-button' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='filter-apply-button' tag='BUTTON' type='button' class='fd-button fd-button--emphasized btn-apply' aaname='Apply' check:innerText='Apply' /&gt;" Guid="096c8d51-4879-42d4-b655-04ef4927b365" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADYAAAAjCAYAAADfXvn1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALhSURBVFhH7Zg9b9pQFIY7M1b9EbS/IJ3bCvVPsGUkS5stUuiI1KFNxgwMyYAiMaQjmZAiNVTN4AzmI7RYQYmciMgJH7FAoLfn2Pc6F2qcGHXAlFd6Jcy519zH55zLlZ9hQfV/gH3/3cX77TpefSojtqZFwrxWXnOp0RUUrjwwhnrx4dR3chTMa//R6AkaBezNlzPfCVHyW2KQ8sDim7rv4CiZGaQ8ML+BUbTUEiwqllqCRcVScwO2awJW7cI3FsZSM4Ot6gNnnnFS942H9ZyAnaNwN4LW7AMtCwnfMeE8H2AHXdi9DtbTLWgYoJAV3+c7sNBHUe/DFve1W20ax/ELFOnEY9TaMNxkA4M+Cnn3YPAAdoUSxbUj5cCwZcHg39kT1wGWmglsozGCqZ//9dkFY5hbpDJ0EsheQyMYu3FJcReMYb7lqoilDWw3h3TdxQbNVTPG91QrIXFClXHXxqq4DrLUDGC0WFrc/pa45uzJH3XAlAySExotirKbEmCmbnix2NYtZWKIYm6iFPfaMCnz7m/oTmxsXoClQoPFj+7FDFUjlA4o7oDZ2FXnHFNRctkKsMqxElu7QYXB8pM9ZlAPU9lqtDGleYzyIB+xVEgw9+lN7oTrtaFbbtMyRhlNTs2YO34cTCk/fjAhNiipcGBOE1OPTD69QypH6pXPssdMC0neMDKXKDkw3IOyx2zsZ3ljqFIvUY+JMmYwu3H1cE8nU0NYPdp91Y3kEUuFAkvyf5fz9Cdj1Hd0D+1Xl8DGd0WLIFPTdsUeQebcRScoM84c80bcU8dOk7+4x44z/2mWmmHzCLBfj3n267FgO4eA5rVvbJql5hYsnqWyHzztv0u11FyCcb/xTlvRmoj7xIMs9W/B5sBSS7CoWGoJFhVLeWAL+16R36L6DY6S332tCxoFjF/qP4/yu/uPp/hp8GHUlQfGOiy3sZKp4mU6OmUZ3yzjNa25eNYRFK7GwBZJCwoG/AH6yBqk3ifLaAAAAABJRU5ErkJggg==" InformativeScreenshot="c99f6a17578b803f4314d55ea75e99ac.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Business Network' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+            </Sequence>
+            <uix:NCheckState DisplayName="Check App State-There is currently no document available to view" sap:VirtualizedContainerService.HintSize="821,422" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="a45657b3-a5aa-4afa-9c61-3304242dc24a" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="0 result" sap:VirtualizedContainerService.HintSize="400,205" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Throw Exception="[new SystemException(&quot;PO not found&quot;)]" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <ui:LogMessage sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_9" Message="[&quot;Filtering results are being reviewed because the SAP did not show notification of no results&quot;]" />
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable Accuracy="0.7" BrowserURL="https://mu.ariba.com/workbench/" DesignTimeRectangle="806, 825, 307, 15" DesignTimeScaleFactor="0.8999999761581421" ElementType="Text" FriendlyName="'There is'" FullSelectorArgument="&lt;webctrl class='no-data-label' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='no-data-label' tag='DIV' type='' aaname='*There is currently no document available to view*' check:innerText='There is currently no document available to view' /&gt;" Guid="ae59cc9f-916e-4e81-961b-832e52a4838c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAATcAAAATCAYAAAD1aEqmAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAi7SURBVHhe7Vots6s8EH5/FSqqqq4KVYU7CoVDVaHq+gPqUCgUrqoKh6qqwqFQuH13NwGS8NXeOXfOuZ08M505EJJs9uPJZnP+AwcHB4cPhCM3BweHj4QjNwcHh4+EIzcHB4ePhCM3BweHj8RAbtXZA89b+J2r4Zswb/jvn0BbZXApHtCp589FBWcvhB9U9TqaHELvjFI6fBvaCrJLAQ927vfs3+QheGEOS59zu4rh34a/GdNj5ta10Lbyd0+Q0JL78NyqmX+a3J6pDyK+QauePwbVFfaGczpy+xk0cIt38CM88EzBFzHc2Ll/E7n9XZ38zZiePZZyFjezmp8mt49Fdbac05Hbz6CBPPR+htwM/C5y+x06eR9/QG4l3JIAdnRcFXuIi1q1Elqo0gj8HbZ5O/CjVKXZBGmwNL9CgO0DSdYFJMEeBI4n9gEkN308E4aRuifkKMdeyLmCOIVy0RlQrizmeT1PwD5IoBd7Stgk52hMbk9zuAa7wYHm3q2tQ8p9h0caDvJ+pSoVJ2IjXaqflEV37hqyQEBSmol7dRZwuD7UkwZFPPdHCuFe8Ji7L90OpLp8kNXb+RBdy8XAYDQlXMN+bSFc0YYGuVF75A8+ESQ5PHVx6cgVjz4TJAWuSuI1/d/Z1tSf5k8fzahLcYST4TPbPpiXN1w/2o7GO55AdpdBPNpigbzR74pzb0f0pbAfv8UMx4Mg02UBeFwPIJJS2nqxL8LYMHT7SzRlCrGS2dvN+BeOVQw62UOo2XRKbms60rGkkw6eeQJB719+BNel4Htc4SASMNy3LSDyAiBVTWRbiiOME6ET+DODI36T3MeBKSZ0/b9NbmIXQYbO1XUdNPczHLw+lab5AhQggwc/t+yAIiyUQNJpub1RR93uDonwUcCajd/V6HQHHy7VrKYNRTQF/n1S6WxXQ3mJF/uRXJ6fwL3mWeBZnOCUPXnOV4LLEyGvuVXn88m7jXWw3BiEZ2xvSW9EPN4BBm7ayNzaIgIvKuRaGdgupHNMwEEi4IhkWqNsXfOAFB10IML2BrE44KYk10/Ecw088OeIkvGAqy8gzB5y/vYBWUhO3Ts6tWNQXytlCwzgGAN6OGo8kZxx/ATlYeVg++kEmWK/V/Q/+lwD9/MBdbmDKEf5UZd1EYMQIxFt+6CAXUQ+iLpBv7klON4g63aW0uB84aWUa8FeJE9PXl2ZIFlmuOIeqJvDaOe1vtJuC+TWoY3CE+RyUajCDL8d7c/+hesiGzWok65Gf0Sb9Hq1CWRdRzamOmlvqPNDDIWyYVthwuL5oz8boM3ZJCHdnw3Z1uKI2jSuoX5hFMFuEIx0fUS/Uo+I98ntor+XziJf0eCohJIbJFigEArWmnJarZ2U5H3lwy5OeGZHa44RuiLa2wmEj0FSEWHwqwVIuXTl6ngluDxjUdN3W+tguQ3ykg4TSsXQgKvkhlGDRh+dmYMoyIz5BnCQWLs+zy+dd07W7p6Ad7iipmZAOy8GnaEB3jVVIC62K0fkdtxYFmz0iv6F7oukK11WY72v+KAwyYvGExe5lplA3oRuO7bTSGZTsrOg993I3EyYcrJ9rXnq/GuwuR432zqyYetEZqhfueFBXKefPUkgakouhg3EJDszptfiSM4r+9HfSGQPlLv3BfI5y4ffJrdlR5R/jyns+BvbZ4Ju5nsz0EeYRsLnMoOEj0OU4uNRbDbaad6FLAfxSnCZ7dN3W+uw5cY3ktz6MbbIDUHHG+k8HZSJgKhQW5gNI0gkeH5dFswWDND8Vp8B1GYTqT7HYruSf65dw9v6t3VlkJvsO2eLJR/k8Ya1b5Nb9yzgHB3V0VL9NHlsO+nHpNW+q+TWQJnG8OWrY6n69XLq9h2AxGrYfFjUlo5s2DqRz1MXwjGWFMfHULXZ1RkE2jFVl43/npGrXwdnjPQtkTETWQNFKLM16muT6zeS28yOYGDqWHNMvQbTSDpkat3vVCa2M7ejnsvyLjYac7rm6butdUzlfp/c2CnIoCSfXcPQsUFuLKu1y69mbtUFBI5nmFVla9LsM5nZm5nbW/pfJbf3fZDHe5ncaHw8/tGRWL2ZyEPr7e3kRTDuQRt9V8iNbeajDfAoLWHKyfady9xUtmT635aObNg6kRmUYbONzI36FJHHGzJlYvp3umybfEA6It2i3vrjKI0X5g+UycrIEd9IbjQRnuWDC5SqtlWXF4hQi9IkM47FgerDCYVjH2gfkJ9OYGS8GnRF1Plp7Edz0Tl+oW6g19y6roX6foYQU12Si1Nm5ThUg7knmAbjztqvabrmmXcb6zCdizBDbscUquHfbkhXaKx7q3RHIAcREMfRihMhNshNyjoGWdeUcKaa2VJq2wdlX89p7JqbqqmhnXntdNGD7UMtqW/nmhv2b1HH53CoR76tf5tMDHL7Ax+k8SxyO93G+qqJCi6ou6Qv/PT1R10eWu/xAEmCgWr8i8NG3wm5jfbn+nLQF/1xTbgZ+VrcsX3x+74uKmtu6CtqLml/JD+1pnUd2ZjqhDZDIVCPXHPr8AR1RnmWT0cE3kDjBDMurdaMMGJjkw/oSBtiDKB++92SNpMogkiru/b4VnKjALRvJfsiqPzWciwCGuKsbuK2bu4MRfANXZ/irx1LCfrtkJKrv87rqOCu3QSWlbFTvURuhJV1GHIzLHLr0PGP8uZJ1uE6qK4Y5Ph86oMBwYVY/SJiDlvkRtBupOjmLc7UZcAS+Ht1uzjclmo1mraCVLstDekyQzUxrHbjNvVd/W+Q29s+aJAbLTVScvZ1OBP1LVFje7CjW/cMg9bOmoiwcW77hnu1r2E3y/6ajli/aQHpl1W3OqXDjbL8RrNpg8dCmtdPlZxrOppiTid1od2WBjFk1aoH4RqoHoljWCWKSWxs8AFlap52sYDnb+agcTMdMUtuDr8UtEut1K8cHBxGOHL7V9DS8XGaDTg4OMzDkds/AC4T4FEjzrRitIODwyocuTk4OHwgAP4HxPGpbcekzaEAAAAASUVORK5CYII=" InformativeScreenshot="0920b3cf0e3ad2a8ef9b2d7f7e1299b0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Business Network' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive" />
+              </uix:NCheckState.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NCheckState>
+            <Sequence DisplayName="Select PO" sap:VirtualizedContainerService.HintSize="821,2881" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="resultOrderNo" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="759,443" sap2010:WorkflowViewState.IdRef="RetryScope_1">
+                <ui:RetryScope.ActivityBody>
+                  <ActivityAction>
+                    <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="400,268" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NGetText DisplayName="Get Text 'Order Number'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="a45657b3-a5aa-4afa-9c61-3304242dc24a" TextString="[resultOrderNo]" Version="V3">
+                        <uix:NGetText.Target>
+                          <uix:TargetAnchorable BrowserURL="https://mu.ariba.com/workbench/" DesignTimeRectangle="52, 621, 325, 47" DesignTimeScaleFactor="0.8999999761581421" FriendlyName="'4542640071'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='cdk-cell cdk-cell-v1 cdk-column-orderNumber' aaname='' /&gt;" Guid="fbe74a28-4327-4052-90ae-12729525ba20" InformativeScreenshot="4f4d1b26fa6003d780cda9cac61c631c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Business Network' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                            <uix:TargetAnchorable.Anchors>
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                <uix:Target DesignTimeRectangle="52, 576, 325, 45" FriendlyName="'Order Number'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='cdk-header-cell cdk-header-cell-v1 cdk-column-orderNumber cdk-table-sticky cdk-table-sticky-border-elem-top' aaname='' check:innerText='Order Number' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAUkAAAAxCAYAAABXjFuwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPvSURBVHhe7dotV9tQGMDxfaqoqKqqqqiqKFQUqgoVFcUHKGaYYoLpDDXBdKaYgggmmGLC2VmnNvfs5oX2Lk2fUYjodv73nN85LG+9mP9ub/j07ftaHh4ehMFgMBi7YxPJNE0BAA2bSP78+QsA0EAkAUBBJAFAQSQBQEEkAUBBJAFAQSQBQEEkAUBBJAFAQSQBQEEkAUBBJAFAQSQBQEEkAUBBJAFAQSQBQHGEkXyWOHAkWrSdO0KLSJzgWlZt5wD887qPZH4v0+hUvJ4jjuNIzzuV8fy5/dpW3URyFQfm8z0ZL3ePB/Eh8/kLIgn817qN5PpOIs8R7+xalqsXyfMXyRaXctpzTZie2u/Z0WEkPU88/0rSxnEiCeCtOo1kNvHLYGTNc8sL8ZyR3OTm5zIqFzKJhuIOLmRpzq+SSPy+a1Z+PfHDC4lOrEhmMwn9vrjFqtQPJU5/VMdbnmN/ZhnJ6FaSsCejm5c/jleR3I1xdc/d9lxcfHbPzMuV4dlM0vSLnA3reY7vZF3cV87jUpLJqFo9u30JPt9X5wrvnD+A49BhJJ9lasJiB2nrUSbDOkhFHJyBhDdPZqVpgpFdie8GEmfVtfk8MkGtrzUr03OzGozm1TPz5aUEbijzdctz/vg8K3ir6/KepLinPv7WSBbxWxZhz28ldF3pndb/AeQzOXMCma7Mz+U8nDKMeXFuZaI4cCWcmzl9YP4AjkOnkdz/Nbk6V8apiIO1cqrC9NW69kni15Xk4lzcE3tlWoV4E1tlBbYN3i9JzQrXG99vjr81kmHyGq/62vnrtda9ZewimdfPKKQTszo8N8/5wPwBHIfOV5Lt+32NlaS1h7eIzIqtjlllG6AyWmaV1hRM69gqe4F2JMu90oEvk/SwSG7PKf9umcfrcz4yfwDHofs9ycaLklKxJ2l/zbTiUAXFXknaQW2uxCyHRNJYJ6H0RjNZmuP7IpnFJ++L5JtXkhYiCfwTOo1ktQdXvN2+kkW25+12Mw6NPcnVTSgDs9oqA1Tv6YVJvTrN72Q8uqy+oh4YySpsrvj+cLPaXZy7MjCBrvYSbyUqXsq8K5LW75d/NavWQfWnRx+YP4Dj0G0kC+tH/e8kW+KQmTD65fXF2+2ZxOYr+Gb/z3o77PYDiZI9sW3YjaRRvmW3tgTKZ1dvr/vFS5rEPLNc1R4YSXPv9HMgfdf8Dm5fRpPH1rfbh8wfwHHoPpIA8B8hkgCgIJIAoCCSAKAgkgCgIJIAoCCSAKAgkgCgIJIAoCCSAKAgkgCgIJIAoCCSAKAgkgCgIJIAoCCSAKAgkgCgIJIAoNhEMk1TAEDDJpIMBoPB2B1EksFgMPYOkd81QdWLkZC3vwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                              </scg:List>
+                            </uix:TargetAnchorable.Anchors>
+                          </uix:TargetAnchorable>
+                        </uix:NGetText.Target>
+                      </uix:NGetText>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:RetryScope.ActivityBody>
+                <ui:RetryScope.Condition>
+                  <ActivityFunc x:TypeArguments="x:Boolean" />
+                </ui:RetryScope.Condition>
+              </ui:RetryScope>
+              <If Condition="[resultOrderNo.Trim=in_strPO]" sap:VirtualizedContainerService.HintSize="759,2283" sap2010:WorkflowViewState.IdRef="If_1">
+                <If.Then>
+                  <Sequence DisplayName="Po matched" sap:VirtualizedContainerService.HintSize="681,1814" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="resultOrderStatus" />
+                      <Variable x:TypeArguments="ui:UiElement" Name="uiEl_poNo" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="619,143" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;PO number  found, status check will be done&quot;]" />
+                    <uix:NGetText DisplayName="Get Text 'Order Status'" sap:VirtualizedContainerService.HintSize="619,157" sap2010:WorkflowViewState.IdRef="NGetText_4" OutUiElement="[uiEl_poNo]" ScopeIdentifier="a45657b3-a5aa-4afa-9c61-3304242dc24a" TextString="[resultOrderStatus]" Version="V3">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://mu.ariba.com/workbench/" DesignTimeRectangle="1215, 621, 325, 47" DesignTimeScaleFactor="0.8999999761581421" FriendlyName="'Partially Invoiced'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='5' tableRow='2' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' class='cdk-cell cdk-cell-v1 cdk-column-orderStatus' tag='TD' aaname='' /&gt;" Guid="34f9d2b3-b4d8-43af-95ae-16d74c9d9b3e" InformativeScreenshot="a314473c7c40daa306c10f3bc2c71790.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Business Network' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="1215, 576, 325, 45" FriendlyName="'Order Status'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableCol='5' tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' class='cdk-header-cell cdk-header-cell-v1 cdk-column-orderStatus cdk-table-sticky cdk-table-sticky-border-elem-top' tag='TH' aaname='' check:innerText='Order Status' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAUkAAAAxCAYAAABXjFuwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARcSURBVHhe7dqhc+JMHMbx/lWoKBQKhUJFoaJQKFRUFH8ANZyhJjXUcKY11FDTmpyhBkxqqLpzz7u7CYXSsNfOZG6Oe78785kh7CbZmqe/3eVCNBqNRjvZLrIsEwCg2sXPn78EAKhGSAKAByEJAB6EJAB4EJIA4EFIAoAHIQkAHoQkAHgQkgDgQUgCgAchCQAehCQAeBCSAOBBSAKAByEJAB6EJAB4/IUhuVEaNZQsq/oA4M+qPyTX95oMQrWChhqNQK0wVvr4Uj22Ul0h+azbpK9O086joWanr+T2uezbaNaPlK6P76mwvFQzeajuA/DPqzckV9eKgkDh6F6r/EV5vlE2S9QNOib0Xqvv+aCekMwmHQXRtbJtcZ1nN4p7iRa5vX5W2vtkSC4SNQhJ4H+rxpB81SIO1E7utT3qy+cDBe1LPZrPy6ShaHylpGvGjp9c//o2UdgKTMXXVBhfKuntQ3L7+E39TrOoSqNLLXbBtjThZa6nSfft2bv3WfY9vXRXOR4qQthWl44LwFdlaVzO4eA99h27cY0iVN38083+eW4e11qbz3aukXuGqVxtBZ199h8DgL9VjSH5oFHQ1vixom97p/ggZBrtWPOVqTRtlbe6UhiYvlUxNjeVW8eEjAvJ9Y2ipukrw2Y9j9UOr7Syz3QB1lY8fzYV68cwcsEchErSe2Xr4/4HJeV83PX6uwaDKz26KvOXVtNIQVyE/TqN3lWSp0Pyh6bdribl358vRhpWhjSAc1JrSL4Lng99RfDZkNlVkFYRQvcHY+1SuBi7nh332SAu32HDqaKCPJRnd2/7o0ErVJz+KKtc31yN7Erdsjr8fEi+aNa3Ww13FaEM4FzVXEkG1XuJR5XkYci4yvLdnt9+T9L1vS13dwKN7DsOlrn7e09ze5KdQIO5PUQ6DsmNFuPikKfZ6arbbbn9zK+FpPm8fdbtZOCW7UErMlUlYQmcu9r3JIP4rnpPslwmH4fMx0rSLltPVZIHvhiS1moaloH3PiTdHPo3+2d9pZK0BzsV83DbBsFIy6PvAZyXGkPSsHuI7nTbLjmrT7c/hMzRnqTbdyyX5rs9yWn5E6KtqQaHyXfl9j5vSG50O+xpmD5p7U63X5WvTDVrKslhWUmOgq4mWTE+m3bVGJbPtffGnbdnu6Ae7oPfXUflvmj+pGm/WVSd2weNB5dalvua9u+KCEng7NUbktZvfif5ISSNlQnG0P2e0Z5uf1dqxiSLom9/um1PjAeaLstn/a6SNPMY97vlPMrfSc52e5KvWo5DNc33gT2NtwEXFu9wy+TZN0W96yIITVAP3Il1rwjy7ZMmkVmOu/nEmi+uy7GHJ+TF+1huA+ev/pAEgH8IIQkAHoQkAHgQkgDgQUgCgAchCQAehCQAeBCSAOBBSAKAByEJAB6EJAB4EJIA4EFIAoAHIQkAHoQkAHgQkgDgQUgCgAchCQAeF1mWCQBQ7UI0Go1GO9kISRqNRjvZpP8AEkgjOaF67vMAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NGetText.Target>
+                    </uix:NGetText>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="619,143" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;First order status : &quot; + resultOrderStatus]" />
+                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="619,116" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+                      <ui:MultipleAssign.AssignOperations>
+                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:String">[resultOrderStatus]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(resultOrderStatus,"\s+","")]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                        </scg:List>
+                      </ui:MultipleAssign.AssignOperations>
+                    </ui:MultipleAssign>
+                    <If Condition="[resultOrderStatus.ToLower.Trim.Contains(&quot;new&quot;) OR resultOrderStatus.ToLower.Trim.Contains(&quot;partiallyinvoiced&quot;) OR resultOrderStatus.ToLower.Trim.Contains(&quot;changed&quot;) OR resultOrderStatus.ToLower.Trim.Contains(&quot;invoiced&quot;)]" sap:VirtualizedContainerService.HintSize="619,984" sap2010:WorkflowViewState.IdRef="If_2">
+                      <If.Then>
+                        <Sequence DisplayName="okay to process" sap:VirtualizedContainerService.HintSize="541,607" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,143" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Order status is suitable for processing&quot;]" />
+                          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,116" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                            <ui:MultipleAssign.AssignOperations>
+                              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:Boolean">[boolTableExtNeeded]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                              </scg:List>
+                            </ui:MultipleAssign.AssignOperations>
+                          </ui:MultipleAssign>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click -first order number" sap:VirtualizedContainerService.HintSize="479,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a45657b3-a5aa-4afa-9c61-3304242dc24a" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://mu.ariba.com/workbench/" DesignTimeRectangle="73, 673, 154, 25" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'4502880011'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='{0}' colName='Order Number' href='https://service.ariba.com*' /&gt;&quot;, in_strPO)]" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl aaname='{0}' colName='Order Number' href='https://service.ariba.com*' tag='A' type='' class='' check:text='{0}' /&gt;&quot;, in_strPO)]" Guid="98d07d53-1864-4ef5-91f6-dc1185a0d237" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJoAAAAZCAYAAADJ2zdhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARbSURBVGhD7Zi/ayJbFMdf7V9hmTJdSst0llvabZkUgqSIhUWagGk2kMbiFVo8AhZrqcUS2MIUKUZxmBjDDJFdJsGgbswTRPi+c+5cx+vP3YS3wxbnAwPOnJnMgfvJ9965f0EQIkBEEyJBRBMiQUQTIkFEEyJBRBMiQUQTImGDaFN45SZih7e41leALrKHFl1bPD7U+ro+Rf/mFql0cH3n2EGlO9E1ZgSn5iCp67s5B5fuSNeYAa5LLSQ21XtdnJ82sKPfm7y4h/OqawzXTyzEuZ5uIvOlpwvMz3ojJn1UCw16volLX18z6T0ge0zPn9xjXVnYznrR3A6SNCBxUzT/Hh8OHVSHL+ibx2Qa1NUzTeRvnun6AFa5Rc/buFIyaHHTLRTbA6Pu4EqN9xRWiQb5lOXhC2P4dQcJer465Pojzo8spD4/YczlyTOqF3T/mYdA8ycUcyRfoQuPevLbHaSo/0xdi7q1N8L3kCGJ9k9b2F8jmv/Vxn66gY8kuoj2PtaI9ozLkwaynzsk1rJoZsItYv1tYa/0XZ8xP1A5tXDw9YV+U5qVbRpoM8E4IRs4b/PvPr3TQvbGTJlvyJMseYt+askDKTXWLaWT7se+RfzoDnzrjP6XFmJaxO29EXYH2fpAv2dVNKtM7+5N4dfon0VEexcrovm1FnYuHjBeFkud2yhQGuzy9ERHqtTViRKIkqmP1dkMr0wJUPimz5YYuvh42EJFzXDzRPNUQk5UiuytJFqPso7LNM1xon0KRFICcM9cm0Eptq/6f0NvG0SbIaK9n0XRhh4O0npwl0Xj1GC5yo/weXpyPWRp8BOlRyoa6WOgBmataJSalCgJqs2Hf4Dqp0Dg4Gii4Bpy9Gh602ssdeTu4OiE48RaLw33/4beRLTfhiHaCFcXxuJ+WTROGVcnimZ846h1nPUm0Qb0Hp1e+so80TqwevSGyb/w1q3RSHK1JnxdXKOJaH8+oWgszV6uMx/8FdHWEN7zq9PTCNf8ZaemSH1J0VXrtaKrTxUvqJ5p8am32LHRG8Ppq6VQAsjU+UcTinZdMKalpWM5DWaM6zZiehGuEmlh4IIBDhfc6oOAvvaOaPDNbQlm8oDMFtHUe7aIhvYdrecW/ymUFLPE+2lvGhHtt7HyMRCylGhj+w6pnIOKy9sTvIVwjwOazpLlp+AGdT99rdaNLQSSylLJNYVHHxlxXv/567ZHfiipwqmTsinY3mii2KVTJZUxdertjViYwIE4CUq1+fZGA3lbp9jW3ojJKOiFnmPRim2ztynGr8G5w1s09E6Ha8PRYoIKW/ll0dSG6j92uOEa503RGg28rvKA9FnG2YbriYMrnweKCdZJZkrOjnBN+PqESmH+Rbubs1G054kzdl3kSSa1IUtH8oykHM7+PjH8joKux9Mt5EmqOdt600ml/655BL0FEq/WNyefsMpm0QThf0REEyJBRBMiQUQTIkFEEyJBRBMiQUQTIkFEEyIA+A+0RkXMK1R0CAAAAABJRU5ErkJggg==" InformativeScreenshot="597ffc44a06b898a2f476fb0e48acee2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Business Network' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="not okay" sap:VirtualizedContainerService.HintSize="400,201" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Throw Exception="[new BusinessRuleException(&quot;Order status NOT acceptable : &quot;+resultOrderStatus)]" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence DisplayName="no match" sap:VirtualizedContainerService.HintSize="400,293" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Throw Exception="[new SystemException(&quot;po in SAP Ariba does not match po in invoice&quot;)]" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="338,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="check again with table extraction?" sap:VirtualizedContainerService.HintSize="541,410" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,143" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;PO search results failed with Get Text activity, it will be retried with Table Extraction&quot;]" />
+                          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,116" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+                            <ui:MultipleAssign.AssignOperations>
+                              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:Boolean">[boolTableExtNeeded]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                              </scg:List>
+                            </ui:MultipleAssign.AssignOperations>
+                          </ui:MultipleAssign>
+                        </Sequence>
+                      </ui:CommentOut.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:CommentOut>
+                  </Sequence>
+                </If.Else>
+              </If>
+            </Sequence>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 907" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM/SURBVFhHxZLLTxNRFMbnT+A/oKm0vsrDtSv3sHGnO9QiolES4kJNFBSJaEStgIJGRUVRhFqKaFDxVV7ScHnYUgWhWC0YpfhAI7r4vPfOnXaGXhVdjF/yy/3Od+6ZMwxVAPxXpKGZSEMzkYZmIg3NRBqaiTQ0E2loJoqtZQoaaZ5kn+aJ6rKoQO9VEn39rD5TT0PeMk0Uy7VJMFLFyX1Dwv+ul9oQjnte67whF/f0s9Zrk8RyI5KipNaNQmNra4RT4I3Es9S6MZ0fhWVBrfZlmdHr56wXx4jl8ngK/xdYa4I443uL2bkftDbqQegjrDUBrD4XMvQrOqJYUhtEwY1xkRg1Ev2KgqYJOhvk81Z6VyOtdoRYz4b4coZS4g3zIZnuD8dgOzGAkpYJkagKRuZgdw0g/8oLkSRr9vN35JwNwEbvsbsM28lBYq8aii9nKPcG3rP7XJcfRbG+ZghF9SG4u6eRU0WHDj9F7/MP4kZC2ZX0BS4ERQW4e6Z53ROaFQlwuj3C5+2H+7D0SB+xHfUbljOU9v539FQV+zSPix2vkXPMj6WlXbBTsiv8omtU3f0INtcOiQqobpuA/UAXiuoSL3WqLcyfsay0mywr60lazlCcVf30TFbnsxmsO+5HeWPiM1d6XgoHhKe+IK+aiAroCsygyjvOc03l15/DvvcxsRX7pMsZyvJdHXAef4qh0eTPPBn9wtGUXerDne6oqOgLuUeFS1bs4zzWFD8mK/Y8/OVyhuIoaofGuoM+nPeO0VyuzsF3CL+ZExX9CjqvKfZhHo33JrF2/xOycufd3y5nKI7tbfxBJxtG4DzUicJjvTT/e7muBuHYflul8A6h/HE5Q9ld2UfPP+uJfzrOzOw3kSbkqg/AUdCK9K2txLHt1qKWM5Qd5Z0YDM5Qb9TEq0/CqT59cwsy8lXKapN/uK5Lw0jP95KMLd5FL2comc6b0HDue4BNFOYzdLmBPI8K9QvukIw8T0pmblNWVm7z4r/Aqo1uMLIYG5pVT884ohfPeZ3oi1mSucn9V3+5hsIeQt9afWCuSrzmvcQy3l+Y5zYTev+fljOkoZlIQzORhmYiDc1EGpqJNDQTaWgm0tA8oPwES1YLjswN8o8AAAAASUVORK5CYII=" InformativeScreenshot="4077a5079e2bda8696116733fe7dcc55.jpg" Selector="&lt;html app='chrome.exe' url='https://*.ariba.com*' /&gt;" Title="Business Network" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
