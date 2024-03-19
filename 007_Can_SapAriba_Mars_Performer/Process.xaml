@@ -6,10 +6,10 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>912,4069</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>912,4435</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="31">
+    <scg:List x:TypeArguments="x:String" Capacity="62">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -41,10 +41,11 @@
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Reflection</x:String>
       <x:String>System.Globalization</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="47">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="94">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -91,15 +92,15 @@
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="654,4004" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="654,4370" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strPO" />
       <Variable x:TypeArguments="x:Boolean" Name="boolCredit" />
-      <Variable x:TypeArguments="x:String" Name="strInvoiceNumber" />
       <Variable x:TypeArguments="x:String" Name="strInvoiceDate" />
-      <Variable x:TypeArguments="x:String" Name="strMosDate" />
       <Variable x:TypeArguments="x:String" Name="strInvoiceTotal" />
       <Variable x:TypeArguments="x:String" Name="strNet" />
       <Variable x:TypeArguments="x:String" Name="strOrderNumber" />
@@ -107,7 +108,7 @@
       <Variable x:TypeArguments="x:String" Name="strTaxId" />
       <Variable x:TypeArguments="x:String" Name="strTaxCategory" />
       <Variable x:TypeArguments="x:String" Name="strVatTaxId" />
-      <Variable x:TypeArguments="x:String" Name="strAgency" />
+      <Variable x:TypeArguments="x:String" Default="mediacom" Name="strAgency" />
       <Variable x:TypeArguments="x:String" Name="strCreditMemoReason" />
       <Variable x:TypeArguments="x:String" Name="strSummary" />
       <Variable x:TypeArguments="x:String" Name="strSharePointFolderName" />
@@ -120,7 +121,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="592,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
-    <ui:MultipleAssign DisplayName="Multiple Assign-transaction info" sap:VirtualizedContainerService.HintSize="592,364" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign-transaction info" sap:VirtualizedContainerService.HintSize="592,271" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -131,28 +132,12 @@
               <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("PO").ToString.Trim]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[strInvoiceNumber]</OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("InvoiceNumber").ToString.Trim]</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
             <ui:AssignOperation.To>
               <OutArgument x:TypeArguments="x:String">[strInvoiceDate]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:String">[DateTime.ParseExact(in_TransactionItem.SpecificContent("InvoiceDate").ToString.Trim, "MMMdd/yy", Globalization.CultureInfo.InvariantCulture).ToString("d MMM yyyy")]</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[strMosDate]</OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[DateTime.ParseExact(Convert.ToDateTime(in_TransactionItem.SpecificContent("MOS").ToString.Trim).toString(), "MM/dd/yyyy hh:mm:ss", Globalization.CultureInfo.InvariantCulture).ToString("dd MMM yyyy")]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
@@ -171,14 +156,6 @@
               <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Net").ToString.Trim]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[strAgency]</OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Agency").ToString.Trim]</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
             <ui:AssignOperation.To>
               <OutArgument x:TypeArguments="x:String">[strSummary]</OutArgument>
@@ -192,7 +169,7 @@
               <OutArgument x:TypeArguments="x:String">[strSharePointFolderName]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("SharePointFolderName").ToString.Trim]</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("SharePointFolder").ToString.Trim]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
         </scg:List>
@@ -222,7 +199,7 @@
               <OutArgument x:TypeArguments="x:String">[strDownloadFolder]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[in_Config("DownloadFolder").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String">[Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\Downloads"]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
         </scg:List>
@@ -230,33 +207,15 @@
     </ui:MultipleAssign>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\Process\DownloadPdfFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="592,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Workflows\Process\DownloadPdfFile.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strSharePointSiteURL">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strSiteurl" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strDriveName">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strDriveName" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strClientName">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strClientName" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strSharePointFolderName">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strSharePointFolderName" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strInvoiceNumber">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strInvoiceNumber" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strDownloadFolder">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strDownloadFolder" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strTenantID">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strTenantID" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strAppID">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strAppID" />
-        </InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_strPdfLocation">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="strPdfPath" />
-        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strSharePointSiteURL">[strSiteurl]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strDriveName">[strDriveName]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strClientName">[strClientName]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strSharePointFolderName">[strSharePointFolderName]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strInvoiceNumber">[strSummary]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strDownloadFolder">[strDownloadFolder]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strTenantID">[strTenantID]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strAppID">[strAppID]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_strPdfLocation">[strPdfPath]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:IfElseIf sap2010:Annotation.AnnotationText="assigning agency values" DisplayName="Else If agency name" sap:VirtualizedContainerService.HintSize="592,867" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
@@ -295,7 +254,7 @@
               </Sequence>
             </ui:IfElseIfBlock.Then>
           </ui:IfElseIfBlock>
-          <ui:IfElseIfBlock BlockType="ElseIf" Condition="[strAgency = &quot;essencemediacom&quot;]">
+          <ui:IfElseIfBlock BlockType="ElseIf" Condition="[strAgency = &quot;essence&quot;]">
             <ui:IfElseIfBlock.Then>
               <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="541,258" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
@@ -368,7 +327,7 @@
         <InArgument x:TypeArguments="x:Boolean" x:Key="in_boolCredit">[boolCredit]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <If Condition="[boolCredit]" DisplayName="If boolcredit is true" sap:VirtualizedContainerService.HintSize="592,624" sap2010:WorkflowViewState.IdRef="If_3">
+    <If Condition="[boolCredit]" DisplayName="If boolcredit is true" sap:VirtualizedContainerService.HintSize="592,930" sap2010:WorkflowViewState.IdRef="If_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -376,36 +335,44 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="debit process - Sequence" sap:VirtualizedContainerService.HintSize="400,224" sap2010:WorkflowViewState.IdRef="Sequence_6">
+        <Sequence DisplayName="credit proess - Sequence" sap:VirtualizedContainerService.HintSize="400,530" sap2010:WorkflowViewState.IdRef="Sequence_8">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\Process\SAP_3InvDet1_Summary.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Workflows\Process\SAP_3InvDet1_Summary.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\Process\SAP_2SelectLargetAmountInvoice.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Workflows\Process\SAP_2SelectLargetAmountInvoice.xaml">
             <ui:InvokeWorkflowFile.Arguments>
+              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\Process\SAP_3InvDet1_Summary_Credit.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Workflows\Process\SAP_3InvDet1_Summary_Credit.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_strSummary">[strSummary]</InArgument>
               <InArgument x:TypeArguments="x:String" x:Key="in_strInvoiceDate">[strInvoiceDate]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_strInvoiceNumber">[strInvoiceNumber]</InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_strTaxId">[strTaxId]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\Process\SAP_3InvDet_Comment.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="Workflows\Process\SAP_3InvDet_Comment.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_strCreditMemoReason">
+                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strCreditMemoReason" />
+              </InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="credit proess - Sequence" sap:VirtualizedContainerService.HintSize="400,224" sap2010:WorkflowViewState.IdRef="Sequence_7">
+        <Sequence DisplayName="debit process - Sequence" sap:VirtualizedContainerService.HintSize="400,224" sap2010:WorkflowViewState.IdRef="Sequence_9">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\Process\SAP_3InvDet1_Summary_Credit.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Workflows\Process\SAP_3InvDet1_Summary_Credit.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\Process\SAP_3InvDet1_Summary.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Workflows\Process\SAP_3InvDet1_Summary.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_strSummary">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strSummary" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_strInvoiceDate">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strInvoiceDate" />
-              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_strInvoiceDate">[strInvoiceDate]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_strTaxId">[strTaxId]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_strSummary">[strSummary]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </Sequence>
@@ -418,9 +385,12 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\Process\SAP_3InvDet3_Tax.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="592,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Workflows\Process\SAP_3InvDet3_Tax.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strNet">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strNet" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strNet">[strNet]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\Process\SAP_3InvDet4_AdditionalFields.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="592,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="Workflows\Process\SAP_3InvDet4_AdditionalFields.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strVatTaxId">[strVatTaxId]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_3InvDet5_LineItem.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="592,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Workflows\Process\SAP_3InvDet5_LineItem.xaml">
@@ -430,9 +400,6 @@
         </InArgument>
         <InArgument x:TypeArguments="x:Boolean" x:Key="in_boolCredit">
           <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolCredit" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strCreditMemoReason">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strCreditMemoReason" />
         </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>

@@ -1,14 +1,14 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="SAP_3InvDet1_Summary" this:SAP_3InvDet1_Summary.in_strInvoiceDate="20 Feb 2024" this:SAP_3InvDet1_Summary.in_strInvoiceNumber="ST-3C-1138" this:SAP_3InvDet1_Summary.in_strTaxId="88663454RT00001" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="SAP_3InvDet1_Summary" this:SAP_3InvDet1_Summary.in_strInvoiceDate="24 Feb 2024" this:SAP_3InvDet1_Summary.in_strTaxId="88663454RT00001" this:SAP_3InvDet1_Summary.in_strSummary="2402-01" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_strInvoiceDate" Type="InArgument(x:String)" />
-    <x:Property Name="in_strInvoiceNumber" Type="InArgument(x:String)" />
     <x:Property Name="in_strTaxId" Type="InArgument(x:String)" />
+    <x:Property Name="in_strSummary" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
-  <sap:VirtualizedContainerService.HintSize>912,1614</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>912,1694</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SAP_EnterInvoiceDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="62">
@@ -119,7 +119,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Invoice #'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="338,254" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="f5b12240-454f-4c73-a53c-29968af27917" Text="[in_strInvoiceNumber]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Invoice #'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="338,254" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="f5b12240-454f-4c73-a53c-29968af27917" Text="[in_strSummary]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109542057/aw?awh=r&amp;awssk=VSvKXqx2&amp;dard=1" DesignTimeRectangle="232, 338, 270, 32" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT _nygzrc'" FullSelectorArgument="&lt;webctrl tag='INPUT' rowName='      Invoice #:             ' /&gt;" FuzzyAccuracy="0.79" FuzzySelectorArgument="&lt;webctrl tag='INPUT' rowName='      Invoice #:             ' type='text' class='w-txt w-txt-dsize' aaname='' /&gt;" Guid="64964cba-3291-4a8a-8e7b-3b049853dbe9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAARIAAAAkCAYAAABFY7UnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACXSURBVHhe7dQxCoAwAMBAv+/o6mfrZMFBsGa9g3wh2wCIjATI5kj245SkpW6PkQB8ZSRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRA9joSSVrpNkcC8JeRANEYF9sWi5NSDHfWAAAAAElFTkSuQmCC" InformativeScreenshot="fee89362d6c86066ed52e985aa345dab.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>

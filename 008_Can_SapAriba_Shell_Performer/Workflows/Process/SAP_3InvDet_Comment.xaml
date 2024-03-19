@@ -1,0 +1,169 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SAP_3InvDet_Comment" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_strCreditMemoReason" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:SAP_3InvDet_Comment.in_strCreditMemoReason>
+    <InArgument x:TypeArguments="x:String" />
+  </this:SAP_3InvDet_Comment.in_strCreditMemoReason>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>486,1056</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SAP_3InvDet_Comment_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="46">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SAP_3InvDet_Comment" sap:VirtualizedContainerService.HintSize="496,991" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: SAP Business Network Supplier" sap:VirtualizedContainerService.HintSize="434,880" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="9b3282d1-7366-4db2-8cc3-4bccbac0dd1b" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,663" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Reason for Credit Memo'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="338,254" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="9b3282d1-7366-4db2-8cc3-4bccbac0dd1b" Text="[in_strCreditMemoReason]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109553055/aw?awh=r&amp;awssk=pMI9bgNz#b0" DesignTimeRectangle="232, 436, 587, 60" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'TEXTAREA _eraglc'" FullSelectorArgument="&lt;webctrl tableRow='110' tag='TABLE' /&gt;&lt;webctrl id='_eraglc' tableRow='1' tag='TEXTAREA' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='_eraglc' type='' tag='TEXTAREA' class='w-txt w-txtarea w-txt-dsize' aaname='' /&gt;" Guid="22979952-5693-4dcb-8b5f-a65372b9ab2b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAk8AAABACAYAAAADDpOSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFsSURBVHhe7drLDcJAEAVBonUuHLmSrNEijPgtdt+rpKdJoQ9zWgEAOEw8AQAEz3g6X65mZmZmNtnmLZ4AAPgmngAAAvEEABCIJwCAQDwBAATiCQAgEE8AAIF4AgAIxBMAQCCeAAAC8QQAEIgnAIBAPAEABOIJACAQTwAAgXgCAAjEEwBAIJ4AAALxBAAQiCcAgEA8AQAE4gkAIBBPAACBeAIACMQTAEAgngAAAvEEABCIJwCAQDwBAATiCQAgEE8AAIF4AgAIxBMAQCCeAAAC8QQAEIgnAIBAPAEABOIJACAQTwAAgXgCAAjEEwBAIJ4AAALxBAAQiCcAgEA8AQAE4gkAIBBPAACBeAIACMQTAEAgngAADliW5X7FEwDAji2cBvEEAPDHazgN4gkAYOIznAbxBADww2c4+XkCAJiYhdMgngAAXvwLp0E8AQA87IXTIJ4AAIJpPJmZmZnZ722e8QQAwD7xBABw2LreADQTQ71DfXVFAAAAAElFTkSuQmCC" InformativeScreenshot="0e968732524b858c9690ba3da197b760.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SAP Business Network Supplier' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="72, 438, 148, 21" ElementType="Text" FriendlyName="'Reason for Credit Memo'" FullSelectorArgument="&lt;webctrl tag='TD' aaname='  Reason for Credit Memo:  ' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TD' aaname='  Reason for Credit Memo:  ' type='' class='base-ncd-label-top ANXLabel ANXLabelWithErrorKey' check:text='Reason for Credit Memo:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJgAAAAZCAYAAADNLudcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUuSURBVGhD7VjfSypbFL5/r6AYhoooIVGIBBKCiHQ4iBhhYkRPGdGhhHOihBIMKsgHg3ywh3nwPMzLd9b+MbpnHEen7lw6l/2BMDN79pq11/rWL/+BhkaA0ATTCBSaYBqBQhNMI1BogmkECk0wjUChCaYRKDTBNAKFJphGoPgfE2yE09w6QuEoyvfy0VfF6AzZ8B7u2PVkgPN2F2O+8PfDm2D84FHuJOsXiedRvX2XL3xh9KsIpRp4kbefBnN8JY/YmrTFWhb5g3+JCCrBBg3EwkVcGuzmHee5PE5H7Hoeb+3thQH00szQ2vbCvf8VViBYFodPBgxD/Ib3DWyFk9gfyHe+Ku73ENo8w5u8/RQmPZTjUcR2W7gbSlsMezjczSB98AxTvvZhqASzYYSjjcUksQgWKXUdOjygGk9SMPwVBHMqaeB8J4ps23o4wmUpiwiP6gyK7QEmcoVF/am1Fl5HtjaL+LerMhIyG0Q267ixFsxXnCt70qXOlCR3Ffpu8xpHO6L0hdYK7gZk5OL7xY9H+DK5tRbKKSJR7Vk+nWHYzBJZTzzJOi/jN/oHVsazn51lpp8VxWa1PaQtgk3JRiV+c3aGUKXHd6rgBKvUiUwFmfEk+nXESmUUbb5b5CfxnfJxB8WUsGtit4OXwRkKdBame6LWm/nUw47m7R4ia3u4Udjum2DGU0vJYCb63ylSKl0YTKjxjH1StngrvjC+KiDffCZKEkixI2vNvKbDW2XAxPC4iG/3v/n1XUWRZ1KJIDJbTmdODMXLuBzzRbwckON3OkK+E7YMtqJcyk4TobqCd+rlothqe7cFThlv7TwiuRMM5fcuS0mkm6/8XU5Ya420vyHdQnMEY6DM6VHmBMF6eKwlsXVhWcHEDX2r2u8qe738JIm82cAjE2Ew31DQW/oZHRTCVKZ5dHjbEQZl9WbP5g/fPRjrPYpX1okf8I1K6JFigDEZ1i3aGFhfIDKfSOEFUmZo8+i8PDxRNMbreKRL5sREU6nNXmXQtrZcrlvmEpARvmRQsMsQpCzfylsG1hNyfaQ8dW104pLBGFYjGIYtpK2zml0U6Vx9214vPwl9ir8sPzj1U8/vbUc3+MhgMgq+P9CVhBsB2S93JsrBuItqLknpdB2xVIaXxGlpHT/gVDbNkRRFPnts+56EYnDmxFlpJqxKML9ybRBkWbwuYJfBnOtil3BVOt5BWEUX2/WqBMMrDjeoVx6Sl36VJdGVvVymiz7cT84A8rhfYkc3+CuRE5Y+Kf0+yXs3Rk8hFMtTabEIOctgKliJpGjih12eaT5EML9yHeAlbaM1N5FOqOfYqj3wkmCX4ZLBppAOU9cGLSQ+RTCqThd5yu5dmjoF0ex7l/tpJYIFm8EEDOqrZsaWWa10DdEWGbirFbDPCTjAITWJhStRkc0xkZMmMe4EklvY/SF7EJJJjopxgim9AltgfRs5Su2VPkYwn3KdMMmwpHsk15hOkcPbKpW1JBme9Y7zMkQP1hJ9DQuiiyLK0ha2Hkz2Z+49GHNoZuHErhIMxg9sscmRfMP5ZSOYl5/8EMzbjh/swZwRRMTZIGMeWw+V6YRNS5XOlDiT+7oyKTZwfrCNNN/3jpva7D+lyIYskRwOecr09XGCMfiQ6wbH/2CRVAGH/Zkp52XYp8jETguz15kuGaELm+iuTogMNH3xJZVg5NCafI+cKs06hY1gtPqzRMPItNl3Zr9FfvJDMIbFdvQ/RWpofBKaYBqBQhNMI1BogmkECk0wjUChCaYRIIA/FyCRGefeEOYAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Credit Memo Reason'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="338,254" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="9b3282d1-7366-4db2-8cc3-4bccbac0dd1b" Text="[in_strCreditMemoReason]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109528066/aw?awh=r&amp;awssk=X.xu8sSt" DesignTimeRectangle="232, 639, 270, 32" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT _yfxt9b'" FullSelectorArgument="&lt;webctrl tableRow='93' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='w-txt w-txt-dsize' aaname='' /&gt;" Guid="e61da42f-15a5-46bb-abf3-6f3a85fa9f7c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAARIAAAAkCAYAAABFY7UnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACXSURBVHhe7dQxCoAwAMBAv+/o6mfrZMFBsGa9g3wh2wCIjATI5kj245SkpW6PkQB8ZSRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRAZiRA9joSSVrpNkcC8JeRANEYF9sWi5NSDHfWAAAAAElFTkSuQmCC" InformativeScreenshot="bd979f9c52ae17eb8a635fd3e1c8a007.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SAP Business Network Supplier' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="72, 641, 148, 21" ElementType="Text" FriendlyName="'Credit Memo Reason'" FullSelectorArgument="&lt;webctrl tag='TD' aaname='  Credit Memo Reason:  ' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TD' aaname='  Credit Memo Reason:  ' type='' class='base-ncd-label-top ANXLabel ANXLabelWithErrorKey' check:text='Credit Memo Reason:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJgAAAAZCAYAAADNLudcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAU4SURBVGhD7VjfSypbFL5/r5AohoYYImGIBBKCDGGEiBEaxaGnlChOwemgQgUT2IF8UKgHe5iHepiX7679Y2b2jD9Ot3PH4t79wYB79o9Ze61vfXtt/4KGRojQBNMIFZpgGqFCE0wjVGiCaYQKTTCNUKEJphEqNME0QoUmmEao+E8R7GYnhlz7mX694fG8g+5EvNf4PCyZYCzwVeSTq4isxOhZRWar+a8RwSPYEPvJGEqXFn8/OS8iz9/PwHMHOWbLzp18oWB4hBT1iTU/B2xPwlfOQz6rdPD4Kgd8cSyRYG/krDVEkmW0bsewLIueMW4Oy0hlmxjYctgfwCOYH0/fcvNJ4hAsbqAbsMGsryFByfDpBKv8lP6iZzLEWYX8uH0FkT5fG8sj2OgImZVNHC+K1W0VkY0GWjvrRMQGBuzd8xXKWaF40bSB0+EbH8rwSgpTlGoY3Wiitu0Q7BmnGzEYt0Su9qaS/VXciKkeOMGqqBGZilLxBO5RSxooV/ykfTWbrgJHyVZXfbntTZwdbCLKvhXfxL5JCVR32iWcustYMA+KSMSZTatIFJow5ygSJ1hQXR8atKaylwU+mvQanr2+vmd8r6wL28iGXL0PZyv26MJdLxLPoXzpGC79et6HkXbWbOBG2j6iRI5mTzASTY6lEWzSLiJS6LibmAkWpJU12hAp3CvJiX2P3eQajJ4FJi7WQ5PIIJXG7qNMY1kfgz06QZ42HCQYwzxl45AEu6GgJQoXrirYPQOJ+j266lwam48XcTziBmBySWOyR8Khru0v1GPj8SBH7XXscvtsDA4oafbu2UhB+gIFgismka1OY7dmK9IUwewX/FAVbKGPKEk2qvgx4R+C1au69trXhrLGGMfbNUEU+w6Gsp49uUCR9lV7YAOFXyOFIwz4RItsiZGffrEG7OEVWpdDPs/B0gjGnTqrzlHBguQoF4NZQ4Qy4kk2gRecFiRx2FhfHxQyfIBgGKOV3ZQqY6NLQayZ/rk8SXb6/LcABZdUmc9h9qSP8Cg6pu1j7Y0OteUeevI9g3VFQSzh+wyGcYJxlXGegOIt8lEQ9k9KSql8JiWULFdYLruYWg8YsFKBk0j4tXztTfhdXJerYNzBC+AGQcB/vHlPvv0i+gLreWT4CMFI4g9zyByORSAk0dW508EWzy4RMWj7/DYpBM3xE4C9c8jtB/+mE0CpoOq4RT7il6q2gQw7iuPrSKXXfEfrxOzAKLB3q0hVrrits/zqkcjvVwavbzaWXIPl0BrKtoNXOs8LDZgse4NBmZFNLthYX5/N5fpPCAbrAnlSoS7dOjnRCOrcaQVT8G6CfUDBlAA+UhL4jtPf+ShNR58zWFUwFeyIJJs4Kd+hYF+TYEQAc49qB8rAfecWOepjN0tnOBnIFT8YFFlflK9ZXUNN6w61Lbpx8j5/DSZqj9kEM/diSB0EmS2hEozCdkYZnUhSIshK1UdOqSCtB/FNVgyXdmSw300wFpQiokoN1mW36/fWYPhFlw92TMlifYGPeJ2Vdm7oFgaHlCByr0/tMkrnYz7HsYETTKnpGERt66/B5hHsU2swgcD/YCTbxcN7z7HBoDAoNyR2MzPoAuBsgN3ocvwmJm6R7AaX+TZNMJvqjRQfV536K8JPMBkUpdgPqp/vFpkuocWll/APCMb8oN4iUwv+15omGNnAbEzSXpw5c31EftjyfF2+PKGjmOaxrkkfNX48Chsy8ojkCKxX67HjlncsJNin3iI1/p/QBNMIFZpgGqFCE0wjVGiCaYQKTTCNEAH8DQ6O3o8dKC0VAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 929" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="72ff208c6dd55aa87ecb42a43aba57d9.jpg" Selector="&lt;html app='chrome.exe' /&gt;" Title="SAP Business Network Supplier" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

@@ -1,14 +1,13 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="SAP_3InvDet5_LineItem_Debit" this:SAP_3InvDet5_LineItem_Debit.in_strNet="26.58" this:SAP_3InvDet5_LineItem_Debit.in_boolCredit="True" this:SAP_3InvDet5_LineItem_Debit.in_strCreditMemoReason="Billing Adjustment" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="SAP_3InvDet5_LineItem_Debit" this:SAP_3InvDet5_LineItem_Debit.in_strNet="26.58" this:SAP_3InvDet5_LineItem_Debit.in_boolCredit="True" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_strNet" Type="InArgument(x:String)" />
     <x:Property Name="in_boolCredit" Type="InArgument(x:Boolean)" />
-    <x:Property Name="in_strCreditMemoReason" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
-  <sap:VirtualizedContainerService.HintSize>912,3318</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1126,2859</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SAP_EnterInvoiceDetails3_LineItem_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="37">
@@ -107,7 +106,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="SAP_3InvDet5_LineItem" sap:VirtualizedContainerService.HintSize="609,3253" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SAP_3InvDet5_LineItem" sap:VirtualizedContainerService.HintSize="609,2794" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="adim2" />
     </Sequence.Variables>
@@ -116,13 +115,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: SAP Business Network Supplier" sap:VirtualizedContainerService.HintSize="547,3142" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="9b80aa0a-d100-4c81-a198-56e17b8de381" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: SAP Business Network Supplier" sap:VirtualizedContainerService.HintSize="547,2683" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="9b80aa0a-d100-4c81-a198-56e17b8de381" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="513,2925" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="513,2466" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="lineItemsCurrent" />
               <Variable x:TypeArguments="x:String" Name="adim1" />
@@ -161,44 +160,6 @@
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-            </ui:IfElseIf>
-            <ui:IfElseIf DisplayName="Else If it is a credit" sap:VirtualizedContainerService.HintSize="451,560" sap2010:WorkflowViewState.IdRef="IfElseIf_2">
-              <ui:IfElseIf.ConditionBlocks>
-                <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
-                  <ui:IfElseIfBlock BlockType="If" Condition="[in_boolCredit]">
-                    <ui:IfElseIfBlock.Then>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,365" sap2010:WorkflowViewState.IdRef="Sequence_13">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Reason for Credit Memo'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="338,254" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="9b80aa0a-d100-4c81-a198-56e17b8de381" Text="[in_strCreditMemoReason]" Version="V3">
-                          <uix:NTypeInto.Target>
-                            <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109553055/aw?awh=r&amp;awssk=pMI9bgNz#b0" DesignTimeRectangle="232, 436, 587, 60" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'TEXTAREA _eraglc'" FullSelectorArgument="&lt;webctrl tableRow='110' tag='TABLE' /&gt;&lt;webctrl id='_eraglc' tableRow='1' tag='TEXTAREA' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='_eraglc' type='' tag='TEXTAREA' class='w-txt w-txtarea w-txt-dsize' aaname='' /&gt;" Guid="22979952-5693-4dcb-8b5f-a65372b9ab2b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAk8AAABACAYAAAADDpOSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFsSURBVHhe7drLDcJAEAVBonUuHLmSrNEijPgtdt+rpKdJoQ9zWgEAOEw8AQAEz3g6X65mZmZmNtnmLZ4AAPgmngAAAvEEABCIJwCAQDwBAATiCQAgEE8AAIF4AgAIxBMAQCCeAAAC8QQAEIgnAIBAPAEABOIJACAQTwAAgXgCAAjEEwBAIJ4AAALxBAAQiCcAgEA8AQAE4gkAIBBPAACBeAIACMQTAEAgngAAAvEEABCIJwCAQDwBAATiCQAgEE8AAIF4AgAIxBMAQCCeAAAC8QQAEIgnAIBAPAEABOIJACAQTwAAgXgCAAjEEwBAIJ4AAALxBAAQiCcAgEA8AQAE4gkAIBBPAACBeAIACMQTAEAgngAADliW5X7FEwDAji2cBvEEAPDHazgN4gkAYOIznAbxBADww2c4+XkCAJiYhdMgngAAXvwLp0E8AQA87IXTIJ4AAIJpPJmZmZnZ722e8QQAwD7xBABw2LreADQTQ71DfXVFAAAAAElFTkSuQmCC" InformativeScreenshot="0e968732524b858c9690ba3da197b760.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SAP Business Network Supplier' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
-                              <uix:TargetAnchorable.Anchors>
-                                <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
-                                  <uix:Target DesignTimeRectangle="72, 438, 148, 21" ElementType="Text" FriendlyName="'Reason for Credit Memo'" FullSelectorArgument="&lt;webctrl tag='TD' aaname='  Reason for Credit Memo:  ' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TD' aaname='  Reason for Credit Memo:  ' type='' class='base-ncd-label-top ANXLabel ANXLabelWithErrorKey' check:text='Reason for Credit Memo:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJgAAAAZCAYAAADNLudcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUuSURBVGhD7VjfSypbFL5/r6AYhoooIVGIBBKCiHQ4iBhhYkRPGdGhhHOihBIMKsgHg3ywh3nwPMzLd9b+MbpnHEen7lw6l/2BMDN79pq11/rWL/+BhkaA0ATTCBSaYBqBQhNMI1BogmkECk0wjUChCaYRKDTBNAKFJphGoPgfE2yE09w6QuEoyvfy0VfF6AzZ8B7u2PVkgPN2F2O+8PfDm2D84FHuJOsXiedRvX2XL3xh9KsIpRp4kbefBnN8JY/YmrTFWhb5g3+JCCrBBg3EwkVcGuzmHee5PE5H7Hoeb+3thQH00szQ2vbCvf8VViBYFodPBgxD/Ib3DWyFk9gfyHe+Ku73ENo8w5u8/RQmPZTjUcR2W7gbSlsMezjczSB98AxTvvZhqASzYYSjjcUksQgWKXUdOjygGk9SMPwVBHMqaeB8J4ps23o4wmUpiwiP6gyK7QEmcoVF/am1Fl5HtjaL+LerMhIyG0Q267ixFsxXnCt70qXOlCR3Ffpu8xpHO6L0hdYK7gZk5OL7xY9H+DK5tRbKKSJR7Vk+nWHYzBJZTzzJOi/jN/oHVsazn51lpp8VxWa1PaQtgk3JRiV+c3aGUKXHd6rgBKvUiUwFmfEk+nXESmUUbb5b5CfxnfJxB8WUsGtit4OXwRkKdBame6LWm/nUw47m7R4ia3u4Udjum2DGU0vJYCb63ylSKl0YTKjxjH1StngrvjC+KiDffCZKEkixI2vNvKbDW2XAxPC4iG/3v/n1XUWRZ1KJIDJbTmdODMXLuBzzRbwckON3OkK+E7YMtqJcyk4TobqCd+rlothqe7cFThlv7TwiuRMM5fcuS0mkm6/8XU5Ya420vyHdQnMEY6DM6VHmBMF6eKwlsXVhWcHEDX2r2u8qe738JIm82cAjE2Ew31DQW/oZHRTCVKZ5dHjbEQZl9WbP5g/fPRjrPYpX1okf8I1K6JFigDEZ1i3aGFhfIDKfSOEFUmZo8+i8PDxRNMbreKRL5sREU6nNXmXQtrZcrlvmEpARvmRQsMsQpCzfylsG1hNyfaQ8dW104pLBGFYjGIYtpK2zml0U6Vx9214vPwl9ir8sPzj1U8/vbUc3+MhgMgq+P9CVhBsB2S93JsrBuItqLknpdB2xVIaXxGlpHT/gVDbNkRRFPnts+56EYnDmxFlpJqxKML9ybRBkWbwuYJfBnOtil3BVOt5BWEUX2/WqBMMrDjeoVx6Sl36VJdGVvVymiz7cT84A8rhfYkc3+CuRE5Y+Kf0+yXs3Rk8hFMtTabEIOctgKliJpGjih12eaT5EML9yHeAlbaM1N5FOqOfYqj3wkmCX4ZLBppAOU9cGLSQ+RTCqThd5yu5dmjoF0ex7l/tpJYIFm8EEDOqrZsaWWa10DdEWGbirFbDPCTjAITWJhStRkc0xkZMmMe4EklvY/SF7EJJJjopxgim9AltgfRs5Su2VPkYwn3KdMMmwpHsk15hOkcPbKpW1JBme9Y7zMkQP1hJ9DQuiiyLK0ha2Hkz2Z+49GHNoZuHErhIMxg9sscmRfMP5ZSOYl5/8EMzbjh/swZwRRMTZIGMeWw+V6YRNS5XOlDiT+7oyKTZwfrCNNN/3jpva7D+lyIYskRwOecr09XGCMfiQ6wbH/2CRVAGH/Zkp52XYp8jETguz15kuGaELm+iuTogMNH3xJZVg5NCafI+cKs06hY1gtPqzRMPItNl3Zr9FfvJDMIbFdvQ/RWpofBKaYBqBQhNMI1BogmkECk0wjUChCaYRIIA/FyCRGefeEOYAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, Image" />
-                                </scg:List>
-                              </uix:TargetAnchorable.Anchors>
-                            </uix:TargetAnchorable>
-                          </uix:NTypeInto.Target>
-                          <uix:NTypeInto.VerifyOptions>
-                            <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
-                              <uix:VerifyExecutionTypeIntoOptions.Retry>
-                                <InArgument x:TypeArguments="x:Boolean" />
-                              </uix:VerifyExecutionTypeIntoOptions.Retry>
-                              <uix:VerifyExecutionTypeIntoOptions.Timeout>
-                                <InArgument x:TypeArguments="x:Double" />
-                              </uix:VerifyExecutionTypeIntoOptions.Timeout>
-                            </uix:VerifyExecutionTypeIntoOptions>
-                          </uix:NTypeInto.VerifyOptions>
-                        </uix:NTypeInto>
-                      </Sequence>
-                    </ui:IfElseIfBlock.Then>
-                  </ui:IfElseIfBlock>
-                </sc:BindingList>
-              </ui:IfElseIf.ConditionBlocks>
             </ui:IfElseIf>
             <Sequence DisplayName="check lineitem - Sequence" sap:VirtualizedContainerService.HintSize="451,400" sap2010:WorkflowViewState.IdRef="Sequence_11">
               <sap:WorkflowViewStateService.ViewState>
@@ -271,115 +232,33 @@
                 </uix:VerifyExecutionTypeIntoOptions>
               </uix:NTypeInto.VerifyOptions>
             </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Checkbox'" sap:VirtualizedContainerService.HintSize="451,193" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9b80aa0a-d100-4c81-a198-56e17b8de381" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109543032/aw?awh=r&amp;awssk=zTqYODTZ#b0" DesignTimeRectangle="81, 447, 24, 24" DesignTimeScaleFactor="1" ElementType="CheckBox" FriendlyName="'Checkbox'" FullSelectorArgument="&lt;webctrl tag='DIV' class='w-chk w-chk-dsize' colName='        Please ensure Quantity, Amount and decimal separator are correct before submitting invoice   ' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='DIV' class='w-chk w-chk-dsize' colName='        Please ensure Quantity, Amount and decimal separator are correct before submitting invoice   ' type='' aaname='  ' /&gt;" Guid="64b77cb0-add6-4e90-a8ec-1cacadd84720" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABASURBVEhL7c0hDgAgDMBAvo/E8tmhIEHgumF6SXVbFPs37GOmtl3DLA5xDnEOcQ5xDnEOcQ5xz2Fm2xlWKR5GLDFZvip4hacxAAAAAElFTkSuQmCC" InformativeScreenshot="a103abdb539679d1bd2109a640c51227.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="451,143" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[&quot;Fields are filled, the update button will be clicked&quot;]" />
-            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="10" DelayBefore="2" DisplayName="Click 'Update'" sap:VirtualizedContainerService.HintSize="451,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9b80aa0a-d100-4c81-a198-56e17b8de381" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="10" DelayBefore="2" DisplayName="Click 'Update'" sap:VirtualizedContainerService.HintSize="451,157" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9b80aa0a-d100-4c81-a198-56e17b8de381" Version="V3">
               <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109549034/aw?awh=r&amp;awssk=ztno7euZ#b0" DesignTimeRectangle="1468, 830, 45, 16" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Update'" FullSelectorArgument="&lt;webctrl tag='BUTTON' aaname='Update' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='_loa0gb' tag='TABLE' /&gt;&lt;webctrl type='' tag='SPAN' class='' aaname=' Update' check:innerText='Update' /&gt;" Guid="e8edcf3b-5990-4471-b684-9791b4d802c8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADEAAAAUCAYAAAAk/dWZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJwSURBVFhH7VQ7ayJRFJ5/YZkypeX+BEtLy22msAmCjY2NxWI5zYDYKNhMI9jZpNBCkDRapIjj+0XGuKgTzGSIEb49d+5M5sGyu7oLOwQ/uHDPPffec77zEvAJcCERFlxIhAV+Ep0pBHGKti26eEJeHEB5tMWT8QwlqyLfscV/jBCSWENKDk+yFUISp9s6i0RbVhGvaFCkAa5EFUJygFR9C5OrCXu0S0NcMx2tRGkByUvC2KImu/rr7AxdgymYHX5mrewCGjvW1yjk+ratPr5W1h5bf0FCEPvItHTsDBO73hxxkqX7I2mP6Jb6iOTm6OrvwOEFXWWICDngkNBuh0gUV9AOdJ/0DZnuSyvbsWAmtihnKBDKBrsDifoGBQpIov7M1YTzSUiaJxpH6yxSfKL9BtKNiswdI+SAHEn/opyYXSfqQRK9GaLi2OeT2RpByC3t+39K4qAhFSynqs4FG5PqAILMSHAnyjN+zuHvCXO0RJ7KwyknX+kESVg+ee59LNdPP4nHBZVF0AEySh9FxREaLJ0EKxPyigsWeCaipQ3tmRPBTNDEoexwEjxTiSr1kP3fqZkIwk8Cr+QM1Wd6DKVH9a7v8dCaIp5U8cVykMMiQYakzgtJ725P9AI98d2EaewDPcFJpprsLYFqvJyj/3wk+ijcG9RvbyTznoh99JCORnGI/N2rdZshQIKBJktlhBg5ztJ2dUMPbr2Txy6nytIzMWg6NT3lddih5kwuWs50StT3pDxi0hy7/1PAatUxhPQcE+sxBbJIQWBvnbqn6VT+5v4XkxZ40N1M/4TE72GR8EyH/40LibDgLBJhwycgAfwAX7tcPfmp/kwAAAAASUVORK5CYII=" InformativeScreenshot="024ab3e5a941a0eaf4994df052e0ca9c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive" WaitForReadyArgument="Complete">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target DesignTimeRectangle="1439, 818, 104, 40" ElementType="Button" FriendlyName="'Update'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;span&amp;gt;form&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;div&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;div&amp;gt;table' parentname='_loa0gb' tableCol='2' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='_ffzbzc' tableRow='1' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='_loa0gb' tag='TABLE' /&gt;&lt;webctrl id='_ffzbzc' type='' tag='BUTTON' class='w-btn' aaname='Update' check:innerText='Update' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGgAAAAoCAYAAAASRL/NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAP9SURBVHhe7Zs7TyJRFMf5FpaWlpb7ESwtKbehsDEmNjY2FhvLaUiMjSY2NCZ2Nu6ubtYNURJwIyhPeUZ8AWMUETT57zl3ZmBmwN0Ylblk7z85CZc7M5ec35wHkzu+WkOHMnlNAZLcXgR0XasjnswicpTAj3AUX38eKntHY5+yb+PJnPD1IAZsAwFl8iV8/xVBsVLFTV3HY7sDpfcV+/S61hA+/rYfET4fxKIPULZQxlEibV5GaViKxVPI5ssOFmwOQEzxKJEyT1EatgxIzkjqAuI8yGlNyVtxuuPU1wfomBqCAuVDJW+VL5+LxqEP0GEsIRoCJW/F0XNI3V0fIG77VLfmvZgBs+gDxL25khxiFgqQxFKAJJcCJLkUIMklB6BoAb5AAWFz2NMllgMZhM7N4at1i9BiCstRcziCUoC6uoI2k33DWh8jBairt671MRopQOFgCtMbVYS0DMYDKfhmMpjbrqNlTJPuEF7LYoLnyPxrZWh2QM06toK9+YnFImJNnuB1jO+ELZYhHnTpV1hZSptrpfF548q21nA0coB8gTQW9nU0mi00kiVM01g7fqbZZ8TW0hhbKiGmPwGde8RCWYyRcy1A1Z0s/KsXqHboeJrfDdLx2oXpdHcE1bG+QJBDNTT4oYpewwrB9m/fGtND0ugB0qq2u/hZfDe2ekmfa9BmU1g4YFiWyMnzf0lxvK4VLW5AySImA2eO39Taz8G3VDGPH47kBtSpYs6d4jadD3Hzmxn4ggzIcPB60fjekLMGtXIVLFPKslKcI525AYnfZDuua4NupI+THIDOy5Sq3M4lh5KTJgM57JrPbUUEBS+MgZARQZNrNfrMDnZHEHVmFFUGICPC/JtUs6znwK+MIC8kByA8kKOpHsyfIZSk+qLf4XS/gOmZFD4J5xsSgMiJWvSeRk+9GpR01aDrFlrNO1cNMgDO7fG5JKop60t0PQegNFaOm1Tf2jQ2atBUt2bp2F3NYvngQRw9LEkCiEUd2EYOUwSFU8n4LDljx96hmSluo2LrrKiL27OlvE4DW1aHR2Z1cf7tO5p8Rn7vrHd9uhm2Ns/gmy8hL06mm2SVAPO5Vp2hLm79S+96U1oZp7o9Qj9eEgH6twSgIXdRXksBklwKkOQaKUD/oxQgyTUQkNo0Ioce2+3Bm0Z4Izdv+VHyVswgcnTSDyieyqFYsf9jV/JCBd64SCz6APHWX952quStuP7c1Ads/WUTm+fjavO8V4rGk+LtEjsTByA29fqJN+I3G3LFioMFWx8gNn4FgtNdoVwVRUt1d+8v7tbYt+xjTmvuyLFsICA2PpmLFXcU3PbxRZS9n7FPI79PkCAf22uO214EpEwOU4CkNh1/ALvatog4BDCJAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
+                <uix:TargetAnchorable BrowserURL="https://service.ariba.com/SCMSupplier.aw/109540053/aw?awh=r&amp;awssk=PZmpFbDw#b0" DesignTimeRectangle="1441, 657, 100, 36" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Update'" FullSelectorArgument="&lt;webctrl tag='BUTTON' aaname='Update' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' aaname='Update' idx='2' check:text='Update' /&gt;" Guid="580024ff-a995-43da-890a-23ef8357620e" ImageBase64="" InformativeScreenshot="a6185ade54d97ac6e4689728dfedaae6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="451,143" sap2010:WorkflowViewState.IdRef="LogMessage_7" Message="[&quot;Moving to  next page&quot;]" />
-            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="10" DisplayName="Click 'Next'" sap:VirtualizedContainerService.HintSize="451,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9b80aa0a-d100-4c81-a198-56e17b8de381" Version="V3">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="451,143" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[&quot;Moving to  next page&quot;]" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="10" DisplayName="Click 'Next'" sap:VirtualizedContainerService.HintSize="451,157" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9b80aa0a-d100-4c81-a198-56e17b8de381" Version="V3">
               <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109549034/aw?awh=r&amp;awssk=ztno7euZ#b0" DesignTimeRectangle="1822, 830, 29, 16" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Next'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;span&amp;gt;form&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;div&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;div&amp;gt;table' parentname='_loa0gb' tableCol='2' tableRow='1' tag='TABLE' /&gt;&lt;webctrl parentid='_w_slkb' tableRow='1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='_loa0gb' tag='TABLE' /&gt;&lt;webctrl parentid='_w_slkb' type='' tag='SPAN' class='' aaname=' Next  ' check:innerText='Next' /&gt;" Guid="138b1b56-5537-4d02-b39a-a4c76ed6f55f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACEAAAAUCAYAAAADU1RxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGjSURBVEhLxZS/bsIwEMZ5Ex6hj9CRR+jII8DWOVPHDixsqEPFBiNjOiBVDKhSBjIwsCDBghCkicEQvp7/JHGQhQpC5qRP8p2d88/ncyqV5hYPlzXoWtaga1mDrmUNulbhcIQgSw5omAtInSXFl7wUu6sKR0OQzYK4tOg+EAyDDRCOLHOFIyBO8CdHMBzRaRWL7gXhJ/+F6MXorwA226Gq58oQv3idpFiLkglLUgx6kZyrjcQBUnTbOmebY0Y5w9FeAhRGh9S5pfJBDkHj3oE2oeSfas6EqAUpwFP0CbbqxWhIP6tchPf5CVhx1JoxuuIw870+zFWVEGMzmQmRyHtdT5n+RmiHb24k99RmixXBiSb3snVXQ5Bayv/5igwIlchmJlh1TABkiyDJY7dBkOp09+I0/sVKnIn6IOQEPz3rj1shKp4qNaOk5z3hDxM8UZPWhwcsNlnZzT6I0JjSd/l/R1/ThOHlI6ZvjX3ygQ2C9EwdL01DyNcRHIvXQYDhmMmkclNq0resD3R/iMopKHVNF17HA2UNupY16FrWoGtZg061xR9vvts6C97BtQAAAABJRU5ErkJggg==" InformativeScreenshot="2aa566f5093e188a559fb05e07590edf.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
-                  <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                      <uix:Target DesignTimeRectangle="1786, 820, 100, 36" ElementType="Button" FriendlyName="'Next'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;span&amp;gt;form&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;div&amp;gt;div&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;div&amp;gt;table' parentname='_loa0gb' tableCol='2' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='_w_slkb' tableRow='1' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl parentname='_loa0gb' tag='TABLE' /&gt;&lt;webctrl id='_w_slkb' type='' tag='BUTTON' class='w-btn w-btn-primary' aaname='Go to next step' check:innerText='Next' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGgAAAAoCAYAAAASRL/NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMCSURBVHhe7ZtLaxNRFMfT4sZH/ArZu1G0CK5c9iO47AcQTSI1WejCbBRUdBGV6qa4kOIrxQd0mSgFyaIIWTSLLrIwmNIamtuYTDtJ+vfcmUkzjxtBkiY3ci78oJk79xbOr+eekzITqu7UwOgLC9KcvoJ+bNVw7Y3A+QcC4cQuQjFmmMiYXqDYXn8r8HNb7UCiFPQkW8OxG0K5MTN8puMCz3JBD5KAoFsfajidZDmjRsY89dnrQuIRlKbMCSdYzriQsX/xtY+g8pbgY00D5HFX+aUQdPW1wPF59SJmdJy4KZBYVgg6c1dmTz2wgBk9lx6JoKBT3EprQ5gahoAg1Y3M+GBBmsOCNIcFaQ4L0pwJEGSiCBrNFqK+ucVNur5peq79b0yOIBqlQsMzNxxBBlYEUMyr5sbPhAg6QHa9DQNtLKZ7c8MSlG2yoAFwBGUaWK4CRmkPEWfOK+g3kusd7MhUk6PZwUrG/o/IbF7K7WBpwdlzwUSJ9izm9y05vUF/AM7eujBBgujnTIsEUOBf2XNuQbOFDmB2sEwiI6kGotbnbsbV8bh8AFRNzMYaWJKiy/uOaM6gAXEJ8gTaLahp1ZGdDcO1bg/fTFfgU7aISpXEyYYj1b2PBQ2IWxCRtj9/z9Vdguwgq4ZbWmSN5NCoFJqH11jQwPgEEXNUa2QWZP+aQT6o7hRNErvhq0csaFCCgkIp+/gyKOD+GpRdbeIsNQxzqy1URPcoc9edOqIbtO7we5Vz9K0buPKyQWtdv0cDJlMQcZk6M2s4gqwurtDudXEkr7hmWAG3hFDDcK9bd5x6JDPOFmYffdzFMf8MC9IcFqQ5LEhzWJDmBATxQyP6oHxo5Nx9fmhRFy4+VAiKv1ffzIwagfmM7cQjqLJdw3RctYAZJVPEVlUhSPI0J2sRH3Xj4iTF/nm/h+e73P5ImURpptqAOTrkQ/N3PnldSAKCJAtf5HHHkkbFFCWE/7WTLkpBEvkKROydwAy/AnkkhJO7mKFuLU4xdtccP30FMXrAgrSmhj+P9tIPEv+3UgAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
-                    </scg:List>
-                  </uix:TargetAnchorable.Anchors>
-                </uix:TargetAnchorable>
+                <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109549034/aw?awh=r&amp;awssk=ztno7euZ#b0" DesignTimeRectangle="1822, 667, 29, 16" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Next'" FullSelectorArgument="&lt;webctrl tag='SPAN' aaname=' Next  ' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' aaname=' Next  ' type='' class='' check:text='Next' /&gt;" Guid="138b1b56-5537-4d02-b39a-a4c76ed6f55f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACEAAAAUCAYAAAADU1RxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGjSURBVEhLxZS/bsIwEMZ5Ex6hj9CRR+jII8DWOVPHDixsqEPFBiNjOiBVDKhSBjIwsCDBghCkicEQvp7/JHGQhQpC5qRP8p2d88/ncyqV5hYPlzXoWtaga1mDrmUNulbhcIQgSw5omAtInSXFl7wUu6sKR0OQzYK4tOg+EAyDDRCOLHOFIyBO8CdHMBzRaRWL7gXhJ/+F6MXorwA226Gq58oQv3idpFiLkglLUgx6kZyrjcQBUnTbOmebY0Y5w9FeAhRGh9S5pfJBDkHj3oE2oeSfas6EqAUpwFP0CbbqxWhIP6tchPf5CVhx1JoxuuIw870+zFWVEGMzmQmRyHtdT5n+RmiHb24k99RmixXBiSb3snVXQ5Bayv/5igwIlchmJlh1TABkiyDJY7dBkOp09+I0/sVKnIn6IOQEPz3rj1shKp4qNaOk5z3hDxM8UZPWhwcsNlnZzT6I0JjSd/l/R1/ThOHlI6ZvjX3ygQ2C9EwdL01DyNcRHIvXQYDhmMmkclNq0resD3R/iMopKHVNF17HA2UNupY16FrWoGtZg061xR9vvts6C97BtQAAAABJRU5ErkJggg==" InformativeScreenshot="899ecf541fbe8e6e0257fbe19ecc771c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="451,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-              <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="603,810" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <Sequence sap:VirtualizedContainerService.HintSize="541,699" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <uix:NGetText DisplayName="Get Text 'Line Items'" sap:VirtualizedContainerService.HintSize="479,157" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="9b80aa0a-d100-4c81-a198-56e17b8de381" TextString="[lineItemsCurrent]" Version="V3">
-                      <uix:NGetText.Target>
-                        <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109527065/aw?awh=r&amp;awssk=LhEJ5D_q#b0" DesignTimeRectangle="75, 237, 1781, 48" DesignTimeScaleFactor="1" FriendlyName="'Line Items1 Line'" FullSelectorArgument="&lt;webctrl id='_xtvocb' tag='TABLE' /&gt;&lt;webctrl class='tableHeader w-stw-header' innertext='*Line Items*Line Items,*Included,*Previously Fully Invoiced*' /&gt;" FuzzySelectorArgument="&lt;webctrl id='_xtvocb' tag='TABLE' /&gt;&lt;webctrl class='tableHeader w-stw-header' tag='TD' type='' aaname='             ' /&gt;" Guid="d80f1421-c122-49d9-bd39-8291221fb7b5" InformativeScreenshot="ae01568485b9632cba9fba3cfcae7901.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SAP Business Network Supplier' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
-                          <uix:TargetAnchorable.Anchors>
-                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                              <uix:Target DesignTimeRectangle="90, 246, 87, 27" ElementType="Text" FriendlyName="'Line Items'" FullSelectorArgument="&lt;webctrl id='_xtvocb' tableRow='107' tag='TABLE' /&gt;&lt;webctrl class='DataTableHeaderFont' tableRow='1' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='_xtvocb' tag='TABLE' /&gt;&lt;webctrl class='DataTableHeaderFont' type='' tag='DIV' aaname='Line Items' check:innerText='Line Items' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFsAAAAfCAYAAACI/7HjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPKSURBVGhD7ZfPSypRFMff39RCJCIieBEUPBgQhEBoMSAIghIoRIGIBIkgES5FhIdBvBaKoAhRi3RhbnSjLaqNbXI1q9l937kzd3JmGn8UOkXcL1zw3jl37jmfuZ577i8IuSYB20UJ2C5KwHZRAraLErBd1OJgqyr/ITRJC4Gt3CTh9WwgfqPwESEnzYT9WolgxRNBecQHHKT2cpA8Wzh2FXYPac8qVjI93v/+Wgjsr5ED7NEt4tsbSH9T/j8MdhUhGvvZsHtZsjEFqfXZHBWPlVMENgkKPV/fP0VtyG3epKDPbGhHMhvvtoxU5Rmzj1srbN1PfR2jmaErgypS+7t0ttCztV0ETqp4NC9i+DwcoV2I4Pcae8cW2TXAXFYHV4jvb2nvXffF8HdgnszmxCDxOL3bAUQzVXRtzJYIexWhcAT+gwvU7ju4q2QRYAH4iuhzMwoB3Yyfgg8gXmqgTXa1EjlNc6Xz3gzgVtjqsId2PQs/jUVLHe1dj/wIUckfiQ5w/6HuS7t+gaiP+ZJD11iE+yz5AtyuhctEQPs4UiKJ0GYI+TqbW4TMoP4Zx9EvsBhknLHn2vuvkArKxMMawVJhew9vad+OpdRjNC4hP+ADgyJ2CEKqaXVqqK0ZQ23qeTtvGnlA/g/5ctKyfryhbhut80UcfX7G5R6t4ZFx+cSHSGrz1BTHCOWwzY8JWipsO0S7Xb8gUT+Ltt4di0DITvMtmhO29kFp7J733/SCcpDmGx/B0WcOMljVUsmbLHEouD4kG18S5cHU3bFc2JagmWzj3Qw5Sf1JLVSZuuh8sPmaE1u4ileTndVnDtuwMWS3HbWQ3tPPnJVNP2RKQ3dP78F/A9h02LA859C6wwXsbL6mkcfftd6LZWdbfZ4TNpfy1EH5/Igf9hu0WV74E11fCltPI0e4nv7vm6CPpZGZt9sFwB5LQTtDsa3RAcxHmL4UtgHCvgNYzj4ufKwa0TTlgGTArFUn5exE8V01Yp07D+wRaokc2rZvOayEyCb7GdgSQic5nJ3b260ewGdhE06t9KN6Vqa69I7+1nf/kvBTiejdM4FwlBPshgZ7J1yk0q2B655OQC/9qD4OZlFuUupoXuGY5VgqOfNGeebo8xywac0oK2mpNExXWnpq4uWhvQKaEza9zLHxL2d31NFxkuO4fqmRffqFgR0w0ULHGpyjHGBTaP3S+EISvxn/HbVLTdCPdTaHnkkHRbTN/9bPwmZSHlDL2C41DjHMhC20OAnYLkrAdlECtosSsF2UgO2iBGwXJWC7KAHbRQnYrgn4DweWWiipdHItAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
-                            </scg:List>
-                          </uix:TargetAnchorable.Anchors>
-                        </uix:TargetAnchorable>
-                      </uix:NGetText.Target>
-                    </uix:NGetText>
-                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,116" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
-                      <ui:MultipleAssign.AssignOperations>
-                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
-                            <ui:AssignOperation.To>
-                              <OutArgument x:TypeArguments="x:String">[adim1]</OutArgument>
-                            </ui:AssignOperation.To>
-                            <ui:AssignOperation.Value>
-                              <InArgument x:TypeArguments="x:String">[text.RegularExpressions.Regex.Replace(lineItemsCurrent,"\s+"," ").Trim.ToLower]</InArgument>
-                            </ui:AssignOperation.Value>
-                          </ui:AssignOperation>
-                        </scg:List>
-                      </ui:MultipleAssign.AssignOperations>
-                    </ui:MultipleAssign>
-                    <If Condition="[adim1.Contains(&quot;line items&quot;)]" sap:VirtualizedContainerService.HintSize="479,52" sap2010:WorkflowViewState.IdRef="If_1">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="541,227" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                          <Sequence.Variables>
-                            <Variable x:TypeArguments="x:String" Name="adim3" />
-                          </Sequence.Variables>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,116" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
-                            <ui:MultipleAssign.AssignOperations>
-                              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
-                                  <ui:AssignOperation.To>
-                                    <OutArgument x:TypeArguments="x:String">[adim2]</OutArgument>
-                                  </ui:AssignOperation.To>
-                                  <ui:AssignOperation.Value>
-                                    <InArgument x:TypeArguments="x:String">[adim1.Substring(10)]</InArgument>
-                                  </ui:AssignOperation.Value>
-                                </ui:AssignOperation>
-                              </scg:List>
-                            </ui:MultipleAssign.AssignOperations>
-                          </ui:MultipleAssign>
-                        </Sequence>
-                      </If.Then>
-                    </If>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;&quot;]" />
-                  </Sequence>
-                </Sequence>
-              </ui:CommentOut.Body>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:CommentOut>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
