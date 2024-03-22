@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>912,4994</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1126,5427</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SAP_DownloadInvoicesReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="37">
@@ -99,7 +99,7 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SAP_DownloadInvoicesReport" sap:VirtualizedContainerService.HintSize="878,4929" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SAP_DownloadInvoicesReport" sap:VirtualizedContainerService.HintSize="878,5322" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="customerNameSAP" />
     </Sequence.Variables>
@@ -146,20 +146,21 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Business Network" sap:VirtualizedContainerService.HintSize="816,3708" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="a45657b3-a5aa-4afa-9c61-3304242dc24a" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Business Network" sap:VirtualizedContainerService.HintSize="816,4101" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="a45657b3-a5aa-4afa-9c61-3304242dc24a" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="invoices page" sap:VirtualizedContainerService.HintSize="782,3491" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <Sequence DisplayName="invoices page" sap:VirtualizedContainerService.HintSize="782,3884" sap2010:WorkflowViewState.IdRef="Sequence_10">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
+            <uix:NGoToUrl DelayAfter="3" DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="720,82" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="https://mu.ariba.com/workbench/" Version="V3" />
             <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" ContinueOnError="True" DisplayName="Keyboard Shortcuts-reset zoom" sap:VirtualizedContainerService.HintSize="720,179" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][d(ctrl)]0[u(ctrl)][u(hk)]" Timeout="5" Version="V3" />
-            <Sequence DisplayName="filter details" sap:VirtualizedContainerService.HintSize="720,1060" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence DisplayName="filter details" sap:VirtualizedContainerService.HintSize="720,1329" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -202,28 +203,42 @@
                   </uix:TargetAnchorable>
                 </uix:NSelectItem.Target>
               </uix:NSelectItem>
-              <uix:NSelectItem DelayAfter="2" DisplayName="Select Item 'Invoice date'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NSelectItem_4" Item="Last 7 days" ScopeIdentifier="a45657b3-a5aa-4afa-9c61-3304242dc24a" Version="V3">
-                <uix:NSelectItem.Items>
-                  <scg:List x:TypeArguments="x:String" Capacity="7">
-                    <x:String>Last 24 hours</x:String>
-                    <x:String>Last 7 days</x:String>
-                    <x:String>Last 14 days</x:String>
-                    <x:String>Last 31 days</x:String>
-                    <x:String>Last 90 days</x:String>
-                    <x:String>Last 365 days</x:String>
-                    <x:String>Custom date range</x:String>
-                  </scg:List>
-                </uix:NSelectItem.Items>
-                <uix:NSelectItem.Target>
-                  <uix:TargetAnchorable BrowserURL="https://mu.ariba.com/workbench/?scope=INVOICES&amp;tile=INVOICES_TRANSACTION" DesignTimeRectangle="1043, 592, 287, 38" DesignTimeScaleFactor="1" FriendlyName="'Last 31 days'" FullSelectorArgument="&lt;webctrl id='fd-select-0' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='fd-select-0' tag='DIV' type='' class='fd-select__control' aaname='' check:innerText='Last 31 days' /&gt;" Guid="6b8444da-f51d-4267-aee7-d9a4b0de6a91" InformativeScreenshot="fe22acf010ef10a55e6636bd68b42248.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Business Network' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Invoice date'" sap:VirtualizedContainerService.HintSize="338,193" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a45657b3-a5aa-4afa-9c61-3304242dc24a" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://mu.ariba.com/workbench/?scope=INVOICES&amp;tile=INVOICES_TRANSACTION" DesignTimeRectangle="1043, 667, 287, 38" DesignTimeScaleFactor="1" ElementType="DropDown" FriendlyName="'Last 31 days'" FullSelectorArgument="&lt;webctrl tag='DIV' aria-label='Select an Option' idx='1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='DIV' aria-label='Select an Option' type='' class='fd-select__control' aaname='' /&gt;" Guid="fadd5733-49a0-4c38-882c-af7b29ab1797" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAASMAAAAqCAYAAAD4WD1RAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVlSURBVHhe7ZrBSxtZHMf3H8mfIAg5SA+1h6wHKxQCXQx70EtyMZcgJQQMiF70kL1UeijFxSCYXMZLvCSX6kGFbigiEVwGAoEQJAhuxUuzh+++NzO/OJlObRoTJi7fL3wg5r15MxN9H9/vTX4BwzDMGIQyYhhmLNIjo07nX9ze3eGfL7e4IYSQEaD9oj2jfeNOV0ZfOx3fAwkhZFRo70i6MtKm8utMCCGjQntH0pWRX0dCCBk1EsqIEBIoEsqIEBIoEsqIEBIoEsqIEBIoEsqIEBIoEsqIEBIoEsqIEBIoEsqIEBIoEsqIEBIoEsqIEBIokgFk1MBefBoLhYZP2yhpoPIujZfPphGamMbkiwQyhQtcefqU1hcxOZHCXt39fh/U97EwkcORXxshZGRIxkZGZmkFU+uffNs0NUOJaOEtKpctNJotmNUiEuEIcidOn3oZmegsokspRCkjQp4MkvGRUSGF0AMy+hbPdZzsYrWsXltSoYwIGSbW/HxoXlnzZzAvSIYvo/YFjPUUnod1ORXB8/guTtv3bXvZhNM2i1hqF0fq5uwbtcsvTXe18wANvTJ6loLh/XD6lVH9GFvxV6qk0yVfCluF7R4ZXZ0fIOe0h8KvkPhwZpWEV4cbmJwvoibjaKxzpmE01XUdbiM5N2vdhx43Z3hLSUKeII5sQr7/sD8hZ7UNsAhQSIYuI9NYQWLzGKYloBYq668xmT22JqRpKOmky2jovm0Tlc0VJZ5r+7g+V0ZH6yKtBLaq9rE99CWjM2zNRZDIn9nX0jzDTjzi+qAbMFJKJIemLZLmR6zORLB6qM+njp15rc4tY9nXbt+j+qWEF/Heua5GdR+Z9H6vuAh5qvgK6XEi0khGX6ad5BCK78NUrxulNUzOrWHnxERDVksOfZdpbb1nZOIov4aX1sT3tPcjo+o2fvUa/ryIqK/1bbQE5Z5r+URXsDdfTOzMi6gu8F5JLrb5EZ/rPqIk5KnTI6THi0gjGbqMrPJmadEpxRwcGel287CIzNLvmLJKuBwql877/crIxek7tera9BzTj4y0IH1LLZHRNT4bOSSjTpnm0L3n5gGSEysoqbLs5rKI2Mw2TmUctcoy1Iov9kKttJ4lsKxWXyzTyP8KPX9c86KfbZWHkAxZRrqEUeWP+5G7a2XU27eF0w9KQPEDq+1HMqqpVVWu3LvaqOUXvz2mLxm9VZLxrILcqyX9OqzGOL8/n3tlpGVVyUaQNFrWNcTyZrefm6vLMjLq83jsL4uQscMR0jD+tiWDy0jvtzTtx+w2euLqPZMIMqWW3Vf2YhwZ1QpryBScfRo1oU0j3SujdBmmGstvJVHT+zJKEDvVhnW+2sm29Wh/Wc5llW+KalHJKKn6OT97ykEbR5rqHsz2Na7qnj0jLavwhr3yUT9bm+VqpdcjYC2s+AqWZ+yNa+u9trr/lP76gSOx5jG2opQRIQ8hGVhG7mWajT2Ra6UNxJwvJk7Nb8DIbyAUdUoi/QSrW8L1lmk3l6r0sY773uRVpVNBja3LHzW290uPlsx6rsfme+WkPl9m/v6pl/00TZ7OmShlE6qU1GPMIpY9wE52GtH8hWsMLTTVnnI25C1a1jUuOE/TWKYR8mMkA8iI2LRgLMnGtV87IaQfJJTRQFzbZaN3E5wQ8tNIKKOfxXm0OTWvSsxHPM4khNhIKCNCSKBIKCNCSKBIKCNCSKBIKCNCSKBIKCNCSKBIKCNCSKBIKCNCSKBIKCNCSKBIujK6vbvz7UgIIaNCe0fSldHXTse3MyGEjArtHUlXRjp/nf+N7B9/YvHNJn5LrhFCyNDRftGe0b5xp0dGDMMwQYUyYhhmDAL8BxrulYqDJ3VRAAAAAElFTkSuQmCC" InformativeScreenshot="3c306bfbe0f49ffd017f3a37314195c1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                        <uix:Target DesignTimeRectangle="1043, 570, 75, 16" ElementType="Text" FriendlyName="'Invoice date'" FullSelectorArgument="&lt;webctrl parentid='select-date-range-0' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='select-date-range-0' tag='LABEL' type='' class='label' aaname='Invoice date' check:innerText='Invoice date' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAE8AAAAUCAYAAADMfWCyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMQSURBVFhH7ZYtl6swEIbvr4qKQtVVoapwVShcVFUUrj+gDoVC4VAoHApVhUNF4d6dJKSELnv37rK9a3jP6TmFpDOZJ/PRP9j1be3wNmiHt0E7vA3a4W2QB29AETPExTA9v0oj7lWGrH61H1KbgsUFRfYa/QI8herCEd666fmF+gK8oRII0nZ6+jf9Arz/qK/AK2Kwn4PXImUxiqaCjAIwxsBPF1S9XutwO3LIZjQ7rRTKhCHK9QYqzUIiOnDzuyBMcGvmENp0eUl9nSL29matmlYU2ixBGDBaCxAmGTrf5ZPGe/E4axBJlLlcwBuaDGJaZ0EEaYOx4PS76eMY9qWLgeNA9qbtD30CjyNIcnTDiHHsUckjmKgoJDKcR2CyJkyTVImEJShpUVEJ8KNAeberqr0hYiFcpfrwxlqC8xh5N5CtEQPtFWljfNzJB4/Jv2Gp0GUxPZfrmaQqCB5C1r0509jXkCHBcPDGFrf4gsIaI9A5YhbB3DXpOfPMuUKJujfW0FcSx/CK1ru8T+EtMlmXAScD+nufExCByp7Fg0k9TTCcC/+aRtSS4TjRm+HZvaf8bt4vpbObsqCZHrVGAkLVUK7Q0xfGzgUWXgnAx2Vr43XxLeGtxXBHfuK4ejw+L1vfs4bHUguPHOgyFYZejzxyZWztSD9okgbmDjfDW99rpf3PpbRWVr5M8O+devAGNJnAOZzK9snWEp49l7/PfWY+m+ARvjIBS0ooKoHT8Ua5Yt6uZNMPZd5fNJQU/FPmmfNN8ExmhikaakFWNt51eGuZ916b4NkyEpDUCx0YLdfHCtPzqI81KUKvv3zY80ba2+UQwkIwPS+6onF9p7kiIZpe25lleq7teYrsqKeeZ+BGbuCQLfIbUiYt4F0qDEoZ+7bnzT1SdQUul+XlbINHbhqpp9EMxmmeVHryCeSPCbqEp7XYu5jMNG1zgchMWzvxXDBrUm02T229l6Ytdz167JDFB3BaY/yAOCuRnall1NNV9AR/8uP62vO/AP8fg5YHb9dXtcPboB3eBu3wNmiH920BbzV86DcvirneAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target DesignTimeRectangle="1043, 645, 75, 16" ElementType="Text" FriendlyName="'Invoice date'" FullSelectorArgument="&lt;webctrl tag='LABEL' aaname='Invoice date' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' aaname='Invoice date' type='' class='label' check:text='Invoice date' /&gt;" SearchSteps="Selector, FuzzySelector" />
                       </scg:List>
                     </uix:TargetAnchorable.Anchors>
                   </uix:TargetAnchorable>
-                </uix:NSelectItem.Target>
-              </uix:NSelectItem>
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Last 7 days'" sap:VirtualizedContainerService.HintSize="338,193" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a45657b3-a5aa-4afa-9c61-3304242dc24a" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://mu.ariba.com/workbench/?scope=INVOICES&amp;tile=INVOICES_TRANSACTION" DesignTimeRectangle="1059, 437, 255, 21" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Last 7 days'" FullSelectorArgument="&lt;webctrl tag='SPAN' aaname='Last 7 days' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' aaname='Last 7 days' type='' class='fd-list__title' check:text='Last 7 days' /&gt;" Guid="bf1844e6-c4bf-4ab4-af73-5ba91a730faa" InformativeScreenshot="088c4435c67680247edbf3abdf09547d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+                </uix:NClick.Target>
+                <uix:NClick.VerifyOptions>
+                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                    <uix:VerifyExecutionOptions.Retry>
+                      <InArgument x:TypeArguments="x:Boolean" />
+                    </uix:VerifyExecutionOptions.Retry>
+                    <uix:VerifyExecutionOptions.Timeout>
+                      <InArgument x:TypeArguments="x:Double" />
+                    </uix:VerifyExecutionOptions.Timeout>
+                  </uix:VerifyExecutionOptions>
+                </uix:NClick.VerifyOptions>
+              </uix:NClick>
               <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="9" DisplayName="Click 'Apply'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a45657b3-a5aa-4afa-9c61-3304242dc24a" Version="V3">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="https://mu.ariba.com/workbench/" DesignTimeRectangle="1731, 477, 50, 31" DesignTimeScaleFactor="0.8999999761581421" ElementType="Button" FriendlyName="'Apply'" FullSelectorArgument="&lt;webctrl id='filter-apply-button' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='filter-apply-button' tag='BUTTON' type='button' class='fd-button fd-button--emphasized btn-apply' aaname='Apply' check:innerText='Apply' /&gt;" Guid="096c8d51-4879-42d4-b655-04ef4927b365" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADYAAAAjCAYAAADfXvn1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALhSURBVFhH7Zg9b9pQFIY7M1b9EbS/IJ3bCvVPsGUkS5stUuiI1KFNxgwMyYAiMaQjmZAiNVTN4AzmI7RYQYmciMgJH7FAoLfn2Pc6F2qcGHXAlFd6Jcy519zH55zLlZ9hQfV/gH3/3cX77TpefSojtqZFwrxWXnOp0RUUrjwwhnrx4dR3chTMa//R6AkaBezNlzPfCVHyW2KQ8sDim7rv4CiZGaQ8ML+BUbTUEiwqllqCRcVScwO2awJW7cI3FsZSM4Ot6gNnnnFS942H9ZyAnaNwN4LW7AMtCwnfMeE8H2AHXdi9DtbTLWgYoJAV3+c7sNBHUe/DFve1W20ax/ELFOnEY9TaMNxkA4M+Cnn3YPAAdoUSxbUj5cCwZcHg39kT1wGWmglsozGCqZ//9dkFY5hbpDJ0EsheQyMYu3FJcReMYb7lqoilDWw3h3TdxQbNVTPG91QrIXFClXHXxqq4DrLUDGC0WFrc/pa45uzJH3XAlAySExotirKbEmCmbnix2NYtZWKIYm6iFPfaMCnz7m/oTmxsXoClQoPFj+7FDFUjlA4o7oDZ2FXnHFNRctkKsMqxElu7QYXB8pM9ZlAPU9lqtDGleYzyIB+xVEgw9+lN7oTrtaFbbtMyRhlNTs2YO34cTCk/fjAhNiipcGBOE1OPTD69QypH6pXPssdMC0neMDKXKDkw3IOyx2zsZ3ljqFIvUY+JMmYwu3H1cE8nU0NYPdp91Y3kEUuFAkvyf5fz9Cdj1Hd0D+1Xl8DGd0WLIFPTdsUeQebcRScoM84c80bcU8dOk7+4x44z/2mWmmHzCLBfj3n267FgO4eA5rVvbJql5hYsnqWyHzztv0u11FyCcb/xTlvRmoj7xIMs9W/B5sBSS7CoWGoJFhVLeWAL+16R36L6DY6S332tCxoFjF/qP4/yu/uPp/hp8GHUlQfGOiy3sZKp4mU6OmUZ3yzjNa25eNYRFK7GwBZJCwoG/AH6yBqk3ifLaAAAAABJRU5ErkJggg==" InformativeScreenshot="c99f6a17578b803f4314d55ea75e99ac.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Business Network' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive" />
@@ -259,7 +274,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NCheckState>
-            <Sequence DisplayName="export result" sap:VirtualizedContainerService.HintSize="720,1965" sap2010:WorkflowViewState.IdRef="Sequence_14">
+            <Sequence DisplayName="export result" sap:VirtualizedContainerService.HintSize="720,1967" sap2010:WorkflowViewState.IdRef="Sequence_14">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="resultOrderNo" />
                 <Variable x:TypeArguments="x:Boolean" Name="boolSaveWindowExists" />
@@ -318,7 +333,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:RetryScope>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'File name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="658,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="Simulate" ScopeIdentifier="a45657b3-a5aa-4afa-9c61-3304242dc24a" Text="[in_sapInvoicesExcelPath+&quot;\InvoiceReport.xlsx&quot;]" Version="V3">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into 'File name'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="658,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="Simulate" ScopeIdentifier="a45657b3-a5aa-4afa-9c61-3304242dc24a" Text="[in_sapInvoicesExcelPath]" Version="V3">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable DesignTimeRectangle="136, 768, 1751, 17" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'1702931963906.xlsx'" FullSelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" Guid="92b4ee2c-c89b-4ec0-a551-85e2c7d4467f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAABtsAAAAVCAYAAAAn1FHHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMGSURBVHhe7d3RkZswFAVQ10VB1ONqaMbFEEsgEEICR18kc87MTgJ+usL7e0fsawYAAAAAAAC6KNsAAAAAAACgk7INAAAAAAAAOinbAAAAAAAAoJOyDQAAAAAAADpdl23TOL9e4zytl5/38L1+FT/r53F2uTe8P3E+mMZ9Nr9fn//M72GfH9PGSfE8UWPfYN97mJePLvJbOX+V/4tpHv9qHgAAAAAAgKdqlG1rKTWO81iWW5lQvi0FVCiQ0lxWJn3e83tbfLw/1Oa//5/S/GGm8TzNnO/VeC7HmvkXz1P9XuGqmv+LYw4AAAAAAAD/rpvXSOZlUyn7LJz+yo6J7SVcLhRmS8lUfl6fr+19vNfO+c4N7++OV/asZk7ze/2S3xL2VbYBAAAAAAD8D/rLtmncCqqyrCpLqsUP5VbuJiNo5sS14RTc+prHWjGW5bdyTs+V1tzmLyfxtrVhfpvJy7bytZZX6wAAAAAAAHiazrJtP6UWr1qlVObw2sXw+ZZ7LJhCViyfTkVbUDxPKyfe358v37ua38i5LNtuXymZnrX8HWZlW8o7aK0DAAAAAADgafrKtvA3zrKS6LpsK05rrbbS6zXM41isD4pCa3F+nmpOWWLVSq0iv5ZzWbbd5Qdxj3Bibb2OsrIt/q24SlFXXQcAAAAAAMDTdJVtoYQ6FEFF2bSXVMcTcC3hZFi9q6oVVe3TXtv8j2XY7b6t7/Vjfrx/VbatUtG3zVXXAQAAAAAA8DQdZVulQIsntNJcVia1SqhcmEl/l2wKL09MzqXUcq9RtuU5h7XLybr4GLf5X3lO63u18k8zYW36N8lndntB2VoHAAAAAADA03SUbY0SaD2NlZ/ISie28p+9UEr3sqz1tYpp9tzTlXs3coI8a3+gRv5FTuV7RbX8mBOKtOOrM+PvoVYEZtnLvlfrAAAAAAAAeJqbsg0AAAAAAABoUbYBAAAAAABAJ2UbAAAAAAAAdFK2AQAAAAAAQCdlGwAAAAAAAHRStgEAAAAAAEAnZRsAAAAAAAB0mec/aRO2I4200l4AAAAASUVORK5CYII=" InformativeScreenshot="f5dc82a0621541d345612afb78c70305.png" IsResponsive="True" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Save As' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -339,7 +354,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:FileExistsX DisplayName="File Exists" Exists="[isInvoiceReportExists]" sap:VirtualizedContainerService.HintSize="338,133" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[in_sapInvoicesExcelPath+&quot;\InvoiceReport.xlsx&quot;]" />
+                      <ui:FileExistsX DisplayName="File Exists" Exists="[isInvoiceReportExists]" sap:VirtualizedContainerService.HintSize="338,133" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[in_sapInvoicesExcelPath]" />
                     </Sequence>
                   </ActivityAction>
                 </ui:RetryScope.ActivityBody>

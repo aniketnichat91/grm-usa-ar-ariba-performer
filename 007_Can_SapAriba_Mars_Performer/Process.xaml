@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>912,4435</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1126,3755</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="62">
@@ -96,7 +96,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="654,4370" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="654,3650" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strPO" />
       <Variable x:TypeArguments="x:Boolean" Name="boolCredit" />
@@ -108,7 +108,6 @@
       <Variable x:TypeArguments="x:String" Name="strTaxId" />
       <Variable x:TypeArguments="x:String" Name="strTaxCategory" />
       <Variable x:TypeArguments="x:String" Name="strVatTaxId" />
-      <Variable x:TypeArguments="x:String" Default="mediacom" Name="strAgency" />
       <Variable x:TypeArguments="x:String" Name="strCreditMemoReason" />
       <Variable x:TypeArguments="x:String" Name="strSummary" />
       <Variable x:TypeArguments="x:String" Name="strSharePointFolderName" />
@@ -218,83 +217,28 @@
         <OutArgument x:TypeArguments="x:String" x:Key="out_strPdfLocation">[strPdfPath]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:IfElseIf sap2010:Annotation.AnnotationText="assigning agency values" DisplayName="Else If agency name" sap:VirtualizedContainerService.HintSize="592,867" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
-      <ui:IfElseIf.ConditionBlocks>
-        <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
-          <ui:IfElseIfBlock BlockType="If" Condition="[strAgency = &quot;mediacom&quot;]">
-            <ui:IfElseIfBlock.Then>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="541,258" sap2010:WorkflowViewState.IdRef="Sequence_2">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <ui:MultipleAssign DisplayName="Multiple Assign mediacom values" sap:VirtualizedContainerService.HintSize="479,147" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
-                  <ui:MultipleAssign.AssignOperations>
-                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
-                        <ui:AssignOperation.To>
-                          <OutArgument x:TypeArguments="x:String">[strTaxId]</OutArgument>
-                        </ui:AssignOperation.To>
-                        <ui:AssignOperation.Value>
-                          <InArgument x:TypeArguments="x:String">["88663454RT00001"]</InArgument>
-                        </ui:AssignOperation.Value>
-                      </ui:AssignOperation>
-                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
-                        <ui:AssignOperation.To>
-                          <OutArgument x:TypeArguments="x:String">[strVatTaxId]</OutArgument>
-                        </ui:AssignOperation.To>
-                        <ui:AssignOperation.Value>
-                          <InArgument x:TypeArguments="x:String">88663454RT00001</InArgument>
-                        </ui:AssignOperation.Value>
-                      </ui:AssignOperation>
-                    </scg:List>
-                  </ui:MultipleAssign.AssignOperations>
-                </ui:MultipleAssign>
-              </Sequence>
-            </ui:IfElseIfBlock.Then>
-          </ui:IfElseIfBlock>
-          <ui:IfElseIfBlock BlockType="ElseIf" Condition="[strAgency = &quot;essence&quot;]">
-            <ui:IfElseIfBlock.Then>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="541,258" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <ui:MultipleAssign DisplayName="Multiple Assign essence values" sap:VirtualizedContainerService.HintSize="479,147" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
-                  <ui:MultipleAssign.AssignOperations>
-                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
-                        <ui:AssignOperation.To>
-                          <OutArgument x:TypeArguments="x:String">[strTaxId]</OutArgument>
-                        </ui:AssignOperation.To>
-                        <ui:AssignOperation.Value>
-                          <InArgument x:TypeArguments="x:String">779913318RT0001</InArgument>
-                        </ui:AssignOperation.Value>
-                      </ui:AssignOperation>
-                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
-                        <ui:AssignOperation.To>
-                          <OutArgument x:TypeArguments="x:String">[strVatTaxId]</OutArgument>
-                        </ui:AssignOperation.To>
-                        <ui:AssignOperation.Value>
-                          <InArgument x:TypeArguments="x:String">779913318RT0001</InArgument>
-                        </ui:AssignOperation.Value>
-                      </ui:AssignOperation>
-                    </scg:List>
-                  </ui:MultipleAssign.AssignOperations>
-                </ui:MultipleAssign>
-              </Sequence>
-            </ui:IfElseIfBlock.Then>
-          </ui:IfElseIfBlock>
-        </sc:BindingList>
-      </ui:IfElseIf.ConditionBlocks>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:IfElseIf>
+    <ui:MultipleAssign DisplayName="Multiple Assign essence values" sap:VirtualizedContainerService.HintSize="592,147" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_21">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strTaxId]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">779913318RT0001</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_22">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strVatTaxId]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">779913318RT0001</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
     <If Condition="[convert.ToDouble(strInvoiceTotal) &lt; 0]" DisplayName="If invoice total is lower than 0 " sap:VirtualizedContainerService.HintSize="592,376" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
         <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_2">
@@ -354,9 +298,7 @@
           </ui:InvokeWorkflowFile>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\Process\SAP_3InvDet_Comment.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="Workflows\Process\SAP_3InvDet_Comment.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_strCreditMemoReason">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strCreditMemoReason" />
-              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_strCreditMemoReason">[strCreditMemoReason]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </Sequence>
@@ -395,12 +337,8 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_3InvDet5_LineItem.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="592,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Workflows\Process\SAP_3InvDet5_LineItem.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strNet">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strNet" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:Boolean" x:Key="in_boolCredit">
-          <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="boolCredit" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strNet">[strNet]</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="in_boolCredit">[boolCredit]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\Process\SAP_4SubmitAmountCheck.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="592,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Workflows\Process\SAP_4SubmitAmountCheck.xaml">
