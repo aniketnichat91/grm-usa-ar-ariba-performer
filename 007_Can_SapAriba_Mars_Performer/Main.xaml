@@ -726,7 +726,7 @@
                                               <OutArgument x:TypeArguments="x:String">[GlobalVariablesNamespace.GlobalVariables.strClientName]</OutArgument>
                                             </ui:AssignOperation.To>
                                             <ui:AssignOperation.Value>
-                                              <InArgument x:TypeArguments="x:String">SapAribaMars</InArgument>
+                                              <InArgument x:TypeArguments="x:String">[Config("ClientName").ToString]</InArgument>
                                             </ui:AssignOperation.Value>
                                           </ui:AssignOperation>
                                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_17">
@@ -857,7 +857,7 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                   <TryCatch.Try>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="1003,4082" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                                    <Sequence DisplayName="all end process- Sequence" sap:VirtualizedContainerService.HintSize="1003,4082" sap2010:WorkflowViewState.IdRef="Sequence_48">
                                       <Sequence.Variables>
                                         <Variable x:TypeArguments="scg:IEnumerable(ui:QueueItem)" Name="QIs" />
                                       </Sequence.Variables>
@@ -1015,7 +1015,12 @@
                                                                   <ActivityAction>
                                                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\EndProcess\SAP_DownloadInvoicesReport.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_35" UnSafe="False" WorkflowFileName="Workflows\EndProcess\SAP_DownloadInvoicesReport.xaml">
                                                                       <ui:InvokeWorkflowFile.Arguments>
-                                                                        <InArgument x:TypeArguments="x:String" x:Key="in_sapInvoicesExcelPath">[sapInvoicesExcelPath]</InArgument>
+                                                                        <InArgument x:TypeArguments="x:String" x:Key="in_sapInvoicesExcelPath">
+                                                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="sapInvoicesExcelPath" />
+                                                                        </InArgument>
+                                                                        <InArgument x:TypeArguments="x:String" x:Key="in_customerNameSAP">
+                                                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;customerNameSAP&quot;).ToString" />
+                                                                        </InArgument>
                                                                       </ui:InvokeWorkflowFile.Arguments>
                                                                     </ui:InvokeWorkflowFile>
                                                                   </ActivityAction>
