@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Excel_SummaryPivot" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Excel_SummaryPivot" this:Excel_SummaryPivot.in_JoinedExcelPath="C:\1files\uipath\can_ar_ariba\mars\invoice_reports\JoinedFinal - Copy.xlsx" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_JoinedExcelPath" Type="InArgument(x:String)" />
   </x:Members>
@@ -6,7 +6,7 @@
     <x:Null />
   </VisualBasic.Settings>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
-  <sap:VirtualizedContainerService.HintSize>1094,1871</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1126,1871</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Excel_SummaryPivot_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="68">
@@ -184,8 +184,8 @@
                         </scg:List>
                       </ui:MultipleAssign.AssignOperations>
                     </ui:MultipleAssign>
-                    <ueab:CreateTableX OutTableName="{x:Null}" DisplayName="Format as Table" HasHeaders="True" sap:VirtualizedContainerService.HintSize="479,212" sap2010:WorkflowViewState.IdRef="CreateTableX_1" Range="[JoinedExcel.Sheet(&quot;Filtered Left&quot;)]" ReplaceExisting="False" TableName="[tableNameFL]" />
-                    <ueab:CreatePivotTableXv2 DestinationRange="[JoinedExcel.Sheet(&quot;pivot_robot&quot;)]" DisplayName="Create Pivot Table" sap:VirtualizedContainerService.HintSize="479,617" sap2010:WorkflowViewState.IdRef="CreatePivotTableXv2_2" LayoutRowType="Compact" Range="[JoinedExcel.Table(tableNameFL)]" TableName="SUMMARY" ValuesMode="Columns">
+                    <ueab:CreateTableX OutTableName="{x:Null}" DisplayName="Format as Table" HasHeaders="True" sap:VirtualizedContainerService.HintSize="479,212" sap2010:WorkflowViewState.IdRef="CreateTableX_1" Range="[JoinedExcel.Sheet(&quot;Status&quot;)]" ReplaceExisting="False" TableName="[tableNameFL]" />
+                    <ueab:CreatePivotTableXv2 DestinationRange="[JoinedExcel.Sheet(&quot;Summary&quot;)]" DisplayName="Create Pivot Table" sap:VirtualizedContainerService.HintSize="479,617" sap2010:WorkflowViewState.IdRef="CreatePivotTableXv2_2" LayoutRowType="Compact" Range="[JoinedExcel.Table(tableNameFL)]" TableName="SUMMARY" ValuesMode="Columns">
                       <ueab:CreatePivotTableXv2.Body>
                         <ActivityAction>
                           <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,575" sap2010:WorkflowViewState.IdRef="Sequence_2">
@@ -195,8 +195,8 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="Status" Function="Sum" sap:VirtualizedContainerService.HintSize="382,85" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_1" Type="Row" />
-                            <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="Amount_Bill" Function="Count" sap:VirtualizedContainerService.HintSize="382,85" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_2" Type="Value" />
-                            <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="Amount_Bill" Function="Sum" sap:VirtualizedContainerService.HintSize="382,85" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_3" Type="Value" />
+                            <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="InvoiceTotal" Function="Count" sap:VirtualizedContainerService.HintSize="382,85" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_2" Type="Value" />
+                            <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="InvoiceTotal" Function="Sum" sap:VirtualizedContainerService.HintSize="382,85" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_3" Type="Value" />
                             <ueab:PivotTableFieldX DisplayName="Pivot Field" FieldName="Amount_SAP" Function="Sum" sap:VirtualizedContainerService.HintSize="382,85" sap2010:WorkflowViewState.IdRef="PivotTableFieldX_4" Type="Value" />
                           </Sequence>
                         </ActivityAction>

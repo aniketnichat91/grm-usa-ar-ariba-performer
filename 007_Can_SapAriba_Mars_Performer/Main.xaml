@@ -847,9 +847,9 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.To>
-                            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="1087,4455" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+                            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="1087,4535" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
                               <State.Entry>
-                                <TryCatch DisplayName="Try to close all aplications" sap:VirtualizedContainerService.HintSize="1041,4310" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                                <TryCatch DisplayName="Try to close all aplications" sap:VirtualizedContainerService.HintSize="1041,4350" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1015,12 +1015,8 @@
                                                                   <ActivityAction>
                                                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\EndProcess\SAP_DownloadInvoicesReport.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_35" UnSafe="False" WorkflowFileName="Workflows\EndProcess\SAP_DownloadInvoicesReport.xaml">
                                                                       <ui:InvokeWorkflowFile.Arguments>
-                                                                        <InArgument x:TypeArguments="x:String" x:Key="in_sapInvoicesExcelPath">
-                                                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="sapInvoicesExcelPath" />
-                                                                        </InArgument>
-                                                                        <InArgument x:TypeArguments="x:String" x:Key="in_customerNameSAP">
-                                                                          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;customerNameSAP&quot;).ToString" />
-                                                                        </InArgument>
+                                                                        <InArgument x:TypeArguments="x:String" x:Key="in_sapInvoicesExcelPath">[sapInvoicesExcelPath]</InArgument>
+                                                                        <InArgument x:TypeArguments="x:String" x:Key="in_customerNameSAP">[Config("customerNameSAP").ToString]</InArgument>
                                                                       </ui:InvokeWorkflowFile.Arguments>
                                                                     </ui:InvokeWorkflowFile>
                                                                   </ActivityAction>
@@ -1031,9 +1027,18 @@
                                                               </ui:RetryScope>
                                                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\EndProcess\Excel_LogReportVsSapReport.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="376,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_36" UnSafe="False" WorkflowFileName="Workflows\EndProcess\Excel_LogReportVsSapReport.xaml">
                                                                 <ui:InvokeWorkflowFile.Arguments>
-                                                                  <InArgument x:TypeArguments="x:String" x:Key="in_sapInvoicesExcelPath">[sapInvoicesExcelPath]</InArgument>
-                                                                  <InArgument x:TypeArguments="x:String" x:Key="in_JoinedExcelPath">[JoinedExcelPath]</InArgument>
-                                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strSharePointFolder">[CurrentRow("SharePointFolder").ToString]</InArgument>
+                                                                  <InArgument x:TypeArguments="x:String" x:Key="in_sapInvoicesExcelPath">
+                                                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="sapInvoicesExcelPath" />
+                                                                  </InArgument>
+                                                                  <InArgument x:TypeArguments="x:String" x:Key="in_JoinedExcelPath">
+                                                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="JoinedExcelPath" />
+                                                                  </InArgument>
+                                                                  <InArgument x:TypeArguments="x:String" x:Key="in_strSharePointFolder">
+                                                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;SharePointFolder&quot;).ToString" />
+                                                                  </InArgument>
+                                                                  <InArgument x:TypeArguments="x:String" x:Key="in_statusExcelPath">
+                                                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="statusExcelPath" />
+                                                                  </InArgument>
                                                                 </ui:InvokeWorkflowFile.Arguments>
                                                               </ui:InvokeWorkflowFile>
                                                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\EndProcess\Excel_SummaryPivot.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="376,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_37" UnSafe="False" WorkflowFileName="Workflows\EndProcess\Excel_SummaryPivot.xaml">

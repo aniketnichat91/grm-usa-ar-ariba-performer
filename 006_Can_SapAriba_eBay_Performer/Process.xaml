@@ -6,10 +6,10 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>912,2416</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1126,2781</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="90">
+    <scg:List x:TypeArguments="x:String" Capacity="46">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -122,7 +122,7 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="541,2311" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="541,2716" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="POnumber" />
       <Variable x:TypeArguments="x:Boolean" Name="boolCredit" />
@@ -139,6 +139,9 @@
       <Variable x:TypeArguments="x:String" Name="lineServiceStartDate" />
       <Variable x:TypeArguments="x:String" Name="lineServiceEndDate" />
       <Variable x:TypeArguments="x:String" Name="MosDate" />
+      <Variable x:TypeArguments="x:String" Name="sharepointFolder" />
+      <Variable x:TypeArguments="x:String" Name="totalAmount" />
+      <Variable x:TypeArguments="x:String" Name="strDownloadFolder" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -147,7 +150,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="479,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
-    <ui:MultipleAssign DisplayName="Multiple Assign-fixed values according to PDD" sap:VirtualizedContainerService.HintSize="479,240" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+    <ui:MultipleAssign DisplayName="Multiple Assign-fixed values according to PDD" sap:VirtualizedContainerService.HintSize="479,271" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
@@ -190,10 +193,18 @@
               <InArgument x:TypeArguments="x:String">779913318RT0001</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_31">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strDownloadFolder]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\Downloads"]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:MultipleAssign DisplayName="Multiple Assign-CHECK headers" sap:VirtualizedContainerService.HintSize="479,302" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+    <ui:MultipleAssign DisplayName="Multiple Assign-CHECK headers" sap:VirtualizedContainerService.HintSize="479,333" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_18">
@@ -201,7 +212,7 @@
               <OutArgument x:TypeArguments="x:String">[POnumber]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("PO Number").ToString.Trim.Replace("-","")]</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("PO").ToString.Trim.Replace("-","")]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_19">
@@ -217,7 +228,7 @@
               <OutArgument x:TypeArguments="x:String">[invoiceNumber]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Invoice Number").ToString.Trim.Replace("-","")]</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("InvoiceNumber").ToString.Trim]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_21">
@@ -225,15 +236,7 @@
               <OutArgument x:TypeArguments="x:String">[invoiceDate]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Invoice Date").ToString.Trim]</InArgument>
-            </ui:AssignOperation.Value>
-          </ui:AssignOperation>
-          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_22">
-            <ui:AssignOperation.To>
-              <OutArgument x:TypeArguments="x:String">[attachmentPdfPath]</OutArgument>
-            </ui:AssignOperation.To>
-            <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Invoice PDF Path").ToString.Trim]</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("InvoiceDate").ToString.Trim]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_23">
@@ -241,7 +244,7 @@
               <OutArgument x:TypeArguments="x:String">[taxableAmount]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Amount").ToString.Trim]</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Net").ToString.Trim]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_28">
@@ -252,10 +255,26 @@
               <InArgument x:TypeArguments="x:String">[DateTime.ParseExact(Convert.ToDateTime(in_TransactionItem.SpecificContent("MOS").ToString.Trim).toString(), "MM/dd/yyyy hh:mm:ss", Globalization.CultureInfo.InvariantCulture).ToString("dd MMM yyyy")]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_29">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[sharepointFolder]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("SharePointFolder").ToString.Trim]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_30">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[totalAmount]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("InvoiceTotal").ToString.Trim]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:MultipleAssign DisplayName="Multiple Assign-Must be cleared" sap:VirtualizedContainerService.HintSize="479,147" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+    <ui:MultipleAssign DisplayName="Multiple Assign service dates" sap:VirtualizedContainerService.HintSize="479,147" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_26">
@@ -348,6 +367,19 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\Process\DownloadPdfFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="479,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="Workflows\Process\DownloadPdfFile.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strSharePointSiteURL">[strSiteurl]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strDriveName">[strDriveName]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strClientName">[strClientName]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strSharePointFolderName">[SharePointFolder]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strInvoiceNumber">[InvoiceNumber]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strDownloadFolder">[strDownloadFolder]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strTenantID">[strTenantID]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strAppID">[strAppID]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_strPdfLocation">[attachmentPdfPath]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAP_1PoSearch.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="479,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Workflows\Process\SAP_1PoSearch.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_POnumber">[POnumber]</InArgument>
@@ -386,10 +418,21 @@
         <InArgument x:TypeArguments="x:String" x:Key="in_lineServiceEndDate">[lineServiceEndDate]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\Process\SAP_4SubmitAmountCheck.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="479,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Workflows\Process\SAP_4SubmitAmountCheck.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_billAmount">[taxableAmount]</InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="479,303" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,224" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\Process\SAP_4SubmitAmountCheck.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="338,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Workflows\Process\SAP_4SubmitAmountCheck.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_billAmount">[totalAmount]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
   </Sequence>
 </Activity>

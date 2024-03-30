@@ -26,6 +26,29 @@
           }
         }
       },
+      "CADGRM_SAP.Office365.Email/1.0.5": {
+        "type": "package",
+        "dependencies": {
+          "UiPath.MicrosoftOffice365.Activities": "2.1.1",
+          "UiPath.System.Activities": "22.10.5"
+        },
+        "compile": {
+          "lib/net6.0-windows7.0/_._": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/CADGRM_SAP.Office365.Email.dll": {},
+          "lib/net6.0-windows7.0/CADGRM_SAP.Office365.Email_Expressions_21128069.dll": {},
+          "lib/net6.0-windows7.0/CADGRM_SAP.Office365.Email_Expressions_26608156.dll": {},
+          "lib/net6.0-windows7.0/CADGRM_SAP.Office365.Email_Expressions_31350213.dll": {}
+        },
+        "contentFiles": {
+          "contentFiles/any/any/_._": {
+            "buildAction": "None",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          }
+        }
+      },
       "ClosedXML/0.95.4": {
         "type": "package",
         "dependencies": {
@@ -5203,6 +5226,29 @@
           }
         }
       },
+      "CADGRM_SAP.Office365.Email/1.0.5": {
+        "type": "package",
+        "dependencies": {
+          "UiPath.MicrosoftOffice365.Activities": "2.1.1",
+          "UiPath.System.Activities": "22.10.5"
+        },
+        "compile": {
+          "lib/net6.0-windows7.0/_._": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/CADGRM_SAP.Office365.Email.dll": {},
+          "lib/net6.0-windows7.0/CADGRM_SAP.Office365.Email_Expressions_21128069.dll": {},
+          "lib/net6.0-windows7.0/CADGRM_SAP.Office365.Email_Expressions_26608156.dll": {},
+          "lib/net6.0-windows7.0/CADGRM_SAP.Office365.Email_Expressions_31350213.dll": {}
+        },
+        "contentFiles": {
+          "contentFiles/any/any/_._": {
+            "buildAction": "None",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          }
+        }
+      },
       "ClosedXML/0.95.4": {
         "type": "package",
         "dependencies": {
@@ -10233,6 +10279,40 @@
         "lib/netstandard2.0/Azure.Core.dll",
         "lib/netstandard2.0/Azure.Core.xml",
         "pkgicon.png"
+      ]
+    },
+    "CADGRM_SAP.Office365.Email/1.0.5": {
+      "sha512": "UNW8v27NujkNDAv3581yvl+tBoT+8V65Lo/uxeEuBmtT5asioR3AH20aCJLDmvH0gYaETNAIRbUUrO6KLi4Y5g==",
+      "type": "package",
+      "path": "cadgrm_sap.office365.email/1.0.5",
+      "files": [
+        ".nupkg.metadata",
+        "cadgrm_sap.office365.email.1.0.5.nupkg.sha512",
+        "cadgrm_sap.office365.email.nuspec",
+        "content/.project/PackageBindingsMetadata.json",
+        "content/.project/design.json",
+        "content/.settings/Design/settings-5190454b.json",
+        "content/.settings/Design/settings-a1b2dac1.json",
+        "content/.settings/Design/settings-afad0842.json",
+        "content/.settings/Release/settings-1a5b880a.json",
+        "content/.settings/Release/settings-5190454b.json",
+        "content/.settings/Release/settings-590bb27b.json",
+        "content/.settings/Release/settings-82ca306a.json",
+        "content/.settings/Release/settings-9e9290da.json",
+        "content/.settings/Release/settings-a1b2dac1.json",
+        "content/.settings/Release/settings-afad0842.json",
+        "content/GetEmail.xaml",
+        "content/MoveMail.xaml",
+        "content/SendEmail.xaml",
+        "content/bindings.json",
+        "content/bindings_v2.json",
+        "content/project.json",
+        "contentFiles/any/any/.objects/.metadata",
+        "contentFiles/any/any/.objects/.type",
+        "lib/net6.0-windows7.0/CADGRM_SAP.Office365.Email.dll",
+        "lib/net6.0-windows7.0/CADGRM_SAP.Office365.Email_Expressions_21128069.dll",
+        "lib/net6.0-windows7.0/CADGRM_SAP.Office365.Email_Expressions_26608156.dll",
+        "lib/net6.0-windows7.0/CADGRM_SAP.Office365.Email_Expressions_31350213.dll"
       ]
     },
     "ClosedXML/0.95.4": {
@@ -20331,6 +20411,7 @@
   "projectFileDependencyGroups": {
     "": [],
     "net6.0-windows7.0": [
+      "CADGRM_SAP.Office365.Email >= 1.0.5 <= 1.0.5",
       "UiPath.Excel.Activities >= 2.16.1 <= 2.16.1",
       "UiPath.MicrosoftOffice365.Activities >= 2.1.1 <= 2.1.1",
       "UiPath.System.Activities >= 23.10.5 <= 23.10.5",
@@ -20351,6 +20432,11 @@
     "frameworks": {
       "net6.0-windows7.0": {
         "dependencies": {
+          "CADGRM_SAP.Office365.Email": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[1.0.5, 1.0.5]"
+          },
           "UiPath.Excel.Activities": {
             "include": "Runtime",
             "target": "Package",

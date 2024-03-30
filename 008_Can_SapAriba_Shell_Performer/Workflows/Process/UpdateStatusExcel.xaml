@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="UpdateStatusExcel" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="UpdateStatusExcel" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:c="clr-namespace:CADGRM_SAP_Office365_Email;assembly=CADGRM_SAP.Office365.Email" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
     <x:Property Name="io_dtStatus" Type="InOutArgument(sd:DataTable)" />
@@ -11,10 +11,10 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>531,798</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1126,2680</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>UpdateStatusExcel_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="50">
+    <scg:List x:TypeArguments="x:String" Capacity="58">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -44,10 +44,22 @@
       <x:String>System.Runtime.Serialization</x:String>
       <x:String>System.Xml.Serialization</x:String>
       <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>CADGRM_SAP_Office365_Email</x:String>
+      <x:String>Microsoft.Graph</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Models</x:String>
+      <x:String>UiPath.Shared.Services.Graph.Mail.Models</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="84">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="118">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
@@ -90,22 +102,40 @@
       <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>CADGRM_SAP.Office365.Email</AssemblyReference>
+      <AssemblyReference>Microsoft.Graph</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>Microsoft.Graph.Core</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="UpdateStatusExcel" sap:VirtualizedContainerService.HintSize="541,733" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="UpdateStatusExcel" sap:VirtualizedContainerService.HintSize="1050,2615" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="POnumber" />
       <Variable x:TypeArguments="x:String" Name="invoiceNumber" />
       <Variable x:TypeArguments="x:String" Name="invoiceDate" />
       <Variable x:TypeArguments="x:String" Name="attachmentPdfPath" />
       <Variable x:TypeArguments="x:String" Name="Amount_bill" />
+      <Variable x:TypeArguments="x:Int32" Name="intRowIndex" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Multiple Assign-FILL INSIDE &quot;&quot;" sap:VirtualizedContainerService.HintSize="479,240" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign-FILL INSIDE &quot;&quot;" sap:VirtualizedContainerService.HintSize="988,240" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -113,7 +143,7 @@
               <OutArgument x:TypeArguments="x:String">[POnumber]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("PO Number").ToString.Trim.Replace("-","")]</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("PO").ToString.Trim.Replace("-","")]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -121,7 +151,7 @@
               <OutArgument x:TypeArguments="x:String">[invoiceNumber]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Invoice Number").ToString.Trim.Replace("-","")]</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("InvoiceNumber").ToString.Trim.Replace("-","")]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
@@ -129,7 +159,7 @@
               <OutArgument x:TypeArguments="x:String">[invoiceDate]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Invoice Date").ToString.Trim]</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("InvoiceDate").ToString.Trim]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
@@ -137,7 +167,7 @@
               <OutArgument x:TypeArguments="x:String">[attachmentPdfPath]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Invoice PDF Path").ToString.Trim]</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("SharePointFolder").ToString.Trim]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
@@ -145,13 +175,13 @@
               <OutArgument x:TypeArguments="x:String">[Amount_bill]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Amount").ToString.Trim]</InArgument>
+              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("InvoiceTotal").ToString.Trim]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,116" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="988,116" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
@@ -165,6 +195,93 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{POnumber,invoiceNumber,invoiceDate,Amount_bill,in_status,in_exceptionType,in_exceptionMessage,in_exceptionSSpath,in_additionalInfo}]" DataTable="[io_dtStatus]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="479,186" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+    <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[io_dtStatus]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="988,292" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="PO Number" LookupValue="[POnumber]" RowIndex="[intRowIndex]" />
+    <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="988,1736" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+      <ui:IfElseIf.ConditionBlocks>
+        <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+          <ui:IfElseIfBlock BlockType="If" Condition="[intRowIndex = -1]">
+            <ui:IfElseIfBlock.Then>
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,297" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{POnumber,invoiceNumber,invoiceDate,Amount_bill,in_status,in_exceptionType,in_exceptionMessage,in_exceptionSSpath,in_additionalInfo}]" DataTable="[io_dtStatus]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="338,186" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+              </Sequence>
+            </ui:IfElseIfBlock.Then>
+          </ui:IfElseIfBlock>
+          <ui:IfElseIfBlock BlockType="Else">
+            <ui:IfElseIfBlock.Then>
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="540,1208" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If Condition="[io_dtStatus(intRowIndex)(&quot;PO Number&quot;).tostring= POnumber]" DisplayName="If po found" sap:VirtualizedContainerService.HintSize="478,1097" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If.Then>
+                    <Sequence DisplayName="update row item - Sequence" sap:VirtualizedContainerService.HintSize="400,576" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign DisplayName="Assign row number in_status" sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Object">[io_dtStatus(intRowIndex)("Status")]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Object">[in_status]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign row number in_exceptionType" sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="Assign_4">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Object">[io_dtStatus(intRowIndex)("Type")]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Object">[in_exceptionType]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign row number in_exceptionMessage" sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="Assign_5">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Object">[io_dtStatus(intRowIndex)("Message")]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Object">[in_exceptionMessage]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign row number in_exceptionSSpath" sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="Assign_6">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Object">[io_dtStatus(intRowIndex)("Screenshot Path")]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Object">[in_exceptionSSpath]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign DisplayName="Assign row number in_additionalInfo" sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="Assign_7">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Object">[io_dtStatus(intRowIndex)("Additional Info")]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Object">[in_additionalInfo]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <c:SendEmail BCC="{x:Null}" CC="{x:Null}" BodyHTML="[&quot;&lt;p&gt;Po number could not find in data table. Workflow is update status excel. &lt;/p&gt;&quot;]" EmailTo="[strSupportTeam.Split(&quot;;&quot;c)]" sap:VirtualizedContainerService.HintSize="334,345" sap2010:WorkflowViewState.IdRef="SendEmail_1" Subject="Po could not find the data table">
+                      <c:SendEmail.AttachmentsCollection>
+                        <InArgument x:TypeArguments="scg:IEnumerable(x:String)" />
+                      </c:SendEmail.AttachmentsCollection>
+                    </c:SendEmail>
+                  </If.Else>
+                </If>
+              </Sequence>
+            </ui:IfElseIfBlock.Then>
+          </ui:IfElseIfBlock>
+        </sc:BindingList>
+      </ui:IfElseIf.ConditionBlocks>
+    </ui:IfElseIf>
   </Sequence>
 </Activity>

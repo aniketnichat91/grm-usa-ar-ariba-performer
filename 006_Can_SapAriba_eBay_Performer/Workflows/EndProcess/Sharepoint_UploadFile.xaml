@@ -1,21 +1,21 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Sharepoint_UploadFile" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mg="clr-namespace:Microsoft.Graph;assembly=Microsoft.Graph" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uma="clr-namespace:UiPath.MicrosoftOffice365.Activities;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umaf="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Sharepoint_UploadFile" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mg="clr-namespace:Microsoft.Graph;assembly=Microsoft.Graph" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uma="clr-namespace:UiPath.MicrosoftOffice365.Activities;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umaf="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_filePathToUpload" Type="InArgument(x:String)" />
-    <x:Property Name="in_sharepointJobFolderID" Type="InArgument(mg:DriveItem)" />
+    <x:Property Name="in_strFolder" Type="InArgument(x:String)" />
   </x:Members>
   <this:Sharepoint_UploadFile.in_filePathToUpload>
     <InArgument x:TypeArguments="x:String" />
   </this:Sharepoint_UploadFile.in_filePathToUpload>
-  <this:Sharepoint_UploadFile.in_sharepointJobFolderID>
-    <InArgument x:TypeArguments="mg:DriveItem" />
-  </this:Sharepoint_UploadFile.in_sharepointJobFolderID>
+  <this:Sharepoint_UploadFile.in_strFolder>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Sharepoint_UploadFile.in_strFolder>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>627,1571</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1126,2459</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Sharepoint_UploadFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="70">
+    <scg:List x:TypeArguments="x:String" Capacity="38">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -57,7 +57,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="90">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="48">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
@@ -107,7 +107,7 @@
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sharepoint_UploadFile" sap:VirtualizedContainerService.HintSize="637,1506" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sharepoint_UploadFile" sap:VirtualizedContainerService.HintSize="713,2394" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="MSO365_AppID" />
       <Variable x:TypeArguments="x:String" Name="MSO365_TenantID" />
@@ -121,7 +121,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Orch_GetCredentials" sap:VirtualizedContainerService.HintSize="575,81" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Orch_GetCredentials" sap:VirtualizedContainerService.HintSize="651,620" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="appID_username" />
         <Variable x:TypeArguments="x:String" Name="appSecret_username" />
@@ -131,80 +131,42 @@
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:GetRobotCredential AssetName="MS_Office365_AppID" CacheStrategy="None" DisplayName="Get Credential-ms office 365 app ID" FolderPath="GMUSA_FINANCE_AR" sap:VirtualizedContainerService.HintSize="479,170" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[appIdSecure]" Username="[appID_username]">
+      <ui:GetRobotCredential AssetName="[strAppSecretCredentialName]" CacheStrategy="None" DisplayName="Get Credential-ms office 365 app secret" sap:VirtualizedContainerService.HintSize="338,52" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[AppSecretSecure]" Username="[appSecret_username]">
+        <ui:GetRobotCredential.TimeoutMS>
+          <InArgument x:TypeArguments="x:Int32" />
+        </ui:GetRobotCredential.TimeoutMS>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:GetRobotCredential>
+      <ui:GetRobotCredential AssetName="[strOffice365CredentialsName]" CacheStrategy="None" DisplayName="Get Credential-sharepoint login" sap:VirtualizedContainerService.HintSize="338,417" sap2010:WorkflowViewState.IdRef="GetRobotCredential_4" Password="[sharepointPasswordSecure]" Username="[sharepointUsername]">
         <ui:GetRobotCredential.TimeoutMS>
           <InArgument x:TypeArguments="x:Int32" />
         </ui:GetRobotCredential.TimeoutMS>
       </ui:GetRobotCredential>
-      <ui:GetRobotCredential AssetName="MS_Office365_AppSecret" CacheStrategy="None" DisplayName="Get Credential-ms office 365 app secret" FolderPath="GMUSA_FINANCE_AR" sap:VirtualizedContainerService.HintSize="479,170" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[AppSecretSecure]" Username="[appSecret_username]">
-        <ui:GetRobotCredential.TimeoutMS>
-          <InArgument x:TypeArguments="x:Int32" />
-        </ui:GetRobotCredential.TimeoutMS>
-      </ui:GetRobotCredential>
-      <ui:GetRobotCredential AssetName="MS_Office365_TenantID" CacheStrategy="None" DisplayName="Get Credential-ms office 365 tenant id" FolderPath="GMUSA_FINANCE_AR" sap:VirtualizedContainerService.HintSize="479,170" sap2010:WorkflowViewState.IdRef="GetRobotCredential_3" Password="[appTenantIdSecure]" Username="[TenantID_username]">
-        <ui:GetRobotCredential.TimeoutMS>
-          <InArgument x:TypeArguments="x:Int32" />
-        </ui:GetRobotCredential.TimeoutMS>
-      </ui:GetRobotCredential>
-      <ui:GetRobotCredential AssetName="GMUSA_AR_SharePointCredential" CacheStrategy="None" DisplayName="Get Credential-sharepoint login" FolderPath="GMUSA_FINANCE_AR" sap:VirtualizedContainerService.HintSize="479,170" sap2010:WorkflowViewState.IdRef="GetRobotCredential_4" Password="[sharepointPasswordSecure]" Username="[sharepointUsername]">
-        <ui:GetRobotCredential.TimeoutMS>
-          <InArgument x:TypeArguments="x:Int32" />
-        </ui:GetRobotCredential.TimeoutMS>
-      </ui:GetRobotCredential>
-      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,147" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
-        <ui:MultipleAssign.AssignOperations>
-          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
-              <ui:AssignOperation.To>
-                <OutArgument x:TypeArguments="x:String">[MSO365_AppID]</OutArgument>
-              </ui:AssignOperation.To>
-              <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">[new System.Net.NetworkCredential(string.Empty, appIdSecure).Password]</InArgument>
-              </ui:AssignOperation.Value>
-            </ui:AssignOperation>
-            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
-              <ui:AssignOperation.To>
-                <OutArgument x:TypeArguments="x:String">[MSO365_TenantID]</OutArgument>
-              </ui:AssignOperation.To>
-              <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">[new System.Net.NetworkCredential(string.Empty, appTenantIdSecure).Password]</InArgument>
-              </ui:AssignOperation.Value>
-            </ui:AssignOperation>
-          </scg:List>
-        </ui:MultipleAssign.AssignOperations>
-      </ui:MultipleAssign>
-      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,116" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
-        <ui:MultipleAssign.AssignOperations>
-          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
-              <ui:AssignOperation.To>
-                <OutArgument x:TypeArguments="x:String">[sharepointSiteURL]</OutArgument>
-              </ui:AssignOperation.To>
-              <ui:AssignOperation.Value>
-                <InArgument x:TypeArguments="x:String">https://insidemedia.sharepoint.com/sites/GRMUSA-AR</InArgument>
-              </ui:AssignOperation.Value>
-            </ui:AssignOperation>
-          </scg:List>
-        </ui:MultipleAssign.AssignOperations>
-      </ui:MultipleAssign>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="575,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;Path of the file to upload into sharepoint : &quot; +in_filePathToUpload]" />
-    <uma:Office365ApplicationScope ApplicationSecret="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" OAuth2Username="{x:Null}" Password="{x:Null}" Timeout="{x:Null}" ApplicationId="[MSO365_AppID]" AuthenticationType="UsernameAndPassword" DisplayName="PRIVATE-Microsoft Office 365 Scope" Environment="Global" sap:VirtualizedContainerService.HintSize="575,1093" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuthApplication="UiPath" SecureApplicationSecret="[AppSecretSecure]" SecurePassword="[sharepointPasswordSecure]" Services="Files" Tenant="[MSO365_TenantID]" Username="[sharepointUsername]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="651,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;Path of the file to upload into sharepoint : &quot; +in_filePathToUpload]" />
+    <uma:Office365ApplicationScope ApplicationSecret="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" OAuth2Username="{x:Null}" Password="{x:Null}" Timeout="{x:Null}" ApplicationId="[strAppId]" AuthenticationType="UsernameAndPassword" DisplayName="PRIVATE-Microsoft Office 365 Scope" Environment="Global" sap:VirtualizedContainerService.HintSize="651,1442" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuthApplication="UiPath" SecureApplicationSecret="[AppSecretSecure]" SecurePassword="[sharepointPasswordSecure]" Services="Files" Tenant="[strTenantId]" Username="[sharepointUsername]">
       <uma:Office365ApplicationScope.Body>
         <ActivityAction x:TypeArguments="mg:GraphServiceClient">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="mg:GraphServiceClient" Name="ParentScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Microsoft Office 365 Scope" sap:VirtualizedContainerService.HintSize="541,1006" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Microsoft Office 365 Scope" sap:VirtualizedContainerService.HintSize="617,1355" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <Sequence.Variables>
               <Variable x:TypeArguments="mg:DriveItem" Name="uploadedFileSPID" />
               <Variable x:TypeArguments="mg:DriveItem" Name="geto" />
               <Variable x:TypeArguments="x:String" Name="enterid" />
               <Variable x:TypeArguments="x:String" Name="enterurl" />
+              <Variable x:TypeArguments="mg:DriveItem" Name="driveDestinationFolder" />
+              <Variable x:TypeArguments="mg:DriveItem" Name="uploadedFile" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -212,32 +174,52 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <umaf:UploadFile CloudFileName="{x:Null}" DriveMetadata="{x:Null}" Metadata="{x:Null}" ConflictBehavior="Replace" Destination="[in_sharepointJobFolderID]" DisplayName="Upload File" sap:VirtualizedContainerService.HintSize="479,250" sap2010:WorkflowViewState.IdRef="UploadFile_2" LocalFilePath="[in_filePathToUpload]" Result="[uploadedFileSPID]" />
-            <Delay Duration="00:00:00.0050000" sap:VirtualizedContainerService.HintSize="479,90" sap2010:WorkflowViewState.IdRef="Delay_1" />
-            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,147" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
-              <ui:MultipleAssign.AssignOperations>
-                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
-                    <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[enterid]</OutArgument>
-                    </ui:AssignOperation.To>
-                    <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[uploadedFileSPID.Id]</InArgument>
-                    </ui:AssignOperation.Value>
-                  </ui:AssignOperation>
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
-                    <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[enterurl]</OutArgument>
-                    </ui:AssignOperation.To>
-                    <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[uploadedFileSPID.WebUrl]</InArgument>
-                    </ui:AssignOperation.Value>
-                  </ui:AssignOperation>
-                </scg:List>
-              </ui:MultipleAssign.AssignOperations>
-            </ui:MultipleAssign>
-            <umaf:GetItem DriveMetadata="{x:Null}" DriveName="{x:Null}" ItemFriendlyName="{x:Null}" SiteUrl="{x:Null}" DisplayName="Get File/Folder" sap:VirtualizedContainerService.HintSize="479,107" sap2010:WorkflowViewState.IdRef="GetItem_2" Item="[geto]" ItemId="[enterid]" ItemSelectionMode="ItemUrl" ItemUrl="[enterurl]" />
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;The file was successfully uploaded or replaced&quot;]" />
+            <umaf:FindFilesAndFolders DriveMetadata="{x:Null}" Results="{x:Null}" Account="[sharepointUsername]" DisplayName="Find Files And Folders - created folder" DriveName="[strDriveName]" First="[driveDestinationFolder]" sap:VirtualizedContainerService.HintSize="555,86" sap2010:WorkflowViewState.IdRef="FindFilesAndFolders_1" Query="[in_strFolder]" SiteUrl="[strSiteURL]" Subfolder="[strClientName]" />
+            <umaf:UploadFile CloudFileName="{x:Null}" DriveMetadata="{x:Null}" Metadata="{x:Null}" Account="[sharepointUsername]" ConflictBehavior="Rename" Destination="[driveDestinationFolder]" DisplayName="Upload File" sap:VirtualizedContainerService.HintSize="555,250" sap2010:WorkflowViewState.IdRef="UploadFile_3" LocalFilePath="[in_filePathToUpload]" Result="[uploadedFile]" />
+            <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="555,828" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="7">
+              <ui:RetryScope.ActivityBody>
+                <ActivityAction>
+                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="513,653" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="mg:DriveItem" Name="itemUploadedFile" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <umaf:GetItem DriveMetadata="{x:Null}" ItemFriendlyName="{x:Null}" ItemUrl="{x:Null}" Account="[sharepointUsername]" DisplayName="Get File/Folder" DriveName="[strDriveName]" sap:VirtualizedContainerService.HintSize="451,106" sap2010:WorkflowViewState.IdRef="GetItem_3" Item="[itemUploadedFile]" ItemId="[uploadedFile.Id]" ItemSelectionMode="ItemId" SiteUrl="[strSiteURL]" />
+                    <ui:IfElseIf DisplayName="Else If uploaded file is not created" sap:VirtualizedContainerService.HintSize="451,396" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+                      <ui:IfElseIf.ConditionBlocks>
+                        <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                          <ui:IfElseIfBlock BlockType="If" Condition="[itemUploadedFile  is Nothing]">
+                            <ui:IfElseIfBlock.Then>
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,201" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Throw DisplayName="Throw SE" Exception="[new System.Exception(&quot;Uploaded file is not created.&quot;)]" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                              </Sequence>
+                            </ui:IfElseIfBlock.Then>
+                          </ui:IfElseIfBlock>
+                        </sc:BindingList>
+                      </ui:IfElseIf.ConditionBlocks>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:IfElseIf>
+                  </Sequence>
+                </ActivityAction>
+              </ui:RetryScope.ActivityBody>
+              <ui:RetryScope.Condition>
+                <ActivityFunc x:TypeArguments="x:Boolean" />
+              </ui:RetryScope.Condition>
+            </ui:RetryScope>
           </Sequence>
         </ActivityAction>
       </uma:Office365ApplicationScope.Body>
