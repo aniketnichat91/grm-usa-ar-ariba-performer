@@ -9,11 +9,12 @@
     <x:Property Name="in_strTenantID" Type="InArgument(x:String)" />
     <x:Property Name="in_strAppID" Type="InArgument(x:String)" />
     <x:Property Name="out_strPdfLocation" Type="OutArgument(x:String)" />
+    <x:Property Name="Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>912,3491</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>652,3332</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CheckPdfFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="37">
@@ -57,7 +58,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="51">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="102">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
@@ -108,9 +109,12 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DownloadPdfFile" sap:VirtualizedContainerService.HintSize="713,3426" sap2010:WorkflowViewState.IdRef="Sequence_3">
+  <Sequence DisplayName="DownloadPdfFile" sap:VirtualizedContainerService.HintSize="653,3267" sap2010:WorkflowViewState.IdRef="Sequence_3">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="isPdfExists" />
       <Variable x:TypeArguments="ss:SecureString" Name="secAppSecret" />
@@ -122,16 +126,16 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="651,662" sap2010:WorkflowViewState.IdRef="RetryScope_2">
+    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="611,666" sap2010:WorkflowViewState.IdRef="RetryScope_2">
       <ui:RetryScope.ActivityBody>
         <ActivityAction>
-          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="400,487" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="376,492" sap2010:WorkflowViewState.IdRef="Sequence_14">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:GetRobotCredential AssetName="[strAppSecretCredentialName]" CacheStrategy="None" DisplayName="Get Credential - app secret" sap:VirtualizedContainerService.HintSize="338,168" sap2010:WorkflowViewState.IdRef="GetRobotCredential_3" Password="[secAppSecret]" TimeoutMS="120000">
+            <ui:GetRobotCredential AssetName="[Config(&quot;AppSecretCredentialName&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential - app secret" sap:VirtualizedContainerService.HintSize="334,180" sap2010:WorkflowViewState.IdRef="GetRobotCredential_3" Password="[secAppSecret]" TimeoutMS="120000">
               <ui:GetRobotCredential.Username>
                 <OutArgument x:TypeArguments="x:String" />
               </ui:GetRobotCredential.Username>
@@ -142,7 +146,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:GetRobotCredential>
-            <ui:GetRobotCredential AssetName="[strOffice365CredentialsName]" CacheStrategy="None" DisplayName="Get Credential - CADGRM.SAP.Office365Credentials" sap:VirtualizedContainerService.HintSize="338,168" sap2010:WorkflowViewState.IdRef="GetRobotCredential_4" Password="[secEmailPassword]" TimeoutMS="120000" Username="[strEmailUsername]">
+            <ui:GetRobotCredential AssetName="[Config(&quot;Office365CredentialsName&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential - CADGRM.SAP.Office365Credentials" sap:VirtualizedContainerService.HintSize="334,180" sap2010:WorkflowViewState.IdRef="GetRobotCredential_4" Password="[secEmailPassword]" TimeoutMS="120000" Username="[strEmailUsername]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -163,13 +167,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:RetryScope>
-    <uma:Office365ApplicationScope ApplicationSecret="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" OAuth2Username="{x:Null}" Password="{x:Null}" Timeout="{x:Null}" ApplicationId="[in_strAppID]" AuthenticationType="UsernameAndPassword" DisplayName="Microsoft Office 365 Scope" Environment="Global" sap:VirtualizedContainerService.HintSize="651,2613" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuthApplication="UiPath" SecureApplicationSecret="[secAppSecret]" SecurePassword="[secEmailPassword]" Services="Files, Shared" Tenant="[in_strTenantID]" Username="[strEmailUsername]">
+    <uma:Office365ApplicationScope ApplicationSecret="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" OAuth2Username="{x:Null}" Password="{x:Null}" Timeout="{x:Null}" ApplicationId="[in_strAppID]" AuthenticationType="UsernameAndPassword" DisplayName="Microsoft Office 365 Scope" Environment="Global" sap:VirtualizedContainerService.HintSize="611,2469" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuthApplication="UiPath" SecureApplicationSecret="[secAppSecret]" SecurePassword="[secEmailPassword]" Services="Files, Shared" Tenant="[in_strTenantID]" Username="[strEmailUsername]">
       <uma:Office365ApplicationScope.Body>
         <ActivityAction x:TypeArguments="mg:GraphServiceClient">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="mg:GraphServiceClient" Name="ParentScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="617,2526" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="577,2383" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <Sequence.Variables>
               <Variable x:TypeArguments="s:String[]" Name="arrFiles" />
               <Variable x:TypeArguments="mg:DriveItem" Name="drivePdfFile" />
@@ -180,11 +184,11 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <umaf:FindFilesAndFolders DriveMetadata="{x:Null}" Results="{x:Null}" Account="[strEmailUsername]" DisplayName="Find Files And Folders - folder" DriveName="[in_strDriveName]" First="[driveMainFolder]" sap:VirtualizedContainerService.HintSize="555,86" sap2010:WorkflowViewState.IdRef="FindFilesAndFolders_1" Query="[in_strSharePointFolderName]" SiteUrl="[in_strSharePointSiteURL]" Subfolder="[in_strClientName]" />
-            <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="555,2289" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="10">
+            <umaf:FindFilesAndFolders DriveMetadata="{x:Null}" Results="{x:Null}" Account="[strEmailUsername]" DisplayName="Find Files And Folders - folder" DriveName="[in_strDriveName]" First="[driveMainFolder]" sap:VirtualizedContainerService.HintSize="535,85" sap2010:WorkflowViewState.IdRef="FindFilesAndFolders_1" Query="[in_strSharePointFolderName]" SiteUrl="[in_strSharePointSiteURL]" Subfolder="[in_strClientName]" />
+            <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="535,2166" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="10">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
-                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="513,2034" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="493,1992" sap2010:WorkflowViewState.IdRef="Sequence_7">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="strSubFolder" />
                     </Sequence.Variables>
@@ -193,7 +197,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign sap:VirtualizedContainerService.HintSize="451,61" sap2010:WorkflowViewState.IdRef="Assign_3">
+                    <Assign sap:VirtualizedContainerService.HintSize="451,60" sap2010:WorkflowViewState.IdRef="Assign_3">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:String">[strSubFolder]</OutArgument>
                       </Assign.To>
@@ -201,14 +205,14 @@
                         <InArgument x:TypeArguments="x:String">[in_strClientName+"/"+in_strSharePointFolderName]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <umaf:FindFilesAndFolders DriveMetadata="{x:Null}" Results="{x:Null}" Account="[strEmailUsername]" DisplayName="Find Files And Folders -pdf file" DriveName="[in_strDriveName]" First="[drivePdfFile]" sap:VirtualizedContainerService.HintSize="451,85" sap2010:WorkflowViewState.IdRef="FindFilesAndFolders_2" Query="[in_strInvoiceNumber]" SiteUrl="[in_strSharePointSiteURL]" Subfolder="[strSubFolder]" />
-                    <umaf:DownloadFile DriveMetadata="{x:Null}" DisplayName="Download File" File="[drivePdfFile]" sap:VirtualizedContainerService.HintSize="451,133" sap2010:WorkflowViewState.IdRef="DownloadFile_1" LocalFilePath="[in_strDownloadFolder]" />
-                    <ui:IfElseIf DisplayName="Else If destination folder is not created" sap:VirtualizedContainerService.HintSize="451,396" sap2010:WorkflowViewState.IdRef="IfElseIf_2">
+                    <umaf:FindFilesAndFolders DriveMetadata="{x:Null}" Results="{x:Null}" Account="[strEmailUsername]" DisplayName="Find Files And Folders -pdf file" DriveName="[in_strDriveName]" First="[drivePdfFile]" sap:VirtualizedContainerService.HintSize="451,84" sap2010:WorkflowViewState.IdRef="FindFilesAndFolders_2" Query="[in_strInvoiceNumber]" SiteUrl="[in_strSharePointSiteURL]" Subfolder="[strSubFolder]" />
+                    <umaf:DownloadFile DriveMetadata="{x:Null}" DisplayName="Download File" File="[drivePdfFile]" sap:VirtualizedContainerService.HintSize="451,132" sap2010:WorkflowViewState.IdRef="DownloadFile_1" LocalFilePath="[in_strDownloadFolder]" />
+                    <ui:IfElseIf DisplayName="Else If destination folder is not created" sap:VirtualizedContainerService.HintSize="451,376" sap2010:WorkflowViewState.IdRef="IfElseIf_2">
                       <ui:IfElseIf.ConditionBlocks>
                         <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                           <ui:IfElseIfBlock BlockType="If" Condition="[drivePdfFile is Nothing]">
                             <ui:IfElseIfBlock.Then>
-                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,201" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="380,182" sap2010:WorkflowViewState.IdRef="Sequence_6">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>

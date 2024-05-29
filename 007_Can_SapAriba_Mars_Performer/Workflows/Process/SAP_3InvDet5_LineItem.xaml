@@ -7,7 +7,7 @@
     <x:Null />
   </VisualBasic.Settings>
   <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
-  <sap:VirtualizedContainerService.HintSize>1126,3897</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>788,3495</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SAP_EnterInvoiceDetails3_LineItem_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="37">
@@ -106,7 +106,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="SAP_3InvDet5_LineItem" sap:VirtualizedContainerService.HintSize="1012,3832" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SAP_3InvDet5_LineItem" sap:VirtualizedContainerService.HintSize="798,3430" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="adim2" />
     </Sequence.Variables>
@@ -115,13 +115,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: SAP Business Network Supplier" sap:VirtualizedContainerService.HintSize="950,3721" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="9b80aa0a-d100-4c81-a198-56e17b8de381" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: SAP Business Network Supplier" sap:VirtualizedContainerService.HintSize="756,3338" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="9b80aa0a-d100-4c81-a198-56e17b8de381" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="916,3504" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="722,3122" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="lineItemsCurrent" />
               <Variable x:TypeArguments="x:String" Name="adim1" />
@@ -133,23 +133,23 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NGetText DisplayName="Get Text 'lineitem header'" sap:VirtualizedContainerService.HintSize="854,157" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="9b80aa0a-d100-4c81-a198-56e17b8de381" TextString="[strHeader]" Version="V3">
+            <uix:NGetText DisplayName="Get Text 'lineitem header'" sap:VirtualizedContainerService.HintSize="680,156" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="9b80aa0a-d100-4c81-a198-56e17b8de381" TextString="[strHeader]" Version="V3">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109550062/aw?awh=r&amp;awssk=KcAYcoF6#b0" DesignTimeRectangle="76, 507, 1794, 45" DesignTimeScaleFactor="1" FriendlyName="'1 Line Items,  1 Includ…'" FullSelectorArgument="&lt;webctrl class='base-NCFMST-hdr-grp' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='base-NCFMST-hdr-grp' tag='DIV' type='' /&gt;" Guid="7d012f07-47eb-499e-992f-b06667b105de" InformativeScreenshot="8d4ef7c5fa98d119c46a110d505dbdfd.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
               </uix:NGetText.Target>
             </uix:NGetText>
-            <ui:IfElseIf sap2010:Annotation.AnnotationText="it has to be 1 included item in the list items" DisplayName="Else If does not contain 1 included" sap:VirtualizedContainerService.HintSize="854,427" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+            <ui:IfElseIf sap2010:Annotation.AnnotationText="it has to be 1 included item in the list items" DisplayName="Else If does not contain 1 included" sap:VirtualizedContainerService.HintSize="680,339" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
               <ui:IfElseIf.ConditionBlocks>
                 <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                   <ui:IfElseIfBlock BlockType="If" Condition="[not strHeader.Contains(&quot;1 Included&quot;)]">
                     <ui:IfElseIfBlock.Then>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,201" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_10">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Throw DisplayName="Throw be" Exception="[new BusinessRuleException(&quot;there are more than 1 included line item or there is no included item.&quot;)]" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                        <Throw DisplayName="Throw be" Exception="[new BusinessRuleException(&quot;there are more than 1 included line item or there is no included item.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
                       </Sequence>
                     </ui:IfElseIfBlock.Then>
                   </ui:IfElseIfBlock>
@@ -161,13 +161,13 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:IfElseIf>
-            <Sequence DisplayName="check lineitem - Sequence" sap:VirtualizedContainerService.HintSize="854,400" sap2010:WorkflowViewState.IdRef="Sequence_11">
+            <Sequence DisplayName="check lineitem - Sequence" sap:VirtualizedContainerService.HintSize="680,377" sap2010:WorkflowViewState.IdRef="Sequence_11">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'checkbox'" sap:VirtualizedContainerService.HintSize="338,193" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9b80aa0a-d100-4c81-a198-56e17b8de381" Version="V3">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'checkbox'" sap:VirtualizedContainerService.HintSize="334,192" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9b80aa0a-d100-4c81-a198-56e17b8de381" Version="V3">
                 <uix:NClick.Target>
                   <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109553055/aw?awh=r&amp;awssk=pMI9bgNz" DesignTimeRectangle="76, 684, 24, 24" DesignTimeScaleFactor="1" ElementType="CheckBox" FriendlyName="'Checkbox'" FullSelectorArgument="&lt;webctrl class='tableBody' tableRow='2' tag='TABLE' /&gt;&lt;webctrl tableRow='10' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='tableBody' tag='TABLE' /&gt;&lt;webctrl type='' tag='DIV' class='w-chk w-chk-dsize' aaname='  ' /&gt;" Guid="e563f79e-548d-4c83-b691-54ac843a568f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABASURBVEhL7c0hDgAgDMBAvo/E8tmhIEHgumF6SXVbFPs37GOmtl3DLA5xDnEOcQ5xDnEOcQ5xz2Fm2xlWKR5GLDFZvip4hacxAAAAAElFTkSuQmCC" InformativeScreenshot="f8992e5bac1af949815213ea06f018d7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -188,15 +188,15 @@
                   </uix:VerifyExecutionOptions>
                 </uix:NClick.VerifyOptions>
               </uix:NClick>
-              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="338,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
                 <ui:CommentOut.Body>
-                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="400,318" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,298" sap2010:WorkflowViewState.IdRef="Sequence_12">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="{x:Null}" Result="{x:Null}" DisplayName="Get Attribute '1'" sap:VirtualizedContainerService.HintSize="338,207" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" ScopeIdentifier="9b80aa0a-d100-4c81-a198-56e17b8de381" Version="V3">
+                    <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="{x:Null}" Result="{x:Null}" DisplayName="Get Attribute '1'" sap:VirtualizedContainerService.HintSize="334,206" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric`1_1" ScopeIdentifier="9b80aa0a-d100-4c81-a198-56e17b8de381" Version="V3">
                       <uix:NGetAttributeGeneric.Target>
                         <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109553055/aw?awh=r&amp;awssk=pMI9bgNz" DesignTimeRectangle="79, 688, 18, 18" DesignTimeScaleFactor="1" FriendlyName="'LABEL'" FullSelectorArgument="&lt;webctrl class='tableBody' tableRow='2' tag='TABLE' /&gt;&lt;webctrl tableRow='10' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl class='tableBody' tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='w-chk-block is-block' aaname='' /&gt;" Guid="858ad98b-8796-422b-886c-067b2c4b0b4b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGUSURBVEhLrZQxT8JAGIb7Lxj5GfwERkdHRwcGFhInFgaIcTAmLpIYExYGBkfDIglLRxh6IAQLKhFjUMDYQBqS1zv6Qa9Hgab1Sb6h912evNfvWg2RWaJfaUFLGYjlB+jbzmp08egFx1wqxFqqg4eZsxxRbKF2vZYaSJQ+aT2ieM56SEhpaxY1OBHEY9xl3bTJypjWHUKLR1VnYE51UaOhrQkntoZIb6QGjqpTariEEC+g3zA3baYHXUkrUMQ+O1RME0kp7cnjDzW8SOIZvzoM8byJtjRdL1OUc65UyzyjQR0VEv8qx+vg/m07/aTeQWy9h9dp3T+tYJN43pTvpCiGM50+I4H9jkJG6mdN9Knlh/QqlpjoXUXO72fpAxPea5SkE/FK6zvf1wplePyHUn3yHFdUPNfyDOxQWoEiFlhoV7blbjEUmgvauxsfscDyDlOu3AAj2rWPHWKBclNWxXDJltTfzx6x4BvlvCuOXbzyQQbjgJhjf5Gcp+0GSys4LBZY/A7fDjGnxyAEE4dAO78q4v+riD/MQcr4Yk0MoAAAAABJRU5ErkJggg==" InformativeScreenshot="5e2d89ad675c8f2125abd487bfde753f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SAP Business Network Supplier' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive">
                           <uix:TargetAnchorable.Anchors>
@@ -217,7 +217,7 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:CommentOut>
             </Sequence>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'subtotal'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="854,254" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="9b80aa0a-d100-4c81-a198-56e17b8de381" Text="[in_strNet]" Version="V3">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'subtotal'" EmptyFieldMode="MultiLine" sap:VirtualizedContainerService.HintSize="680,253" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="9b80aa0a-d100-4c81-a198-56e17b8de381" Text="[in_strNet]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109553055/aw?awh=r&amp;awssk=pMI9bgNz" DesignTimeRectangle="1669, 684, 102, 32" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'$758,363.11 CAD'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' colName='Subtotal' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' colName='Subtotal' class='w-txt' aaname='' /&gt;" Guid="b8609505-e84c-4d69-9cd8-57b82c0aff6a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGoAAAAkCAYAAABhc6+LAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATBSURBVGhD7ZdNayJLFIbvb8oiyCCDCAkDcyEgCMKA4EIYEATDQAIhQhAJVwk4IcziLmQIyAhiFkogQRjMInER3ehGs0iyaTf2qla9e++pqu5O22k/iJlLmtQDDbZVXR/nPefUqb+g8AVKKJ9gC/XP93/V8wYfiymhFG8LJZRPUEL5BCWUT1BC+QQllE9QQvkEJZRPUEL5hNcRSj9H6mhgvij+BKsJpfdQ/hbDx/UPWKPnY3QH5a4umibNjPjP/aSavH2Aokdb0dTaeDhHPrEp/gt8SiJ/OZYNHky6VeyafdfCSezW72CYbRytXUA8zMcPYSNdxdBqNB5xcZTBRtBqK+FaM9u8YAOUEyGsPXPIMS4OYlhLn2Ni/jMTsldlL2nOKe1VvHycWu8sVhBqjFoignx7DEPjEdUDG50je3AO7/3eobyVRE00cqEKuPZaodFDPphEecDkO+uguBVBeSRfp2A9HCd2UBvpYrOGdoX8Vgj5rhzYGPxAJErzCN9h6P/cR/5GOpJ2mUH8sANNdGUY/iLHSpx5rt0YVUnsJLJ78Wmh9CtkozHaM327SChuo2AI8ZMO7nUGxhgmDx0cf6Xv23JN81hBKG7sFBp8Z0ukPqNbQOBbi0zC6dG3JfTFbxd8rGgV9+Yr5/bIisTF9O2+Bq4PP5Awy/grweedsaZJu4oL2qfIEs59Ds6kQw1KC4QycHsYwmdy5iVX84wVhDLQP4khkCih0SwhRouYjY5G+snTpVFyqNT3ZRogb803zRRgDHBMXlrsmhGlt7AbjKHyIF/nwVNmiqJRRu0jal9SqFxWkfpEKcud+qZg5Ay0l8P5hnwmlMVCoWhPFE3H8315LisIJWEUvrWDJALmGWEb3MnoFJ+3TjE0X6VQFPJmfja0DvLREHbbUhxjcIoYH088fyNVX5DHuaFE3ziyN9Z5Js/BQPoMQzGsKcbelRnVHO5Acp6NRBX9uZOsJlRxPYPGcknBk5WFElipj86MIhncjhyBDPt4fbogMChHO3tpzZQ0AkVQKkybejBb2R1q6U1bRG8MkfPZlODci6lA6coeAj62K73xdTCmY1jPIBB1OJMHq0aUVSy9hNcViuCbmTpPWAvb6zu4mGdnwhLKyxgzDeTBU1+G33uuM2rOObSM179cKOmsASpe3EGrNXOUWWZXtRYvF4rOkvIXSjXNO6peuFCU302PdkbUfZ3Soiv3G1oL2a9UjcmSa/o7SpORoCOiqIzm55sdkdS3QnOKVhonlcihYVV9Oo++ECK/HnkrWHufoqSEW+EkOhUXMTrQB9SX0uBJEsmTnqz6DAbtpkDz5vBb9KUKsX6GW5doLxeK4NFMURU7aplVH0UxiST26lVqulgpotiohaLrHlW0zwhClNpepbWB+ybdb8Qhb96VHGebdlPCdtS6G8Ww/bNnG4G1c3QePkUF7yuLhed97XnCfH2bVI63nspvuhfV6E4j106FRqLgcA5K4eEQlc0yDfBKUozvfEiYERfO/f/MiCWm7lFL3N0crCSUjSP1/XEolWZFVLwvXkeo/xM2xuS9qUT4T6h3ihLKJyihfIISyicooXyCEsonKKF8ghLKJyihfMJModTz9h4LWyjF20YJ5QuA/wBwYj86haqxoQAAAABJRU5ErkJggg==" InformativeScreenshot="ad475e2f235d3557725b1624935e9e61.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive" />
               </uix:NTypeInto.Target>
@@ -232,9 +232,9 @@
                 </uix:VerifyExecutionTypeIntoOptions>
               </uix:NTypeInto.VerifyOptions>
             </uix:NTypeInto>
-            <If Condition="[in_boolCredit]" sap:VirtualizedContainerService.HintSize="854,469" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[in_boolCredit]" sap:VirtualizedContainerService.HintSize="680,351" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Else>
-                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Checkbox'" sap:VirtualizedContainerService.HintSize="334,193" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9b80aa0a-d100-4c81-a198-56e17b8de381" Version="V3">
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Checkbox'" sap:VirtualizedContainerService.HintSize="334,192" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9b80aa0a-d100-4c81-a198-56e17b8de381" Version="V3">
                   <uix:NClick.Target>
                     <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109543032/aw?awh=r&amp;awssk=zTqYODTZ#b0" DesignTimeRectangle="81, 447, 24, 24" DesignTimeScaleFactor="1" ElementType="CheckBox" FriendlyName="'Checkbox'" FullSelectorArgument="&lt;webctrl tag='DIV' class='w-chk w-chk-dsize' colName='        Please ensure Quantity, Amount and decimal separator are correct before submitting invoice   ' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='DIV' class='w-chk w-chk-dsize' colName='        Please ensure Quantity, Amount and decimal separator are correct before submitting invoice   ' type='' aaname='  ' /&gt;" Guid="64b77cb0-add6-4e90-a8ec-1cacadd84720" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABASURBVEhL7c0hDgAgDMBAvo/E8tmhIEHgumF6SXVbFPs37GOmtl3DLA5xDnEOcQ5xDnEOcQ5xz2Fm2xlWKR5GLDFZvip4hacxAAAAAElFTkSuQmCC" InformativeScreenshot="a103abdb539679d1bd2109a640c51227.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive" />
                   </uix:NClick.Target>
@@ -251,21 +251,21 @@
                 </uix:NClick>
               </If.Else>
             </If>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="854,143" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[&quot;Fields are filled, the update button will be clicked&quot;]" />
-            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="10" DelayBefore="2" DisplayName="Click 'Update'" sap:VirtualizedContainerService.HintSize="854,157" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9b80aa0a-d100-4c81-a198-56e17b8de381" Version="V3">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="680,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[&quot;Fields are filled, the update button will be clicked&quot;]" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="10" DelayBefore="2" DisplayName="Click 'Update'" sap:VirtualizedContainerService.HintSize="680,156" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9b80aa0a-d100-4c81-a198-56e17b8de381" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://service.ariba.com/SCMSupplier.aw/109540053/aw?awh=r&amp;awssk=PZmpFbDw#b0" DesignTimeRectangle="1441, 657, 100, 36" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Update'" FullSelectorArgument="&lt;webctrl tag='BUTTON' aaname='Update' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' aaname='Update' idx='2' check:text='Update' /&gt;" Guid="580024ff-a995-43da-890a-23ef8357620e" ImageBase64="" InformativeScreenshot="a6185ade54d97ac6e4689728dfedaae6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NCheckState DisplayName="Check App State 'Please check'" sap:VirtualizedContainerService.HintSize="854,722" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="9b80aa0a-d100-4c81-a198-56e17b8de381" Version="V3">
+            <uix:NCheckState DisplayName="Check App State 'Please check'" sap:VirtualizedContainerService.HintSize="680,698" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="9b80aa0a-d100-4c81-a198-56e17b8de381" Version="V3">
               <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,505" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="376,482" sap2010:WorkflowViewState.IdRef="Sequence_13">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Checkbox'" sap:VirtualizedContainerService.HintSize="338,193" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9b80aa0a-d100-4c81-a198-56e17b8de381" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Checkbox'" sap:VirtualizedContainerService.HintSize="334,192" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9b80aa0a-d100-4c81-a198-56e17b8de381" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109543032/aw?awh=r&amp;awssk=zTqYODTZ#b0" DesignTimeRectangle="81, 447, 24, 24" DesignTimeScaleFactor="1" ElementType="CheckBox" FriendlyName="'Checkbox'" FullSelectorArgument="&lt;webctrl tag='DIV' class='w-chk w-chk-dsize' colName='        Please ensure Quantity, Amount and decimal separator are correct before submitting invoice   ' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='DIV' class='w-chk w-chk-dsize' colName='        Please ensure Quantity, Amount and decimal separator are correct before submitting invoice   ' type='' aaname='  ' /&gt;" Guid="64b77cb0-add6-4e90-a8ec-1cacadd84720" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABASURBVEhL7c0hDgAgDMBAvo/E8tmhIEHgumF6SXVbFPs37GOmtl3DLA5xDnEOcQ5xDnEOcQ5xz2Fm2xlWKR5GLDFZvip4hacxAAAAAElFTkSuQmCC" InformativeScreenshot="a103abdb539679d1bd2109a640c51227.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive" />
                     </uix:NClick.Target>
@@ -280,7 +280,7 @@
                       </uix:VerifyExecutionOptions>
                     </uix:NClick.VerifyOptions>
                   </uix:NClick>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="10" DelayBefore="2" DisplayName="Click 'Update'" sap:VirtualizedContainerService.HintSize="338,157" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9b80aa0a-d100-4c81-a198-56e17b8de381" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="10" DelayBefore="2" DisplayName="Click 'Update'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9b80aa0a-d100-4c81-a198-56e17b8de381" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://service.ariba.com/SCMSupplier.aw/109540053/aw?awh=r&amp;awssk=PZmpFbDw#b0" DesignTimeRectangle="1441, 657, 100, 36" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Update'" FullSelectorArgument="&lt;webctrl tag='BUTTON' aaname='Update' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' aaname='Update' idx='2' check:text='Update' /&gt;" Guid="580024ff-a995-43da-890a-23ef8357620e" ImageBase64="" InformativeScreenshot="a6185ade54d97ac6e4689728dfedaae6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                     </uix:NClick.Target>
@@ -288,7 +288,7 @@
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
-                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="400,105" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="250,84" sap2010:WorkflowViewState.IdRef="Sequence_14">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -300,8 +300,8 @@
                 <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109552069/aw?awh=r&amp;awssk=yltMJH87#b0" DesignTimeRectangle="77, 401, 473, 12" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Please check'" FullSelectorArgument="&lt;webctrl class='inlineErrorText' tag='SPAN' aaname='Please check the box after you ensure Quantity and Amount are correct before submitting invoice.' /&gt;" FuzzySelectorArgument="&lt;webctrl class='inlineErrorText' tag='SPAN' aaname='Please check the box after you ensure Quantity and Amount are correct before submitting invoice.' type='' check:text='Please check the box after you ensure Quantity and Amount are correct before submitting invoice.' /&gt;" Guid="1685de97-2cba-4ec5-951f-58ffe82c3f1c" InformativeScreenshot="949818c744d8e016ad41677bafd10460.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
               </uix:NCheckState.Target>
             </uix:NCheckState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="854,143" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[&quot;Moving to  next page&quot;]" />
-            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="10" DisplayName="Click 'Next'" sap:VirtualizedContainerService.HintSize="854,157" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9b80aa0a-d100-4c81-a198-56e17b8de381" Version="V3">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="680,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Message="[&quot;Moving to  next page&quot;]" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="10" DisplayName="Click 'Next'" sap:VirtualizedContainerService.HintSize="680,156" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="9b80aa0a-d100-4c81-a198-56e17b8de381" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109549034/aw?awh=r&amp;awssk=ztno7euZ#b0" DesignTimeRectangle="1822, 667, 29, 16" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Next'" FullSelectorArgument="&lt;webctrl tag='SPAN' aaname=' Next  ' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' aaname=' Next  ' type='' class='' check:text='Next' /&gt;" Guid="138b1b56-5537-4d02-b39a-a4c76ed6f55f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACEAAAAUCAYAAAADU1RxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGjSURBVEhLxZS/bsIwEMZ5Ex6hj9CRR+jII8DWOVPHDixsqEPFBiNjOiBVDKhSBjIwsCDBghCkicEQvp7/JHGQhQpC5qRP8p2d88/ncyqV5hYPlzXoWtaga1mDrmUNulbhcIQgSw5omAtInSXFl7wUu6sKR0OQzYK4tOg+EAyDDRCOLHOFIyBO8CdHMBzRaRWL7gXhJ/+F6MXorwA226Gq58oQv3idpFiLkglLUgx6kZyrjcQBUnTbOmebY0Y5w9FeAhRGh9S5pfJBDkHj3oE2oeSfas6EqAUpwFP0CbbqxWhIP6tchPf5CVhx1JoxuuIw870+zFWVEGMzmQmRyHtdT5n+RmiHb24k99RmixXBiSb3snVXQ5Bayv/5igwIlchmJlh1TABkiyDJY7dBkOp09+I0/sVKnIn6IOQEPz3rj1shKp4qNaOk5z3hDxM8UZPWhwcsNlnZzT6I0JjSd/l/R1/ThOHlI6ZvjX3ygQ2C9EwdL01DyNcRHIvXQYDhmMmkclNq0resD3R/iMopKHVNF17HA2UNupY16FrWoGtZg061xR9vvts6C97BtQAAAABJRU5ErkJggg==" InformativeScreenshot="899ecf541fbe8e6e0257fbe19ecc771c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>

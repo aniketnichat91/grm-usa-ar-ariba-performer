@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>959,1765</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1126,1568</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>LogInCoupa_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="34">
@@ -100,7 +100,7 @@
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="this workflow logs into coupa via chrome" DisplayName="LogInCoupa" sap:VirtualizedContainerService.HintSize="500,1700" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="this workflow logs into coupa via chrome" DisplayName="LogInCoupa" sap:VirtualizedContainerService.HintSize="500,1503" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strUsername" />
       <Variable x:TypeArguments="ss:SecureString" Name="secPassword" />
@@ -112,7 +112,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;LogInCoupa workflow is starting...&quot;]" />
-    <ui:GetRobotCredential AssetName="CIBC_Coupa_Credentials" CacheStrategy="None" DisplayName="Get Credential coupa" FolderPath="GMCAN_FINANCE_AR" sap:VirtualizedContainerService.HintSize="438,365" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secPassword]" TimeoutMS="120000" Username="[strUsername]" />
+    <ui:GetRobotCredential AssetName="CIBC_Coupa_Credentials" CacheStrategy="None" DisplayName="Get Credential coupa" sap:VirtualizedContainerService.HintSize="438,168" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secPassword]" TimeoutMS="120000" Username="[strUsername]" />
     <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,522" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
         <l:SapCoupaLogin sap:VirtualizedContainerService.HintSize="334,294" sap2010:WorkflowViewState.IdRef="SapCoupaLogin_1" IncognitoMode="True" Password="[secPassword]" URL="[in_strCoupaURL]" UiBrowser="[out_brwCoupa]" Username="[strUsername]" />

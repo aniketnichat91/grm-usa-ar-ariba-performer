@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="get_cred" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="701,2887" sap2010:WorkflowViewState.IdRef="get_cred_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="get_cred" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="564,1447" sap2010:WorkflowViewState.IdRef="get_cred_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
       <x:String>System.Activities</x:String>
@@ -55,14 +55,14 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence Get cred " sap:VirtualizedContainerService.HintSize="524,2822" sap2010:WorkflowViewState.IdRef="Sequence_4">
+  <Sequence DisplayName="Sequence Get cred " sap:VirtualizedContainerService.HintSize="524,1382" sap2010:WorkflowViewState.IdRef="Sequence_4">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Sequence Get cred from Can_SapCoupa_CIBC" sap:VirtualizedContainerService.HintSize="462,1089" sap2010:WorkflowViewState.IdRef="Sequence_27">
+    <Sequence DisplayName="Sequence Get cred from Can_SapCoupa_CIBC" sap:VirtualizedContainerService.HintSize="462,434" sap2010:WorkflowViewState.IdRef="Sequence_27">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -80,7 +80,7 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:GetRobotCredential AssetName="_CADGRM.SAP_AppSecret" CacheStrategy="None" DisplayName="Get Credential coupa" FolderPath="GMCAN_FINANCE_AR" sap:VirtualizedContainerService.HintSize="338,365" sap2010:WorkflowViewState.IdRef="GetRobotCredential_3" Password="[secPassword]" TimeoutMS="120000" Username="[strUsername]" />
+        <ui:GetRobotCredential AssetName="_CADGRM.SAP_AppSecret" CacheStrategy="None" DisplayName="Get Credential coupa" sap:VirtualizedContainerService.HintSize="338,168" sap2010:WorkflowViewState.IdRef="GetRobotCredential_3" Password="[secPassword]" TimeoutMS="120000" Username="[strUsername]" />
         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[strUsername]" />
         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="[secPassword.ToString]" />
         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="[new System.Net.NetworkCredential(string.Empty, secPassword).Password]" />
@@ -96,12 +96,12 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:GetRobotCredential AssetName="CADGRM.SAP.Office365Credentials" CacheStrategy="None" DisplayName="Get Credential coupa" FolderPath="GMCAN_FINANCE_AR" sap:VirtualizedContainerService.HintSize="338,365" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secPassword]" TimeoutMS="120000" Username="[strUsername]" />
+        <ui:GetRobotCredential AssetName="CADGRM.SAP.Office365Credentials" CacheStrategy="None" DisplayName="Get Credential coupa" sap:VirtualizedContainerService.HintSize="338,168" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secPassword]" TimeoutMS="120000" Username="[strUsername]" />
         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[strUsername]" />
         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[secPassword.ToString]" />
         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[new System.Net.NetworkCredential(string.Empty, secPassword).Password]" />
       </Sequence>
-      <Sequence DisplayName="get_Sap_Coupa_cred" sap:VirtualizedContainerService.HintSize="400,736" sap2010:WorkflowViewState.IdRef="Sequence_47">
+      <Sequence DisplayName="get_Sap_Coupa_cred" sap:VirtualizedContainerService.HintSize="400,81" sap2010:WorkflowViewState.IdRef="Sequence_47">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="strUsername" />
           <Variable x:TypeArguments="ss:SecureString" Name="secPassword" />
@@ -112,12 +112,12 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:GetRobotCredential AssetName="CIBC_Coupa_Credentials" CacheStrategy="None" DisplayName="Get Credential coupa" FolderPath="GMCAN_FINANCE_AR" sap:VirtualizedContainerService.HintSize="338,365" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[secPassword]" TimeoutMS="120000" Username="[strUsername]" />
+        <ui:GetRobotCredential AssetName="CIBC_Coupa_Credentials" CacheStrategy="None" DisplayName="Get Credential coupa" sap:VirtualizedContainerService.HintSize="338,168" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[secPassword]" TimeoutMS="120000" Username="[strUsername]" />
         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[strUsername]" />
         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[new System.Net.NetworkCredential(string.Empty, secPassword).Password]" />
       </Sequence>
     </Sequence>
-    <Sequence sap:VirtualizedContainerService.HintSize="462,1582" sap2010:WorkflowViewState.IdRef="Sequence_13">
+    <Sequence sap:VirtualizedContainerService.HintSize="462,797" sap2010:WorkflowViewState.IdRef="Sequence_13">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -135,7 +135,7 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:GetRobotCredential AssetName="Doordash_Coupa_Credentials" CacheStrategy="None" DisplayName="Get Credential coupa" FolderPath="GMCAN_FINANCE_AR" sap:VirtualizedContainerService.HintSize="338,365" sap2010:WorkflowViewState.IdRef="GetRobotCredential_4" Password="[secPassword]" TimeoutMS="120000" Username="[strUsername]" />
+        <ui:GetRobotCredential AssetName="Doordash_Coupa_Credentials" CacheStrategy="None" DisplayName="Get Credential coupa" sap:VirtualizedContainerService.HintSize="338,168" sap2010:WorkflowViewState.IdRef="GetRobotCredential_4" Password="[secPassword]" TimeoutMS="120000" Username="[strUsername]" />
         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_9" Text="[strUsername]" />
         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_10" Text="[secPassword.ToString]" />
         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_11" Text="[new System.Net.NetworkCredential(string.Empty, secPassword).Password]" />
@@ -151,7 +151,7 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:GetRobotCredential AssetName="Can_SapAriba_Shell_Credentials" CacheStrategy="None" DisplayName="Get Credential coupa" FolderPath="GMCAN_FINANCE_AR" sap:VirtualizedContainerService.HintSize="338,365" sap2010:WorkflowViewState.IdRef="GetRobotCredential_5" Password="[secPassword]" TimeoutMS="120000" Username="[strUsername]" />
+        <ui:GetRobotCredential AssetName="Can_SapAriba_Shell_Credentials" CacheStrategy="None" DisplayName="Get Credential coupa" sap:VirtualizedContainerService.HintSize="338,168" sap2010:WorkflowViewState.IdRef="GetRobotCredential_5" Password="[secPassword]" TimeoutMS="120000" Username="[strUsername]" />
         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_12" Text="[strUsername]" />
         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_13" Text="[secPassword.ToString]" />
         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_14" Text="[new System.Net.NetworkCredential(string.Empty, secPassword).Password]" />
@@ -167,12 +167,12 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:GetRobotCredential AssetName="Can_SapAriba_ebay_Credentials" CacheStrategy="None" DisplayName="Get Credential coupa" FolderPath="GMCAN_FINANCE_AR" sap:VirtualizedContainerService.HintSize="338,365" sap2010:WorkflowViewState.IdRef="GetRobotCredential_6" Password="[secPassword]" TimeoutMS="120000" Username="[strUsername]" />
+        <ui:GetRobotCredential AssetName="Can_SapAriba_ebay_Credentials" CacheStrategy="None" DisplayName="Get Credential coupa" sap:VirtualizedContainerService.HintSize="338,168" sap2010:WorkflowViewState.IdRef="GetRobotCredential_6" Password="[secPassword]" TimeoutMS="120000" Username="[strUsername]" />
         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_15" Text="[strUsername]" />
         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_16" Text="[secPassword.ToString]" />
         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_17" Text="[new System.Net.NetworkCredential(string.Empty, secPassword).Password]" />
       </Sequence>
-      <Sequence DisplayName="get_Can_SapAriba_Dell_Credentials" sap:VirtualizedContainerService.HintSize="400,866" sap2010:WorkflowViewState.IdRef="Sequence_51">
+      <Sequence DisplayName="get_Can_SapAriba_Dell_Credentials" sap:VirtualizedContainerService.HintSize="400,81" sap2010:WorkflowViewState.IdRef="Sequence_51">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="strUsername" />
           <Variable x:TypeArguments="ss:SecureString" Name="secPassword" />
@@ -183,7 +183,7 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:GetRobotCredential AssetName="Can_SapAriba_Dell_Credentials" CacheStrategy="None" DisplayName="Get Credential coupa" FolderPath="GMCAN_FINANCE_AR" sap:VirtualizedContainerService.HintSize="338,365" sap2010:WorkflowViewState.IdRef="GetRobotCredential_7" Password="[secPassword]" TimeoutMS="120000" Username="[strUsername]" />
+        <ui:GetRobotCredential AssetName="Can_SapAriba_Dell_Credentials" CacheStrategy="None" DisplayName="Get Credential coupa" sap:VirtualizedContainerService.HintSize="338,168" sap2010:WorkflowViewState.IdRef="GetRobotCredential_7" Password="[secPassword]" TimeoutMS="120000" Username="[strUsername]" />
         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_18" Text="[strUsername]" />
         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_19" Text="[secPassword.ToString]" />
         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_20" Text="[new System.Net.NetworkCredential(string.Empty, secPassword).Password]" />
@@ -199,12 +199,12 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:GetRobotCredential AssetName="Can_SapAriba_Bayer_Credentials" CacheStrategy="None" DisplayName="Get Credential coupa" FolderPath="GMCAN_FINANCE_AR" sap:VirtualizedContainerService.HintSize="338,365" sap2010:WorkflowViewState.IdRef="GetRobotCredential_8" Password="[secPassword]" TimeoutMS="120000" Username="[strUsername]" />
+        <ui:GetRobotCredential AssetName="Can_SapAriba_Bayer_Credentials" CacheStrategy="None" DisplayName="Get Credential coupa" sap:VirtualizedContainerService.HintSize="338,168" sap2010:WorkflowViewState.IdRef="GetRobotCredential_8" Password="[secPassword]" TimeoutMS="120000" Username="[strUsername]" />
         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_21" Text="[strUsername]" />
         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_22" Text="[secPassword.ToString]" />
         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_23" Text="[new System.Net.NetworkCredential(string.Empty, secPassword).Password]" />
       </Sequence>
-      <Sequence DisplayName="get_Can_SapAriba_Mars_Credentials" sap:VirtualizedContainerService.HintSize="400,866" sap2010:WorkflowViewState.IdRef="Sequence_44">
+      <Sequence DisplayName="get_Can_SapAriba_Mars_Credentials" sap:VirtualizedContainerService.HintSize="400,81" sap2010:WorkflowViewState.IdRef="Sequence_44">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="strUsername" />
           <Variable x:TypeArguments="ss:SecureString" Name="secPassword" />
@@ -215,7 +215,7 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:GetRobotCredential AssetName="Can_SapAriba_Mars_Credentials" CacheStrategy="None" DisplayName="Get Credential coupa" FolderPath="GMCAN_FINANCE_AR" sap:VirtualizedContainerService.HintSize="338,365" sap2010:WorkflowViewState.IdRef="GetRobotCredential_9" Password="[secPassword]" TimeoutMS="120000" Username="[strUsername]" />
+        <ui:GetRobotCredential AssetName="Can_SapAriba_Mars_Credentials" CacheStrategy="None" DisplayName="Get Credential coupa" sap:VirtualizedContainerService.HintSize="338,168" sap2010:WorkflowViewState.IdRef="GetRobotCredential_9" Password="[secPassword]" TimeoutMS="120000" Username="[strUsername]" />
         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_24" Text="[strUsername]" />
         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_25" Text="[secPassword.ToString]" />
         <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="WriteLine_26" Text="[new System.Net.NetworkCredential(string.Empty, secPassword).Password]" />

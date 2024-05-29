@@ -7,11 +7,12 @@
     <x:Property Name="in_exceptionType" Type="InArgument(x:String)" />
     <x:Property Name="in_exceptionSSpath" Type="InArgument(x:String)" />
     <x:Property Name="in_additionalInfo" Type="InArgument(x:String)" />
+    <x:Property Name="Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1040,3360</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>904,2223</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>UpdateStatusExcel_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="58">
@@ -119,9 +120,11 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="UpdateStatusExcel" sap:VirtualizedContainerService.HintSize="1050,2615" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="UpdateStatusExcel" sap:VirtualizedContainerService.HintSize="914,2158" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="POnumber" />
       <Variable x:TypeArguments="x:String" Name="invoiceNumber" />
@@ -135,7 +138,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Multiple Assign-FILL INSIDE &quot;&quot;" sap:VirtualizedContainerService.HintSize="988,240" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign-FILL INSIDE &quot;&quot;" sap:VirtualizedContainerService.HintSize="872,239" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -181,7 +184,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="988,116" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="872,115" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
@@ -195,39 +198,39 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[io_dtStatus]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="988,292" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="PO Number" LookupValue="[POnumber]" RowIndex="[intRowIndex]" />
-    <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="988,1736" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+    <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[io_dtStatus]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="872,291" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="PO Number" LookupValue="[POnumber]" RowIndex="[intRowIndex]" />
+    <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="872,1301" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
       <ui:IfElseIf.ConditionBlocks>
         <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
           <ui:IfElseIfBlock BlockType="If" Condition="[intRowIndex = -1]">
             <ui:IfElseIfBlock.Then>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,297" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,277" sap2010:WorkflowViewState.IdRef="Sequence_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{POnumber,invoiceNumber,invoiceDate,Amount_bill,in_status,in_exceptionType,in_exceptionMessage,in_exceptionSSpath,in_additionalInfo}]" DataTable="[io_dtStatus]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="338,186" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{POnumber,invoiceNumber,invoiceDate,Amount_bill,in_status,in_exceptionType,in_exceptionMessage,in_exceptionSSpath,in_additionalInfo}]" DataTable="[io_dtStatus]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
               </Sequence>
             </ui:IfElseIfBlock.Then>
           </ui:IfElseIfBlock>
           <ui:IfElseIfBlock BlockType="Else">
             <ui:IfElseIfBlock.Then>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="540,1208" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="801,794" sap2010:WorkflowViewState.IdRef="Sequence_4">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <If Condition="[io_dtStatus(intRowIndex)(&quot;PO Number&quot;).tostring= POnumber]" DisplayName="If po found" sap:VirtualizedContainerService.HintSize="478,1097" sap2010:WorkflowViewState.IdRef="If_1">
+                <If Condition="[io_dtStatus(intRowIndex)(&quot;PO Number&quot;).tostring= POnumber]" DisplayName="If po found" sap:VirtualizedContainerService.HintSize="759,702" sap2010:WorkflowViewState.IdRef="If_1">
                   <If.Then>
-                    <Sequence DisplayName="update row item - Sequence" sap:VirtualizedContainerService.HintSize="400,576" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <Sequence DisplayName="update row item - Sequence" sap:VirtualizedContainerService.HintSize="380,555" sap2010:WorkflowViewState.IdRef="Sequence_3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign DisplayName="Assign row number in_status" sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+                      <Assign DisplayName="Assign row number in_status" sap:VirtualizedContainerService.HintSize="338,60" sap2010:WorkflowViewState.IdRef="Assign_1">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Object">[io_dtStatus(intRowIndex)("Status")]</OutArgument>
                         </Assign.To>
@@ -235,7 +238,7 @@
                           <InArgument x:TypeArguments="x:Object">[in_status]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign DisplayName="Assign row number in_exceptionType" sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="Assign_4">
+                      <Assign DisplayName="Assign row number in_exceptionType" sap:VirtualizedContainerService.HintSize="338,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Object">[io_dtStatus(intRowIndex)("Type")]</OutArgument>
                         </Assign.To>
@@ -270,7 +273,7 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <c:SendEmail BCC="{x:Null}" CC="{x:Null}" BodyHTML="[&quot;&lt;p&gt;Po number could not find in data table. Workflow is update status excel. &lt;/p&gt;&quot;]" EmailTo="[strSupportTeam.Split(&quot;;&quot;c)]" sap:VirtualizedContainerService.HintSize="334,345" sap2010:WorkflowViewState.IdRef="SendEmail_1" Subject="Po could not find the data table">
+                    <c:SendEmail BCC="{x:Null}" CC="{x:Null}" BodyHTML="[&quot;&lt;p&gt;Po number could not find in data table. Workflow is update status excel. &lt;/p&gt;&quot;]" EmailTo="[Config(&quot;SupportTeam&quot;).ToString.Split(&quot;;&quot;c)]" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="SendEmail_1" Subject="Po could not find the data table">
                       <c:SendEmail.AttachmentsCollection>
                         <InArgument x:TypeArguments="scg:IEnumerable(x:String)" />
                       </c:SendEmail.AttachmentsCollection>

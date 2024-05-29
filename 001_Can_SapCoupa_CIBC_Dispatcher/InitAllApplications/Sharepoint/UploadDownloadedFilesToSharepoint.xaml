@@ -11,7 +11,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>959,3738</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>801,3192</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>UploadDownloadedFilesToSharepoint_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="39">
@@ -113,7 +113,7 @@
       <AssemblyReference>System.Collections</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="this workflow uploads all files from attachments in email " DisplayName="UploadDownloadedFilesToSharepoint" sap:VirtualizedContainerService.HintSize="811,3673" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="this workflow uploads all files from attachments in email " DisplayName="UploadDownloadedFilesToSharepoint" sap:VirtualizedContainerService.HintSize="811,3047" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strEmailUsername" />
       <Variable x:TypeArguments="ss:SecureString" Name="secEmailPassword" />
@@ -127,21 +127,21 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="749,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;UploadDownloadedFilesToSharepoint workflow is starting...&quot;]" />
-    <ui:GetRobotCredential AssetName="_CADGRM.SAP_AppSecret" CacheStrategy="None" DisplayName="Get Credential - app secret" FolderPath="GMCAN_FINANCE_AR" sap:VirtualizedContainerService.HintSize="749,365" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secAppSecret]" TimeoutMS="120000">
+    <ui:GetRobotCredential AssetName="_CADGRM.SAP_AppSecret" CacheStrategy="None" DisplayName="Get Credential - app secret" sap:VirtualizedContainerService.HintSize="749,52" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secAppSecret]" TimeoutMS="120000">
       <ui:GetRobotCredential.Username>
         <OutArgument x:TypeArguments="x:String" />
       </ui:GetRobotCredential.Username>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:GetRobotCredential>
-    <ui:GetRobotCredential AssetName="CADGRM.SAP.Office365Credentials" CacheStrategy="None" DisplayName="Get Credential - _CADGRM.SAP@service.groupm.com" FolderPath="GMCAN_FINANCE_AR" sap:VirtualizedContainerService.HintSize="749,365" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[secEmailPassword]" TimeoutMS="120000" Username="[strEmailUsername]">
+    <ui:GetRobotCredential AssetName="CADGRM.SAP.Office365Credentials" CacheStrategy="None" DisplayName="Get Credential - _CADGRM.SAP@service.groupm.com" sap:VirtualizedContainerService.HintSize="749,52" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[secEmailPassword]" TimeoutMS="120000" Username="[strEmailUsername]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
