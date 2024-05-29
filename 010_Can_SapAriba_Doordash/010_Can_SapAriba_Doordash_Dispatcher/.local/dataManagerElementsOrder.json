@@ -1,0 +1,500 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strSupportTeam&",
+        "strTenantID&",
+        "strAppID&",
+        "strDriveName&",
+        "strAppSecretCredentialName&",
+        "strSiteURL&",
+        "strOffice365CredentialsName&",
+        "strSharePointSubfolder&",
+        "strSMEs&",
+        "strClientName&"
+      ],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strSupportTeam&Sequence_34",
+        "strTenantID&Sequence_34",
+        "strAppID&Sequence_34",
+        "strDriveName&Sequence_34",
+        "strAppSecretCredentialName&Sequence_34",
+        "strSiteURL&Sequence_34",
+        "strOffice365CredentialsName&Sequence_34",
+        "strSharePointSubfolder&Sequence_34",
+        "strSMEs&Sequence_34",
+        "strClientName&Sequence_34",
+        "TransactionItem&StateMachine_1",
+        "SystemException&StateMachine_1",
+        "BusinessException&StateMachine_1",
+        "TransactionNumber&StateMachine_1",
+        "Config&StateMachine_1",
+        "RetryNumber&StateMachine_1",
+        "TransactionField2&StateMachine_1",
+        "TransactionField1&StateMachine_1",
+        "TransactionID&StateMachine_1",
+        "dt_TransactionData&StateMachine_1",
+        "ConsecutiveSystemExceptions&StateMachine_1",
+        "dtEmail&Sequence_4",
+        "strAttachmentsDownloadPath&Sequence_4",
+        "ShouldStop&Sequence_25"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_OrchestratorQueueName",
+        "in_OrchestratorQueueFolder"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Process.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strSupportTeam&Sequence_34",
+        "strTenantID&Sequence_34",
+        "strAppID&Sequence_34",
+        "strDriveName&Sequence_34",
+        "strAppSecretCredentialName&Sequence_34",
+        "strSiteURL&Sequence_34",
+        "strOffice365CredentialsName&Sequence_34",
+        "strSharePointSubfolder&Sequence_34",
+        "strSMEs&Sequence_34",
+        "strClientName&Sequence_34",
+        "strEmailId&Sequence_1",
+        "strAttachmentsDownloadPath&Sequence_1",
+        "strFolder&Sequence_1",
+        "strEmailSender&Sequence_1",
+        "dtBillRegister&Sequence_1",
+        "strExceptionReason&Sequence_1",
+        "strQueueName&Sequence_1",
+        "strEmailSubject&Sequence_1",
+        "strSharePointFolder&Sequence_1",
+        "strEmailFolder&Sequence_1",
+        "strHeaderTag&Sequence_1",
+        "strTableTag&Sequence_1",
+        "strTdTag&Sequence_1",
+        "dtQueue&Sequence_1",
+        "dtCredits&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionItem",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "InitAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strEmailSubject&Sequence_9",
+        "strSMEs&Sequence_9",
+        "strEmailFolder&Sequence_9",
+        "strSupportTeam&Sequence_34",
+        "strTenantID&Sequence_34",
+        "strAppID&Sequence_34",
+        "strDriveName&Sequence_34",
+        "strAppSecretCredentialName&Sequence_34",
+        "strSiteURL&Sequence_34",
+        "strOffice365CredentialsName&Sequence_34",
+        "strSharePointSubfolder&Sequence_34",
+        "strSMEs&Sequence_34",
+        "strClientName&Sequence_34"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "out_dtEmail",
+        "out_strAttachmentsDownloadPath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/Init/CheckEmailsAndDownloadFiles.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strSupportTeam&Sequence_34",
+        "strTenantID&Sequence_34",
+        "strAppID&Sequence_34",
+        "strDriveName&Sequence_34",
+        "strAppSecretCredentialName&Sequence_34",
+        "strSiteURL&Sequence_34",
+        "strOffice365CredentialsName&Sequence_34",
+        "strSharePointSubfolder&Sequence_34",
+        "strSMEs&Sequence_34",
+        "strClientName&Sequence_34",
+        "listEmails&Sequence_1",
+        "strFolder&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strEmailSubject",
+        "io_strAttachmentsDownloadPath",
+        "in_strClientName",
+        "in_strEmailFolder",
+        "in_strSMEs",
+        "out_dtEmail"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/process/ReadExcelsAndUnzipPdfs.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strSupportTeam&Sequence_34",
+        "strTenantID&Sequence_34",
+        "strAppID&Sequence_34",
+        "strDriveName&Sequence_34",
+        "strAppSecretCredentialName&Sequence_34",
+        "strSiteURL&Sequence_34",
+        "strOffice365CredentialsName&Sequence_34",
+        "strSharePointSubfolder&Sequence_34",
+        "strSMEs&Sequence_34",
+        "strClientName&Sequence_34",
+        "arrFiles&Sequence_1",
+        "isBillingRegisterExists&Sequence_1",
+        "isHistoricExists&Sequence_1",
+        "isZipExists&Sequence_1",
+        "strClientCell&Sequence_1",
+        "strSheetName&Sequence_1",
+        "wb&Sequence_4",
+        "listSheets&Sequence_18",
+        "mails&Sequence_21",
+        "strEmailId&Sequence_21"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_dtBillRegister",
+        "out_strExceptionReason",
+        "in_strEmailSender",
+        "in_strSMEs",
+        "in_strSupportTeam",
+        "in_strAttachmentsDownloadPath",
+        "in_strEmailFolder"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/GetTransactionData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strSupportTeam&Sequence_34",
+        "strTenantID&Sequence_34",
+        "strAppID&Sequence_34",
+        "strDriveName&Sequence_34",
+        "strAppSecretCredentialName&Sequence_34",
+        "strSiteURL&Sequence_34",
+        "strOffice365CredentialsName&Sequence_34",
+        "strSharePointSubfolder&Sequence_34",
+        "strSMEs&Sequence_34",
+        "strClientName&Sequence_34"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionNumber",
+        "in_Config",
+        "out_TransactionItem",
+        "out_TransactionField1",
+        "out_TransactionField2",
+        "out_TransactionID",
+        "io_dt_TransactionData"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/InitAllSettings.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strSupportTeam&Sequence_34",
+        "strTenantID&Sequence_34",
+        "strAppID&Sequence_34",
+        "strDriveName&Sequence_34",
+        "strAppSecretCredentialName&Sequence_34",
+        "strSiteURL&Sequence_34",
+        "strOffice365CredentialsName&Sequence_34",
+        "strSharePointSubfolder&Sequence_34",
+        "strSMEs&Sequence_34",
+        "strClientName&Sequence_34",
+        "dt_SettingsAndConstants&Sequence_5",
+        "dt_Assets&Sequence_6",
+        "AssetValue&Sequence_11"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ConfigFile",
+        "in_ConfigSheets",
+        "out_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/process/FilterAndPrepareInputData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strSupportTeam&Sequence_34",
+        "strTenantID&Sequence_34",
+        "strAppID&Sequence_34",
+        "strDriveName&Sequence_34",
+        "strAppSecretCredentialName&Sequence_34",
+        "strSiteURL&Sequence_34",
+        "strOffice365CredentialsName&Sequence_34",
+        "strSharePointSubfolder&Sequence_34",
+        "strSMEs&Sequence_34",
+        "strClientName&Sequence_34",
+        "strPO&Sequence_2",
+        "intRowIndex&Sequence_2",
+        "strInvoiceNumber&Sequence_2",
+        "strInvoiceDate&Sequence_2",
+        "strNet&Sequence_2",
+        "strTotalAmount&Sequence_2",
+        "strProduct&Sequence_2",
+        "dtFilteredSum&Sequence_2",
+        "doubleTotalFilteredInvoices&Sequence_2",
+        "doubleNetFilteredInvoices&Sequence_2",
+        "strMos&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_dtBillRegister",
+        "out_dtQueue",
+        "out_dtCredits"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/process/UploadDownloadedFilesToSharepoint.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strSupportTeam&Sequence_34",
+        "strTenantID&Sequence_34",
+        "strAppID&Sequence_34",
+        "strDriveName&Sequence_34",
+        "strAppSecretCredentialName&Sequence_34",
+        "strSiteURL&Sequence_34",
+        "strOffice365CredentialsName&Sequence_34",
+        "strSharePointSubfolder&Sequence_34",
+        "strSMEs&Sequence_34",
+        "strClientName&Sequence_34",
+        "strEmailUsername&Sequence_1",
+        "secEmailPassword&Sequence_1",
+        "secAppSecret&Sequence_1",
+        "uploadedFile&Sequence_1",
+        "arrFiles&Sequence_3",
+        "driveDestinationFolder&Sequence_3",
+        "driveMainFolder&Sequence_3",
+        "itemUploadedFile&Sequence_7"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strFolder",
+        "in_strAttachmentsDownloadPath",
+        "in_strAppID",
+        "in_strTenantID",
+        "in_strSiteURL",
+        "in_strDriveName",
+        "in_strClientName",
+        "in_strSharePointSubFolder"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/process/AddItemsToPerformerQueue.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strSupportTeam&Sequence_34",
+        "strTenantID&Sequence_34",
+        "strAppID&Sequence_34",
+        "strDriveName&Sequence_34",
+        "strAppSecretCredentialName&Sequence_34",
+        "strSiteURL&Sequence_34",
+        "strOffice365CredentialsName&Sequence_34",
+        "strSharePointSubfolder&Sequence_34",
+        "strSMEs&Sequence_34",
+        "strClientName&Sequence_34"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strAttachmentsFolder",
+        "in_strQueueName",
+        "in_dtQueue",
+        "in_strSharePointFolder"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/process/CheckPdfFile.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strSupportTeam&Sequence_34",
+        "strTenantID&Sequence_34",
+        "strAppID&Sequence_34",
+        "strDriveName&Sequence_34",
+        "strAppSecretCredentialName&Sequence_34",
+        "strSiteURL&Sequence_34",
+        "strOffice365CredentialsName&Sequence_34",
+        "strSharePointSubfolder&Sequence_34",
+        "strSMEs&Sequence_34",
+        "strClientName&Sequence_34",
+        "isPdfExists&Sequence_1",
+        "strPdfFilePath&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strBillNumber",
+        "in_strAttachmentsFolder"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/process/CheckDuplicateItem.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strSupportTeam&Sequence_34",
+        "strTenantID&Sequence_34",
+        "strAppID&Sequence_34",
+        "strDriveName&Sequence_34",
+        "strAppSecretCredentialName&Sequence_34",
+        "strSiteURL&Sequence_34",
+        "strOffice365CredentialsName&Sequence_34",
+        "strSharePointSubfolder&Sequence_34",
+        "strSMEs&Sequence_34",
+        "strClientName&Sequence_34",
+        "QIs&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strBillNumber",
+        "in_strPerformerQueueName"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/process/AddItemToLogReport.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strSupportTeam&Sequence_34",
+        "strTenantID&Sequence_34",
+        "strAppID&Sequence_34",
+        "strDriveName&Sequence_34",
+        "strAppSecretCredentialName&Sequence_34",
+        "strSiteURL&Sequence_34",
+        "strOffice365CredentialsName&Sequence_34",
+        "strSharePointSubfolder&Sequence_34",
+        "strSMEs&Sequence_34",
+        "strClientName&Sequence_34",
+        "strEmailUsername&Sequence_1",
+        "secAppSecret&Sequence_1",
+        "secEmailPassword&Sequence_1",
+        "driveLogReport&Sequence_1",
+        "dtLogReport&Sequence_1",
+        "arrFiles&Sequence_10",
+        "driveDestinationFolder&Sequence_10",
+        "driveMainFolder&Sequence_10"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strSharePointFolder",
+        "in_strPO",
+        "in_strInvoiceTotal",
+        "in_strNet",
+        "in_strInvoiceDate",
+        "in_strInvoiceNumber"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/process/SendNotificationEmailToRequester.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strSupportTeam&Sequence_34",
+        "strTenantID&Sequence_34",
+        "strAppID&Sequence_34",
+        "strDriveName&Sequence_34",
+        "strAppSecretCredentialName&Sequence_34",
+        "strSiteURL&Sequence_34",
+        "strOffice365CredentialsName&Sequence_34",
+        "strSharePointSubfolder&Sequence_34",
+        "strSMEs&Sequence_34",
+        "strClientName&Sequence_34",
+        "secAppSecret&Sequence_1",
+        "secEmailPassword&Sequence_1",
+        "strEmailUsername&Sequence_1",
+        "strTotalAllInvoices&Sequence_1",
+        "dtLogReport&Sequence_1",
+        "doubleTotalAllInvoices&Sequence_1",
+        "htmlCreditDtText&Sequence_1",
+        "arrFiles&Sequence_6",
+        "driveDestinationFolder&Sequence_6",
+        "driveMainFolder&Sequence_6",
+        "driveLogReport&Sequence_6"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strSharePointFolder",
+        "in_dtQueue",
+        "in_strRequester",
+        "in_dtCredits",
+        "in_strHeaderTag",
+        "in_strTdTag",
+        "in_strTableTag"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Workflows/process/ConvertCreditDtToHtml.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strSupportTeam&Sequence_34",
+        "strTenantID&Sequence_34",
+        "strAppID&Sequence_34",
+        "strDriveName&Sequence_34",
+        "strAppSecretCredentialName&Sequence_34",
+        "strSiteURL&Sequence_34",
+        "strOffice365CredentialsName&Sequence_34",
+        "strSharePointSubfolder&Sequence_34",
+        "strSMEs&Sequence_34",
+        "strClientName&Sequence_34",
+        "tableHTML&Sequence_1",
+        "index&Sequence_1",
+        "lst&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "htmlCreditDtText",
+        "in_dtCredits",
+        "in_strHeaderTag",
+        "in_strTdTag",
+        "in_strTableTag"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/CloseAllApplications.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strSupportTeam&Sequence_34",
+        "strTenantID&Sequence_34",
+        "strAppID&Sequence_34",
+        "strDriveName&Sequence_34",
+        "strAppSecretCredentialName&Sequence_34",
+        "strSiteURL&Sequence_34",
+        "strOffice365CredentialsName&Sequence_34",
+        "strSharePointSubfolder&Sequence_34",
+        "strSMEs&Sequence_34",
+        "strClientName&Sequence_34"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}

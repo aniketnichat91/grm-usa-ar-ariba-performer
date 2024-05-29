@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1217,1564</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1515,3868</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Sharepoint_UploadExcpSS_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="38">
@@ -84,15 +84,15 @@
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.MicrosoftOffice365.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>Microsoft.Graph.Core</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sharepoint_UploadExcpSS" sap:VirtualizedContainerService.HintSize="643,1499" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sharepoint_UploadExcpSS" sap:VirtualizedContainerService.HintSize="999,3803" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ss:SecureString" Name="AppSecretSecure" />
       <Variable x:TypeArguments="x:String" Name="MSO365_AppID" />
@@ -107,7 +107,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="wf test" sap:VirtualizedContainerService.HintSize="581,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="wf test" sap:VirtualizedContainerService.HintSize="937,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="485,212" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <sap:WorkflowViewStateService.ViewState>
@@ -138,7 +138,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <Sequence DisplayName="get creds" sap:VirtualizedContainerService.HintSize="581,81" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="get creds" sap:VirtualizedContainerService.HintSize="937,1268" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="appID_username" />
         <Variable x:TypeArguments="ss:SecureString" Name="appIdSecure" />
@@ -148,7 +148,7 @@
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -193,13 +193,13 @@
         </ui:MultipleAssign.AssignOperations>
       </ui:MultipleAssign>
     </Sequence>
-    <uma:Office365ApplicationScope ApplicationSecret="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" Password="{x:Null}" Timeout="{x:Null}" ApplicationId="[MSO365_AppID]" AuthenticationType="UsernameAndPassword" DisplayName="Microsoft Office 365 Scope" Environment="Global" sap:VirtualizedContainerService.HintSize="581,1175" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuthApplication="UiPath" SecureApplicationSecret="[AppSecretSecure]" SecurePassword="[sharepointPasswordSecure]" Services="Files" Tenant="[MSO365_TenantID]" Username="[sharepointUsername]">
+    <uma:Office365ApplicationScope ApplicationSecret="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" Password="{x:Null}" Timeout="{x:Null}" ApplicationId="[MSO365_AppID]" AuthenticationType="UsernameAndPassword" DisplayName="Microsoft Office 365 Scope" Environment="Global" sap:VirtualizedContainerService.HintSize="937,2292" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuthApplication="UiPath" SecureApplicationSecret="[AppSecretSecure]" SecurePassword="[sharepointPasswordSecure]" Services="Files" Tenant="[MSO365_TenantID]" Username="[sharepointUsername]">
       <uma:Office365ApplicationScope.Body>
         <ActivityAction x:TypeArguments="mg:GraphServiceClient">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="mg:GraphServiceClient" Name="ParentScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="547,1088" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="903,2205" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="fileItemID" />
             </Sequence.Variables>
@@ -208,7 +208,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence sap:VirtualizedContainerService.HintSize="485,501" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence sap:VirtualizedContainerService.HintSize="841,633" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="sharepointSubfolder" />
                 <Variable x:TypeArguments="x:String" Name="sharepointQuerystr" />
@@ -240,12 +240,13 @@
                   </scg:List>
                 </ui:MultipleAssign.AssignOperations>
               </ui:MultipleAssign>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="423,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[sharepointSubfolder+ &quot;     &quot; +sharepointQuerystr]" />
               <umaf:FindFilesAndFolders DriveMetadata="{x:Null}" DriveName="{x:Null}" Results="{x:Null}" DisplayName="Find Files And Folders" First="[in_sharepointJobFolderID]" sap:VirtualizedContainerService.HintSize="423,86" sap2010:WorkflowViewState.IdRef="FindFilesAndFolders_1" Query="[sharepointQuerystr]" SiteUrl="[sharepointSiteURL]" Subfolder="[sharepointSubfolder]" />
-              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="423,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[in_sharepointJobFolderID.Name]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="423,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[in_sharepointJobFolderID.Name+&quot;    &quot;+sharepointQuerystr]" />
             </Sequence>
-            <umaf:UploadFile CloudFileName="{x:Null}" DriveMetadata="{x:Null}" Metadata="{x:Null}" ConflictBehavior="Replace" Destination="[in_sharepointJobFolderID]" DisplayName="Upload File" sap:VirtualizedContainerService.HintSize="485,250" sap2010:WorkflowViewState.IdRef="UploadFile_1" LocalFilePath="[in_filePathToUpload]" Result="[out_uploadedFileSPID]" />
+            <umaf:UploadFile CloudFileName="{x:Null}" DriveMetadata="{x:Null}" Metadata="{x:Null}" ConflictBehavior="Replace" Destination="[in_sharepointJobFolderID]" DisplayName="Upload File" sap:VirtualizedContainerService.HintSize="841,250" sap2010:WorkflowViewState.IdRef="UploadFile_1" LocalFilePath="[in_filePathToUpload]" Result="[out_uploadedFileSPID]" />
             <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="485,25" sap2010:WorkflowViewState.IdRef="Delay_1" />
-            <Sequence DisplayName="check upload completed" sap:VirtualizedContainerService.HintSize="485,81" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="check upload completed" sap:VirtualizedContainerService.HintSize="841,1066" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="spQueryFile" />
                 <Variable x:TypeArguments="x:String" Name="spSubfolder_file" />
@@ -288,7 +289,9 @@
                   </scg:List>
                 </ui:MultipleAssign.AssignOperations>
               </ui:MultipleAssign>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="779,92" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[fileItemID+ &quot;     &quot; +spQueryFile+ &quot;    &quot;+spSubfolder_file]" />
               <umaf:FindFilesAndFolders DriveMetadata="{x:Null}" DriveName="{x:Null}" DisplayName="Find Files And Folders" First="[firstResultfile]" sap:VirtualizedContainerService.HintSize="779,86" sap2010:WorkflowViewState.IdRef="FindFilesAndFolders_2" Query="[spQueryFile]" Results="[results_files]" SiteUrl="[sharepointSiteURL]" Subfolder="[spSubfolder_file]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="779,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[spQueryFile]" />
               <If Condition="[results_files.Count=0]" sap:VirtualizedContainerService.HintSize="779,362" sap2010:WorkflowViewState.IdRef="If_1">
                 <If.Then>
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[&quot;upload failed&quot;]" />
