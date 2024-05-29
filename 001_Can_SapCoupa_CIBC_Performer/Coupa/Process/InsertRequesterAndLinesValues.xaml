@@ -1,0 +1,241 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="InsertRequesterAndLinesValues" this:InsertRequesterAndLinesValues.in_strRequesterEmail="Christina.Reyes@CIBC.com" this:InsertRequesterAndLinesValues.in_strRequesterName="Cristina Reyes" this:InsertRequesterAndLinesValues.in_strDescription=" FY22 017 R4" this:InsertRequesterAndLinesValues.in_strPrice="23,246.18" this:InsertRequesterAndLinesValues.in_strTaxDescription="CA: HST - Ontario - 13.0%" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_brwCoupa" Type="InArgument(ui:Browser)" />
+    <x:Property Name="in_strRequesterEmail" Type="InArgument(x:String)" />
+    <x:Property Name="in_strRequesterName" Type="InArgument(x:String)" />
+    <x:Property Name="in_strDescription" Type="InArgument(x:String)" />
+    <x:Property Name="in_strPrice" Type="InArgument(x:String)" />
+    <x:Property Name="in_strTaxDescription" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>912,1825</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>InsertRequesterAndLinesValues_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Reflection</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="60">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="this workflow inserts requester and lines values in create invoice page" DisplayName="InsertRequesterAndLinesValues" sap:VirtualizedContainerService.HintSize="517,1760" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="455,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;InsertRequesterAndLinesValues workflow is starting...&quot;]" />
+    <If sap2010:Annotation.AnnotationText="this if enables to test workflow itself." Condition="[in_brwCoupa is Nothing]" sap:VirtualizedContainerService.HintSize="455,94" sap2010:WorkflowViewState.IdRef="If_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Coupa'" sap:VirtualizedContainerService.HintSize="434,250" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="896ec2dcf465b021e41fdbc0ea3466d1" Selector="&lt;html app='chrome.exe' title='Coupa Supplier Portal - Invoices' /&gt;" UiBrowser="[in_brwCoupa]">
+          <ui:BrowserScope.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,103" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </ActivityAction>
+          </ui:BrowserScope.Body>
+        </ui:BrowserScope>
+      </If.Then>
+    </If>
+    <ui:BrowserScope SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" Browser="[in_brwCoupa]" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Coupa'" sap:VirtualizedContainerService.HintSize="455,1220" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="35f4e597358e68c2a3979a08ee3571d4">
+      <ui:BrowserScope.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="421,1073" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:Activate DelayBefore="{x:Null}" DelayMS="{x:Null}" sap:VirtualizedContainerService.HintSize="359,87" sap2010:WorkflowViewState.IdRef="Activate_1">
+              <ui:Activate.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="4b93626d-5e7e-4927-9730-15dc4ef2f84c">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Activate.Target>
+            </ui:Activate>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DelayBefore="1000" DisplayName="Type Into 'requester email'" EmptyField="True" sap:VirtualizedContainerService.HintSize="359,135" sap2010:WorkflowViewState.IdRef="TypeInto_1" SimulateType="True" Text="[in_strRequesterEmail]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d3808b27-16d9-4474-bdcc-98fee04adc8d" InformativeScreenshot="971923b9dfa96c0f6f62eab5ea7c900c" Selector="&lt;webctrl id='enterprise_frame' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' aaname='*Requester Email' /&gt;" WaitForReady="COMPLETE">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'requester name'" EmptyField="True" sap:VirtualizedContainerService.HintSize="359,135" sap2010:WorkflowViewState.IdRef="TypeInto_2" SimulateType="True" Text="[in_strRequesterName]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9ccbf4fb-72a3-416b-89e1-99c6e3f1c686" InformativeScreenshot="67a2fe5a05a28f12bff1c673029d9fc2" Selector="&lt;webctrl id='enterprise_frame' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' aaname='*Requester Name' /&gt;" WaitForReady="COMPLETE">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'description'" EmptyField="True" sap:VirtualizedContainerService.HintSize="359,135" sap2010:WorkflowViewState.IdRef="TypeInto_3" SimulateType="True" Text="[in_strDescription]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="aa4deb9b-541e-41a9-8c7d-b2bcfebc2941" InformativeScreenshot="6472bd5c9e2f1bcce9b56e3ec66f8bb0" Selector="&lt;webctrl id='enterprise_frame' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' aaname='Description' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Type Into 'price'" EmptyField="True" sap:VirtualizedContainerService.HintSize="359,135" sap2010:WorkflowViewState.IdRef="TypeInto_4" SimulateType="True" Text="[in_strPrice]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="44bebf96-c001-4010-bf48-b36a42002cb8" InformativeScreenshot="70db1f0c1cfb60acea00ae226ccbca54" Selector="&lt;webctrl id='enterprise_frame' tag='IFRAME' /&gt;&lt;webctrl tag='INPUT' aaname='Price' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'tax description'" sap:VirtualizedContainerService.HintSize="359,135" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="[in_strTaxDescription]">
+              <ui:SelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="64">
+                  <x:String></x:String>
+                  <x:String>AU: AU0.00 - 0.0%</x:String>
+                  <x:String>AU: AUGST - 10.0%</x:String>
+                  <x:String>CA: GST - Alberta - 5.0%</x:String>
+                  <x:String>CA: GST - British Columbia - 5.0%</x:String>
+                  <x:String>CA: GST - Manitoba - 5.0%</x:String>
+                  <x:String>CA: GST - New Brunswick - 5.0%</x:String>
+                  <x:String>CA: GST - Newfoundland and Labrador - 5.0%</x:String>
+                  <x:String>CA: GST - Northwest Territories - 5.0%</x:String>
+                  <x:String>CA: GST - Nova Scotia - 5.0%</x:String>
+                  <x:String>CA: GST - Nunavut - 5.0%</x:String>
+                  <x:String>CA: GST - Ontario - 5.0%</x:String>
+                  <x:String>CA: GST - Prince Edward Island - 5.0%</x:String>
+                  <x:String>CA: GST - Quebec - 5.0%</x:String>
+                  <x:String>CA: GST - Saskatchewan - 5.0%</x:String>
+                  <x:String>CA: GST - Yukon - 5.0%</x:String>
+                  <x:String>CA: HST - New Brunswick - 15.0%</x:String>
+                  <x:String>CA: HST - Newfoundland and Labrador - 15.0%</x:String>
+                  <x:String>CA: HST - Nova Scotia - 15.0%</x:String>
+                  <x:String>CA: HST - Ontario - 13.0%</x:String>
+                  <x:String>CA: HST - Prince Edward Island - 15.0%</x:String>
+                  <x:String>CA: PST - British Columbia - 7.0%</x:String>
+                  <x:String>CA: PST - Manitoba - 7.0%</x:String>
+                  <x:String>CA: PST - Saskatchewan - 6.0%</x:String>
+                  <x:String>CA: QST - Quebec - 9.975%</x:String>
+                  <x:String>CA: Tax Exempt - 0.0%</x:String>
+                  <x:String>GB: VAT - Exempt - 0.0%</x:String>
+                  <x:String>GB: VAT - Reduced Rate - 5.0%</x:String>
+                  <x:String>GB: VAT - Standard Rate - 20.0%</x:String>
+                  <x:String>HK: HKEXM - Tax Exempt - 0.0%</x:String>
+                  <x:String>JP: JPCPT - 8.0%</x:String>
+                  <x:String>JP: JPEXM - 0.0%</x:String>
+                  <x:String>JP: JPSTD - 10.0%</x:String>
+                  <x:String>LU: LUX0.00 - LUX 0.00% Rate - 0.0%</x:String>
+                  <x:String>LU: LUX14.00 - LUX 14% Rate - 14.0%</x:String>
+                  <x:String>LU: LUX3.00 - LUX 3% Rate - 3.0%</x:String>
+                  <x:String>LU: LUX8.00 - LUX 8% Rate - 8.0%</x:String>
+                  <x:String>LU: LUXSTVAT - LUX Standard Rate 17% - 17.0%</x:String>
+                  <x:String>SG: SGEXM - Tax Exempt - 0.0%</x:String>
+                  <x:String>SG: SGSTD - SG Standard Rate - 8.0%</x:String>
+                </scg:List>
+              </ui:SelectItem.Items>
+              <ui:SelectItem.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="81747073-d5cf-4308-8183-dd2289543470" InformativeScreenshot="484cb141f4b67e50102d16686c547926" Selector="&lt;webctrl id='enterprise_frame' tag='IFRAME' /&gt;&lt;webctrl tag='SELECT' class='tax_code line_tax_code_selector*' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SelectItem.Target>
+            </ui:SelectItem>
+          </Sequence>
+        </ActivityAction>
+      </ui:BrowserScope.Body>
+    </ui:BrowserScope>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="455,92" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;InsertRequesterAndLinesValues workflow is ended.&quot;]" />
+  </Sequence>
+</Activity>

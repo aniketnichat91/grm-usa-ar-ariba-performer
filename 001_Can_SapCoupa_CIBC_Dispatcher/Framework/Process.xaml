@@ -1,0 +1,427 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Process" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:c="clr-namespace:CADGRM_SAP_Office365_Email;assembly=CADGRM_SAP.Office365.Email" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Transaction item to be processed." Name="in_TransactionItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1126,3006</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="47">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Windows.Forms</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Activities.System.Encode</x:String>
+      <x:String>UiPath.Activities.System.Compression.Workflow</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>Microsoft.Graph</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>CADGRM_SAP_Office365_Email</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Models</x:String>
+      <x:String>UiPath.Shared.Services.Graph.Mail.Models</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="65">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualStudio.Services.Common</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>Microsoft.Graph</AssemblyReference>
+      <AssemblyReference>Microsoft.Graph.Core</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>CADGRM_SAP.Office365.Email</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="575,2941" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="strInvoiceNumberPdf" />
+      <Variable x:TypeArguments="x:String" Name="strInvoiceDate" />
+      <Variable x:TypeArguments="x:String" Name="strTotalAmount" />
+      <Variable x:TypeArguments="x:String" Name="strTransit" />
+      <Variable x:TypeArguments="x:String" Name="strMPA" />
+      <Variable x:TypeArguments="x:String" Name="strInvoiceNumber" />
+      <Variable x:TypeArguments="x:String" Name="strInvoiceDatePdf" />
+      <Variable x:TypeArguments="x:String" Name="strTransitPdf" />
+      <Variable x:TypeArguments="x:String" Name="strTotalAmountPdf" />
+      <Variable x:TypeArguments="x:String" Name="strPdfFilePath" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtInvoiceListing" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtTransit" />
+      <Variable x:TypeArguments="si:DirectoryInfo" Name="strExtractedFolder" />
+      <Variable x:TypeArguments="x:String" Name="strAttachmentsFolder" />
+      <Variable x:TypeArguments="x:Boolean" Name="isPdfExists" />
+      <Variable x:TypeArguments="s:String[]" Name="arrSupportTeam" />
+      <Variable x:TypeArguments="x:String" Name="strRequesterEmail" />
+      <Variable x:TypeArguments="x:String" Name="strRequesterName" />
+      <Variable x:TypeArguments="x:String" Name="strTransitExcelPath" />
+      <Variable x:TypeArguments="x:String" Name="strAgencyName" />
+      <Variable x:TypeArguments="x:String" Name="strEmailID" />
+      <Variable x:TypeArguments="x:String" Name="strDefaultRequesterEmail" />
+      <Variable x:TypeArguments="x:String" Name="strDefaultRequesterName" />
+      <Variable x:TypeArguments="x:String" Name="strTotalAmountBeforeTax" />
+      <Variable x:TypeArguments="x:Boolean" Name="isCredit" />
+      <Variable x:TypeArguments="x:String" Name="strPerformerQueueName" />
+      <Variable x:TypeArguments="scg:IEnumerable(ui:QueueItem)" Name="QIs" />
+      <Variable x:TypeArguments="x:String" Name="strSharePointFolderName" />
+      <Variable x:TypeArguments="x:String" Name="strNet" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="513,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process&quot;]" />
+    <ui:Comment sap:VirtualizedContainerService.HintSize="513,132" sap2010:WorkflowViewState.IdRef="Comment_1" Text="create a folder in sharepoint&#xA;upload all files that downloaded&#xA;delete all uploaded files in performer after the process is done and queue is empty&#xA;transit json or take necessary information in dispatcher" />
+    <ui:MultipleAssign DisplayName="Multiple Assign process queue items" sap:VirtualizedContainerService.HintSize="513,349" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="16">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strAttachmentsFolder]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("AttachmentsFolder").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strInvoiceNumber]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("InvoiceNumber").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strInvoiceDate]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("InvoiceDate").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strTotalAmount]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("TotalAmount").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strTransitExcelPath]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_transactionItem.SpecificContent("TransitExcelPath").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strAgencyName]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("AgencyName").tostring]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strEmailID]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("EmailID").tostring]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_15">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strSharePointFolderName]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("FolderName").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_16">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strNet]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Net").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <ui:Comment sap:VirtualizedContainerService.HintSize="513,94" sap2010:WorkflowViewState.IdRef="Comment_2" Text="strTransit = in_TransactionItem.SpecificContent(&quot;Transit&quot;).ToString" />
+    <ui:MultipleAssign DisplayName="Multiple Assign config values" sap:VirtualizedContainerService.HintSize="513,194" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="s:String[]">[arrSupportTeam]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="s:String[]">[in_config("SupportTeam").tostring.split(";"c)]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strDefaultRequesterEmail]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_Config("DefaultRequesterEmail").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strDefaultRequesterName]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_Config("DefaultRequesterName").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_14">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strPerformerQueueName]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_Config("OrchestratorPerformerQueueName").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+    </ui:MultipleAssign>
+    <Sequence DisplayName="check queue - Sequence" sap:VirtualizedContainerService.HintSize="513,843" sap2010:WorkflowViewState.IdRef="Sequence_7">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:GetQueueItems Priority="{x:Null}" DisplayName="Get Queue Items performer queue name" FilterStrategy="Equals" sap:VirtualizedContainerService.HintSize="451,168" sap2010:WorkflowViewState.IdRef="GetQueueItems_2" QueueItemStates="New, Successful" QueueName="[strPerformerQueueName]" Reference="[strInvoiceNumber]" Result="[QIs]">
+        <ui:GetQueueItems.Duration>
+          <InArgument x:TypeArguments="s:Nullable(x:Int32)" />
+        </ui:GetQueueItems.Duration>
+        <ui:GetQueueItems.From>
+          <InArgument x:TypeArguments="s:Nullable(s:DateTime)" />
+        </ui:GetQueueItems.From>
+        <ui:GetQueueItems.Skip>
+          <InArgument x:TypeArguments="x:Int32" />
+        </ui:GetQueueItems.Skip>
+        <ui:GetQueueItems.TimeoutMS>
+          <InArgument x:TypeArguments="x:Int32" />
+        </ui:GetQueueItems.TimeoutMS>
+        <ui:GetQueueItems.To>
+          <InArgument x:TypeArguments="s:Nullable(s:DateTime)" />
+        </ui:GetQueueItems.To>
+        <ui:GetQueueItems.Top>
+          <InArgument x:TypeArguments="x:Int32" />
+        </ui:GetQueueItems.Top>
+      </ui:GetQueueItems>
+      <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="451,524" sap2010:WorkflowViewState.IdRef="IfElseIf_3">
+        <ui:IfElseIf.ConditionBlocks>
+          <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+            <ui:IfElseIfBlock BlockType="If" Condition="[QIs.Count &gt; 0]">
+              <ui:IfElseIfBlock.Then>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,329" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,88" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[strInvoiceNumber+&quot; is already in queue or processed. Please check.&quot;]" />
+                  <Throw DisplayName="Throw BE" Exception="[new BusinessRuleException(&quot;The item is already added to the queue.&quot;)]" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                </Sequence>
+              </ui:IfElseIfBlock.Then>
+            </ui:IfElseIfBlock>
+          </sc:BindingList>
+        </ui:IfElseIf.ConditionBlocks>
+      </ui:IfElseIf>
+    </Sequence>
+    <Sequence DisplayName="check pdf file - Sequence" sap:VirtualizedContainerService.HintSize="513,81" sap2010:WorkflowViewState.IdRef="Sequence_8">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign DisplayName="Assign strPdfFilePath" sap:VirtualizedContainerService.HintSize="451,61" sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[strPdfFilePath]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[strAttachmentsFolder.tostring+"\"+strInvoiceNumber+".pdf"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:FileExistsX DisplayName="File Exists strPdfFilePath" Exists="[isPdfExists]" sap:VirtualizedContainerService.HintSize="451,133" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[strPdfFilePath]" />
+      <ui:IfElseIf DisplayName="Else If pdf file does not exists" sap:VirtualizedContainerService.HintSize="451,781" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+        <ui:IfElseIf.ConditionBlocks>
+          <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+            <ui:IfElseIfBlock BlockType="If" Condition="[not isPdfExists]">
+              <ui:IfElseIfBlock.Then>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,586" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <c:SendEmail BCC="{x:Null}" CC="{x:Null}" BodyHTML="[&quot;Dear development team, &lt;br&gt;The invoice has no pdf please check with business team.&lt;br&gt;The path is &quot;+strPdfFilePath+&quot;&lt;br&gt;Best Regards.&quot;]" EmailTo="[arrSupportTeam]" sap:VirtualizedContainerService.HintSize="338,345" sap2010:WorkflowViewState.IdRef="SendEmail_1" Subject="[strInvoiceNumber+&quot; does not exists.&quot;]">
+                    <c:SendEmail.AttachmentsCollection>
+                      <InArgument x:TypeArguments="scg:IEnumerable(x:String)" />
+                    </c:SendEmail.AttachmentsCollection>
+                  </c:SendEmail>
+                  <Throw DisplayName="Throw BE" Exception="[new BusinessRuleException(strInvoiceNumber+&quot; pdf file does not belong to zip file.&quot;)]" sap:VirtualizedContainerService.HintSize="338,90" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                </Sequence>
+              </ui:IfElseIfBlock.Then>
+            </ui:IfElseIfBlock>
+          </sc:BindingList>
+        </ui:IfElseIf.ConditionBlocks>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:IfElseIf>
+    </Sequence>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DocumentsProcessing\GetInputsFromPdf.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="513,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="DocumentsProcessing\GetInputsFromPdf.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_strInvoiceDate">[strInvoiceDatePdf]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_strTotalAmount">[strTotalAmountPdf]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_strTransit">[strTransitPdf]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_strMPA">[strMPA]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strPdfFilePath">[strPdfFilePath]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_strInvoiceNumber">[strInvoiceNumberPdf]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_strTotalAmountBeforeTax">[strTotalAmountBeforeTax]</OutArgument>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_isCredit">[isCredit]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DocumentsProcessing\GetContactFromTransitExcel.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="513,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="DocumentsProcessing\GetContactFromTransitExcel.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strTransit">[strTransitPdf]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_strRequesterEmail">[strRequesterEmail]</OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_strRequesterName">[strRequesterName]</OutArgument>
+        <InArgument x:TypeArguments="s:String[]" x:Key="in_arrInternalErrors">[arrSupportTeam]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strTransitExcelPath">[strTransitExcelPath]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strDefaultRequesterEmail">[strDefaultRequesterEmail]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strDefaultRequesterName">[strDefaultRequesterName]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DocumentsProcessing\CheckInputValues.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="513,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="DocumentsProcessing\CheckInputValues.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strInvoiceDate">[strInvoiceDate]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strInvoiceDatePdf">[strInvoiceDatePdf]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strInvoiceNumber">[strInvoiceNumber]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strInvoiceNumberPdf">[strInvoiceNumberPdf]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:AddQueueItem ServiceBaseAddress="{x:Null}" DisplayName="Add Queue Item performer queue" sap:VirtualizedContainerService.HintSize="513,219" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[strPerformerQueueName]" Reference="[strInvoiceNumber]" TimeoutMS="120000">
+      <ui:AddQueueItem.ItemInformation>
+        <InArgument x:TypeArguments="x:String" x:Key="InvoiceNumber">[strInvoiceNumber]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="InvoiceDate">[strInvoiceDate]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="TotalAmount">[strTotalAmount]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Transit">[strTransitPdf]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Agency">[strAgencyName]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="RequesterEmail">[strRequesterEmail]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="RequesterName">[strRequesterName]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Description">[strMPA]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Price">[strNet]</InArgument>
+        <InArgument x:TypeArguments="x:Boolean" x:Key="Credit">[isCredit]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="SharePointFolderName">[strSharePointFolderName]</InArgument>
+      </ui:AddQueueItem.ItemInformation>
+    </ui:AddQueueItem>
+  </Sequence>
+</Activity>
