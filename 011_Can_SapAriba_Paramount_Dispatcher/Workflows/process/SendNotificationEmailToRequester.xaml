@@ -21,7 +21,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,1951</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1095,2122</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SendNotificationEmailToRequester_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="43">
@@ -130,9 +130,10 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
       <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SendNotificationEmailToRequester" sap:VirtualizedContainerService.HintSize="476,1886" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SendNotificationEmailToRequester" sap:VirtualizedContainerService.HintSize="476,1977" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ss:SecureString" Name="secAppSecret" />
       <Variable x:TypeArguments="ss:SecureString" Name="secEmailPassword" />
@@ -221,13 +222,49 @@
         <InArgument x:TypeArguments="x:Double">[dtLogReport.AsEnumerable.Sum(function(x) Convert.ToDecimal(x("InvoiceTotal")))]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\process\ConvertCreditDtToHtml.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflows\process\ConvertCreditDtToHtml.xaml">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,204" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\process\ConvertCreditDtToHtml.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflows\process\ConvertCreditDtToHtml.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <OutArgument x:TypeArguments="x:String" x:Key="htmlCreditDtText">[htmlCreditDtText]</OutArgument>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtCredits">[in_dtCredits]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_strHeaderTag">[in_strHeaderTag]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_strTdTag">[in_strTdTag]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_strTableTag">[in_strTableTag]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\process\ConvertCreditDtToHtml.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Workflows\process\ConvertCreditDtToHtml.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="x:String" x:Key="htmlCreditDtText">[htmlCreditDtText]</OutArgument>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtCredits">[in_dtCredits]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strHeaderTag">[in_strHeaderTag]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strTdTag">[in_strTdTag]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strTableTag">[in_strTableTag]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="htmlCreditDtText">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="htmlCreditDtText" />
+        </OutArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtCredits">
+          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="in_dtQueue" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strHeaderTag">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strHeaderTag" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strTdTag">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strTdTag" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strTableTag">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strTableTag" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <c:SendEmail BCC="{x:Null}" CC="{x:Null}" BodyHTML="[&quot;&lt;p&gt;Dear requester,&lt;/p&gt;&lt;p&gt;Your request has been queued. &quot;+dtlogreport.rows.count.ToString+&quot; of &quot;+in_dtQueue.Rows.count.ToString+&quot; debit items will be processed.&lt;/p&gt;&lt;p&gt;Total invoice value is &quot;+doubleTotalAllInvoices.ToString+&quot;.&lt;/p&gt;&lt;p&gt;The invoices that total values are negative and PO number is comma will not be processing. Here is the list: &lt;/p&gt;&lt;p&gt;&quot;+htmlCreditDtText+&quot;&lt;/p&gt;&lt;p&gt;Best Regards.&lt;/p&gt;&quot;]" DisplayName="SendEmail notification email" EmailTo="[in_strRequester.Split(&quot;;&quot;c)]" sap:VirtualizedContainerService.HintSize="434,185" sap2010:WorkflowViewState.IdRef="SendEmail_1" Subject="[&quot;Your Requested Queued - Canada Sap Ariba &quot;+in_Config(&quot;ClientName&quot;).ToString]">
