@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1197,1942</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1432,1881</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="35">
@@ -103,9 +103,12 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="521,1837" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="521,1776" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strEmailId" />
       <Variable x:TypeArguments="x:String" Name="strAttachmentsDownloadPath" />
@@ -124,6 +127,7 @@
       <Variable x:TypeArguments="sd:DataTable" Name="dtCredits" />
       <Variable x:TypeArguments="x:String" Name="strSharePointSubFolder" />
       <Variable x:TypeArguments="x:String" Name="strSMEs" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtZeroAmountInvoices" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -289,6 +293,9 @@
             <InArgument x:TypeArguments="x:String" x:Key="in_strFolderPath">
               <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strAttachmentsDownloadPath" />
             </InArgument>
+            <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_DT_ZeroAmountInvoices">
+              <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dtZeroAmountInvoices" />
+            </OutArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </TryCatch.Try>
@@ -324,15 +331,36 @@
     </TryCatch>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\process\UploadDownloadedFilesToSharepoint.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="479,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Workflows\process\UploadDownloadedFilesToSharepoint.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strFolder">[strSharePointFolder]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strAttachmentsDownloadPath">[strAttachmentsDownloadPath]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strAppID">[in_Config("AzureAppID").ToString]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strTenantID">[in_Config("AzureTenantID").ToString]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strSiteURL">[in_Config("SiteURL").ToString]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strDriveName">[in_Config("DriveName").ToString]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strClientName">[in_Config("ClientName").ToString]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strSharePointSubFolder">[strSharePointSubFolder]</InArgument>
-        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strFolder">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strSharePointFolder" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strAttachmentsDownloadPath">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strAttachmentsDownloadPath" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strAppID">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;AzureAppID&quot;).ToString" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strTenantID">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;AzureTenantID&quot;).ToString" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strSiteURL">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;SiteURL&quot;).ToString" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strDriveName">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;DriveName&quot;).ToString" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strClientName">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;ClientName&quot;).ToString" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strSharePointSubFolder">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strSharePointSubFolder" />
+        </InArgument>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+          <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+        </InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_ZeroAmountInvoices">
+          <VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="dtZeroAmountInvoices" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\process\AddItemsToPerformerQueue.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="479,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Workflows\process\AddItemsToPerformerQueue.xaml">
@@ -344,17 +372,34 @@
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\process\SendNotificationEmailToRequester.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="479,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Workflows\process\SendNotificationEmailToRequester.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strSharePointFolder">[strSharePointFolder]</InArgument>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtQueue">[dtQueue]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strRequester">[strEmailSender]</InArgument>
-        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtCredits">[dtCredits]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strHeaderTag">[strHeaderTag]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strTdTag">[strTdTag]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strTableTag">[strTableTag]</InArgument>
-        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="479,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,204" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\process\SendNotificationEmailToRequester.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Workflows\process\SendNotificationEmailToRequester.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_strSharePointFolder">[strSharePointFolder]</InArgument>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtQueue">[dtQueue]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_strRequester">[strEmailSender]</InArgument>
+              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtCredits">[dtCredits]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_strHeaderTag">[strHeaderTag]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_strTdTag">[strTdTag]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_strTableTag">[strTableTag]</InArgument>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
   </Sequence>
 </Activity>

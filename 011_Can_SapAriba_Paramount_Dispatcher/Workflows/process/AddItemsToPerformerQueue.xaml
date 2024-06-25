@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="AddItemsToPerformerQueue" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="AddItemsToPerformerQueue" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:c="clr-namespace:CADGRM_SAP_Office365_Email;assembly=CADGRM_SAP.Office365.Email" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_strAttachmentsFolder" Type="InArgument(x:String)" />
     <x:Property Name="in_strQueueName" Type="InArgument(x:String)" />
@@ -12,10 +12,10 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1069,1588</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>916,2252</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>AddItemsToPerformerQueue_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="37">
+    <scg:List x:TypeArguments="x:String" Capacity="74">
       <x:String>GlobalConstantsNamespace</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
       <x:String>Microsoft.Graph</x:String>
@@ -53,10 +53,17 @@
       <x:String>UiPath.Shared.Activities.Utils</x:String>
       <x:String>System.Text.RegularExpressions</x:String>
       <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Models</x:String>
+      <x:String>UiPath.Shared.Services.Graph.Mail.Models</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+      <x:String>CADGRM_SAP_Office365_Email</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Enums</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="56">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="112">
       <AssemblyReference>Microsoft.Graph</AssemblyReference>
       <AssemblyReference>Microsoft.Graph.Core</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
@@ -113,21 +120,25 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>CADGRM_SAP.Office365.Email</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="AddItemsToPerformerQueue" sap:VirtualizedContainerService.HintSize="556,1523" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="AddItemsToPerformerQueue" sap:VirtualizedContainerService.HintSize="781,2187" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtQueue]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="729,1680" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtQueue]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="739,2095" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="695,1565" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="705,1980" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strWeek" />
             </Sequence.Variables>
@@ -136,7 +147,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <TryCatch DisplayName="Try Catch check pdf file" sap:VirtualizedContainerService.HintSize="653,339" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch DisplayName="Try Catch check pdf file" sap:VirtualizedContainerService.HintSize="663,339" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <TryCatch.Try>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\process\CheckPdfFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" Level="Trace" UnSafe="False" WorkflowFileName="Workflows\process\CheckPdfFile.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
@@ -163,7 +174,7 @@
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="653,339" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="663,339" sap2010:WorkflowViewState.IdRef="TryCatch_2">
               <TryCatch.Try>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\process\CheckDuplicateItem.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" Level="Trace" UnSafe="False" WorkflowFileName="Workflows\process\CheckDuplicateItem.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
@@ -190,7 +201,7 @@
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <If Condition="[CurrentRow(&quot;ESTIMATE&quot;).ToString.ToLower.Contains(&quot;week&quot;) or CurrentRow(&quot;ESTIMATE&quot;).ToString.ToLower.Contains(&quot;wk&quot;)]" sap:VirtualizedContainerService.HintSize="653,410" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[CurrentRow(&quot;ESTIMATE&quot;).ToString.ToLower.Contains(&quot;week&quot;) or CurrentRow(&quot;ESTIMATE&quot;).ToString.ToLower.Contains(&quot;wk&quot;)]" sap:VirtualizedContainerService.HintSize="663,410" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
                 <Sequence sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
@@ -234,115 +245,85 @@
                 </Sequence>
               </If.Else>
             </If>
-            <ui:AddQueueItem ServiceBaseAddress="{x:Null}" DisplayName="Add Queue Item Debit" sap:VirtualizedContainerService.HintSize="653,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_3" Priority="Normal" QueueType="[in_strQueueName]" Reference="[CurrentRow(&quot;InvoiceNumber&quot;).ToString+&quot;_&quot;+CurrentRow(&quot;PO&quot;).ToString]" TimeoutMS="120000">
-              <ui:AddQueueItem.ItemInformation>
-                <InArgument x:TypeArguments="x:String" x:Key="InvoiceNumber">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;InvoiceNumber&quot;).ToString.Trim" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="InvoiceDate">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;InvoiceDate&quot;).ToString" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Net">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;Net&quot;).ToString" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="InvoiceTotal">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;TotalAmount&quot;).ToString.Trim" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="PO">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;PO&quot;).ToString.Trim" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="SharePointFolder">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strsharepointfolder" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Product">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;Product&quot;).ToString.trim" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="MOS">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;MOS&quot;).ToString.trim" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Discription">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;Product&quot;).ToString.Trim+ &quot; &quot;+CurrentRow(&quot;BILL TYPE&quot;).ToString.trim" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Estimate">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;ESTIMATE&quot;).ToString.trim" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Week">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strWeek" />
-                </InArgument>
-              </ui:AddQueueItem.ItemInformation>
+            <If sap2010:Annotation.AnnotationText="priority is high for credit bills" Condition="[Convert.ToDouble(CurrentRow(&quot;TotalAmount&quot;).ToString)&lt;0]" DisplayName="If the bill is credit" sap:VirtualizedContainerService.HintSize="663,528" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-            </ui:AddQueueItem>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="653,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-              <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,174" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <If.Then>
+                <Sequence DisplayName="Credit - Sequence" sap:VirtualizedContainerService.HintSize="376,339" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <If sap2010:Annotation.AnnotationText="priority is high for credit bills" Condition="[Convert.ToDouble(CurrentRow(&quot;TotalAmount&quot;).ToString)&lt;0]" DisplayName="If the bill is credit" sap:VirtualizedContainerService.HintSize="200,82" sap2010:WorkflowViewState.IdRef="If_1">
+                  <Throw DisplayName="Throw se" Exception="[new BusinessRuleException(&quot;Invoice total negative.&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                  <c:SendEmail BCC="{x:Null}" CC="{x:Null}" BodyHTML="[&quot;&lt;p&gt;Dear sender,&lt;/p&gt;&lt;p&gt;There is negative amount available.&lt;/p&gt;&lt;p&gt;Please check PO and Amount. &lt;/p&gt;&lt;p&gt;PO:&quot;+CurrentRow(&quot;PO&quot;).ToString.Trim+&quot;&lt;/p&gt;&lt;p&gt;Amount:&quot;+CurrentRow(&quot;TotalAmount&quot;).ToString.Trim+&quot;&lt;/p&gt;&lt;p&gt;Thank you.&lt;/p&gt;&lt;p&gt;Best Regards.&lt;/p&gt;&quot;]" EmailTo="[in_Config(&quot;SMEs&quot;).ToString.Split(&quot;;&quot;c)]" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="SendEmail_1" Subject="[&quot;Paramount Billing register contains negative PO amount against this PO:&quot;+CurrentRow(&quot;PO&quot;).ToString]">
+                    <c:SendEmail.AttachmentsCollection>
+                      <InArgument x:TypeArguments="scg:IEnumerable(x:String)" />
+                    </c:SendEmail.AttachmentsCollection>
+                  </c:SendEmail>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Debit - Sequence" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:AddQueueItem ServiceBaseAddress="{x:Null}" DisplayName="Add Queue Item Debit" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_3" Priority="Normal" QueueType="[in_strQueueName]" Reference="[CurrentRow(&quot;InvoiceNumber&quot;).ToString+&quot;_&quot;+CurrentRow(&quot;PO&quot;).ToString]" TimeoutMS="120000">
+                    <ui:AddQueueItem.ItemInformation>
+                      <InArgument x:TypeArguments="x:String" x:Key="InvoiceNumber">
+                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;InvoiceNumber&quot;).ToString.Trim" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="InvoiceDate">
+                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;InvoiceDate&quot;).ToString" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Net">
+                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;Net&quot;).ToString" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="InvoiceTotal">
+                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;TotalAmount&quot;).ToString.Trim" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="PO">
+                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;PO&quot;).ToString.Trim" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="SharePointFolder">
+                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strsharepointfolder" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Product">
+                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;Product&quot;).ToString.trim" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="MOS">
+                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;MOS&quot;).ToString.trim" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Discription">
+                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;Product&quot;).ToString.Trim+ &quot; &quot;+CurrentRow(&quot;BILL TYPE&quot;).ToString.trim" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Estimate">
+                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;ESTIMATE&quot;).ToString.trim" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Week">
+                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strWeek" />
+                      </InArgument>
+                    </ui:AddQueueItem.ItemInformation>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If.Then>
-                      <Sequence DisplayName="Credit - Sequence" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <Throw DisplayName="Throw se" Exception="[new System.Exception(&quot;Invoice total negative.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
-                      </Sequence>
-                    </If.Then>
-                    <If.Else>
-                      <Sequence DisplayName="Debit - Sequence" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:AddQueueItem ServiceBaseAddress="{x:Null}" DisplayName="Add Queue Item Debit" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_2" Priority="Normal" QueueType="[in_strQueueName]" Reference="[CurrentRow(&quot;InvoiceNumber&quot;).ToString+&quot;_&quot;+CurrentRow(&quot;PO&quot;).ToString]" TimeoutMS="120000">
-                          <ui:AddQueueItem.ItemInformation>
-                            <InArgument x:TypeArguments="x:String" x:Key="InvoiceNumber">[CurrentRow("InvoiceNumber").ToString.Trim]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="InvoiceDate">[CurrentRow("InvoiceDate").ToString]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="Net">[CurrentRow("Net").ToString]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="InvoiceTotal">[CurrentRow("TotalAmount").ToString.Trim]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="PO">[CurrentRow("PO").ToString.Trim]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="SharePointFolder">[in_strsharepointfolder]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="Product">[CurrentRow("Product").ToString.trim]</InArgument>
-                            <InArgument x:TypeArguments="x:String" x:Key="MOS">[CurrentRow("MOS").ToString.trim]</InArgument>
-                          </ui:AddQueueItem.ItemInformation>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </ui:AddQueueItem>
-                      </Sequence>
-                    </If.Else>
-                  </If>
+                  </ui:AddQueueItem>
                 </Sequence>
-              </ui:CommentOut.Body>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:CommentOut>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\process\AddItemToLogReport.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="653,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" Level="Trace" UnSafe="False" WorkflowFileName="Workflows\process\AddItemToLogReport.xaml">
+              </If.Else>
+            </If>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\process\AddItemToLogReport.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="663,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" Level="Trace" UnSafe="False" WorkflowFileName="Workflows\process\AddItemToLogReport.xaml">
               <ui:InvokeWorkflowFile.Arguments>
                 <InArgument x:TypeArguments="x:String" x:Key="in_strSharePointFolder">[in_strSharePointFolder]</InArgument>
                 <InArgument x:TypeArguments="x:String" x:Key="in_strPO">[CurrentRow("PO").ToString]</InArgument>

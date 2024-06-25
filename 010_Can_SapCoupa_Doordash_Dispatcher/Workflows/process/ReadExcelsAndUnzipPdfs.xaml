@@ -11,7 +11,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1302,5100</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1454,5100</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>DownloadPdfsAndUnzipPdfs_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="102">
@@ -228,7 +228,7 @@
             <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="605,2477" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
               <ui:IfElseIf.ConditionBlocks>
                 <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
-                  <ui:IfElseIfBlock BlockType="If" Condition="[(file.ToLower.EndsWith(&quot;.xlsx&quot;)  Or file.ToLower.EndsWith(&quot;.xls&quot;) Or file.ToLower.EndsWith(&quot;.xlsm&quot;) Or file.ToLower.EndsWith(&quot;.xlsb&quot;)Or file.ToLower.EndsWith(&quot;.csv&quot;)) AND (file.replace(&quot; &quot;,&quot;&quot;).ToLower.Contains(&quot;billingregister&quot;))]" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_1">
+                  <ui:IfElseIfBlock BlockType="If" Condition="[(file.ToLower.EndsWith(&quot;.xlsx&quot;)  Or file.ToLower.EndsWith(&quot;.xls&quot;) Or file.ToLower.EndsWith(&quot;.xlsm&quot;) Or file.ToLower.EndsWith(&quot;.xlsb&quot;)Or file.ToLower.EndsWith(&quot;.csv&quot;)) AND (file.replace(&quot; &quot;,&quot;&quot;).ToLower.Contains(&quot;billingregister&quot;) OR file.replace(&quot; &quot;,&quot;&quot;).ToLower.Contains(&quot;invoice&quot;))]" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_1">
                     <ui:IfElseIfBlock.Then>
                       <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,1641" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <Sequence.Variables>

@@ -12,7 +12,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,1798</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1088,1588</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>AddItemsToPerformerQueue_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="58">
@@ -112,37 +112,31 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="AddItemsToPerformerQueue" sap:VirtualizedContainerService.HintSize="570,1733" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="AddItemsToPerformerQueue" sap:VirtualizedContainerService.HintSize="556,1523" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtQueue]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="528,1641" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtQueue]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="514,1431" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="494,1526" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="480,1316" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <TryCatch DisplayName="Try Catch check pdf file" sap:VirtualizedContainerService.HintSize="452,339" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch DisplayName="Try Catch check pdf file" sap:VirtualizedContainerService.HintSize="438,339" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <TryCatch.Try>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\process\CheckPdfFile.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" Level="Trace" UnSafe="False" WorkflowFileName="Workflows\process\CheckPdfFile.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_strBillNumber">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;InvoiceNumber&quot;).ToString" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_strAttachmentsFolder">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strAttachmentsFolder" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                      <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_strBillNumber">[CurrentRow("InvoiceNumber").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_strAttachmentsFolder">[in_strAttachmentsFolder]</InArgument>
+                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
               </TryCatch.Try>
@@ -158,24 +152,18 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
                     </ActivityAction.Argument>
-                    <ui:Continue sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="Continue_1" />
+                    <ui:Continue sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Continue_1" />
                   </ActivityAction>
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="452,339" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,339" sap2010:WorkflowViewState.IdRef="TryCatch_2">
               <TryCatch.Try>
                 <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\process\CheckDuplicateItem.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" Level="Trace" UnSafe="False" WorkflowFileName="Workflows\process\CheckDuplicateItem.xaml">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_strBillNumber">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;InvoiceNumber&quot;).ToString+&quot;_&quot;+CurrentRow(&quot;PO&quot;).ToString" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_strPerformerQueueName">
-                      <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strQueueName" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                      <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_strBillNumber">[CurrentRow("InvoiceNumber").ToString+"_"+CurrentRow("PO").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_strPerformerQueueName">[in_strQueueName]</InArgument>
+                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                   </ui:InvokeWorkflowFile.Arguments>
                 </ui:InvokeWorkflowFile>
               </TryCatch.Try>
@@ -191,21 +179,43 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="ui:BusinessRuleException" Name="exception" />
                     </ActivityAction.Argument>
-                    <ui:Continue sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="Continue_2" />
+                    <ui:Continue sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Continue_2" />
                   </ActivityAction>
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <ui:AddQueueItem ServiceBaseAddress="{x:Null}" DisplayName="Add Queue Item Debit" sap:VirtualizedContainerService.HintSize="452,232" sap2010:WorkflowViewState.IdRef="AddQueueItem_3" Priority="Normal" QueueType="[in_strQueueName]" Reference="[CurrentRow(&quot;InvoiceNumber&quot;).ToString+&quot;_&quot;+CurrentRow(&quot;PO&quot;).ToString]" TimeoutMS="120000">
+            <ui:AddQueueItem ServiceBaseAddress="{x:Null}" DisplayName="Add Queue Item Debit" sap:VirtualizedContainerService.HintSize="438,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_3" Priority="Normal" QueueType="[in_strQueueName]" Reference="[CurrentRow(&quot;InvoiceNumber&quot;).ToString+&quot;_&quot;+CurrentRow(&quot;PO&quot;).ToString]" TimeoutMS="120000">
               <ui:AddQueueItem.ItemInformation>
-                <InArgument x:TypeArguments="x:String" x:Key="InvoiceNumber">[CurrentRow("InvoiceNumber").ToString.Trim]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="InvoiceDate">[CurrentRow("InvoiceDate").ToString]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Net">[CurrentRow("Net").ToString]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="InvoiceTotal">[CurrentRow("TotalAmount").ToString.Trim]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="PO">[CurrentRow("PO").ToString.Trim]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="SharePointFolder">[in_strsharepointfolder]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Product">[CurrentRow("Product").ToString.trim]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="MOS">[CurrentRow("MOS").ToString.trim]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="InvoiceNumber">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;InvoiceNumber&quot;).ToString.Trim" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="InvoiceDate">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;InvoiceDate&quot;).ToString" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Net">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;Net&quot;).ToString" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="InvoiceTotal">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;TotalAmount&quot;).ToString.Trim" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="PO">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;PO&quot;).ToString.Trim" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="SharePointFolder">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strsharepointfolder" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Product">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;Product&quot;).ToString.trim" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="MOS">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;MOS&quot;).ToString.trim" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Tax">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;Tax&quot;).ToString.trim" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Status">
+                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;Status&quot;).ToString.trim" />
+                </InArgument>
               </ui:AddQueueItem.ItemInformation>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -214,7 +224,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:AddQueueItem>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="452,252" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="438,252" sap2010:WorkflowViewState.IdRef="CommentOut_1">
               <ui:CommentOut.Body>
                 <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,174" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
@@ -273,29 +283,15 @@
                 </Sequence>
               </ui:CommentOut.Body>
             </ui:CommentOut>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\process\AddItemToLogReport.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="452,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" Level="Trace" UnSafe="False" WorkflowFileName="Workflows\process\AddItemToLogReport.xaml">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Workflows\process\AddItemToLogReport.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="438,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" Level="Trace" UnSafe="False" WorkflowFileName="Workflows\process\AddItemToLogReport.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="in_strSharePointFolder">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strSharePointFolder" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_strPO">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;PO&quot;).ToString" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_strInvoiceTotal">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;TotalAmount&quot;).ToString" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_strNet">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;Net&quot;).ToString" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_strInvoiceDate">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;InvoiceDate&quot;).ToString" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="in_strInvoiceNumber">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;InvoiceNumber&quot;).ToString" />
-                </InArgument>
-                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                  <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
-                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_strSharePointFolder">[in_strSharePointFolder]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_strPO">[CurrentRow("PO").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_strInvoiceTotal">[CurrentRow("TotalAmount").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_strNet">[CurrentRow("Net").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_strInvoiceDate">[CurrentRow("InvoiceDate").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_strInvoiceNumber">[CurrentRow("InvoiceNumber").ToString]</InArgument>
+                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
           </Sequence>
