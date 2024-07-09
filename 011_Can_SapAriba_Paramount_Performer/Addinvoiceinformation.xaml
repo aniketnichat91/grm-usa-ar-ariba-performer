@@ -7,11 +7,12 @@
     <x:Property Name="in_NetAmount" Type="InArgument(x:String)" />
     <x:Property Name="In_pdflocation" Type="InArgument(x:String)" />
     <x:Property Name="in_brwSAP" Type="InArgument(ui:Browser)" />
+    <x:Property Name="In_week" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1106,2699</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1106,2717</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Addinvoiceinformation_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -82,13 +83,13 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Addinvoiceinformation" sap:VirtualizedContainerService.HintSize="526,2634" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Addinvoiceinformation" sap:VirtualizedContainerService.HintSize="526,2652" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If sap2010:Annotation.AnnotationText="this if enables to test workflow itself." Condition="[in_brwSAP is Nothing]" sap:VirtualizedContainerService.HintSize="484,447" sap2010:WorkflowViewState.IdRef="If_1">
+    <If sap2010:Annotation.AnnotationText="this if enables to test workflow itself." Condition="[in_brwSAP is Nothing]" sap:VirtualizedContainerService.HintSize="484,487" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -97,7 +98,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe SAP'" sap:VirtualizedContainerService.HintSize="434,229" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="896ec2dcf465b021e41fdbc0ea3466d1" Selector="&lt;html app='chrome.exe' title='SAP Business Network Supplier' /&gt;" UiBrowser="[in_brwSAP]">
+        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe SAP'" sap:VirtualizedContainerService.HintSize="434,269" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="896ec2dcf465b021e41fdbc0ea3466d1" Selector="&lt;html app='chrome.exe' title='SAP Business Network Supplier' /&gt;" UiBrowser="[in_brwSAP]">
           <ui:BrowserScope.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
@@ -121,13 +122,13 @@
         </ui:BrowserScope>
       </If.Then>
     </If>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe SAP'" sap:VirtualizedContainerService.HintSize="484,2055" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="d403e1e03b616a290aa59bc44953ef9c" Selector="&lt;html app='chrome.exe' title='SAP Business Network Supplier' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe SAP'" sap:VirtualizedContainerService.HintSize="484,2033" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="d403e1e03b616a290aa59bc44953ef9c" Selector="&lt;html app='chrome.exe' title='SAP Business Network Supplier' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="418,1909" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="418,1887" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -240,31 +241,28 @@
             </ui:TypeInto>
             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Coupa\Process\AddPdfToInvoice.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="376,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Coupa\Process\AddPdfToInvoice.xaml">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="in_strPDFLocation">
-                  <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_pdflocation" />
-                </InArgument>
-                <InArgument x:TypeArguments="ui:Browser" x:Key="in_brwSAP">
-                  <VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="in_brwSAP" />
-                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_strPDFLocation">[In_pdflocation]</InArgument>
+                <InArgument x:TypeArguments="ui:Browser" x:Key="in_brwSAP">[in_brwSAP]</InArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
-            <Sequence DisplayName="Sequence- Enter Amount" sap:VirtualizedContainerService.HintSize="376,372" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence DisplayName="Sequence- Enter Amount" sap:VirtualizedContainerService.HintSize="376,350" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'INPUT  Amount'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_6" SimulateType="True" Text="[in_NetAmount]">
-                <ui:TypeInto.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7b62b21c-2fd0-483e-94de-aba279610ffb" InformativeScreenshot="8a753bad2be89b898cdb59e4fa3f5ae9" Selector="&lt;html app='chrome.exe' title='SAP Business Network Supplier' /&gt;&lt;webctrl class='tableBody' tableRow='2' tag='TABLE' /&gt;&lt;webctrl id='_yumlnd' tableRow='10' tag='INPUT' /&gt;" WaitForReady="COMPLETE">
-                    <ui:Target.TimeoutMS>
-                      <InArgument x:TypeArguments="x:Int32" />
-                    </ui:Target.TimeoutMS>
-                  </ui:Target>
-                </ui:TypeInto.Target>
-              </ui:TypeInto>
-              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  _w_slkb'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Coupa\Process\IncludeLineItem.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Coupa\Process\IncludeLineItem.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_Week">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="In_week" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_NetAmount">
+                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_NetAmount" />
+                  </InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  on Next button'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
                 <ui:Click.CursorPosition>
                   <ui:CursorPosition Position="Center">
                     <ui:CursorPosition.OffsetX>

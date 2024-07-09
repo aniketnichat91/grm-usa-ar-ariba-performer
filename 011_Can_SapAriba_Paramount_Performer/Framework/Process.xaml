@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>916,2608</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1106,2699</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -314,13 +314,13 @@
     </ui:MultipleAssign>
     <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="491,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_6">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="493,460" sap2010:WorkflowViewState.IdRef="Sequence_6">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:IfElseIf DisplayName="Else If isCredit is true add minus to the price" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+          <ui:IfElseIf DisplayName="Else If isCredit is true add minus to the price" sap:VirtualizedContainerService.HintSize="256,51" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
             <ui:IfElseIf.ConditionBlocks>
               <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                 <ui:IfElseIfBlock BlockType="If" Condition="[isCredit]">
@@ -412,6 +412,9 @@
         <InArgument x:TypeArguments="ui:Browser" x:Key="in_brwSAP">
           <VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="in_brwSAP" />
         </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="In_week">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strWeek" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="491,51" sap2010:WorkflowViewState.IdRef="CommentOut_5">
@@ -424,30 +427,14 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="InsertGeneralInfo(Autosaved).xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="375,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Coupa\Process\InsertGeneralInfo(Autosaved).xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_strInvoiceNumber">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strInvoiceNumber" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_strInvoiceDate">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strInvoiceDate" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_strPDFLocation">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strPDFLocation" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_NetAmount">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strNetAmount" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_Tax">
-                <Literal x:TypeArguments="x:String">123517427RT0001</Literal>
-              </InArgument>
-              <InArgument x:TypeArguments="ui:Browser" x:Key="in_brwSAP">
-                <VisualBasicValue x:TypeArguments="ui:Browser" ExpressionText="in_brwSAP" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_week">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strWeek" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="In_Description">
-                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="strDiscription" />
-              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_strInvoiceNumber">[strInvoiceNumber]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_strInvoiceDate">[strInvoiceDate]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_strPDFLocation">[strPDFLocation]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_NetAmount">[strNetAmount]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Tax">123517427RT0001</InArgument>
+              <InArgument x:TypeArguments="ui:Browser" x:Key="in_brwSAP">[in_brwSAP]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_week">[strWeek]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="In_Description">[strDiscription]</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
         </Sequence>

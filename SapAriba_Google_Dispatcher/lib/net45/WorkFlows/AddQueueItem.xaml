@@ -19,10 +19,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>748,610</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1032,610</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>AddQueueItem_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="30">
+    <scg:List x:TypeArguments="x:String" Capacity="60">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -53,6 +53,12 @@
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.Excel</x:String>
       <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Enums</x:String>
+      <x:String>Microsoft.Graph</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -75,6 +81,14 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+      <AssemblyReference>Microsoft.Graph</AssemblyReference>
+      <AssemblyReference>Microsoft.Graph.Core</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="AddQueueItem" sap:VirtualizedContainerService.HintSize="462,545" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -102,39 +116,17 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" FolderPath="[in_OrcFolder]" sap:VirtualizedContainerService.HintSize="338,25" sap2010:WorkflowViewState.IdRef="AddQueueItem_3" Priority="Normal" QueueType="[in_QueueName]" Reference="[in_strPONumber+&quot;-&quot;+ in_strBillNumber]">
         <ui:AddQueueItem.ItemInformation>
-          <InArgument x:TypeArguments="x:String" x:Key="BillDate">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strBillDate" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="PONumber">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strPONumber" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="BillAmount">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strBillAmount" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="Due">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_str_Due" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="Client">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Client" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="BillNumber">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strBillNumber" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="RecipientEmail">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_RecipientEmail" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="SharePointFolder">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_StrDateTimeFolderName" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="SharePointLocation">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strSharePointExcelLocation" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="InvoicesLocation">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_StrSharePointInvoicesLocation" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="Product">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strProduct" />
-          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="BillDate">[in_strBillDate]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="PONumber">[in_strPONumber]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="BillAmount">[in_strBillAmount]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="Due">[in_str_Due]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="Client">[in_Client]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="BillNumber">[in_strBillNumber]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="RecipientEmail">[in_RecipientEmail]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="SharePointFolder">[in_StrDateTimeFolderName]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="SharePointLocation">[in_strSharePointExcelLocation]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="InvoicesLocation">[in_StrSharePointInvoicesLocation]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="Product">[in_strProduct]</InArgument>
         </ui:AddQueueItem.ItemInformation>
       </ui:AddQueueItem>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[str_WorkFlowName+in_strPONumber+&quot;-&quot;+ in_strBillNumber+&quot; added to queue.&quot;]">
