@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>917,801</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>930,801</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="45">
@@ -99,7 +99,6 @@
       <AssemblyReference>netstandard</AssemblyReference>
       <AssemblyReference>Microsoft.Graph</AssemblyReference>
       <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <StateMachine InitialState="{x:Reference __ReferenceID3}" sap2010:Annotation.AnnotationText="[Process title]&#xA;[Process description]&#xA;[Additional information (e.g., author, contact information and applications involved and required external setup)]" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="634,736" sap2010:WorkflowViewState.IdRef="StateMachine_1">
@@ -898,7 +897,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <If.Then>
-                                  <Sequence DisplayName="First run" sap:VirtualizedContainerService.HintSize="557,2776" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                  <Sequence DisplayName="First run" sap:VirtualizedContainerService.HintSize="557,2761" sap2010:WorkflowViewState.IdRef="Sequence_17">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -906,110 +905,128 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:LogMessage DisplayName="Log Message screen resolution" sap:VirtualizedContainerService.HintSize="515,91" sap2010:WorkflowViewState.IdRef="LogMessage_36" Level="Info" Message="[&quot;The primary screen resolution is: &quot;+Screen.PrimaryScreen.Bounds.Width.ToString+&quot; x &quot;+ Screen.PrimaryScreen.Bounds.Height.ToString]" />
-                                    <Sequence sap2010:Annotation.AnnotationText="&#xA;Config excel is taken from sharepoint. Pasted into the Data\config.xlsx field.&#xA;Changes to config must be made in sharepoint. &#xA;Sharepoint Path--&gt;https://insidemedia.sharepoint.com/:x:/r/sites/GRMUSA-AR/Shared%20Documents/UiPathRPA/Documents/002_SapAriba_Mars_Dispatcher/Config/Config.xlsx?d=wb39f9909130f4bda8f623c344ee460c9&amp;csf=1&amp;web=1&amp;e=sWX75v" DisplayName="Sharepoİnt Find Config Path" sap:VirtualizedContainerService.HintSize="515,66" sap2010:WorkflowViewState.IdRef="Sequence_48">
-                                      <Sequence.Variables>
-                                        <Variable x:TypeArguments="ss:SecureString" Name="str_SharePointPass" />
-                                        <Variable x:TypeArguments="x:String" Name="str_SharePointUser" />
-                                      </Sequence.Variables>
+                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="515,51" sap2010:WorkflowViewState.IdRef="CommentOut_8">
+                                      <ui:CommentOut.Body>
+                                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,158" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Sequence sap2010:Annotation.AnnotationText="&#xA;Config excel is taken from sharepoint. Pasted into the Data\config.xlsx field.&#xA;Changes to config must be made in sharepoint. &#xA;Sharepoint Path--&gt;https://insidemedia.sharepoint.com/:x:/r/sites/GRMUSA-AR/Shared%20Documents/UiPathRPA/Documents/002_SapAriba_Mars_Dispatcher/Config/Config.xlsx?d=wb39f9909130f4bda8f623c344ee460c9&amp;csf=1&amp;web=1&amp;e=sWX75v" DisplayName="Sharepoİnt Find Config Path" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                                            <Sequence.Variables>
+                                              <Variable x:TypeArguments="ss:SecureString" Name="str_SharePointPass" />
+                                              <Variable x:TypeArguments="x:String" Name="str_SharePointUser" />
+                                            </Sequence.Variables>
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="GMUSA_AR_SharePointCredential" CacheStrategy="None" DisplayName="Get Credential( Share Point Credential )" sap:VirtualizedContainerService.HintSize="334,180" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[str_SharePointPass]" Username="[str_SharePointUser]">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </ui:GetRobotCredential>
+                                            <uma:Office365ApplicationScope CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" Timeout="{x:Null}" ApplicationId="eae21b34-e570-40b5-9512-7c5849823282" ApplicationSecret="ZOg7Q~Qezzsl3WgHPJ3AtEHg4K_C2C3Xavk5N" AuthenticationType="UsernameAndPassword" DisplayName="Private: Microsoft Office 365 Scope" Environment="Global" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuthApplication="UiPath" SecurePassword="[str_SharePointPass]" Services="Files" Tenant="86cbe1bb-213f-4271-b174-bd59d03c87a3" Username="[str_SharePointUser]">
+                                              <uma:Office365ApplicationScope.Body>
+                                                <ActivityAction x:TypeArguments="mg:GraphServiceClient">
+                                                  <ActivityAction.Argument>
+                                                    <DelegateInArgument x:TypeArguments="mg:GraphServiceClient" Name="ParentScope" />
+                                                  </ActivityAction.Argument>
+                                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                                                    <Sequence.Variables>
+                                                      <Variable x:TypeArguments="mg:DriveItem" Name="Folder" />
+                                                    </Sequence.Variables>
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <umaf:FindFilesAndFolders DriveMetadata="{x:Null}" Results="{x:Null}" DisplayName="Find Files And Folders" DriveName="Documents" First="[Folder]" sap:VirtualizedContainerService.HintSize="334,85" sap2010:WorkflowViewState.IdRef="FindFilesAndFolders_1" Query="Config.xlsx" SiteUrl="https://insidemedia.sharepoint.com/sites/GRMUSA-AR" Subfolder="UiPathRPA\Documents\002_SapAriba_Mars_Dispatcher\Config">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                    </umaf:FindFilesAndFolders>
+                                                    <umaf:DownloadFile DriveMetadata="{x:Null}" DisplayName="Download File" File="[Folder]" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="DownloadFile_1" LocalFilePath="Data" />
+                                                    <Delay DisplayName="Delay:2 sec" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+                                                      <ui:CommentOut.Body>
+                                                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="346,344" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <Sequence sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_36">
+                                                              <Assign.To>
+                                                                <OutArgument x:TypeArguments="x:String">[in_strZipFilePath]</OutArgument>
+                                                              </Assign.To>
+                                                              <Assign.Value>
+                                                                <InArgument x:TypeArguments="x:String">[str_FileExcel.WebUrl.ToString]</InArgument>
+                                                              </Assign.Value>
+                                                            </Assign>
+                                                            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_37">
+                                                              <Assign.To>
+                                                                <OutArgument x:TypeArguments="x:String">[in_strZipFilePath]</OutArgument>
+                                                              </Assign.To>
+                                                              <Assign.Value>
+                                                                <InArgument x:TypeArguments="x:String">[str_FileZip.WebUrl.ToString]</InArgument>
+                                                              </Assign.Value>
+                                                            </Assign>
+                                                          </Sequence>
+                                                        </Sequence>
+                                                      </ui:CommentOut.Body>
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                    </ui:CommentOut>
+                                                  </Sequence>
+                                                </ActivityAction>
+                                              </uma:Office365ApplicationScope.Body>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </uma:Office365ApplicationScope>
+                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="LogMessage_39" Level="Info" Message="[&quot;Downloded Config---&gt;Data Folder&quot;]">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </ui:LogMessage>
+                                          </Sequence>
+                                        </Sequence>
+                                      </ui:CommentOut.Body>
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                          <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="GMUSA_AR_SharePointCredential" DisplayName="Get Credential( Share Point Credential )" sap:VirtualizedContainerService.HintSize="434,79" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[str_SharePointPass]" Username="[str_SharePointUser]">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                      </ui:GetRobotCredential>
-                                      <uma:Office365ApplicationScope CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" Timeout="{x:Null}" ApplicationId="eae21b34-e570-40b5-9512-7c5849823282" ApplicationSecret="ZOg7Q~Qezzsl3WgHPJ3AtEHg4K_C2C3Xavk5N" AuthenticationType="UsernameAndPassword" DisplayName="Private: Microsoft Office 365 Scope" Environment="Global" sap:VirtualizedContainerService.HintSize="434,590" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuthApplication="UiPath" SecurePassword="[str_SharePointPass]" Services="Files" Tenant="86cbe1bb-213f-4271-b174-bd59d03c87a3" Username="[str_SharePointUser]">
-                                        <uma:Office365ApplicationScope.Body>
-                                          <ActivityAction x:TypeArguments="mg:GraphServiceClient">
-                                            <ActivityAction.Argument>
-                                              <DelegateInArgument x:TypeArguments="mg:GraphServiceClient" Name="ParentScope" />
-                                            </ActivityAction.Argument>
-                                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,504" sap2010:WorkflowViewState.IdRef="Sequence_51">
-                                              <Sequence.Variables>
-                                                <Variable x:TypeArguments="mg:DriveItem" Name="Folder" />
-                                              </Sequence.Variables>
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                              <umaf:FindFilesAndFolders DriveMetadata="{x:Null}" Results="{x:Null}" DisplayName="Find Files And Folders" DriveName="Documents" First="[Folder]" sap:VirtualizedContainerService.HintSize="334,85" sap2010:WorkflowViewState.IdRef="FindFilesAndFolders_1" Query="Config.xlsx" SiteUrl="https://insidemedia.sharepoint.com/sites/GRMUSA-AR" Subfolder="UiPathRPA\Documents\002_SapAriba_Mars_Dispatcher\Config">
-                                                <sap:WorkflowViewStateService.ViewState>
-                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                  </scg:Dictionary>
-                                                </sap:WorkflowViewStateService.ViewState>
-                                              </umaf:FindFilesAndFolders>
-                                              <umaf:DownloadFile DriveMetadata="{x:Null}" DisplayName="Download File" File="[Folder]" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="DownloadFile_1" LocalFilePath="Data" />
-                                              <Delay DisplayName="Delay:2 sec" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
-                                              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_6">
-                                                <ui:CommentOut.Body>
-                                                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="346,344" sap2010:WorkflowViewState.IdRef="Sequence_50">
-                                                    <sap:WorkflowViewStateService.ViewState>
-                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                      </scg:Dictionary>
-                                                    </sap:WorkflowViewStateService.ViewState>
-                                                    <Sequence sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_49">
-                                                      <sap:WorkflowViewStateService.ViewState>
-                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                        </scg:Dictionary>
-                                                      </sap:WorkflowViewStateService.ViewState>
-                                                      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_36">
-                                                        <Assign.To>
-                                                          <OutArgument x:TypeArguments="x:String">[in_strZipFilePath]</OutArgument>
-                                                        </Assign.To>
-                                                        <Assign.Value>
-                                                          <InArgument x:TypeArguments="x:String">[str_FileExcel.WebUrl.ToString]</InArgument>
-                                                        </Assign.Value>
-                                                      </Assign>
-                                                      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_37">
-                                                        <Assign.To>
-                                                          <OutArgument x:TypeArguments="x:String">[in_strZipFilePath]</OutArgument>
-                                                        </Assign.To>
-                                                        <Assign.Value>
-                                                          <InArgument x:TypeArguments="x:String">[str_FileZip.WebUrl.ToString]</InArgument>
-                                                        </Assign.Value>
-                                                      </Assign>
-                                                    </Sequence>
-                                                  </Sequence>
-                                                </ui:CommentOut.Body>
-                                                <sap:WorkflowViewStateService.ViewState>
-                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                  </scg:Dictionary>
-                                                </sap:WorkflowViewStateService.ViewState>
-                                              </ui:CommentOut>
-                                            </Sequence>
-                                          </ActivityAction>
-                                        </uma:Office365ApplicationScope.Body>
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                      </uma:Office365ApplicationScope>
-                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="LogMessage_39" Level="Info" Message="[&quot;Downloded Config---&gt;Data Folder&quot;]">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                      </ui:LogMessage>
-                                    </Sequence>
+                                    </ui:CommentOut>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke InitAllSettings workflow" sap:VirtualizedContainerService.HintSize="515,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Framework\InitAllSettings.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
                                         <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile">Data\Config.xlsx</InArgument>
@@ -1080,7 +1097,7 @@
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="431,131" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                                      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="423,131" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                                         <ui:MultipleAssign.AssignOperations>
                                           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                             <ui:AssignOperation sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -1146,39 +1163,17 @@
                                     </Sequence>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ReadMail workflow" sap:VirtualizedContainerService.HintSize="515,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="WorkFlows\ReadMail.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                                          <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
-                                        </InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_saveAttachmentpath">
-                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;saveAttachmentPath&quot;).ToString.Replace(&quot;{UserName}&quot;,Environment.UserName)" />
-                                        </InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_strNoMailFoundException">
-                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;noMailFound&quot;).ToString" />
-                                        </InArgument>
-                                        <OutArgument x:TypeArguments="x:String" x:Key="out_strExcelFilePath">
-                                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ExcelFilePath" />
-                                        </OutArgument>
-                                        <OutArgument x:TypeArguments="x:String" x:Key="out_strZipFilePath">
-                                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ZipFilePath" />
-                                        </OutArgument>
-                                        <OutArgument x:TypeArguments="x:String" x:Key="out_RecipientEmail">
-                                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_RecipientEmail" />
-                                        </OutArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_strMailDateTime">
-                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_DateTime" />
-                                        </InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_StrMailCredential">
-                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;GMUSA_AR_MailCredential&quot;).ToString" />
-                                        </InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_strTenantID">
-                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;GMUSA_AR_TenantID&quot;).ToString" />
-                                        </InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_strApplicationID">
-                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;GMUSA_AR_ApplicationID&quot;).ToString" />
-                                        </InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_StrArFolderPath">
-                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;arFolderPath&quot;).ToString.Replace(&quot;{UserName}&quot;,Environment.UserName)" />
-                                        </InArgument>
+                                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_saveAttachmentpath">[Config("saveAttachmentPath").ToString.Replace("{UserName}",Environment.UserName)]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_strNoMailFoundException">[Config("noMailFound").ToString]</InArgument>
+                                        <OutArgument x:TypeArguments="x:String" x:Key="out_strExcelFilePath">[str_ExcelFilePath]</OutArgument>
+                                        <OutArgument x:TypeArguments="x:String" x:Key="out_strZipFilePath">[str_ZipFilePath]</OutArgument>
+                                        <OutArgument x:TypeArguments="x:String" x:Key="out_RecipientEmail">[str_RecipientEmail]</OutArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_strMailDateTime">[str_DateTime]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_StrMailCredential">[config("GMUSA_AR_MailCredential").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_strTenantID">[Config("GMUSA_AR_TenantID").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_strApplicationID">[Config("GMUSA_AR_ApplicationID").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_StrArFolderPath">[Config("arFolderPath").ToString.Replace("{UserName}",Environment.UserName)]</InArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                     </ui:InvokeWorkflowFile>
                                     <Sequence DisplayName="Sharepoint,Excel and Invoice Location Path" sap:VirtualizedContainerService.HintSize="515,666" sap2010:WorkflowViewState.IdRef="Sequence_36">

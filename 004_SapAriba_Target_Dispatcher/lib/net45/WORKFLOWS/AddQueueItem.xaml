@@ -14,14 +14,15 @@
     <x:Property Name="in_strLogReportPath" Type="InArgument(x:String)" />
     <x:Property Name="inOut_StrLogReport" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="in_strMedia" Type="InArgument(x:String)" />
+    <x:Property Name="in_ExecTblReportID" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>917,654</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>532,806</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>AddQueueItem_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="30">
+    <scg:List x:TypeArguments="x:String" Capacity="60">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -52,6 +53,7 @@
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.Excel</x:String>
       <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.Database</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -81,9 +83,13 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="AddQueueItem" sap:VirtualizedContainerService.HintSize="376,589" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="AddQueueItem" sap:VirtualizedContainerService.HintSize="376,741" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_WorkFlowName" />
     </Sequence.Variables>
@@ -102,33 +108,16 @@
     </Assign>
     <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" FolderPath="[in_OrcFolder]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_3" Priority="Normal" QueueType="[in_QueueName]" Reference="[in_strPONumber+&quot;-&quot;+ in_strBillNumber]">
       <ui:AddQueueItem.ItemInformation>
-        <InArgument x:TypeArguments="x:String" x:Key="Media">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strMedia" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="BillDate">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strBillDate" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="PONumber">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strPONumber" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="BillAmount">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strBillAmount" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="LineNumber">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strLineNumber" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="Client">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Client" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="BillNumber">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strBillNumber" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="RecipientEmail">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_RecipientEmail" />
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="SharePointLocation">
-          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strSharePointExcelLocation" />
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Media">[in_strMedia]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="BillDate">[in_strBillDate]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="PONumber">[in_strPONumber]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="BillAmount">[in_strBillAmount]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="LineNumber">[in_strLineNumber]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="Client">[in_Client]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="BillNumber">[in_strBillNumber]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="RecipientEmail">[in_RecipientEmail]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="SharePointLocation">[in_strSharePointExcelLocation]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="ExecutionReportID">[in_ExecTblReportID]</InArgument>
       </ui:AddQueueItem.ItemInformation>
     </ui:AddQueueItem>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[str_WorkFlowName+in_strPONumber+&quot;-&quot;+ in_strBillNumber+&quot; added to queue.&quot;]">
@@ -139,6 +128,40 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="WORKFLOWS\Tracker\Target_InsertBillingRegisterToLogTxn.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="WORKFLOWS\Tracker\Target_InsertBillingRegisterToLogTxn.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Client">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Client" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_TableName">
+          <Literal x:TypeArguments="x:String">AR_Log_Txn</Literal>
+        </InArgument>
+        <InArgument x:TypeArguments="ui:DatabaseConnection" x:Key="in_DbConnection" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_Division" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_CLI" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_Product" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_EST" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_Job" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_Media">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strMedia" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_InvoiceDate">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strBillDate" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_InvoiceNumber">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strBillNumber" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_PONumber">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strPONumber" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_InvoiceAmount">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_strBillAmount" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Status" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_Runcount" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_MOS" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
     <Delay DisplayName="Delay:100 ms" Duration="[TimeSpan.FromMilliseconds(100)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
     <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
       <ui:CommentOut.Body>
@@ -249,7 +272,7 @@
     </ui:CommentOut>
     <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="515,406" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="284,326" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>

@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>624,869</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1043,908</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="50">
@@ -107,10 +107,9 @@
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <StateMachine InitialState="{x:Reference __ReferenceID3}" sap2010:Annotation.AnnotationText="SAP Ariba AR for multiple Clients -  MARS &#xA;[Author : Gajanan Patil]&#xA;Process : This process fetches queue details having invoice details and processing invoicing file in SAP Ariba and saving end Report in Sharepoint" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="634,764" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID3}" sap2010:Annotation.AnnotationText="SAP Ariba AR for multiple Clients -  Elanco&#xA;[Author : ]&#xA;Process : This process fetches queue details having invoice details and processing invoicing file in SAP Ariba and saving end Report in Sharepoint" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="634,763" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -122,7 +121,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Get the next transaction to be processed." DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="251,113" sap2010:WorkflowViewState.IdRef="State_4">
+    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Get the next transaction to be processed." DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="251,112" sap2010:WorkflowViewState.IdRef="State_4">
       <State.Entry>
         <Sequence sap2010:Annotation.AnnotationText="Retrieve a new transaction data to be processed.&#xA;The TransactionNumber variable holds the current transaction number and incrementing this variable makes the framework retrieve the next transaction. If the framework is retrying a failed transaction, this variable is not incremented until the maximum number of retry attempts is reached." DisplayName="Retrieve Data" sap:VirtualizedContainerService.HintSize="945,733" sap2010:WorkflowViewState.IdRef="Sequence_25">
           <Sequence.Variables>
@@ -224,7 +223,7 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">224.333333333333,212.333333333333</av:Point>
-          <av:Size x:Key="ShapeSize">251,113</av:Size>
+          <av:Size x:Key="ShapeSize">251,112</av:Size>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
           <x:Double x:Key="StateContainerWidth">217</x:Double>
           <x:Double x:Key="StateContainerHeight">34</x:Double>
@@ -243,7 +242,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="682,3008" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="144,118" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
               <State.Entry>
                 <Sequence DisplayName="END PROCESS" sap:VirtualizedContainerService.HintSize="636,2863" sap2010:WorkflowViewState.IdRef="Sequence_39">
                   <Sequence.Variables>
@@ -375,42 +374,18 @@
                             </ui:InvokeWorkflowFile>
                             <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Uploads the Execution Excel  file to the respective sharepoint drive for Ariba Client&#xA;" DisplayName="Invoke SharePoint Upload workflow" sap:VirtualizedContainerService.HintSize="438,170" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_47" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Reusable_Library\SharePoint_Upload.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_GMUSA_AR_DownloadFileLocalPath">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_DailyFilePath" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                                  <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_GMUSA_AR_ApplicationSecret">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;GMUSA_AR_ApplicationSecret&quot;).ToString" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_GMUSA_AR_ApplicationID">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;GMUSA_AR_ApplicationID&quot;).ToString" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_GMUSA_AR_TenantID">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;GMUSA_AR_TenantID&quot;).ToString" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_GMUSA_AR_AGENCYNAME_Target">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;GMUSA_AR_AGENCYNAME_Elanco_Performer&quot;).ToString" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_GMUSA_AR_CLIENTNAME_Target">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;GMUSA_AR_CLIENTNAME_Elanco_Performer&quot;).ToString" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_GMUSA_AR_DriveName_Target">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;GMUSA_AR_DriveName_Target&quot;).ToString" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_GMUSA_AR_SiteUrl_Target">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;GMUSA_AR_SiteUrl_Target&quot;).ToString" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_str_TargetRecipientEmail">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_str_TargetRecipientEmail" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="x:String" x:Key="in_str_ClientName">
-                                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_str_ClientName" />
-                                </InArgument>
-                                <InArgument x:TypeArguments="sd:DataTable" x:Key="dt_tarnsaction">
-                                  <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="TransactionData" />
-                                </InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_GMUSA_AR_DownloadFileLocalPath">[str_DailyFilePath]</InArgument>
+                                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_GMUSA_AR_ApplicationSecret">[Config("GMUSA_AR_ApplicationSecret").ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_GMUSA_AR_ApplicationID">[Config("GMUSA_AR_ApplicationID").ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_GMUSA_AR_TenantID">[Config("GMUSA_AR_TenantID").ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_GMUSA_AR_AGENCYNAME_Target">[Config("GMUSA_AR_AGENCYNAME_Elanco_Performer").ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_GMUSA_AR_CLIENTNAME_Target">[Config("GMUSA_AR_CLIENTNAME_Elanco_Performer").ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_GMUSA_AR_DriveName_Target">[Config("GMUSA_AR_DriveName_Target").ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_GMUSA_AR_SiteUrl_Target">[Config("GMUSA_AR_SiteUrl_Target").ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_str_TargetRecipientEmail">[in_str_TargetRecipientEmail]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_str_ClientName">[in_str_ClientName]</InArgument>
+                                <InArgument x:TypeArguments="sd:DataTable" x:Key="dt_tarnsaction">[TransactionData]</InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -586,7 +561,7 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">18,300.5</av:Point>
-                  <av:Size x:Key="ShapeSize">144,119</av:Size>
+                  <av:Size x:Key="ShapeSize">144,118</av:Size>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   <x:Double x:Key="StateContainerWidth">110</x:Double>
                   <x:Double x:Key="StateContainerHeight">25.080000000000041</x:Double>
@@ -615,7 +590,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Process a single transaction. &#xA;The result of the processing can be: 1) Success, 2) Business Exception, 3) System Exception. &#xA;In the case of a system exception, the transaction can be automatically retried." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="231,188" sap2010:WorkflowViewState.IdRef="State_3">
+            <State x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Process a single transaction. &#xA;The result of the processing can be: 1) Success, 2) Business Exception, 3) System Exception. &#xA;In the case of a system exception, the transaction can be automatically retried." DisplayName="Process Transaction" sap:VirtualizedContainerService.HintSize="231,187" sap2010:WorkflowViewState.IdRef="State_3">
               <State.Entry>
                 <TryCatch DisplayName="Try to process transaction" sap:VirtualizedContainerService.HintSize="438,775" sap2010:WorkflowViewState.IdRef="TryCatch_9">
                   <sap:WorkflowViewStateService.ViewState>
@@ -742,7 +717,7 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">234.5,466.5</av:Point>
-                  <av:Size x:Key="ShapeSize">231,188</av:Size>
+                  <av:Size x:Key="ShapeSize">231,187</av:Size>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   <x:Double x:Key="StateContainerWidth">197</x:Double>
                   <x:Double x:Key="StateContainerHeight">34</x:Double>
@@ -760,7 +735,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <Transition.To>
-                    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="254,104" sap2010:WorkflowViewState.IdRef="State_2">
+                    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="254,103" sap2010:WorkflowViewState.IdRef="State_2">
                       <State.Entry>
                         <Sequence DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="1101,4089" sap2010:WorkflowViewState.IdRef="Sequence_29">
                           <Sequence.Variables>
@@ -1046,7 +1021,7 @@
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">223,6.66666666666666</av:Point>
-                          <av:Size x:Key="ShapeSize">254,104</av:Size>
+                          <av:Size x:Key="ShapeSize">254,103</av:Size>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           <x:Double x:Key="StateContainerWidth">220</x:Double>
                           <x:Double x:Key="StateContainerHeight">25</x:Double>
@@ -1076,7 +1051,7 @@
                         <Transition DisplayName="System Exception (failed initialization)" sap:VirtualizedContainerService.HintSize="450,800" sap2010:WorkflowViewState.IdRef="Transition_3">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:PointCollection x:Key="ConnectorLocation">248.4,110.666666666667 248.4,140.666666666667 82.8,140.666666666667 82.8,300.5</av:PointCollection>
+                              <av:PointCollection x:Key="ConnectorLocation">248.4,109.666666666667 248.4,139.666666666667 82.8,139.666666666667 82.8,300.5</av:PointCollection>
                               <x:Int32 x:Key="SrcConnectionPointIndex">7</x:Int32>
                               <x:Int32 x:Key="DestConnectionPointIndex">34</x:Int32>
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>

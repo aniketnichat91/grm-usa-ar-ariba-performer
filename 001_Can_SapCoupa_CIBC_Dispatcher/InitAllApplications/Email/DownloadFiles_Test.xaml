@@ -10,7 +10,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>793,4380</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>959,4380</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetEmailIDAndAddDispatcherQueue_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="46">
@@ -145,7 +145,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="741,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;DownloadFiles workflow is starting...&quot;]" />
-    <ui:GetRobotCredential AssetName="_CADGRM.SAP_AppSecret" CacheStrategy="None" DisplayName="Get Credential - app secret" sap:VirtualizedContainerService.HintSize="741,365" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secAppSecret]" TimeoutMS="120000">
+    <ui:GetRobotCredential AssetName="_CADGRM.SAP_AppSecret" CacheStrategy="None" DisplayName="Get Credential - app secret" FolderPath="GMCAN_FINANCE_AR" sap:VirtualizedContainerService.HintSize="741,365" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secAppSecret]" TimeoutMS="120000">
       <ui:GetRobotCredential.Username>
         <OutArgument x:TypeArguments="x:String" />
       </ui:GetRobotCredential.Username>
@@ -165,7 +165,7 @@
       </Assign.Value>
     </Assign>
     <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="741,90" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[AppPass]" />
-    <ui:GetRobotCredential AssetName="CADGRM.SAP.Office365Credentials" CacheStrategy="None" DisplayName="Get Credential - _CADGRM.SAP@service.groupm.com" sap:VirtualizedContainerService.HintSize="741,365" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[secEmailPassword]" TimeoutMS="120000" Username="[strEmailUsername]">
+    <ui:GetRobotCredential AssetName="CADGRM.SAP.Office365Credentials" CacheStrategy="None" DisplayName="Get Credential - _CADGRM.SAP@service.groupm.com" FolderPath="GMCAN_FINANCE_AR" sap:VirtualizedContainerService.HintSize="741,365" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[secEmailPassword]" TimeoutMS="120000" Username="[strEmailUsername]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>

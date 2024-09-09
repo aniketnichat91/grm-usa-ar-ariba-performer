@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="DownloadConfigFromSharepoint" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1466,1128" sap2010:WorkflowViewState.IdRef="DownloadConfigFromSharepoint_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mg="clr-namespace:Microsoft.Graph;assembly=Microsoft.Graph" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uma="clr-namespace:UiPath.MicrosoftOffice365.Activities;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umaf="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="DownloadConfigFromSharepoint" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="610,1229" sap2010:WorkflowViewState.IdRef="DownloadConfigFromSharepoint_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mg="clr-namespace:Microsoft.Graph;assembly=Microsoft.Graph" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uma="clr-namespace:UiPath.MicrosoftOffice365.Activities;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umaf="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -65,10 +65,14 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>Microsoft.Graph</AssemblyReference>
+      <AssemblyReference>Microsoft.Graph.Core</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DownloadConfigFromSharepoint" sap:VirtualizedContainerService.HintSize="476,1063" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DownloadConfigFromSharepoint" sap:VirtualizedContainerService.HintSize="476,1164" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ss:SecureString" Name="sec_SharePointPass" />
       <Variable x:TypeArguments="x:String" Name="str_SharePointUser" />
@@ -79,7 +83,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Searching Sharepoint for Config file&quot;]" />
-    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="GMUSA_AR_SharePointCredential" DisplayName="Get Credential( Share Point Credential )" sap:VirtualizedContainerService.HintSize="434,79" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[sec_SharePointPass]" Username="[str_SharePointUser]">
+    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="GMUSA_AR_SharePointCredential" CacheStrategy="None" DisplayName="Get Credential( Share Point Credential )" sap:VirtualizedContainerService.HintSize="434,180" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[sec_SharePointPass]" Username="[str_SharePointUser]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -87,7 +91,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:GetRobotCredential>
-    <uma:Office365ApplicationScope CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" Timeout="{x:Null}" ApplicationId="eae21b34-e570-40b5-9512-7c5849823282" ApplicationSecret="ZOg7Q~Qezzsl3WgHPJ3AtEHg4K_C2C3Xavk5N" AuthenticationType="UsernameAndPassword" DisplayName="Private: Microsoft Office 365 Scope" Environment="Global" sap:VirtualizedContainerService.HintSize="434,590" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuthApplication="UiPath" SecurePassword="[sec_SharePointPass]" Services="Files" Tenant="86cbe1bb-213f-4271-b174-bd59d03c87a3" Username="[str_SharePointUser]">
+    <uma:Office365ApplicationScope CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" OAuth2Username="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" Timeout="{x:Null}" ApplicationId="eae21b34-e570-40b5-9512-7c5849823282" ApplicationSecret="ZOg7Q~Qezzsl3WgHPJ3AtEHg4K_C2C3Xavk5N" AuthenticationType="UsernameAndPassword" DisplayName="Microsoft Office 365 Scope" Environment="Global" sap:VirtualizedContainerService.HintSize="434,590" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuthApplication="UiPath" SecurePassword="[sec_SharePointPass]" Services="Files, Shared" Tenant="86cbe1bb-213f-4271-b174-bd59d03c87a3" Username="[str_SharePointUser]">
       <uma:Office365ApplicationScope.Body>
         <ActivityAction x:TypeArguments="mg:GraphServiceClient">
           <ActivityAction.Argument>
@@ -102,19 +106,12 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <umaf:FindFilesAndFolders DriveMetadata="{x:Null}" Results="{x:Null}" DisplayName="Find Files And Folders" DriveName="Documents" First="[Folder]" sap:VirtualizedContainerService.HintSize="334,85" sap2010:WorkflowViewState.IdRef="FindFilesAndFolders_1" Query="Config.xlsx" SiteUrl="https://insidemedia.sharepoint.com/sites/GRMUSA-AR" Subfolder="UiPathRPA\Documents\004_SapAriba_Target_Dispatcher\Config">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </umaf:FindFilesAndFolders>
+            <umaf:FindFilesAndFolders DriveMetadata="{x:Null}" Results="{x:Null}" DisplayName="Find Files And Folders" DriveName="Documents" First="[Folder]" sap:VirtualizedContainerService.HintSize="334,85" sap2010:WorkflowViewState.IdRef="FindFilesAndFolders_2" Query="Config.xlsx" SiteUrl="https://insidemedia.sharepoint.com/sites/GRMUSA-AR" Subfolder="UiPathRPA\Documents\004_SapAriba_Target_Dispatcher\Config" />
             <umaf:DownloadFile DriveMetadata="{x:Null}" DisplayName="Download File" File="[Folder]" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="DownloadFile_1" LocalFilePath="Data" />
             <Delay DisplayName="Delay:2 sec" Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
             <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
               <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="346,344" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="346,376" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>

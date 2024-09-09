@@ -5,6 +5,7 @@
     <x:Property Name="out_strZipFilePath" Type="OutArgument(x:String)" />
     <x:Property Name="out_RecipientEmail" Type="OutArgument(x:String)" />
     <x:Property Name="in_strDateTime" Type="InArgument(x:String)" />
+    <x:Property Name="out_MailReceivedDateTime" Type="OutArgument(x:String)" />
   </x:Members>
   <this:ReadMail.in_strDateTime>
     <InArgument x:TypeArguments="x:String" />
@@ -12,10 +13,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1466,4961</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1241,5328</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ReadMail_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="42">
+    <scg:List x:TypeArguments="x:String" Capacity="84">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -58,6 +59,11 @@
       <x:String>UiPath.MicrosoftOffice365.Models</x:String>
       <x:String>UiPath.Shared.Services.Graph.Mail.Models</x:String>
       <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Mail.Enums</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.Shared.Services.Graph.Mail.Contracts</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -97,10 +103,14 @@
       <AssemblyReference>netstandard</AssemblyReference>
       <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ReadMail" sap:VirtualizedContainerService.HintSize="1039,4896" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ReadMail" sap:VirtualizedContainerService.HintSize="1251,5263" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="str_workFlowName" />
       <Variable x:TypeArguments="umm:Office365Message[]" Name="list_MailMessages" />
@@ -116,7 +126,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="997,100" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1209,100" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -130,7 +140,7 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="997,224" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1209,51" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
@@ -175,10 +185,16 @@
           </ui:AssignOperation>
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:MultipleAssign>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="997,4400" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1209,4940" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="İnbox Mail Read " sap:VirtualizedContainerService.HintSize="959,4173" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="İnbox Mail Read " sap:VirtualizedContainerService.HintSize="1171,4713" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <Sequence.Variables>
             <Variable x:TypeArguments="ss:SecureString" Name="str_mailpassword" />
             <Variable x:TypeArguments="x:String" Name="str_mailuser" />
@@ -189,7 +205,7 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="917,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[str_WorkFlowname+&quot; Controlling Mail Read &quot;]">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1129,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[str_WorkFlowname+&quot; Controlling Mail Read &quot;]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -197,16 +213,16 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:LogMessage>
-          <ui:GetRobotCredential TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="to get the credential for retreiving mail." AssetName="[MailCredential]" DisplayName="Get Credential : For outlook" sap:VirtualizedContainerService.HintSize="917,110" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[str_mailpassword]" Username="[str_mailuser]">
+          <ui:GetRobotCredential TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="to get the credential for retreiving mail." AssetName="[MailCredential]" CacheStrategy="None" DisplayName="Get Credential : For outlook" sap:VirtualizedContainerService.HintSize="1129,93" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[str_mailpassword]" Username="[str_mailuser]">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:GetRobotCredential>
-          <uma:Office365ApplicationScope ApplicationSecret="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" Timeout="{x:Null}" sap2010:Annotation.AnnotationText="To  get mail from outlook." ApplicationId="[in_Config(&quot;GMUSA_AR_ApplicationID&quot;).ToString]" AuthenticationType="UsernameAndPassword" DisplayName="Microsoft Office 365 Scope : To get outlook mail" Environment="Default" sap:VirtualizedContainerService.HintSize="917,139" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_2" OAuthApplication="UiPath" SecurePassword="[str_mailpassword]" Services="Mail" Tenant="[in_Config(&quot;GMUSA_AR_TenantID&quot;).ToString]" Username="[str_mailuser]">
+          <uma:Office365ApplicationScope ApplicationSecret="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" OAuth2Username="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" Timeout="{x:Null}" sap2010:Annotation.AnnotationText="To  get mail from outlook." ApplicationId="[in_Config(&quot;GMUSA_AR_ApplicationID&quot;).ToString]" AuthenticationType="UsernameAndPassword" DisplayName="Microsoft Office 365 Scope : To get outlook mail" Environment="Default" sap:VirtualizedContainerService.HintSize="1129,139" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_2" OAuthApplication="UiPath" SecurePassword="[str_mailpassword]" Services="Mail" Tenant="[in_Config(&quot;GMUSA_AR_TenantID&quot;).ToString]" Username="[str_mailuser]">
             <uma:Office365ApplicationScope.Body>
               <ActivityAction x:TypeArguments="mg:GraphServiceClient">
                 <ActivityAction.Argument>
@@ -223,7 +239,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </uma:Office365ApplicationScope>
-          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="917,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1129,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
             <ui:CommentOut.Body>
               <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_22">
                 <sap:WorkflowViewStateService.ViewState>
@@ -241,11 +257,11 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:CommentOut>
-          <Delay DisplayName="Delay:1 sec" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="917,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
-          <If Condition="[list_MailMessages.Count=0]" DisplayName="If: Read mail Count Control" sap:VirtualizedContainerService.HintSize="917,403" sap2010:WorkflowViewState.IdRef="If_1">
+          <Delay DisplayName="Delay:1 sec" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="1129,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+          <If Condition="[list_MailMessages.Count=0]" DisplayName="If: Read mail Count Control" sap:VirtualizedContainerService.HintSize="1129,51" sap2010:WorkflowViewState.IdRef="If_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -276,7 +292,7 @@
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[str_workFlowName+&quot; incoming unread mails read with Mars in the subject.&quot;]">
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[str_workFlowName+&quot; incoming unread mails read with Target in the subject.&quot;]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -287,13 +303,13 @@
               </Sequence>
             </If.Else>
           </If>
-          <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="917,3025" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[list_MailMessages]">
+          <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1129,3934" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[list_MailMessages]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="snm:MailMessage">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="CurrentMail" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="881,2901" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1093,3810" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="attachments_Downloded" />
                   </Sequence.Variables>
@@ -302,7 +318,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <If Condition="[CurrentMail.Attachments.Count&lt;&gt;0]" DisplayName="If: Attachments control" sap:VirtualizedContainerService.HintSize="839,403" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If Condition="[CurrentMail.Attachments.Count&lt;&gt;0]" DisplayName="If: Attachments control" sap:VirtualizedContainerService.HintSize="1051,938" sap2010:WorkflowViewState.IdRef="If_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -320,14 +336,14 @@
                       </ui:LogMessage>
                     </If.Then>
                     <If.Else>
-                      <Sequence DisplayName="Continue" sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <Sequence DisplayName="Continue" sap:VirtualizedContainerService.HintSize="602,780" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[str_WorkFlowname+&quot; Mail DOESN'T have attachments. Will continue from other mail.&quot;]">
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="560,91" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[str_WorkFlowname+&quot; Mail DOESN'T have attachments. Will continue from other mail.&quot;]">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -335,11 +351,58 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:LogMessage>
-                        <ui:Continue sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Continue_1" />
+                        <uma:Office365ApplicationScope ApplicationSecret="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" OAuth2Username="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" Timeout="{x:Null}" sap2010:Annotation.AnnotationText="To  get mail from outlook." ApplicationId="[in_Config(&quot;GMUSA_AR_ApplicationID&quot;).ToString]" AuthenticationType="UsernameAndPassword" DisplayName="Microsoft Office 365 Scope : To get outlook mail" Environment="Default" sap:VirtualizedContainerService.HintSize="560,495" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_3" OAuthApplication="UiPath" SecurePassword="[str_mailpassword]" Services="Mail" Tenant="[in_Config(&quot;GMUSA_AR_TenantID&quot;).ToString]" Username="[str_mailuser]">
+                          <uma:Office365ApplicationScope.Body>
+                            <ActivityAction x:TypeArguments="mg:GraphServiceClient">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="mg:GraphServiceClient" Name="ParentScope" />
+                              </ActivityAction.Argument>
+                              <Sequence sap:VirtualizedContainerService.HintSize="526,378" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <umam:GetMail Account="{x:Null}" EmailId="{x:Null}" DisplayName="Get Mail" GetAsHTML="False" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="GetMail_3" MailFolder="Inbox" MarkAsRead="True" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Query="startsWith(subject,'Target')" Results="[list_MailMessages]" Top="100" />
+                                <If Condition="[CurrentMail.Attachments.Count&lt;&gt;0]" sap:VirtualizedContainerService.HintSize="484,224" sap2010:WorkflowViewState.IdRef="If_7">
+                                  <If.Else>
+                                    <Sequence sap:VirtualizedContainerService.HintSize="242,66" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <umam:ReplyToMail Account="{x:Null}" AddBCC="{x:Null}" AddTo="{x:Null}" AttachmentsCollection="{x:Null}" AddCC="[{in_Config(&quot;GMUSA_AR_Dispatcher_Mail_CC&quot;).ToString}]" Body="Dear Sender,&#xA;&#xA;The Billing Register For attached invoices Is missing. Please send the Billing Register (In specified format that was Shared during the UAT stage) And the respective invoice zip folder In an email.&#xA; &#xA;Regards,&#xA;AR Bot." DisplayName="Reply to Mail" sap:VirtualizedContainerService.HintSize="434,352" sap2010:WorkflowViewState.IdRef="ReplyToMail_2" Importance="Normal" IsDraft="False" Message="[CType(CurrentMail, UiPath.MicrosoftOffice365.Models.Office365Message)]" NewSubject="Missing Attachments for Target" ReplyToAll="False">
+                                        <umam:ReplyToMail.Attachments>
+                                          <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                                        </umam:ReplyToMail.Attachments>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </umam:ReplyToMail>
+                                    </Sequence>
+                                  </If.Else>
+                                </If>
+                              </Sequence>
+                            </ActivityAction>
+                          </uma:Office365ApplicationScope.Body>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uma:Office365ApplicationScope>
+                        <ui:Continue sap:VirtualizedContainerService.HintSize="560,22" sap2010:WorkflowViewState.IdRef="Continue_1" />
                       </Sequence>
                     </If.Else>
                   </If>
-                  <Sequence DisplayName="save Attachment" sap:VirtualizedContainerService.HintSize="839,1134" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <Sequence DisplayName="save Attachment" sap:VirtualizedContainerService.HintSize="1051,1159" sap2010:WorkflowViewState.IdRef="Sequence_7">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Boolean" Name="bool_SaveAttachmentControl" />
                     </Sequence.Variables>
@@ -357,7 +420,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:LogMessage>
-                    <ui:PathExists DisplayName="Path Exists: Folder name Control" Exists="[bool_SaveAttachmentControl]" sap:VirtualizedContainerService.HintSize="797,89" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[saveAttachmentpath+in_strDateTime+&quot;\ExcelAttachment&quot;]" PathType="Folder" />
+                    <ui:PathExists Resource="{x:Null}" DisplayName="Path Exists: Folder name Control" Exists="[bool_SaveAttachmentControl]" sap:VirtualizedContainerService.HintSize="797,114" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[saveAttachmentpath+in_strDateTime+&quot;\ExcelAttachment&quot;]" PathType="Folder" />
                     <If Condition="[bool_SaveAttachmentControl]" DisplayName="If : Path Control" sap:VirtualizedContainerService.HintSize="797,460" sap2010:WorkflowViewState.IdRef="If_3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -391,7 +454,7 @@
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[saveAttachmentpath+in_strDateTime+&quot;\ExcelAttachment&quot;]" />
+                          <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[saveAttachmentpath+in_strDateTime+&quot;\ExcelAttachment&quot;]" />
                           <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[str_workFlowName+saveAttachmentpath+in_strDateTime+&quot; --&gt;File Created.&quot;]">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -414,27 +477,27 @@
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:LogMessage>
                   </Sequence>
-                  <Sequence DisplayName="Get .zip and .xlsx FilePath" sap:VirtualizedContainerService.HintSize="839,869" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                  <Sequence DisplayName="Get .zip and .xlsx FilePath" sap:VirtualizedContainerService.HintSize="1051,1118" sap2010:WorkflowViewState.IdRef="Sequence_19">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="562,777" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[attachments_Downloded]">
+                    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1009,1026" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[attachments_Downloded]">
                       <ui:ForEach.Body>
                         <ActivityAction x:TypeArguments="x:Object">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,653" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="973,902" sap2010:WorkflowViewState.IdRef="Sequence_17">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <If Condition="[item.ToString.Contains(&quot;.xlsx&quot;)]" DisplayName="If :excel path" sap:VirtualizedContainerService.HintSize="484,470" sap2010:WorkflowViewState.IdRef="If_5">
+                            <If Condition="[item.ToString.Contains(&quot;.xlsx&quot;)]" DisplayName="If :excel path" sap:VirtualizedContainerService.HintSize="931,719" sap2010:WorkflowViewState.IdRef="If_5">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -460,31 +523,67 @@
                                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[str_workFlowName+&quot;Get excel file Name--&gt;&quot;+item.ToString]" />
                                 </Sequence>
                               </If.Then>
+                              <If.Else>
+                                <uma:Office365ApplicationScope ApplicationSecret="{x:Null}" CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" OAuth2Username="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" Timeout="{x:Null}" sap2010:Annotation.AnnotationText="To  get mail from outlook." ApplicationId="[in_Config(&quot;GMUSA_AR_ApplicationID&quot;).ToString]" AuthenticationType="UsernameAndPassword" DisplayName="Microsoft Office 365 Scope : To get outlook mail" Environment="Default" sap:VirtualizedContainerService.HintSize="510,561" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_4" OAuthApplication="UiPath" SecurePassword="[str_mailpassword]" Services="Mail" Tenant="[in_Config(&quot;GMUSA_AR_TenantID&quot;).ToString]" Username="[str_mailuser]">
+                                  <uma:Office365ApplicationScope.Body>
+                                    <ActivityAction x:TypeArguments="mg:GraphServiceClient">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="mg:GraphServiceClient" Name="ParentScope" />
+                                      </ActivityAction.Argument>
+                                      <Sequence sap:VirtualizedContainerService.HintSize="476,444" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <umam:ReplyToMail Account="{x:Null}" AddBCC="{x:Null}" AddTo="{x:Null}" AttachmentsCollection="{x:Null}" AddCC="[{in_Config(&quot;GMUSA_AR_Dispatcher_Mail_CC&quot;).ToString}]" Body="Dear Sender, &#xD;&#xA;&#xD;&#xA;The Billing Register for the attached invoices is missing. Please send the Billing Register (in the specified format that was shared during the UAT stage) and the respective invoice zip folder in an email.&#xD;&#xA; &#xD;&#xA;Regards,&#xD;&#xA;AR Bot." DisplayName="Reply to Mail" sap:VirtualizedContainerService.HintSize="434,352" sap2010:WorkflowViewState.IdRef="ReplyToMail_3" Importance="Normal" IsDraft="False" Message="[CType(CurrentMail, UiPath.MicrosoftOffice365.Models.Office365Message)]" NewSubject="Missing Billing Register / Invoice Listing file" ReplyToAll="False">
+                                          <umam:ReplyToMail.Attachments>
+                                            <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                                          </umam:ReplyToMail.Attachments>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </umam:ReplyToMail>
+                                      </Sequence>
+                                    </ActivityAction>
+                                  </uma:Office365ApplicationScope.Body>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </uma:Office365ApplicationScope>
+                              </If.Else>
                             </If>
-                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="931,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
                               <ui:CommentOut.Body>
-                                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="526,561" sap2010:WorkflowViewState.IdRef="Sequence_23">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <If Condition="[item.ToString.Contains(&quot;.zip&quot;)]" DisplayName="If:zip path" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_6">
+                                  <If Condition="[item.ToString.Contains(&quot;.zip&quot;)]" DisplayName="If:zip path" sap:VirtualizedContainerService.HintSize="484,469" sap2010:WorkflowViewState.IdRef="If_6">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <If.Then>
-                                      <Sequence DisplayName="zip path" sap:VirtualizedContainerService.HintSize="304,244" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                      <Sequence DisplayName="zip path" sap:VirtualizedContainerService.HintSize="376,283" sap2010:WorkflowViewState.IdRef="Sequence_20">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                        <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:String">[out_strZipFilePath]</OutArgument>
                                           </Assign.To>
@@ -492,10 +591,10 @@
                                             <InArgument x:TypeArguments="x:String">[item.ToString]</InArgument>
                                           </Assign.Value>
                                         </Assign>
-                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="262,52" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[str_workFlowName+&quot;Get zip file Name--&gt;&quot;+item.ToString]">
+                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[str_workFlowName+&quot;Get zip file Name--&gt;&quot;+item.ToString]">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
@@ -523,7 +622,7 @@
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:ForEach>
                   </Sequence>
-                  <Sequence DisplayName="RecipientEmail" sap:VirtualizedContainerService.HintSize="839,283" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                  <Sequence DisplayName="RecipientEmail" sap:VirtualizedContainerService.HintSize="1051,383" sap2010:WorkflowViewState.IdRef="Sequence_21">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -536,6 +635,14 @@
                       </Assign.To>
                       <Assign.Value>
                         <InArgument x:TypeArguments="x:String">[CurrentMail.from.Address.ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[out_MailReceivedDateTime]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[(DateTime.Parse(CurrentMail.Headers("Date"))).ToString("MM/dd/yyyy HH:mm:ss")]</InArgument>
                       </Assign.Value>
                     </Assign>
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Info" Message="[str_workFlowName+&quot;RecipientEmail--&gt;&quot;+ out_RecipientEmail]">

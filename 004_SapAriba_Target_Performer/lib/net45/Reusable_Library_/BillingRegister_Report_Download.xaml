@@ -22,7 +22,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>701,2910</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1043,2818</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Test_Screenshotdemo_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="41">
@@ -110,7 +110,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Download_BillingRegister" sap:VirtualizedContainerService.HintSize="694,2845" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Download_BillingRegister" sap:VirtualizedContainerService.HintSize="634,2753" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_BillingRegister" />
       <Variable x:TypeArguments="x:String" Name="str_BillingRegister_FileName" />
@@ -122,9 +122,9 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="632,2734" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="592,2661" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence DisplayName="Getting Queue Name and  Billing Register Details from the queue" sap:VirtualizedContainerService.HintSize="594,2506" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Getting Queue Name and  Billing Register Details from the queue" sap:VirtualizedContainerService.HintSize="554,2434" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <Sequence.Variables>
             <Variable x:TypeArguments="scg:IEnumerable(ui:QueueItem)" Name="QueueList" />
             <Variable x:TypeArguments="ui:WorkbookApplication" Name="workbook_sheet" />
@@ -135,9 +135,9 @@
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="532,92" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Billing Register Download Started&quot;]" />
-          <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Reference="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="StartsWith" sap:VirtualizedContainerService.HintSize="532,80" sap2010:WorkflowViewState.IdRef="GetQueueItems_1" QueueItemStates="New, InProgress, Failed, Successful" QueueName="[in_str_QueueName]" Result="[QueueList]" Top="1" />
-          <Assign sap:VirtualizedContainerService.HintSize="532,61" sap2010:WorkflowViewState.IdRef="Assign_3">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="512,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Billing Register Download Started&quot;]" />
+          <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Reference="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="StartsWith" sap:VirtualizedContainerService.HintSize="512,79" sap2010:WorkflowViewState.IdRef="GetQueueItems_1" QueueItemStates="New, InProgress, Failed, Successful" QueueName="[in_str_QueueName]" Result="[QueueList]" Top="1" />
+          <Assign sap:VirtualizedContainerService.HintSize="512,60" sap2010:WorkflowViewState.IdRef="Assign_3">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[str_BillingRegisterFilePath]</OutArgument>
             </Assign.To>
@@ -145,25 +145,25 @@
               <InArgument x:TypeArguments="x:String">["BillingRegisterFile_"+System.DateTime.Now.ToString("dd_MM_yyyy_mm_ss")]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:ForEach x:TypeArguments="ui:QueueItem" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="532,2042" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[QueueList]">
+          <ui:ForEach x:TypeArguments="ui:QueueItem" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="512,1992" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[QueueList]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="ui:QueueItem">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="ui:QueueItem" Name="item" />
                 </ActivityAction.Argument>
-                <Sequence sap:VirtualizedContainerService.HintSize="496,1917" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence sap:VirtualizedContainerService.HintSize="476,1868" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uma:Office365ApplicationScope CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" Timeout="{x:Null}" ApplicationId="[in_GMUSA_AR_ApplicationID]" ApplicationSecret="[in_GMUSA_AR_ApplicationSecret]" AuthenticationType="UsernameAndPassword" DisplayName="Microsoft Office 365 Scope ( Share Point)" Environment="Global" sap:VirtualizedContainerService.HintSize="434,1217" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuthApplication="UiPath" SecurePassword="[in_sec_GMUSA_AR_SharePoint_Pass]" Services="Files" Tenant="[in_GMUSA_AR_TenantID]" Username="[in_str_GMUSA_AR_SharePoint_User]">
+                  <uma:Office365ApplicationScope CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" Timeout="{x:Null}" ApplicationId="[in_GMUSA_AR_ApplicationID]" ApplicationSecret="[in_GMUSA_AR_ApplicationSecret]" AuthenticationType="UsernameAndPassword" DisplayName="Microsoft Office 365 Scope ( Share Point)" Environment="Global" sap:VirtualizedContainerService.HintSize="434,1186" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuthApplication="UiPath" SecurePassword="[in_sec_GMUSA_AR_SharePoint_Pass]" Services="Files" Tenant="[in_GMUSA_AR_TenantID]" Username="[in_str_GMUSA_AR_SharePoint_User]">
                     <uma:Office365ApplicationScope.Body>
                       <ActivityAction x:TypeArguments="mg:GraphServiceClient">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="mg:GraphServiceClient" Name="ParentScope" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,1130" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1100" sap2010:WorkflowViewState.IdRef="Sequence_2">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="mg:DriveItem" Name="Folder" />
                             <Variable x:TypeArguments="mg:DriveItem" Name="DestinationFolder" />
@@ -183,7 +183,7 @@
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+                          <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_1">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[str_BillingRegister_FileName]</OutArgument>
                             </Assign.To>
@@ -191,7 +191,7 @@
                               <InArgument x:TypeArguments="x:String">[path.GetFileName(item.SpecificContent("SharePointLocation").ToString)]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <Assign sap:VirtualizedContainerService.HintSize="338,61" sap2010:WorkflowViewState.IdRef="Assign_2">
+                          <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[str_BillingRegister_FilePath]</OutArgument>
                             </Assign.To>
@@ -199,11 +199,11 @@
                               <InArgument x:TypeArguments="x:String">[item.SpecificContent("SharePointLocation").ToString.Replace("\"+str_BillingRegister_FileName,"")]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[str_BillingRegister_FilePath]" />
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[str_BillingRegister_FileName]" />
-                          <umaf:FindFilesAndFolders DriveMetadata="{x:Null}" Results="{x:Null}" DisplayName="Find Files And Folders" DriveName="Documents" First="[FinalFile]" sap:VirtualizedContainerService.HintSize="338,86" sap2010:WorkflowViewState.IdRef="FindFilesAndFolders_1" Query="[str_BillingRegister_FileName]" SiteUrl="https://insidemedia.sharepoint.com/sites/GRMUSA-AR/" Subfolder="[str_BillingRegister_FilePath]" />
-                          <umaf:DownloadFile DriveMetadata="{x:Null}" DisplayName="Download File" File="[FinalFile]" sap:VirtualizedContainerService.HintSize="338,160" sap2010:WorkflowViewState.IdRef="DownloadFile_1" LocalFilePath="[in_config(&quot;DownloadFolderpath&quot;).ToString+&quot;\&quot;+str_BillingRegister_FileName]" />
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,92" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[str_BillingRegister_FileName]">
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[str_BillingRegister_FilePath]" />
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[str_BillingRegister_FileName]" />
+                          <umaf:FindFilesAndFolders DriveMetadata="{x:Null}" Results="{x:Null}" DisplayName="Find Files And Folders" DriveName="Documents" First="[FinalFile]" sap:VirtualizedContainerService.HintSize="334,85" sap2010:WorkflowViewState.IdRef="FindFilesAndFolders_2" Query="[str_BillingRegister_FileName]" SiteUrl="https://insidemedia.sharepoint.com/sites/GRMUSA-AR/" Subfolder="[str_BillingRegister_FilePath]" />
+                          <umaf:DownloadFile DriveMetadata="{x:Null}" DisplayName="Download File" File="[FinalFile]" sap:VirtualizedContainerService.HintSize="334,159" sap2010:WorkflowViewState.IdRef="DownloadFile_1" LocalFilePath="[in_config(&quot;DownloadFolderpath&quot;).ToString+&quot;\&quot;+str_BillingRegister_FileName]" />
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[str_BillingRegister_FileName]">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -211,7 +211,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:LogMessage>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[str_BillingRegister_FileName]">
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[str_BillingRegister_FileName]">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -229,7 +229,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uma:Office365ApplicationScope>
-                  <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,259.333333333333" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" Workbook="[workbook_sheet]" WorkbookPath="[in_config(&quot;DownloadFolderpath&quot;).ToString+str_BillingRegister_FileName]">
+                  <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,260" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" Workbook="[workbook_sheet]" WorkbookPath="[in_config(&quot;DownloadFolderpath&quot;).ToString+str_BillingRegister_FileName]">
                     <ui:ExcelApplicationScope.Body>
                       <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                         <ActivityAction.Argument>

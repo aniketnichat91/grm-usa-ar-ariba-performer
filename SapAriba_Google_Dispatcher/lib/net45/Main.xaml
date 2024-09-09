@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1276,803</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1021,802</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Main2_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="45">
@@ -101,10 +101,9 @@
       <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <StateMachine InitialState="{x:Reference __ReferenceID3}" sap2010:Annotation.AnnotationText="[Process title]&#xA;[Process description]&#xA;[Additional information (e.g., author, contact information and applications involved and required external setup)]" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="634,738" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+  <StateMachine InitialState="{x:Reference __ReferenceID3}" sap2010:Annotation.AnnotationText="[Process title]&#xA;[Process description]&#xA;[Additional information (e.g., author, contact information and applications involved and required external setup)]" DisplayName="General Business Process" sap:VirtualizedContainerService.HintSize="634,737" sap2010:WorkflowViewState.IdRef="StateMachine_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -115,7 +114,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Get the next transaction to be processed." DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="251,113" sap2010:WorkflowViewState.IdRef="State_4">
+    <State x:Name="__ReferenceID0" sap2010:Annotation.AnnotationText="Get the next transaction to be processed." DisplayName="Get Transaction Data" sap:VirtualizedContainerService.HintSize="251,112" sap2010:WorkflowViewState.IdRef="State_4">
       <State.Entry>
         <Sequence sap2010:Annotation.AnnotationText="Retrieve a new transaction data to be processed.&#xA;The TransactionNumber variable holds the current transaction number and incrementing this variable makes the framework retrieve the next transaction. If the framework is retrying a failed transaction, this variable is not incremented until the maximum number of retry attempts is reached." DisplayName="Retrieve Data" sap:VirtualizedContainerService.HintSize="945,788" sap2010:WorkflowViewState.IdRef="Sequence_25">
           <Sequence.Variables>
@@ -260,7 +259,7 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">224.333333333333,212.333333333333</av:Point>
-          <av:Size x:Key="ShapeSize">251,113</av:Size>
+          <av:Size x:Key="ShapeSize">251,112</av:Size>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
           <x:Double x:Key="StateContainerWidth">217</x:Double>
           <x:Double x:Key="StateContainerHeight">34</x:Double>
@@ -279,7 +278,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Transition.To>
-            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="144,120" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="144,119" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
               <State.Entry>
                 <TryCatch DisplayName="Try to close all aplications" sap:VirtualizedContainerService.HintSize="701,988" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                   <sap:WorkflowViewStateService.ViewState>
@@ -398,7 +397,7 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">18,208</av:Point>
-                  <av:Size x:Key="ShapeSize">144,120</av:Size>
+                  <av:Size x:Key="ShapeSize">144,119</av:Size>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   <x:Double x:Key="StateContainerWidth">110</x:Double>
                   <x:Double x:Key="StateContainerHeight">26</x:Double>
@@ -861,7 +860,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <Transition.Condition>[SystemException IsNot Nothing]</Transition.Condition>
                   <Transition.To>
-                    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="740,4205" sap2010:WorkflowViewState.IdRef="State_2">
+                    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="254,103" sap2010:WorkflowViewState.IdRef="State_2">
                       <State.Entry>
                         <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="694,3786" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                           <sap:WorkflowViewStateService.ViewState>
@@ -1108,39 +1107,17 @@
                                     </Sequence>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ReadMail workflow" sap:VirtualizedContainerService.HintSize="496,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="WorkFlows\ReadMail.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-                                          <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
-                                        </InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_saveAttachmentpath">
-                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;saveAttachmentPath&quot;).ToString.Replace(&quot;{UserName}&quot;,Environment.UserName)" />
-                                        </InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_strNoMailFoundException">
-                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;noMailFound&quot;).ToString" />
-                                        </InArgument>
-                                        <OutArgument x:TypeArguments="x:String" x:Key="out_strExcelFilePath">
-                                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ExcelFilePath" />
-                                        </OutArgument>
-                                        <OutArgument x:TypeArguments="x:String" x:Key="out_strZipFilePath">
-                                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_ZipFilePath" />
-                                        </OutArgument>
-                                        <OutArgument x:TypeArguments="x:String" x:Key="out_RecipientEmail">
-                                          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="str_RecipientEmail" />
-                                        </OutArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_strMailDateTime">
-                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_DateTime" />
-                                        </InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_StrMailCredential">
-                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="config(&quot;GMUSA_AR_MailCredential&quot;).ToString" />
-                                        </InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_strTenantID">
-                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;GMUSA_AR_TenantID&quot;).ToString" />
-                                        </InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_strApplicationID">
-                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;GMUSA_AR_ApplicationID&quot;).ToString" />
-                                        </InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_StrArFolderPath">
-                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;arFolderPath&quot;).ToString.Replace(&quot;{UserName}&quot;,Environment.UserName)" />
-                                        </InArgument>
+                                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_saveAttachmentpath">[Config("saveAttachmentPath").ToString.Replace("{UserName}",Environment.UserName)]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_strNoMailFoundException">[Config("noMailFound").ToString]</InArgument>
+                                        <OutArgument x:TypeArguments="x:String" x:Key="out_strExcelFilePath">[str_ExcelFilePath]</OutArgument>
+                                        <OutArgument x:TypeArguments="x:String" x:Key="out_strZipFilePath">[str_ZipFilePath]</OutArgument>
+                                        <OutArgument x:TypeArguments="x:String" x:Key="out_RecipientEmail">[str_RecipientEmail]</OutArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_strMailDateTime">[str_DateTime]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_StrMailCredential">[config("GMUSA_AR_MailCredential").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_strTenantID">[Config("GMUSA_AR_TenantID").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_strApplicationID">[Config("GMUSA_AR_ApplicationID").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_StrArFolderPath">[Config("arFolderPath").ToString.Replace("{UserName}",Environment.UserName)]</InArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                     </ui:InvokeWorkflowFile>
                                     <Sequence DisplayName="Sharepoint,Excel and Invoice Location Path" sap:VirtualizedContainerService.HintSize="496,81" sap2010:WorkflowViewState.IdRef="Sequence_36">
@@ -1216,18 +1193,10 @@
                                     </Sequence>
                                     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke DownloadExcelFilter workflow" sap:VirtualizedContainerService.HintSize="496,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_32" UnSafe="False" WorkflowFileName="WorkFlows\DownloadExcelFilter.xaml">
                                       <ui:InvokeWorkflowFile.Arguments>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_StrExcelFilePath">
-                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_ExcelFilePath" />
-                                        </InArgument>
-                                        <InArgument x:TypeArguments="s:String[]" x:Key="in_arryColumnName">
-                                          <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="Config(&quot;QueueColumnName&quot;).ToString.Trim.Split(&quot;;&quot;c)" />
-                                        </InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_StrArFolderPath">
-                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;arFolderPath&quot;).ToString.Replace(&quot;{UserName}&quot;,Environment.UserName)" />
-                                        </InArgument>
-                                        <InArgument x:TypeArguments="x:String" x:Key="in_strMailDateTime">
-                                          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="str_DateTime" />
-                                        </InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_StrExcelFilePath">[str_ExcelFilePath]</InArgument>
+                                        <InArgument x:TypeArguments="s:String[]" x:Key="in_arryColumnName">[Config("QueueColumnName").ToString.Trim.Split(";"c)]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_StrArFolderPath">[Config("arFolderPath").ToString.Replace("{UserName}",Environment.UserName)]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_strMailDateTime">[str_DateTime]</InArgument>
                                       </ui:InvokeWorkflowFile.Arguments>
                                     </ui:InvokeWorkflowFile>
                                     <Sequence DisplayName="add TransactionData DownlodedExcel" sap:VirtualizedContainerService.HintSize="496,81" sap2010:WorkflowViewState.IdRef="Sequence_35">
@@ -1294,7 +1263,7 @@
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">223,6.66666666666666</av:Point>
-                          <av:Size x:Key="ShapeSize">254,104</av:Size>
+                          <av:Size x:Key="ShapeSize">254,103</av:Size>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           <x:Double x:Key="StateContainerWidth">220</x:Double>
                           <x:Double x:Key="StateContainerHeight">25</x:Double>
