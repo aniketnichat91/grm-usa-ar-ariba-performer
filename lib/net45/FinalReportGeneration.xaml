@@ -12,7 +12,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1458,4229</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1217,4229</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>FinalReportGeneration_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="64">
@@ -100,7 +100,6 @@
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="FinalReportGeneration" sap:VirtualizedContainerService.HintSize="839,4164" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -185,7 +184,7 @@
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:ExecuteQuery.Parameters>
     </ui:ExecuteQuery>
-    <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[dt_TotalAmountSum]" DisplayName="Run query total invoices count and amount" ExistingDbConnection="[in_DbConnection]" sap:VirtualizedContainerService.HintSize="797,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_6" Sql="select (select sum(CAST(Log_Total_Amount as DECIMAL(9,2))) from AR_Log_Txn  where convert(date,Log_Insertion_Date_Time)&gt;convert(date,GETDATE()-1) and (Log_Txn_Status like '%Failed%' or Log_Txn_Status like'%InProgress%' or  Log_Txn_Status is null or Log_Txn_Status ='') and Log_CM_ID=1) as Failed,(select sum(CAST(Log_Total_Amount as DECIMAL(9,2))) from AR_Log_Txn  where convert(date,Log_Insertion_Date_Time)&gt;convert(date,GETDATE()-1) and Log_Txn_Status like '%Successful%' and Log_CM_ID=1) as Successful">
+    <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[dt_TotalAmountSum]" DisplayName="Run query total invoices count and amount" ExistingDbConnection="[in_DbConnection]" sap:VirtualizedContainerService.HintSize="797,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_6" Sql="select (select sum(CAST(Log_Total_Amount as DECIMAL(20,2))) from AR_Log_Txn  where convert(date,Log_Insertion_Date_Time)&gt;convert(date,GETDATE()-1) and (Log_Txn_Status like '%Failed%' or Log_Txn_Status like'%InProgress%' or  Log_Txn_Status is null or Log_Txn_Status ='') and Log_CM_ID=1) as Failed,(select sum(CAST(Log_Total_Amount as DECIMAL(20,2))) from AR_Log_Txn  where convert(date,Log_Insertion_Date_Time)&gt;convert(date,GETDATE()-1) and Log_Txn_Status like '%Successful%' and Log_CM_ID=1) as Successful">
       <ui:ExecuteQuery.Parameters>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:ExecuteQuery.Parameters>
@@ -281,6 +280,7 @@
           <ui:InvokeWorkflowFile.Arguments>
             <InArgument x:TypeArguments="x:String" x:Key="in_CredentialName">GMUSA_AR_Target_Credentials</InArgument>
             <InArgument x:TypeArguments="x:String" x:Key="in_CM_ID">1</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_SapInvoicesReportPath">C:\Users\grmusarpadev17\Documents\AR_Automation\USA Target\SAP Invoices Report\</InArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </TryCatch.Try>

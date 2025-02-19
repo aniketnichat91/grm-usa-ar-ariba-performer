@@ -18,7 +18,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>652,3214</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1152,3392</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>uploadFinalReportonsharepoint_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="37">
@@ -62,7 +62,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="39">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="78">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -102,9 +102,10 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="uploadFinalReportonsharepoint" sap:VirtualizedContainerService.HintSize="552,3149" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="uploadFinalReportonsharepoint" sap:VirtualizedContainerService.HintSize="556,3327" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ss:SecureString" Name="str_GMUSA_AR_SharePoint_Pass" />
       <Variable x:TypeArguments="x:String" Name="str_GMUSA_AR_SharePoint_User" />
@@ -115,7 +116,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_config(&quot;GMUSA_AR_SharePointCredential&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential( Share Point Credential )" sap:VirtualizedContainerService.HintSize="510,180" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[str_GMUSA_AR_SharePoint_Pass]" Username="[str_GMUSA_AR_SharePoint_User]">
+    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_config(&quot;GMUSA_AR_SharePointCredential&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential( Share Point Credential )" sap:VirtualizedContainerService.HintSize="514,180" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[str_GMUSA_AR_SharePoint_Pass]" Username="[str_GMUSA_AR_SharePoint_User]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -123,7 +124,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:GetRobotCredential>
-    <Assign sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+    <Assign sap:VirtualizedContainerService.HintSize="514,60" sap2010:WorkflowViewState.IdRef="Assign_9">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strDateTime]</OutArgument>
       </Assign.To>
@@ -131,13 +132,13 @@
         <InArgument x:TypeArguments="x:String">[Now.ToString("yyyy-MM-dd")]</InArgument>
       </Assign.Value>
     </Assign>
-    <uma:Office365ApplicationScope CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" OAuth2Username="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" Timeout="{x:Null}" ApplicationId="[in_GMUSA_AR_ApplicationID.ToString]" ApplicationSecret="[in_GMUSA_AR_ApplicationSecret.ToString]" AuthenticationType="UsernameAndPassword" DisplayName="Private: Microsoft Office 365 Scope ( Share Point)" Environment="Global" sap:VirtualizedContainerService.HintSize="510,2737" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuthApplication="UiPath" SecurePassword="[str_GMUSA_AR_SharePoint_Pass]" Services="Files" Tenant="[in_GMUSA_AR_TenantID.ToString]" Username="[str_GMUSA_AR_SharePoint_User]">
+    <uma:Office365ApplicationScope CertificateAsBase64="{x:Null}" CertificatePassword="{x:Null}" ContinueOnError="{x:Null}" OAuth2Username="{x:Null}" Password="{x:Null}" SecureApplicationSecret="{x:Null}" Timeout="{x:Null}" ApplicationId="[in_GMUSA_AR_ApplicationID.ToString]" ApplicationSecret="[in_GMUSA_AR_ApplicationSecret.ToString]" AuthenticationType="UsernameAndPassword" DisplayName="Private: Microsoft Office 365 Scope ( Share Point)" Environment="Global" sap:VirtualizedContainerService.HintSize="514,2915" sap2010:WorkflowViewState.IdRef="Office365ApplicationScope_1" OAuthApplication="UiPath" SecurePassword="[str_GMUSA_AR_SharePoint_Pass]" Services="Files" Tenant="[in_GMUSA_AR_TenantID.ToString]" Username="[str_GMUSA_AR_SharePoint_User]">
       <uma:Office365ApplicationScope.Body>
         <ActivityAction x:TypeArguments="mg:GraphServiceClient">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="mg:GraphServiceClient" Name="ParentScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,2651" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="480,2829" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="mg:DriveItem" Name="Folder" />
               <Variable x:TypeArguments="mg:DriveItem" Name="DestinationFolder" />
@@ -157,14 +158,14 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Finding the Folder Name in Config Exists&quot;]" />
-            <umaf:FindFilesAndFolders DriveMetadata="{x:Null}" Results="{x:Null}" DisplayName="Find Files And Folders" DriveName="[in_GMUSA_AR_DriveName_Target]" First="[Folder]" sap:VirtualizedContainerService.HintSize="434,85" sap2010:WorkflowViewState.IdRef="FindFilesAndFolders_1" Query="[in_GMUSA_AR_CLIENTNAME_Target]" SiteUrl="[in_GMUSA_AR_SiteUrl_Target]" Subfolder="[in_GMUSA_AR_AGENCYNAME_Target]" />
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,183" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Finding the Folder Name in Config Exists&quot;]" />
+            <umaf:FindFilesAndFolders DriveMetadata="{x:Null}" Results="{x:Null}" DisplayName="Find Files And Folders" DriveName="[in_GMUSA_AR_DriveName_Target]" First="[Folder]" sap:VirtualizedContainerService.HintSize="438,85" sap2010:WorkflowViewState.IdRef="FindFilesAndFolders_1" Query="[in_GMUSA_AR_CLIENTNAME_Target]" SiteUrl="[in_GMUSA_AR_SiteUrl_Target]" Subfolder="[in_GMUSA_AR_AGENCYNAME_Target]" />
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,361" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <TryCatch.Try>
                 <umaf:CreateFolder DriveMetadata="{x:Null}" DisplayName="Create Folder" Folder="[Folder]" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="CreateFolder_1" Name="[Now.ToString(&quot;yyyy-MM-dd&quot;)]" ParentItem="[Folder]" />
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -180,7 +181,7 @@
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Uploading file to Sharepoint Started&quot;]">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Uploading file to Sharepoint Started&quot;]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -188,7 +189,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:LogMessage>
-            <umaf:UploadFile CloudFileName="{x:Null}" DriveMetadata="{x:Null}" Metadata="{x:Null}" ConflictBehavior="Replace" Destination="[Folder]" DisplayName="Upload File : Excel" sap:VirtualizedContainerService.HintSize="434,249" sap2010:WorkflowViewState.IdRef="UploadFile_2" LocalFilePath="[in_GMUSA_AR_DownloadFileLocalPath+&quot;.xlsx&quot;]" Result="[str_File]">
+            <umaf:UploadFile CloudFileName="{x:Null}" DriveMetadata="{x:Null}" Metadata="{x:Null}" ConflictBehavior="Replace" Destination="[Folder]" DisplayName="Upload File : Excel" sap:VirtualizedContainerService.HintSize="438,249" sap2010:WorkflowViewState.IdRef="UploadFile_2" LocalFilePath="[in_GMUSA_AR_DownloadFileLocalPath+&quot;.xlsx&quot;]" Result="[str_File]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -196,7 +197,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </umaf:UploadFile>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Uploading File to Sharepoint is succesful&quot;]">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Uploading File to Sharepoint is succesful&quot;]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -204,7 +205,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:LogMessage>
-            <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign sap:VirtualizedContainerService.HintSize="438,60" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[driver_Weblink]</OutArgument>
               </Assign.To>
@@ -212,7 +213,7 @@
                 <InArgument x:TypeArguments="x:String">[str_File.WebUrl.ToString.Replace(" ","%20")]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign DisplayName="Email Body Assign" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign DisplayName="Email Body Assign" sap:VirtualizedContainerService.HintSize="438,60" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[str_EmailBody]</OutArgument>
               </Assign.To>
@@ -220,7 +221,7 @@
                 <InArgument x:TypeArguments="x:String">[in_Config("Email_Body").ToString.Replace("{0}",driver_Weblink)]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="CommentOut_4">
               <ui:CommentOut.Body>
                 <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <sap:WorkflowViewStateService.ViewState>
@@ -245,7 +246,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:CommentOut>
-            <Assign DisplayName="Email Address Assign" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+            <Assign DisplayName="Email Address Assign" sap:VirtualizedContainerService.HintSize="438,60" sap2010:WorkflowViewState.IdRef="Assign_12">
               <Assign.To>
                 <OutArgument x:TypeArguments="s:String[]">[SentEmail_Add]</OutArgument>
               </Assign.To>
@@ -253,7 +254,7 @@
                 <InArgument x:TypeArguments="s:String[]">["v-aniket.nichat@partner-groupm.com".Split(";"c)]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+            <Assign sap:VirtualizedContainerService.HintSize="438,60" sap2010:WorkflowViewState.IdRef="Assign_11">
               <Assign.To>
                 <OutArgument x:TypeArguments="s:String[]">[sentEmail_CC]</OutArgument>
               </Assign.To>
@@ -261,7 +262,7 @@
                 <InArgument x:TypeArguments="s:String[]">[in_Config("GMUSA_AR_EmailCC").ToString.Split(";"c)]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="434,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
               <ui:CommentOut.Body>
                 <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="695,143" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
@@ -336,7 +337,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:CommentOut>
-            <Assign DisplayName="Success INvoices Assign" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+            <Assign DisplayName="Success INvoices Assign" sap:VirtualizedContainerService.HintSize="438,60" sap2010:WorkflowViewState.IdRef="Assign_7">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[str_EmailBody]</OutArgument>
               </Assign.To>
@@ -344,7 +345,7 @@
                 <InArgument x:TypeArguments="x:String">[str_EmailBody.Replace("TotalTarget",in_totalinvoicecount.ToString)]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:MultipleAssign DisplayName="Email Template Multiple Assign" sap:VirtualizedContainerService.HintSize="434,193" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+            <ui:MultipleAssign DisplayName="Email Template Multiple Assign" sap:VirtualizedContainerService.HintSize="438,193" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -382,8 +383,8 @@
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
             </ui:MultipleAssign>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[if(SentEmail_Add.count&gt;0,&quot;Sending mail to: &quot;+SentEmail_Add(0).ToString,&quot;Sent Email To filed is Empty&quot;)]" />
-            <umam:SendMail Account="{x:Null}" AttachmentsCollection="{x:Null}" From="{x:Null}" ReplyTo="{x:Null}" Bcc="[in_Config(&quot;GMUSA_AR_EmailBcc&quot;).ToString.Split(&quot;;&quot;c)]" Body="[str_EmailBody]" Cc="[sentEmail_CC]" DisplayName="Completion Send Mail" sap:VirtualizedContainerService.HintSize="434,352" sap2010:WorkflowViewState.IdRef="SendMail_1" Importance="Normal" IsBodyHTML="True" IsDraft="False" Subject="[&quot;[&quot;+in_config(&quot;USARegion&quot;).ToString+&quot;-&quot;+in_config(&quot;BusinessFunction&quot;).ToString+&quot;] - &quot;+in_config(&quot;SystemName&quot;).ToString+&quot; - Target -&quot;+in_config(&quot;BotStatusReport&quot;).ToString+&quot; -&quot;+ now.ToString(&quot;dd/MM/yyyy&quot;)]" To="[SentEmail_Add]">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[if(SentEmail_Add.count&gt;0,&quot;Sending mail to: &quot;+SentEmail_Add(0).ToString,&quot;Sent Email To filed is Empty&quot;)]" />
+            <umam:SendMail Account="{x:Null}" From="{x:Null}" ReplyTo="{x:Null}" AttachmentsCollection="[{in_GMUSA_AR_DownloadFileLocalPath+&quot;.xlsx&quot;}]" Bcc="[in_Config(&quot;GMUSA_AR_EmailBcc&quot;).ToString.Split(&quot;;&quot;c)]" Body="[str_EmailBody]" Cc="[sentEmail_CC]" DisplayName="Completion Send Mail" sap:VirtualizedContainerService.HintSize="438,352" sap2010:WorkflowViewState.IdRef="SendMail_1" Importance="Normal" IsBodyHTML="True" IsDraft="False" Subject="[&quot;[&quot;+in_config(&quot;USARegion&quot;).ToString+&quot;-&quot;+in_config(&quot;BusinessFunction&quot;).ToString+&quot;] - &quot;+in_config(&quot;SystemName&quot;).ToString+&quot; - Target -&quot;+in_config(&quot;BotStatusReport&quot;).ToString+&quot; -&quot;+ now.ToString(&quot;dd/MM/yyyy&quot;)]" To="[SentEmail_Add]">
               <umam:SendMail.Attachments>
                 <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
               </umam:SendMail.Attachments>

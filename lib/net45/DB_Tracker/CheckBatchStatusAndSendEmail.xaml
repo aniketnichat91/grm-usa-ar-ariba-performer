@@ -12,7 +12,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1021,1826</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1152,1826</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CheckBatchStatusAndSendEmail_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="78">
@@ -181,7 +181,7 @@
                     <OutArgument x:TypeArguments="x:String">[str_EmailBody]</OutArgument>
                   </ui:AssignOperation.To>
                   <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:String">["Hi,"+Environment.NewLine+"Please find the batch execution status For Target AR Process On "+Environment.MachineName+Environment.NewLine+Environment.NewLine+ "The batch process "+dt_ProcessedBatch.Rows.Count.ToString+Environment.NewLine+Environment.NewLine+"Thanks,"+Environment.NewLine+"AOC Support"]</InArgument>
+                    <InArgument x:TypeArguments="x:String">["Hi,"+Environment.NewLine+"Please find the batch execution status For Target AR Process On "+Environment.MachineName+Environment.NewLine+Environment.NewLine+ "The batch process "+int_ProcessedInvoiceCount.ToString+Environment.NewLine+Environment.NewLine+"Thanks,"+Environment.NewLine+"AOC Support"]</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
               </scg:List>

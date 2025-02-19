@@ -1,12 +1,13 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ar_postcheck_workflow" this:ar_postcheck_workflow.in_CredentialName="GMUSA_AR_Target_Credentials" this:ar_postcheck_workflow.in_CM_ID="1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ar_postcheck_workflow" this:ar_postcheck_workflow.in_CredentialName="GMUSA_AR_Target_Credentials" this:ar_postcheck_workflow.in_CM_ID="1" this:ar_postcheck_workflow.in_SapInvoicesReportPath="C:\Users\grmusarpadev17\Documents\AR_Automation\USA Target\SAP Invoices Report\" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_CredentialName" Type="InArgument(x:String)" />
     <x:Property Name="in_CM_ID" Type="InArgument(x:String)" />
+    <x:Property Name="in_SapInvoicesReportPath" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1152,6040</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1118,6315</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ar_postcheck_workflow_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="84">
@@ -95,10 +96,12 @@
       <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence-Main" sap:VirtualizedContainerService.HintSize="839,5975" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence DisplayName="Sequence-Main" sap:VirtualizedContainerService.HintSize="873,6250" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="DT_Success_invoices" />
       <Variable x:TypeArguments="ui:DatabaseConnection" Name="DBConnection" />
@@ -112,9 +115,9 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="797,112" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//Important Checks&#xA;1.  Change The Login Assets.&#xA;2.  Check and Update SUCCESS Query for specific clients." />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="797,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;AR_Postcheck_Workflow --&gt; Started&quot;]" />
-    <TryCatch DisplayName="Try Catch-close or kill chrome" sap:VirtualizedContainerService.HintSize="797,51" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+    <ui:Comment sap:VirtualizedContainerService.HintSize="831,112" sap2010:WorkflowViewState.IdRef="Comment_1" Text="//Important Checks&#xA;1.  Change The Login Assets.&#xA;2.  Check and Update SUCCESS Query for specific clients." />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="831,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;AR_Postcheck_Workflow --&gt; Started&quot;]" />
+    <TryCatch DisplayName="Try Catch-close or kill chrome" sap:VirtualizedContainerService.HintSize="831,51" sap2010:WorkflowViewState.IdRef="TryCatch_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -157,12 +160,12 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DBConnection.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="797,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="DB_Tracker\DBConnection.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DBConnection.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="831,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="DB_Tracker\DBConnection.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="ui:DatabaseConnection" x:Key="out_DBConnection">[DBConnection]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <Assign DisplayName="Assign- Target" sap:VirtualizedContainerService.HintSize="797,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Assign- Target" sap:VirtualizedContainerService.HintSize="831,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[str_SuccessQuery]</OutArgument>
       </Assign.To>
@@ -170,7 +173,7 @@
         <InArgument x:TypeArguments="x:String" xml:space="preserve">["select Log_PO_Number ,Log_Invoice_Number ,Log_Total_Amount, Log_Invoice_Date from AR_Log_Txn  where convert(date,Log_Insertion_Date_Time)&gt;=convert(date,GETDATE()-6) and Log_Txn_Status='Successful' and Log_CM_ID="+in_CM_ID+" order by Log_Txn_ID desc"]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessage DisplayName="Log Message- QRY" sap:VirtualizedContainerService.HintSize="797,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;SuccessQRY: &quot;+str_SuccessQuery]">
+    <ui:LogMessage DisplayName="Log Message- QRY" sap:VirtualizedContainerService.HintSize="831,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;SuccessQRY: &quot;+str_SuccessQuery]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -178,7 +181,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[DT_Success_invoices]" DisplayName="Run query success invoices-Target" ExistingDbConnection="[DBConnection]" sap:VirtualizedContainerService.HintSize="797,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="[str_SuccessQuery]">
+    <ui:ExecuteQuery ContinueOnError="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DataTable="[DT_Success_invoices]" DisplayName="Run query success invoices-Target" ExistingDbConnection="[DBConnection]" sap:VirtualizedContainerService.HintSize="831,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1" Sql="[str_SuccessQuery]">
       <ui:ExecuteQuery.Parameters>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:ExecuteQuery.Parameters>
@@ -189,7 +192,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ExecuteQuery>
-    <ui:LogMessage DisplayName="Log Message- Count" sap:VirtualizedContainerService.HintSize="797,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Success #Inv Count From DB: &quot;+DT_Success_invoices.RowCount.ToString]">
+    <ui:LogMessage DisplayName="Log Message- Count" sap:VirtualizedContainerService.HintSize="831,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Success #Inv Count From DB: &quot;+DT_Success_invoices.RowCount.ToString]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -197,7 +200,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:LogMessage>
-    <If Condition="[DT_Success_invoices.RowCount = 0]" sap:VirtualizedContainerService.HintSize="797,301" sap2010:WorkflowViewState.IdRef="If_4">
+    <If Condition="[DT_Success_invoices.RowCount = 0]" sap:VirtualizedContainerService.HintSize="831,301" sap2010:WorkflowViewState.IdRef="If_4">
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_19">
           <sap:WorkflowViewStateService.ViewState>
@@ -218,18 +221,18 @@
         </Sequence>
       </If.Else>
     </If>
-    <Sequence DisplayName="[UI] Sequence-Login" sap:VirtualizedContainerService.HintSize="797,1543" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="[UI] Sequence-Login" sap:VirtualizedContainerService.HintSize="831,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="str_UserName" />
         <Variable x:TypeArguments="ss:SecureString" Name="str_SecurePassword" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_CredentialName]" CacheStrategy="None" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="514,51" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[str_SecurePassword]" Username="[str_UserName]">
+      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_CredentialName]" CacheStrategy="None" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[str_SecurePassword]" Username="[str_UserName]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -237,7 +240,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:GetRobotCredential>
-      <TryCatch DisplayName="Try Catch-close or kill chrome" sap:VirtualizedContainerService.HintSize="514,51" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch DisplayName="Try Catch-close or kill chrome" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -280,13 +283,13 @@
           </Catch>
         </TryCatch.Catches>
       </TryCatch>
-      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: New Incognito Tab" sap:VirtualizedContainerService.HintSize="514,1269" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsIncognito="True" OpenMode="Always" OutUiElement="[uiElement_Browser]" ScopeGuid="56c0720e-f08d-4e57-92cf-60cb648bdf2c" Version="V1" WindowResize="Maximize">
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: New Incognito Tab" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsIncognito="True" OpenMode="Always" OutUiElement="[uiElement_Browser]" ScopeGuid="56c0720e-f08d-4e57-92cf-60cb648bdf2c" Version="V1" WindowResize="Maximize">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="480,1053" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="480,1216" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -304,7 +307,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </uix:NClick>
-              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DelayAfter="1" DelayBefore="1" DeselectAfter="True" DisplayName="Type Into 'Username'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="56c0720e-f08d-4e57-92cf-60cb648bdf2c" Text="[str_UserName]" Version="V1">
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DelayAfter="1" DelayBefore="1" DeselectAfter="True" DisplayName="Type Into 'Username'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="438,216" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="56c0720e-f08d-4e57-92cf-60cb648bdf2c" Text="[str_UserName]" Version="V1">
                 <uix:NTypeInto.Target>
                   <uix:TargetAnchorable BrowserURL="https://service.ariba.com/Supplier.aw/109569047/aw?awh=r&amp;awssk=7H6C5oKc&amp;dard=1" DesignTimeRectangle="92, 373, 342, 50" ElementType="InputBox" FriendlyName="'INPUT userid'" FullSelectorArgument="&lt;webctrl parentid='_5jy2dd' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='_5jy2dd' tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='w-txt w-txt-dsize' aaname='' /&gt;" Guid="5b29a254-7c16-4852-a966-f0d4c8e40eb8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAVoAAAA2CAYAAACGEFHjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATKSURBVHhe7dpZUxRXHIbxfKZc5CIfKQsKyC4ghKDsSzQaREVkFYgxlhEjoKmAqJhN2VwAAxINBBDDrvgP74GeTCZYlYKcqhnq+VV1zdIzp5ubh9On5x3bUFBRpQcAwP8oaCuhBQBPCC0AeEZoAcAzQgsAnhFaAPCM0AKAZ4QWADwjtADgGaEFAM8ILQB4RmgBwDNCCwCeEVoA8IzQAoBnhBYAPCO0AOAZoQUAz6ImtO++9/7WMwDYWwgtAHhGaAHAM0ILAJ5FVWirT9dYcWmFLS8vb737t8tX2i0j65DNzb3YegcAYgOhBQDPCC0AeBazoR0fn7CCohL7MC7ebXr+4OEjt0+Wlpatoem87UtIcvtz8w7b0PCDrb2b4xUWl1pL2wWLi0+0rhvfWd/dHywzO9d+uXfffV7fS0hKsc7rN+zNmzfue+vr69Z767YdzMpx+/Xds+fqbWFhwe3XuetvaLtw0R1f+7W1bhzn96kpKymr2HZcPQ4MDoWOq/NubG7ZGG/F7QcQu2IytEtLS3aksMROnjpj09N/2LNnz62uvtGuXP3WBUvfL6s4ann5BTb84KH7zFcXL1lSSrp7HYz30b4E+/RwofX03rLZ2Tn78aefXRTzjxS56GrcE1WnbH9isj16POK+Nz4xYUWl5fZ9d4/NzM7a45FRF+e6hqbQsfU3xMUfcBHXGM0tbW7ctIws6+jsssnJ39y4yWkZ7rno2AlJqe48db46T53/iapqe/XqtfsMgNgUk6F9+fJPy/kk376+dNnNMCP1DwxaanqmTUw83XrHbHV11corj1l9Y7N7rfEU3vDPKHaaSQ4ODW+9Y24WmroRSO17G42VX1BkC4uLodAe/+KkvX69GUgFOT0z21pavwzNYEdHx9zxda5ra2tWefTzUKwD9+73uzgHMQYQm2IytKIZp6KoTVFTCIOZX/vVa/bBx/u33UrLK21lZcWNV1hS5pYYAhojch1Yz/VeEFoF+1pHV2jpIBg3+F4QWo0fiBxDxsaeuBms3nsxP+9mxeHnGWw6hpYyAMSuqAttZPwCZ86e+1eENRPUrE+X4bo013KB9iu0moWOPfnVRS58W9yYdYpCGDnefwlt0/lWF8junps2vxFIzajD/wnsJrSa8eqz4Zv2sXQAxLaoCq1uSCk+WvcMNzU9/Y910O3ocl/LBQqYLsc109Ws9212EtogovqHEND56Lx2E9pg6SDyfADsDVEVWt3k0qX9gZR0t/56p++ue9Tr7Jw8d5NI9FhQXGodndfdc2264ZSeecimpqbd5f1nx45bctpBu32nz62RaizNeEdGNyO+k9Aqqqdral30FXYdVzev4hOTdxVa6e8fcP8cqqpPuxtoWjvWerJ+ucCMFohtURVa0bKBLqF1o0hrlIpPTW2dzczMuv2i8HTf7LXs3Dy3hqkt8udb4T/v0jia7X7TftVFWHYSWlG0i0rK3TG1XFFb1+B+SbDb0Cri4T/v0tj6dcPTyUm3H0DsirrQAsBeQ2gBwLOoCS0A7FWEFgA8I7QA4BmhBQDPCC0AeEZoAcAzQgsAnhFaAPCM0AKAZ4QWADwjtADgGaEFAM8ILQB4RmgBwDNCCwCeEVoA8IzQAoBnhBYAPCO0AODZZlvN/gIcDKS3SqoxGAAAAABJRU5ErkJggg==" InformativeScreenshot="b5a5ffd6e3caa9189b5a88aee4f42ff0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='SAP Business Network Supplier' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
                     <uix:TargetAnchorable.Anchors>
@@ -316,7 +319,7 @@
                 </uix:NTypeInto.Target>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
@@ -411,13 +414,13 @@
         </uix:NApplicationCard.TargetApp>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </uix:NApplicationCard>
     </Sequence>
-    <Sequence DisplayName="[UI] Sequence-Navigate &amp; Save RPT" sap:VirtualizedContainerService.HintSize="797,1850" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <Sequence DisplayName="[UI] Sequence-Navigate &amp; Save RPT" sap:VirtualizedContainerService.HintSize="831,1456" sap2010:WorkflowViewState.IdRef="Sequence_6">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="DT_SAP_Report" />
       </Sequence.Variables>
@@ -427,80 +430,53 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="434,1758" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InUiElement="[uiElement_Browser]" IsIncognito="True" ScopeGuid="8f0e0051-be37-40a0-982e-1d6fbed2a8de" Version="V1" WindowResize="Maximize">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="434,1364" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InUiElement="[uiElement_Browser]" IsIncognito="True" ScopeGuid="8f0e0051-be37-40a0-982e-1d6fbed2a8de" Version="V1" WindowResize="Maximize">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1622" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,1228" sap2010:WorkflowViewState.IdRef="Sequence_7">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="1" DelayBefore="1" DisplayName="Click 'Invoices'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8f0e0051-be37-40a0-982e-1d6fbed2a8de" Version="V1">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="1" DelayBefore="3" DisplayName="Click 'Invoices'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8f0e0051-be37-40a0-982e-1d6fbed2a8de" Version="V1">
                 <uix:NClick.Target>
-                  <uix:TargetAnchorable BrowserURL="https://portal.us.bn.cloud.ariba.com/dashboard/" DesignTimeRectangle="760, 373, 223, 160" FriendlyName="'0InvoicesLast 31 days'" FullSelectorArgument="&lt;webctrl id='tile-3' tag='DIV' innertext='*Invoices*' /&gt;" FuzzySelectorArgument="&lt;webctrl id='tile-3' tag='DIV' innertext='*Invoices*' class='tile' check:text='0InvoicesLast 31 days' /&gt;" Guid="65538a68-304e-448f-aeae-182e6e759345" ImageBase64="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" InformativeScreenshot="430a92df12fb42ff5c824af1206c55e7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Dashboard | SAP Business Network' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" WaitForReadyArgument="Complete">
-                    <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                        <uix:Target DesignTimeRectangle="846, 461, 50, 32" ElementType="Text" FriendlyName="'Invoices'" FullSelectorArgument="&lt;webctrl id='label-3' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='label-3' tag='DIV' type='' class='label' aaname='Invoices' check:innerText='Invoices' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADYAAAAkCAYAAADCW8lNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ+SURBVFhH7ZTBaxpBFMb79wrKFoNKaZBFDIsEJCyURSxBJCGoWHpcQzBoIYZV0ICFKOhhA3qwhz3oYS9f38zsxrUxEdrYMGF/sIfZN/Nmvnnfmw94p4TCZCMUJhsBYXcwogqMgTfcGy4m7QrOu3NvvB/eQJiD1omCeHnsjffDGwj7PzwvbH4JNVrEzbAC9aOCCMVimQqGS4qNzhCPGrBcMZXjXCMbVVG12eAXrHIOcX9d2oA5XfFpjH5BgdrwrehgWMsjGZh7ZfuJKXbh5zlAXPP2ZyynML+oiNEaFkseV2AtvBixQ5iCZOEW9nKF5WKM84xvoQdU0wr0zlqZ08whol3TUYD7cgqR9Bn6Dou7sBt5uog8WixIBIVNaioiCQM39gquu8KkqSNfm9IqL6bVcc/yuA7uL45ofIkZxRYN2u+E9uNbzGGd5vF1sL68HcKOYAZ6fNYQidnF2GzT4x9cyKbQMUoJytPlAY8pqp8U5Npi9lqYmBu8oDVb8ri30KM5mHQAp63TheioDh6w3LJ8pxX73pDBhWXEjQnreVWw6/j8aE2WR8U3bkmfOUyqtl+ltbBtc33EeZg9//zEGV0sunXoWorbMZahtgkU4e+FUa2uNAXZpkOWOSSL/uR/t1fhlSr2HAGb+vyDMMrXMciOBvRECqWR95MQfVOExXuD+uY79UPgsXmpx+xOEerpHdgbwWPpEqw5W+hi1i0hW+jx2KxBvdgYix5jMerjVxMGt0eeJ3uk69h0U/A1EzZpPb50m8KezN14QZ++mOZIVN1d9FDSDr1X8UUrvi9CYbIRCpONUJhshMJkIxQmG6Ew2QiFyUYoTDZCYbIRCpML4DcbX1OD3P3+PQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
-                      </scg:List>
-                    </uix:TargetAnchorable.Anchors>
-                  </uix:TargetAnchorable>
+                  <uix:TargetAnchorable BrowserURL="https://portal.us.bn.cloud.ariba.com/dashboard/" CvTextArea="575, 166, 56, 13" CvTextArgument="Invoices" CvType="Text" DesignTimeRectangle="576, 165, 55, 16" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Invoices'" FullSelectorArgument="&lt;webctrl parentid='tpp.invoices' tag='SPAN' parentclass='menu-item' idx='*' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='tpp.invoices' tag='SPAN' parentclass='menu-item' type='' class='' aaname='Invoices' check:text='Invoices' /&gt;" Guid="56a047eb-5063-4424-a627-e8eaba84d21e" InformativeScreenshot="c6693bbea505cd06ed226b759f442c6c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*SAP Business Network*' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive" />
                 </uix:NClick.Target>
               </uix:NClick>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Invoices'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_11" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8f0e0051-be37-40a0-982e-1d6fbed2a8de" Version="V1">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="1" DelayBefore="1" DisplayName="Click 'Invoices'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_11" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8f0e0051-be37-40a0-982e-1d6fbed2a8de" Version="V1">
                 <uix:NClick.Target>
-                  <uix:TargetAnchorable BrowserURL="https://portal.us.bn.cloud.ariba.com/workbench/?tileId=21327c04-52eb-4ecc-8a95-1799464fd3e1" DesignTimeRectangle="732, 289, 224, 160" FriendlyName="'0InvoicesLast 31 days'" FullSelectorArgument="&lt;webctrl id='tile-3' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='tile-3' tag='DIV' type='' class='tile selected-tile' aaname='' check:innerText='0&amp;#xD;&amp;#xA;Invoices&amp;#xD;&amp;#xA;Last 31 days' /&gt;" Guid="beaf87aa-ce78-4690-9ccf-39e342c0e63b" ImageBase64="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" InformativeScreenshot="8711d605359eaecf71fb6a12687e2a92.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Business Network' /&gt;" SearchSteps="Selector, Image" Visibility="Interactive">
-                    <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                        <uix:Target DesignTimeRectangle="819, 377, 50, 32" ElementType="Text" FriendlyName="'Invoices'" FullSelectorArgument="&lt;webctrl id='label-3' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='label-3' tag='DIV' type='' class='label' aaname='Invoices' check:innerText='Invoices' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADYAAAAkCAYAAADCW8lNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKBSURBVFhH7ZTBaxpBFMb7N3mQsJSlBBIKBoSAsCAIHoSAEFAKCmIhBBESAiLisfQiGwjmoAQqBdGD5mC91IvJQXMxF/e0p719eTszG9fGRGhjw4T5wcLOfjNv5tt5733AO0UZkw1lTDZ8xq6RDWrI9sVwYzgYN0s4bd2L8WZ4A2MWGocadoojMd4Mb2Ds//C8sdk5jGAejV8lGNsaAqRtRUoY2KSNTqAHM2g7fCrDukQsuI/yDRugXUxA/8jX6ZEMaiN3IaeX02CYXira6FWSCPnmXky9wKSdeXE+QY+L/Zk0Qu2LQefgWuighLYlNGKNMUqZ3BUmtg3bGuI0ShuzFLpFOawh3Vo4m9cTCMQvMaf338U9BMIn6FmuTjVlJukASTTExn5j48o+Ap8zaExtOI6NcT2FZOWWVgktWsXAjeNYGJzFaHyOGWkzk94PaT+2xR3aR0l87S9+3hpjMdTcKAIWTARmmx5cMSPLRkco0A1nO0wQcD3R5M4Wxvhc/w9asCKO8xNpcaZ5M0U/JIVy/w72iuVrU7Enhi5+Yzz1xC3cVBF6TE03joFvU/fd4x41um3vlhbGVs314Odx0/PPh5/RwaxTRTq+iy36pkfz+OGL8/fGqI4u4hpidYvdnl4csq+rb+GVbuw5fGnq8Q/GKF4rQ+mYQXp7FwVf9+Z1k6dipgO7dfOd1vmazUs1NmnmYRxdU9sQWuQYbdZMHEw6x4jlukybmFSL5pDXmKuZVOOvZQxOl3Ke0iNcxVh84vi7GU+TxmOnWzb2ZO5SB33aMT3NmXVRiO+JrvhiKr4vlDHZUMZkQxmTDWVMNpQx2VDGZEMZkw1lTDaUMdlQxuQCeAB+pgPV6POt6AAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
-                      </scg:List>
-                    </uix:TargetAnchorable.Anchors>
-                  </uix:TargetAnchorable>
+                  <uix:TargetAnchorable BrowserURL="https://portal.us.bn.cloud.ariba.com/dashboard/" CvTextArea="583, 214, 51, 13" CvTextArgument="Invoices" CvType="Text" DesignTimeRectangle="583, 213, 50, 16" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Invoices'" FullSelectorArgument="&lt;webctrl aaname='Invoices' parentid='an.invoices_invoices' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Invoices' parentid='an.invoices_invoices' tag='SPAN' type='' class='' check:innerText='Invoices' /&gt;" Guid="3a415ffc-016b-4b53-9763-be78d1d606d3" InformativeScreenshot="fe026707bcdedf399463515f4bdf7512.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Dashboard | SAP Business Network' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive" />
                 </uix:NClick.Target>
               </uix:NClick>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="1" DisplayName="Click 'Partial Matched'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8f0e0051-be37-40a0-982e-1d6fbed2a8de" Version="V1">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="10" DelayBefore="5" DisplayName="Click 'Apply'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8f0e0051-be37-40a0-982e-1d6fbed2a8de" Version="V1">
                 <uix:NClick.Target>
-                  <uix:TargetAnchorable BrowserURL="https://portal.us.bn.cloud.ariba.com/workbench/?tileId=a62e66d9-4552-4dab-9f1f-a543bfb6acd6" DesignTimeRectangle="419, 630, 121, 32" ElementType="Text" FriendlyName="'checked'" FullSelectorArgument="&lt;webctrl parentid='match-1' parentname='partial' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='match-1' parentname='partial' tag='LABEL' type='' class='fd-radio__label' aaname=' Partial match*' check:innerText='Partial match' /&gt;" Guid="81d32790-1282-4d7c-b7cf-94041b7041d5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAH0AAAAkCAYAAACkATUaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAU5SURBVHhe7ZnPSxxnGMfzF7SHvXvf0y5ImyKEEAol5FDxoLZU6WU9TRvK0kNXCtZq1h5aEBIjSKgYzWbVKEhc42HrqNkYrF1qrAiJmFYr7bo9dLeXMWvlm/d55x2dHdfZmQ3d2s77hQf2nXneH76feZ/3eV/PQehFoYA/839J84AdQSetrD3F5998iw8//QqNSqe0/6kVQZfyhiR0D0pC96AkdA9KQvegJHQPSkL3oCR0D6pi6PsvCrh7X0XX9WGEPvuaW/eNEcSnVRQKB8JL6iyqIugLy0/wwSfXMD4zj4cra/hl93duD79/gvEH83j/ajf7vSa8pc6aXEP/7lEaPTdjJe90zRbtG4G6tCpqSZ0luYJOK7zn5p2SkEvZNQY+9cNPonY5ZTER8sNXY7LaC2iMxLGWEy6vKm0LyeEhpPZE2UaZqTb4+s7eR7vS50fLVFaUKpNj6LSHU0g3Q40//gNvdT/H6x9vcqPf9Mzs897VLhwc/C1asZMOvWVsA7lcXredVcQiV+BrjWNbeLnTKvovtWHCgJxLIlx7Bf3romyjakLPqGEEHfZVVeh378/h3szCEcyRVBbnQk9LGr0z/MYSKrN50YqdBHTrH5RLQKkxgXOlVfRWWLeq0F30VVXo3TeGedJmwHyj63lJ4GT0zvBbZMkdhfnyOgW6toh2E7hcegjh1jf18F/XjHZ1V38hAA9ODaCxjtpRWdm0VYQmkbF+BCzcJ/racL6WfAI4rwxhTdNf2YMQfamTaOdjEXX3NjCoXICf9edviiC5I9yZThs378c0zt40f4xtNYrQpQB/FqxXMLie58916MtIftGMINVhW6Aya8yBMzmGTkcyytANmK+xcF4KOBm9M/yoDtUtr1LQ81i51Qxf/QD4WUBj4VqJYEJMgLYTR0tNM2J8cgkEm2yF5QB7bGvg8KwrvbicmQ0j1LeMDPfNI9XzNvw9y6BieegBBMOUb+xDyy2i8zLru07BxCYra7tIRALwG/Vtx32yL22pA/7aNsTWs2ws++yDGYDCxkWpDUGnfvg7bR+ZpSgu1oSRdJH3/OPQf/71N7S5gG7+6smsK6ZYeh19dejQO8VK0WUP/YTSURERnEE3ViWJYFy8tSFKor5o66TM47b2lUcy4se7Y1uiXCwOvWhcYiwO8hRDLsL7CD+HGzCdhveF5VUW3u+IVuwkVro5kWOrqFhZrAyH0VIvwqSwY+hWoPbQtc0EesMNIrwLcwy9uC/rXlsM3W7c1r70eehcEkWLrP3oYzluy4kcQx+dVnHvgftEbnR67tUSOZNyLMv11UeROvoYrCvdDfQN9F8OIDS1xcM5l6uV7hy6/bitfZVf6VWDTlerdNNmwCRzcmRr+uhLHB4eilbsVB56ZpZNTusQnnFKbD9TO/DO0R98GvQGngTpUcPsw37XBlhCpe+zyG0gprDEyQw9FMezE9GGdLIvO+j24xa+kSQyLLqRS9GeTvv2ehxKeJIfW6sKnURXq1EWqs1Q7ayLZfyP0k43m/LQoR1nx5S1hoYTGGR12pesQA3ts0lq0P2VBANQ7LPNJp8yfQq1wdYOJMY64GsSdwJ77KhI7+oZLO5tljvo9uNm2hF9mfbm7Vk2NlP23p/W2646dNLc4x/58a0UZLN1Xb/Njmvy/v0syjV0El2t0k0b7fN0DqesnrJ0StpGEyoP6c5XuFS1VRF0El2t0m0bZfXGv1YpSx+fWXC4h0v9W6oYutR/VxK6ByWhe1ASugcloXtQEroHJaF7UBK6ByWhe1ASuucEvASSrmvnbyM29wAAAABJRU5ErkJggg==" InformativeScreenshot="c3f351a0d373114a104e61eedecb0e04.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Business Network' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
+                  <uix:TargetAnchorable BrowserURL="https://portal.us.bn.cloud.ariba.com/workbench/?scope=INVOICES&amp;tile=INVOICES_TRANSACTION" CvElementArea="1710, 598, 60, 39" CvTextArea="1720, 610, 38, 16" CvTextArgument="Apply" CvType="Button" DesignTimeRectangle="1712, 600, 55, 35" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Apply'" FullSelectorArgument="&lt;webctrl id='filter-apply-button' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='filter-apply-button' tag='BUTTON' type='button' class='fd-button fd-button--emphasized btn-apply is-cozy' aaname='Apply' check:innerText='Apply' /&gt;" Guid="adadecca-bfb0-4056-a62f-ebd72aa63019" InformativeScreenshot="093889608ab3624c191db266bef97348.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Business Network' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive" />
                 </uix:NClick.Target>
               </uix:NClick>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Invoice date'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8f0e0051-be37-40a0-982e-1d6fbed2a8de" Version="V1">
+              <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="3" DelayBefore="5" DisplayName="Click 'FD-ICON'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_9" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8f0e0051-be37-40a0-982e-1d6fbed2a8de" Version="V1">
                 <uix:NClick.Target>
-                  <uix:TargetAnchorable BrowserURL="https://portal.us.bn.cloud.ariba.com/workbench/?tileId=a62e66d9-4552-4dab-9f1f-a543bfb6acd6" DesignTimeRectangle="1043, 592, 287, 38" FriendlyName="'Last 7 days'" FullSelectorArgument="&lt;webctrl aria-role='combobox' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='combobox' tag='DIV' type='' class='fd-select__control' aaname='' check:innerText='Last 7 days' /&gt;" Guid="34ee9ed2-3582-4010-8d68-9fd9ca1f21bf" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAASMAAAAqCAYAAAD4WD1RAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAT9SURBVHhe7Zq/SyNpGMfvH8mfIARSyBbrFtktXGFBcFGu2G0yjTZBjhAwINrEItusbHGIh7Jg0oxNbEyzSREFTw4RBY8BISAhBME7sdlc8b33nXnfyYy+ehoNk3O/X/iA+syPjPB+fJ53/AkMwzADEMqIYZiBSEhGnc4/uLy6wl9/X+KCEEL6gPSL9Iz0TTC+jL53OsYTCSGkX0jv6PgykqYyHUwIIf1CekfHl5HpQEII6Tc6lBEhJFJ0KCNCSKToUEaEkEjRoYwIIZGiQxkRQiJFhzIihESKDmVECIkUHcqIEBIpOpQRISRSdCgjQkik6PQgowY2UiP4UGwYav3Cu2dsyMDinuF4A6eb+DBUQM1UI4REhs7AyMgpz2H4DrG0zppohNjD8tgIstvnxuNvQBkRMpDoDI6Miun7dzmS/VW8TuRRaRtqJigjQnrGXZ9DaWycmuve+urNCzpPL6P2MezFNF4m5BiVxMvUV+xqYYjaRs5StVFMpb+iJh7Oe9Du6FXYCVzPyDkquSRefzkw1BSndSyn3iEurhd/lcZycTUko9bhFgqqHku8g7VygJasnZQwdUNyeygkJrC8L8/bRHZSnffCwuxKHQ3/OEKeKUo2MeMfdLE+3NodsroDnSeXkWPPwVqqw3EXcxOVxQnEc3V3oTu2kE5m21u8bQeVpTkhHm/MelBndLaFmSELayeGmsuBGOGSsNYPvHudHWAtlQz8Ihuw02kUqo4noLNvmH+TxHxVfpYm7OkRzNjN7vV2CohPlnAkzxPPPlv2aq2TOgrpz6jdtzsj5P+MUUiPE5FEp/9jmljIsdQmHPF1o7yA+NgC1nYcNK4t4IfI6GjdQmx66/aORI5w1w1+WMK40eoetcXuM7WqeSUfWfO6sKl1R3zdRDmTxNtMCbWTpicyQn4kQkJ6vIgkOk8uI3f8mf6oRjGFkpGsO9USstM/Y9gd4QqoqO7m/jISXY/fxZjqAilAXyaK0J7ROf6wC5gZV+OWovtM8h7eWHbRrmM+kYF9pq4jnr+ynsfM2Kg33i1+C9+HkOeOXF+BdfPf2yp3o/PEMvJEYRWPu11DoDMKH9vE7ooQUGrLrd1XRm7X8mYVu4aaz85nIZlrXVCwW3I3v4XND7tCC3ZGEtl9yT2p1ra4nxozdc1HjH+/it+FZZvFTMizRQnpsSKS6PQuI7kfE3rVLhe23OhNIqv2VPy9GiWjo+ICskW1jyO6E8fOhGWU2YYjrnX7+OPt53gjk6muUVIUn9Fpn6N1em3PSMoqkUdZdTuN/RIs0cmFBCv3pRJzmJ1WHZL7cwcbmQVs7Kvna4vvxeehjAjpHZ2eZRRs0zy8hX5UzmPqhfez4ck8bDHSxMbVyCTfcPkjXHhMuzgRi989L3m7beWbrjs3rgOI62UnxSglPkf3bVoatjvbOijnLDEqyvuNYiq3hbXcCMbXjwPX8MQXu9aFOdXV7njHMY2QR6PTg4x+HHa/TNyjCyOEPAYdyugWGtUC3j7knyoJIT2hQxndwHtdGX81h7XABjchpD/oUEaEkEjRoYwIIZGiQxkRQiJFhzIihESKDmVECIkUHcqIEBIpOpQRISRSdCgjQkik6Pgyury6Mh5ICCH9QnpHx5fR907HeDAhhPQL6R0dX0Yyvx/+idyn3/DxlyW8n1kghJAnR/pFekb6JpiQjBiGYaIKZcQwzAAE+Bdp0Mxpoe64KAAAAABJRU5ErkJggg==" InformativeScreenshot="9db3b2a43483e2f5dbeb05a30c4aa1e3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Business Network' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive">
-                    <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                        <uix:Target DesignTimeRectangle="1043, 570, 75, 16" ElementType="Text" FriendlyName="'Invoice date'" FullSelectorArgument="&lt;webctrl id='select-date-range-1-label' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl id='select-date-range-1-label' tag='LABEL' type='' class='label' aaname='Invoice date' check:innerText='Invoice date' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAE8AAAAUCAYAAADMfWCyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANiSURBVFhH7ZY9aypBFIbvH9mfYKOVKSSFIASUFMktxCakWVIIAQNiCsVCUlgJgRR2pnErbcRCERRCEBIQBCGBEEQEicVq43bvPfOx7q7X3HxsctPsC4Jnd5yZ88w57/gLnj4tD54LefBcyIPnQh48F7LBm6OuhnBcm8v4u2Rg3NZQ6X33OqRBCYrawEyGX60fgLdE5zyMWPlBxt+oD8CbtXMIXgxl9D79ALz/qI/Aq6WgfB28IS59KdT7XWTje1B8IfgPCuhM2LsHlCNhFPoGHym0RDMZQqI6pe8GHmtFJHbD/HfBaAblvnUodxfOQxr3Sjixja0MlvLNEsNKBrGdEL3bQyypYWhfckOrp8Z6r8F4Ec1q0QFP72tIy/fKjopsm+1VgmPP5OdywB9j3DBzCGOX5hO5W3oDXhjBZA3DFwMrY4pO/jeUsy50ejuuqlDyt1iJwcCihVNfBs0FbZJawB/JofkkMtUH10j4EiiPeOiAt+oV4Q+koI3mNJfBx55e3K/X8Ku0Ps0pQKYobm2vpEUX6UAChd6U72k1uUUhSjBMeMYQZbWA+kgczOqphmOfCk0C2aw8vq8oA8ZyMKiti4hErxyH9yY88xS4WBsEaAL2fVIjIDl0eGJ2mORpZ2wecapCBm7yIUSkz1nwxNjD6jN/7hSr7hBVtwyZjFtkqRuaLzK2iR2YctTAWMZMDMDrbSvyNfNzwtuWwzO0AyePt9vWvlEGz1fCHQ9Em6bb7CSn0OJmG4t5HEmTGDBzcxa87WOF2PpWK21rK7t48vl7GUk5PG+Ou0oOx1HZthtzOeGJfdnHmR+Ljyt4dNqNDJRkCzq1wGHkWlTk1mr6osr7h2YNSn6j8vj+JDxemdESbsiChES+76+8v+UKnmijHLLkhSYYJtPH6tzzyMf6JcRs/vKq5xnkLaMaTs8EBO558SvcmL7Tv+J+uPZZu7jnCs/TaR59w/M43LiGR86O5qJ1Y1RJDnjnXcwWS+GZ3PMsj9RHDaTPnYfjDh6vKHYbWWBMWTcVu/ly0NY3qBMek2Os42amS6KaQ4LftuLGM5PZJn2gWbc2G0u3rd/0aOMBFXUffnqnBPZxUmmhchRCticrcULw5Tom0M1/AfZ/DEw2eJ4+Kg+eC3nwXMiD50IevE8L+AMC9N2wHGnL1wAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
-                      </scg:List>
-                    </uix:TargetAnchorable.Anchors>
-                  </uix:TargetAnchorable>
+                  <uix:TargetAnchorable BrowserURL="https://portal.us.bn.cloud.ariba.com/workbench/?scope=INVOICES&amp;tile=INVOICES_TRANSACTION" CvElementArea="1745, 666, 26, 26" CvType="Icon" DesignTimeRectangle="1748, 661, 19, 38" DesignTimeScaleFactor="1" FriendlyName="'FD-ICON'" FullSelectorArgument="&lt;webctrl aria-role='button' tag='FD-ICON' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='button' tag='FD-ICON' type='' class='sap-icon--excel-attachment' aaname='' /&gt;" Guid="deae1107-92df-4338-a0af-0ed8aff81e78" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABcAAAAqCAYAAABYzsDTAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEuSURBVFhH7ZW/SsNQFIed8wZuPkKeyDewm2Rw6eATtJClQwcXERyyZuvWDh1MaLEthSxCFMpF/LcUfi3xeL2ce9Kk0orS+8FvOefej5Cb3HOEPeLkIk4u4uQiFfIFrlopTi6S8lzO0Huj5YwN8lfEYQKvcVeZ0yFtYZTIDXEwRmf6gvzZzk1ra/kS99Ho+8nCB6rbZMW6Edo5FRhMzsQV8ioM+RKqP8GxKV7Hv11Qf3u0XA1tsRdMEBdfwiPOA9Yri95jyOPws+lfP9GBveODesjn8LmkNKk+A0sunvyXvDlHRqUsSov1fqSootBuHqa8Vv6k/P+9ll39RLL8Z/yu3AuEabMpdSbRoFtv6thJcDYmCUPLsb6mFJs09aKvNwtDvnucXMTJRZxcZI9yYAUCDsuYIaqO8wAAAABJRU5ErkJggg==" InformativeScreenshot="a9b4e131727c721b625656b50bd76b7d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Business Network' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive" />
                 </uix:NClick.Target>
               </uix:NClick>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="1.5" DisplayName="Click 'Last 31 days'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8f0e0051-be37-40a0-982e-1d6fbed2a8de" Version="V1">
+              <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBetweenKeys="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DelayBefore="2" DelayMS="2" DisplayName="Type Into 'Edit'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[in_SapInvoicesReportPath+DateTime.Now.ToString(&quot;yyyy_dd_MM_hh_mm_ss&quot;)+&quot;.xlsx&quot;]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="400f4994-b544-4eb6-9e70-13186c6b1278" InformativeScreenshot="29e9f24acda0fb0a80ea148e3cffa58e" Selector="&lt;wnd app='chrome.exe' cls='#32770' title='Save As' /&gt;&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='File name:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="15" DelayBefore="1" DisplayName="Click 'SAVE'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_10" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8f0e0051-be37-40a0-982e-1d6fbed2a8de" Version="V1">
                 <uix:NClick.Target>
-                  <uix:TargetAnchorable BrowserURL="https://portal.us.bn.cloud.ariba.com/workbench/?tileId=21327c04-52eb-4ecc-8a95-1799464fd3e1" DesignTimeRectangle="1059, 466, 238, 21" ElementType="Text" FriendlyName="'Last 31 days'" FullSelectorArgument="&lt;webctrl parentid='fd-option-3' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='fd-option-3' tag='SPAN' type='' class='fd-list__title' aaname='Last 31 days' check:innerText='Last 31 days' /&gt;" Guid="2749944e-d9e4-4c0a-b075-58cff24f312b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPIAAAAZCAYAAAAL63PlAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASdSURBVHhe7ZrrTxRXGMb7j/R7P9hPfmgTkzaNjU1qbLS2qS2tt6IgVkUXabGo0Fir0OtSooKtCrGiBBVdQQpqkKrEG6Io1gu3LYgU5L6AAq953p2zGRZsJiaWZfL8kgnumTOzZ5L9nfc5Z3xJCCFTHopMiAugyIS4AIpMiAugyIS4AIpMiAugyIS4gJDIAwOD8lXq93LY96fV8v/QHwjI7tx8eXNOlLz86hsy55MYKSwqkydPhq0ewT4/79wr734ULffqG61WZ6D/yvUp8qizy2ohxH28cJGLy8rFuyvH+jSeoydKZV3yVhUOsl2quiHvRcXKxavX9XyDv1mWrkqSuITN8sHiVRSZkAl44SLjfqimTgkfR/XN23KmolKFjFruociETIBjkTu7usWblSOvz/pQXnntHUlMSZP2js7QuTRvtp6bNmO2bN7mleYHD/VeiMvmMFX2WYyMjMiV6hr5fHWS1DX4rdYgTkXG93qSv9Mxzl/0hez5o2CMyLV37kv8hm/1PMabe6hQY3zFhcvi2bhNY7wB37UoLlEamprlr8orsiA6Xp8D9y0qLR8T/wmZTByL7Cs5I1k5B6Wnt0/7/rRjj6T/uluGh4elsPiUfJOeqe04jzVv5eVrep3Tiow+kGTm3IUqczhORO7q7tEIvj//mI6lta1dJ5yoGI+KjDaMufzcRZXQ3/xAYzskNtdWXb9l3S04dvTveNQpKzzBc3je6ppa+WXnvjHSEzKZPHe0RnVFf1xXVn5ePo1NUHnx2Y5Tkfv6A9LW3iF5h30ye8FyjdR2nIiMa1BBTVIAt/6+J8vik58ZrTE288wHCnyhyQmSokJDckxOKxNTJfO3/dL68F9NDoREEo5FRiRN2LRd46iJykZk/LAvXKqSNUlbZPpbczW6YpMKOBXZMDo6Kln78iQjO9dqCeJEZEwuiNXh8dhEa1RhRGJMOojW5jnMMzf6WyR6zddaqW/frdPnQKUGmBx27c3TXfW3318sB4+cYLQmEYMjkbt7eiXWs0kOHS2WocePtc1eke3gM9adG7b8KIODQ/8pMqTFrjbWn3Zwffg1TkRGJEeMtldkxGHEZ4iMio2d75raO6Gqaq/IqMSoyJAdY0CFDgdjvl/fpJPBREsAQiaDcSJjfYkfvTlQkfAXMiBCQwCz9kT/QGBAjpecloLjJXoPVCmsme0iY/0MucwkYIAUR3yl+roJr53wPZAan0tOV2gf3BPt127U6mYT/uJz+AQCMNaYdRv1GfBvbHzZ18gQ7+Nla7Xymo01VFj75AXxcQ+sl9EPIPKnZWRrysCYW1rb9DxFJpHCOJFN3DQHJMBmz8lTZzVSog3xExULUbq3r1+a/mmRL1PTQzva9miNCjrvszhtn+iHr+IXlalQuHf4fwiBZPbxmMMun527dQ06PvQxu9aonvWNfo3cP2T+rjvrOFB9scOOZzFgAsD1qWkZoYlncGhI33ejmuO+jNYk0giJTIJA2pTtXt3kImSqQJFtoMLmF54c9z6ZkEiHIltgCTBr/hJ9X4xda0KmEhSZEBdAkQlxARSZEBdAkQlxARSZkCmPyFOCrZEnMAh1fwAAAABJRU5ErkJggg==" InformativeScreenshot="b4cfdeeb0ee372476460a0e41133511d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Business Network' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" />
-                </uix:NClick.Target>
-              </uix:NClick>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="5" DisplayName="Click 'Apply'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8f0e0051-be37-40a0-982e-1d6fbed2a8de" Version="V1">
-                <uix:NClick.Target>
-                  <uix:TargetAnchorable BrowserURL="https://portal.us.bn.cloud.ariba.com/workbench/?tileId=21327c04-52eb-4ecc-8a95-1799464fd3e1" DesignTimeRectangle="1312, 400, 55, 35" ElementType="Button" FriendlyName="'Apply'" FullSelectorArgument="&lt;webctrl id='filter-apply-button' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl id='filter-apply-button' tag='BUTTON' type='button' class='fd-button fd-button--emphasized btn-apply is-cozy' aaname='Apply' check:innerText='Apply' /&gt;" Guid="0ea9a53a-7aa1-40d1-b764-001734e72725" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADsAAAAnCAYAAACxMTBTAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANFSURBVGhD7Vk7SxxRFM6rCXn9BH9CuryKWKa0tLS0jAlBY0ggQoKQQAyx0M4YonYRYkTQBC0EWaMsWJjCYpsFbURWd3Ye+/hy7p175rE7rjMTAjOzfvDBzpx775zv3nPOvTtzAR2Ec7ECmtnA4HcDdz6UcXPoGBcGkkvh392xsvTXqDaUglYEiv2cs3DlqRjoRLH1AUnl5SfH+LJpKSV+tIh9s6zj1vPggdJC4f/7X4ZS5MIndipnJj5kw1LomN0ylTIbjliRo3boZocipE1PDjtiXy7quPosuFNaeW3wGK+X3HB2xD74qAV2SDsfftKUQo/YrORqM0WxYjhigxpmhYxzsVkj41xsKI5Y+CM6WjWMBtn/gVMHwNGeHmiLQ0Zssd3bdaBURwENbKwEt4nLhInVMH8IFHY0jBbohFI0A9rEZ7LETlexjzrmx+n3Sg06apgYce3S2aKF1UM+qjVQ2DPxKIpditUwR5OqFwxnbMHHe9SvVEWf5147MmKJ7dulED600C2vDWzQP6r8uvtXUDgrBewY6JnU0LdewxHd4TZh7LyyXWSDbzJ1rFYoqrbDn/gYMcRWsFSyQ5jvDYlQPrDQpa6lGGcyBE/kCok2Ye1uGNuT6YhbEJFUx5yIKqd/ezKii/1WlavQCtcBv7M2eULi2GUkUdj2cjuqETyxYciILFY+jB7cP11Br0MTec/s88q5DqmVU4UsjN03GeMWVf06lmbEKlP1X+B+4ciIKFaFlCeEmbIqq9CUYign87kKbg+UVU7S9Zo/Z9vaaazeybIa/wQTRZoA2uqiFCYmI5rYNVEsVBVutsmqbNvkyhSryFdoAiSoGO3qvpxuZ+/OibEIJQs96p5dqID93Yr7zJBkxChQZ1OKacpJL8+yB3LG3u6iFCYmIxViu8YNud0077dhyUi8WHmAIOhUqfs9B5coZPwXsUkjozPFdtQ7qHtjvKdli+KtKcMRO7wQcStICV8tBrw3Fl+/xBv0oA5p5UVirc4HF49YgelNEzcykrvXScfMad96GG+XdVxK+QoL/9/9POMrHuPrbyu1gkXozm6F/D7LEF+/hn8YVKW1xG9LYnu5T36+IH+9OdqMU8VmER0kFvgLJ14TB8nsxwoAAAAASUVORK5CYII=" InformativeScreenshot="7f87d66f847e32c235172cffd2bf595a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Business Network' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" WaitForReadyArgument="Complete" />
-                </uix:NClick.Target>
-              </uix:NClick>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="4" DisplayName="Click 'FD-ICON'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_9" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8f0e0051-be37-40a0-982e-1d6fbed2a8de" Version="V1">
-                <uix:NClick.Target>
-                  <uix:TargetAnchorable BrowserURL="https://portal.us.bn.cloud.ariba.com/workbench/?tileId=21327c04-52eb-4ecc-8a95-1799464fd3e1" DesignTimeRectangle="1348, 461, 19, 38" FriendlyName="'FD-ICON'" FullSelectorArgument="&lt;webctrl aria-role='button' tag='FD-ICON' aria-label='Export' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='button' tag='FD-ICON' aria-label='Export' type='' class='sap-icon--excel-attachment' aaname='' /&gt;" Guid="80a56752-255b-4280-b7c8-8de861038bbb" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABcAAAAqCAYAAABYzsDTAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEPSURBVFhH7ZU9DoIwGIadPYW38QbcwFFXB1YXE2cWBnev4OSmIxAToxBZTBg0OmhMWF4rFqnlQ4SokdgneZev7UN/gNbwQZScRMlJlJzkufy0wUC3UO88iw1zzftLZMvDLUZ9SpbOwOJjJDLku0Tcc+GHvCwxMwvLD5gYdjIzc8Prac5LF63+CtaJFyQk+ZHNRhDnyPMQ5Ew8tNEQxSzaeM/bi3OXB+P5XdzU7Sia4cO/Nobsrek+PjQrDd3FIjIK8vhw2tMjrwgEHjRJkh0Ho+A2LCUnTz6W9zzwcWylTtQ/2Ta2uj+Vv5SflFdvW971EZHyknxXXjwv3ETij6tYylxzb0DJSZScRMlJqioHLu2j1WFwR20hAAAAAElFTkSuQmCC" InformativeScreenshot="03aa301fdeb3985b02a40a2352f916e0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Business Network' /&gt;" SearchSteps="FuzzySelector, Image" Visibility="Interactive" WaitForReadyArgument="Complete" />
-                </uix:NClick.Target>
-              </uix:NClick>
-              <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="5" DelayBefore="1" DisplayName="Click 'SAVE'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_10" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8f0e0051-be37-40a0-982e-1d6fbed2a8de" Version="V1">
-                <uix:NClick.Target>
-                  <uix:TargetAnchorable DesignTimeRectangle="747, 434, 88, 26" ElementType="Button" FriendlyName="'unchecked'" FullSelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Save' /&gt;" FuzzySelectorArgument="&lt;wnd ctrlid='1' title='&amp;amp;Save' check:text='unchecked' /&gt;" Guid="e510ed2a-df9e-4bfc-9252-af624e2fc927" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFwAAAAeCAYAAAChf3k/AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFKSURBVGhD7ZbBkcMgDEXpiW6oZG+0QitUsWd34A60kg2JFLMzO5NEgdl/eBPLyJeH+CTs+07ADwh3BsKdMcLD1zd4A8axKQbN4HmMY1O0hm3bwAuAcGcg3BkIdwbCnZlfeEkUQmgkKqOehZhbeM0UtWSuc1HrCzK3cJnumKmO1hZlbuFbocRREnO9rJXUY4ZJhd9VyjFQ0idAb9hxWj4fTZMLF06RIsrIvCGbEilXfhbBh/xzTTbl/Eb1yBr3jTbRgwWEN9qE3qSby7TLFLF9evl5ON0NtTGerCOcqTmeosxlKifgPr3SI9Pbf49vTf9nmVt44X8lPQZatBwSL9ms4kLqmHi6teDf7wJv5hbeRF1j4J7r4ZCrhPe1x8h4jBVEyv8Awp2BcGcg3BkIdwbCnfmzcPBajGNTDJrB8xjHugDvB8KdgXBXdvoBtsHYGrTo71oAAAAASUVORK5CYII=" InformativeScreenshot="a343283c8da34f30edbe3c7986f7e957.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='#32770' title='Save As' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Visibility="Interactive">
-                    <uix:TargetAnchorable.Anchors>
-                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                        <uix:Target DesignTimeRectangle="3, 3, 791, 17" ElementType="Text" FriendlyName="'Microsoft Excel'" FullSelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Save as type:' cls='ComboBox' /&gt;&lt;ctrl name='Save as type:' role='combo box' /&gt;&lt;ctrl role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Save as type:' cls='ComboBox' /&gt;&lt;ctrl name='Save as type:' role='combo box' /&gt;&lt;ctrl role='text' automationid='' check:text='Microsoft Excel Worksheet' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAxsAAAAVCAYAAAAuPPMkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATXSURBVHhe7dxfbFNVAMfxPmtCDEYjJhpARua6bjBgIWVDxh+HwKJRYyKJqBHqkwkvPoiCmphIFE3HlCEKSjTqg49kMRoFlH8TBX0iOqNkUP7IoO2Ggdjb/Tz39LRruzuYlvHAvp/kl7Pb3Xu6x/PLOXehcDisoFRXVwsAAAAA/i/KBgAAAIAxQdkAAAAAMCYoGwAAAADGBGUDAAAAwJigbAAAAAAYE9e0bPxz9Ef1v7NJfSvbdHbhbP21aI761qxUeuMr8k4n3F0AAAAAxoNrUjayA/2mZLylMy2zXGbr9IKGkpy6r0Hpjk32XgAAAAA3vorLhl8ezq1+3BSKWblSYYvFTFsu7Dh/phJFOfv0YxQOAAAAYByouGykO95UonlGSU42meTHpnqdmFenE/nRJNn+hnsaAAAAwI0qsGzU1NSotrbW3TKyxMWz2rm62RYJv1z0miJx+tGlunzksE6eSKn/0qAGk7uVPdomr3uWsibeoZlmbNBg+rCbJUBXTKFQyCWmLvfxWOqKme+KXY9vAgAAAMaHwLJRV1enSCTibhnZhoOb1dq5Qsda6tUbjSjxSKstGc9+eFFzXk7ZrOwcUKIvJe/IUmUORuQdrLPJ/rnRzVKmJ65occEw1/Gx7gD+d0ZjikWjive4zwAAAABUJLBsNDQ0jKpsPLZrrWZ8/KA2Ptes43PD+nvvN1rxdloNG1ImyULW7BjQYKpb3oGaofy02M1Sxt/ViMZ1Pdf8PfGooqZl5EcAAAAAlQssG42NjaMqG5GP2lS3s01z31umQ4vqlUhmVb/+gs2M9UkTf8xdnzyXVGb/dHkmmf1VyuyrcrOU61IsFApc9NujTvnjVfbIU4/i0ZBKTj8VlxW7S5J/ZqTjWP4cbkfD7nAUF53c/Pnv5JQVAAAAMHqBZSNqFt+jKRu1O5Yr7PLM+hb19iYVeemCIi+eNzGj/7O9vmDf3/D2TXWZYjOyoUV+8ALfLySuIPjlougmv5DkLovusZex4F2LkoJRVDx8ZXMDAAAAGL3AstHU1DSqsrHk86cU3r5M937wgGpMuk/9oiffT6tm3flCwiYPd6Q02PelvO/vdrlL3pFWN8sVuJ2JwnrfX/y7XYZQoUj4pSK/a2F+DtzVcAkoDuVHp/zrwn1uDo5WAQAAAP9dRWXj9QNbVb2t1WSpzcJPV+nYmbQe6kiq+oU+m1WmfBw7069Md6Mye+80mSTvu0nK/rrWzXJlhcW/XfjnS0XpDkTgOxcl948kd2SrpJDYlD5n/wbzOZscAAAAwOhVVDa6Ez9reucSTd96f2Fs+eQJff3Hfntsyi8eh8w97buWm5JxuzyTzJ7bbHSp181Spis+dIzJHaeyBWLYuxhFx538a/vfpIpLQq5IXHFXonjOgtx3lheLkiIDAAAA4KoqKhu+1/Zt0bQti1W1ZYmmvbt4WOZva9bxr+6Qt+dWUzImKrN7ogZ/X+eeDlK221BY9Q+9xxEa9m9q3e+GN4TSo1Rlv/ff7wgqEIXdlJJjW1fbJQEAAABQrOKykb48oBWfrdHUjoW6x8QfbTa32HH7F1Xydt9iSsYEZb6dIO+HeVIm5Z4GAAAAcKOquGz4/MLx6t4OTY4v0OT2XKa0t6ipM2oKxs0uNyn72/MUDQAAAGBckP4FndJW5M8XHgoAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, Image" />
-                      </scg:List>
-                    </uix:TargetAnchorable.Anchors>
-                  </uix:TargetAnchorable>
+                  <uix:TargetAnchorable CvElementArea="1100, 545, 88, 26" CvTextArea="1131, 551, 26, 12" CvTextArgument="Save" CvType="Button" DesignTimeRectangle="1100, 545, 88, 26" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'unchecked'" FullSelectorArgument="&lt;wnd aaname='Save' cls='Button' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Save' cls='Button' check:text='unchecked' /&gt;" Guid="10251889-143c-4a47-9449-2e284bf92550" InformativeScreenshot="34550dceb8db9480cf567d61a836a20f.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' title='Save As' /&gt;" SearchSteps="Selector, CV" Version="V2" Visibility="Interactive" />
                 </uix:NClick.Target>
               </uix:NClick>
             </Sequence>
@@ -517,26 +493,26 @@
         </sap:WorkflowViewStateService.ViewState>
       </uix:NApplicationCard>
     </Sequence>
-    <Sequence DisplayName="Sequence- read lastest Excel in Downloads Folder" sap:VirtualizedContainerService.HintSize="797,66" sap2010:WorkflowViewState.IdRef="Sequence_8">
+    <Sequence DisplayName="Sequence- read lastest Excel in Downloads Folder" sap:VirtualizedContainerService.HintSize="831,479" sap2010:WorkflowViewState.IdRef="Sequence_8">
       <Sequence.Variables>
         <Variable x:TypeArguments="s:String[]" Name="arr_DownloadedPath" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
         <Assign.To>
           <OutArgument x:TypeArguments="s:String[]">[arr_DownloadedPath]</OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles("C:\Users\"+Environment.UserName+"\Downloads","*.xlsx").OrderByDescending(Function(d) New FileInfo(d).CreationTime).Take(1).ToArray]</InArgument>
+          <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(in_SapInvoicesReportPath,"*.xlsx").OrderByDescending(Function(d) New FileInfo(d).CreationTime).Take(1).ToArray]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:ReadRange AddHeaders="True" DataTable="[DT_SAP_Rpt]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="434,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="A4" SheetName="Results" WorkbookPath="[arr_DownloadedPath.First]" />
-      <ui:FilterDataTable DataTable="[DT_SAP_Rpt]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="434,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[DT_SAP_Rpt]" SelectColumnsMode="Keep">
+      <ui:ReadRange AddHeaders="True" DataTable="[DT_SAP_Rpt]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="A4" SheetName="Results" WorkbookPath="[arr_DownloadedPath.First]" />
+      <ui:FilterDataTable DataTable="[DT_SAP_Rpt]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="334,160" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[DT_SAP_Rpt]" SelectColumnsMode="Keep">
         <ui:FilterDataTable.Filters>
           <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
             <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />
@@ -552,8 +528,8 @@
         </ui:FilterDataTable.SelectColumns>
       </ui:FilterDataTable>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="797,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;SAP Rpt Count: &quot;+DT_SAP_Rpt.RowCount.ToString]" />
-    <Assign sap:VirtualizedContainerService.HintSize="797,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="831,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;SAP Rpt Count: &quot;+DT_SAP_Rpt.RowCount.ToString]" />
+    <Assign sap:VirtualizedContainerService.HintSize="831,60" sap2010:WorkflowViewState.IdRef="Assign_5">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:List(x:String)">[List_MissingInvoice]</OutArgument>
       </Assign.To>
@@ -561,7 +537,7 @@
         <InArgument x:TypeArguments="scg:List(x:String)">[New List(Of String)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DT_Success_invoices]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="797,51" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DT_Success_invoices]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="831,1784" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -750,12 +726,12 @@
       </ui:ForEachRow.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <If Condition="[NOT List_MissingInvoice.Count = 0]" sap:VirtualizedContainerService.HintSize="797,403" sap2010:WorkflowViewState.IdRef="If_3">
+    <If Condition="[NOT List_MissingInvoice.Count = 0]" sap:VirtualizedContainerService.HintSize="831,403" sap2010:WorkflowViewState.IdRef="If_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -784,7 +760,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <TryCatch DisplayName="Try Catch-close or kill chrome" sap:VirtualizedContainerService.HintSize="797,51" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+    <TryCatch DisplayName="Try Catch-close or kill chrome" sap:VirtualizedContainerService.HintSize="831,51" sap2010:WorkflowViewState.IdRef="TryCatch_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -827,6 +803,6 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="797,91" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;AR_Postcheck_Workflow --&gt; Completed&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="831,91" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;AR_Postcheck_Workflow --&gt; Completed&quot;]" />
   </Sequence>
 </Activity>
